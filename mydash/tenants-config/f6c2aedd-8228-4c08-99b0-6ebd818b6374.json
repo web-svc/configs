@@ -1,0 +1,2774 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "description": "Messaging campaign management database",
+  "groups": [
+    {
+      "name": "Campaigns",
+      "description": "Manage messaging campaigns and logs",
+      "ui": {
+        "icon": "MdCampaign"
+      },
+      "entities": [
+        {
+          "table": "campaigns",
+          "label": "campaigns",
+          "Identifier": "Id",
+          "description": "Message Campaigns",
+          "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId"
+            },
+            {
+              "name": "AudienceId",
+              "label": "AudienceId"
+            },
+            {
+              "name": "ChannelProvidersId",
+              "label": "ChannelProvidersId"
+            },
+            {
+              "name": "ChannelConnectionsId",
+              "label": "ChannelConnectionsId"
+            },
+            {
+              "name": "ScheduledAt",
+              "label": "ScheduledAt"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId",
+              "type": "lookup",
+              "relation": {
+                "table": "templates",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AudienceId",
+              "label": "AudienceId",
+              "type": "lookup",
+              "relation": {
+                "table": "audiences",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelProvidersId",
+              "label": "ChannelProvidersId",
+              "type": "lookup",
+              "relation": {
+                "table": "channel_providers",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelConnectionsId",
+              "label": "ChannelConnectionsId",
+              "type": "lookup",
+              "relation": {
+                "table": "channel_connections",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ScheduledAt",
+              "label": "ScheduledAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId",
+              "type": "lookup",
+              "relation": {
+                "table": "templates",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AudienceId",
+              "label": "AudienceId",
+              "type": "lookup",
+              "relation": {
+                "table": "audiences",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelProvidersId",
+              "label": "ChannelProvidersId",
+              "type": "lookup",
+              "relation": {
+                "table": "channel_providers",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelConnectionsId",
+              "label": "ChannelConnectionsId",
+              "type": "lookup",
+              "relation": {
+                "table": "channel_connections",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ScheduledAt",
+              "label": "ScheduledAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TenantId",
+            "Name",
+            "Description",
+            "ChannelId",
+            "TemplateId",
+            "AudienceId",
+            "ChannelProvidersId",
+            "ChannelConnectionsId",
+            "ScheduledAt",
+            "CreationDate",
+            "UpdateDate",
+            "Status"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId"
+            },
+            {
+              "name": "AudienceId",
+              "label": "AudienceId"
+            },
+            {
+              "name": "ChannelProvidersId",
+              "label": "ChannelProvidersId"
+            },
+            {
+              "name": "ChannelConnectionsId",
+              "label": "ChannelConnectionsId"
+            },
+            {
+              "name": "ScheduledAt",
+              "label": "ScheduledAt"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBullhorn"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "campaign_logs",
+          "label": "campaign_logs",
+          "Identifier": "Id",
+          "description": "Campaign Activity Logs",
+          "displayFields": [
+            {
+              "name": "CampaignId",
+              "label": "CampaignId"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            },
+            {
+              "name": "SentAt",
+              "label": "SentAt"
+            },
+            {
+              "name": "OpenedAt",
+              "label": "OpenedAt"
+            },
+            {
+              "name": "ClickedAt",
+              "label": "ClickedAt"
+            },
+            {
+              "name": "BounceReason",
+              "label": "BounceReason"
+            },
+            {
+              "name": "ProviderResponse",
+              "label": "ProviderResponse"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "CampaignId",
+              "label": "CampaignId",
+              "type": "lookup",
+              "relation": {
+                "table": "campaigns",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "type": "lookup",
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "SentAt",
+              "label": "SentAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "OpenedAt",
+              "label": "OpenedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "ClickedAt",
+              "label": "ClickedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "BounceReason",
+              "label": "BounceReason",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ProviderResponse",
+              "label": "ProviderResponse",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "CampaignId",
+              "label": "CampaignId",
+              "type": "lookup",
+              "relation": {
+                "table": "campaigns",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "type": "lookup",
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "SentAt",
+              "label": "SentAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "OpenedAt",
+              "label": "OpenedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "ClickedAt",
+              "label": "ClickedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "BounceReason",
+              "label": "BounceReason",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ProviderResponse",
+              "label": "ProviderResponse",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "CampaignId",
+            "ContactId",
+            "Status",
+            "SentAt",
+            "OpenedAt",
+            "ClickedAt",
+            "BounceReason",
+            "ProviderResponse",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "CampaignId",
+              "label": "CampaignId"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            },
+            {
+              "name": "SentAt",
+              "label": "SentAt"
+            },
+            {
+              "name": "OpenedAt",
+              "label": "OpenedAt"
+            },
+            {
+              "name": "ClickedAt",
+              "label": "ClickedAt"
+            },
+            {
+              "name": "BounceReason",
+              "label": "BounceReason"
+            },
+            {
+              "name": "ProviderResponse",
+              "label": "ProviderResponse"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaRegChartBar"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "inbound_messages",
+          "label": "inbound_messages",
+          "Identifier": "Id",
+          "description": "Inbound Messages",
+          "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "CampaignId",
+              "label": "CampaignId"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "MessageText",
+              "label": "MessageText"
+            },
+            {
+              "name": "ReceivedAt",
+              "label": "ReceivedAt"
+            },
+            {
+              "name": "SourceIdentifier",
+              "label": "SourceIdentifier"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CampaignId",
+              "label": "CampaignId",
+              "type": "lookup",
+              "relation": {
+                "table": "campaigns",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "type": "lookup",
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "MessageText",
+              "label": "MessageText",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ReceivedAt",
+              "label": "ReceivedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "SourceIdentifier",
+              "label": "SourceIdentifier",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CampaignId",
+              "label": "CampaignId",
+              "type": "lookup",
+              "relation": {
+                "table": "campaigns",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "type": "lookup",
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "MessageText",
+              "label": "MessageText",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ReceivedAt",
+              "label": "ReceivedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "SourceIdentifier",
+              "label": "SourceIdentifier",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TenantId",
+            "ChannelId",
+            "CampaignId",
+            "ContactId",
+            "MessageText",
+            "ReceivedAt",
+            "SourceIdentifier",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "CampaignId",
+              "label": "CampaignId"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "MessageText",
+              "label": "MessageText"
+            },
+            {
+              "name": "ReceivedAt",
+              "label": "ReceivedAt"
+            },
+            {
+              "name": "SourceIdentifier",
+              "label": "SourceIdentifier"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaInbox"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Audience Management",
+      "description": "Handle contacts, audiences, and segmentation",
+      "ui": {
+        "icon": "MdGroup"
+      },
+      "entities": [
+        {
+          "table": "audience_members",
+          "label": "audience_members",
+          "Identifier": "Id",
+          "description": "Audience Membership",
+          "displayFields": [
+            {
+              "name": "AudienceId",
+              "label": "AudienceId"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "AudienceId",
+              "label": "AudienceId",
+              "type": "lookup",
+              "relation": {
+                "table": "audiences",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "type": "lookup",
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "AudienceId",
+              "label": "AudienceId",
+              "type": "lookup",
+              "relation": {
+                "table": "audiences",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "type": "lookup",
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "AudienceId",
+            "ContactId",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "AudienceId",
+              "label": "AudienceId"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUserFriends"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "audiences",
+          "label": "audiences",
+          "Identifier": "Id",
+          "description": "Audience Segments",
+          "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TenantId",
+            "Name",
+            "Description",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUsers"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "contacts",
+          "label": "contacts",
+          "Identifier": "Id",
+          "description": "Contact List",
+          "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Email",
+              "label": "Email"
+            },
+            {
+              "name": "Phone",
+              "label": "Phone"
+            },
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Email",
+              "label": "Email",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Phone",
+              "label": "Phone",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Email",
+              "label": "Email",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Phone",
+              "label": "Phone",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TenantId",
+            "Name",
+            "Email",
+            "Phone",
+            "WhatsApp",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Email",
+              "label": "Email"
+            },
+            {
+              "name": "Phone",
+              "label": "Phone"
+            },
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaAddressBook"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "custom_fields",
+          "label": "custom_fields",
+          "Identifier": "Id",
+          "description": "Custom Fields",
+          "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName"
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId"
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "fieldtypes",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "fieldtypes",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TenantId",
+            "FieldName",
+            "FieldTypeId",
+            "IsRequired",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName"
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId"
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaSlidersH"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "contact_field_values",
+          "label": "contact_field_values",
+          "Identifier": "Id",
+          "description": "Contact Custom Fields",
+          "displayFields": [
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "type": "lookup",
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "lookup",
+              "relation": {
+                "table": "custom_fields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "type": "lookup",
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "lookup",
+              "relation": {
+                "table": "custom_fields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "ContactId",
+            "CustomFieldId",
+            "FieldValue",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaListAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "fieldtypes",
+          "label": "fieldtypes",
+          "Identifier": "Id",
+          "description": "Field Types",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Description",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTags"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Channel Configuration",
+      "description": "Configure and manage message delivery channels",
+      "ui": {
+        "icon": "MdSettingsInputAntenna"
+      },
+      "entities": [
+        {
+          "table": "channels",
+          "label": "channels",
+          "Identifier": "Id",
+          "description": "Messaging Channels",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Description",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaSatelliteDish"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "channel_providers",
+          "label": "channel_providers",
+          "Identifier": "Id",
+          "description": "Channel Providers",
+          "displayFields": [
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "ChannelId",
+            "Name",
+            "Description",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCloud"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "channel_connections",
+          "label": "channel_connections",
+          "Identifier": "Id",
+          "description": "Channel Connections",
+          "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "ProviderId",
+              "label": "ProviderId"
+            },
+            {
+              "name": "Config",
+              "label": "Config"
+            },
+            {
+              "name": "IsVerified",
+              "label": "IsVerified"
+            },
+            {
+              "name": "VerifiedAt",
+              "label": "VerifiedAt"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ProviderId",
+              "label": "ProviderId",
+              "type": "lookup",
+              "relation": {
+                "table": "channel_providers",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Config",
+              "label": "Config",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "IsVerified",
+              "label": "IsVerified",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "VerifiedAt",
+              "label": "VerifiedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ProviderId",
+              "label": "ProviderId",
+              "type": "lookup",
+              "relation": {
+                "table": "channel_providers",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Config",
+              "label": "Config",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "IsVerified",
+              "label": "IsVerified",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "VerifiedAt",
+              "label": "VerifiedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TenantId",
+            "ChannelId",
+            "ProviderId",
+            "Config",
+            "IsVerified",
+            "VerifiedAt",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "ProviderId",
+              "label": "ProviderId"
+            },
+            {
+              "name": "Config",
+              "label": "Config"
+            },
+            {
+              "name": "IsVerified",
+              "label": "IsVerified"
+            },
+            {
+              "name": "VerifiedAt",
+              "label": "VerifiedAt"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaPlug"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Templates",
+      "description": "Design and manage campaign templates",
+      "ui": {
+        "icon": "MdArticle"
+      },
+      "entities": [
+        {
+          "table": "templates",
+          "label": "templates",
+          "Identifier": "Id",
+          "description": "Message Templates",
+          "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Subject",
+              "label": "Subject"
+            },
+            {
+              "name": "Body",
+              "label": "Body"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Subject",
+              "label": "Subject",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Body",
+              "label": "Body",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "type": "lookup",
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "type": "lookup",
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Subject",
+              "label": "Subject",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Body",
+              "label": "Body",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TenantId",
+            "ChannelId",
+            "Name",
+            "Subject",
+            "Body",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Subject",
+              "label": "Subject"
+            },
+            {
+              "name": "Body",
+              "label": "Body"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaRegFileAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Tenant Management",
+      "description": "Manage tenant-specific settings",
+      "ui": {
+        "icon": "MdBusiness"
+      },
+      "entities": [
+        {
+          "table": "tenants",
+          "label": "tenants",
+          "Identifier": "Id",
+          "description": "Tenant Settings",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Domain",
+              "label": "Domain"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Domain",
+              "label": "Domain",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Domain",
+              "label": "Domain",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Domain",
+            "CreatedAt"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Domain",
+              "label": "Domain"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBuilding"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Ungrouped",
+      "description": "Auto-generated group: Ungrouped",
+      "ui": {
+        "icon": "MdWidgets"
+      },
+      "entities": []
+    }
+  ]
+}
