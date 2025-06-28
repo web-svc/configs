@@ -1,0 +1,1264 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "description": "Payment processing and client management database",
+  "groups": [
+    {
+      "name": "Clients \u0026 Users",
+      "description": "Manage clients and end users",
+      "ui": {
+        "icon": "FaUsers"
+      },
+      "entities": [
+        {
+          "table": "clients",
+          "label": "clients",
+          "Identifier": "Id",
+          "description": "Client applications",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "OriginUrl",
+              "label": "OriginUrl"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId"
+            },
+            {
+              "name": "UpiId",
+              "label": "UpiId"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "OriginUrl",
+              "label": "OriginUrl",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "UpiId",
+              "label": "UpiId",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "OriginUrl",
+              "label": "OriginUrl",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "UpiId",
+              "label": "UpiId",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "OriginUrl",
+            "CreatedAt",
+            "ClientId",
+            "UpiId"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "OriginUrl",
+              "label": "OriginUrl"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId"
+            },
+            {
+              "name": "UpiId",
+              "label": "UpiId"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBuilding"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "users",
+          "label": "users",
+          "Identifier": "Id",
+          "description": "End users",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Email",
+              "label": "Email"
+            },
+            {
+              "name": "PhoneNumber",
+              "label": "PhoneNumber"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Email",
+              "label": "Email",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "PhoneNumber",
+              "label": "PhoneNumber",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Email",
+              "label": "Email",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "PhoneNumber",
+              "label": "PhoneNumber",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Email",
+            "PhoneNumber",
+            "CreatedAt"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Email",
+              "label": "Email"
+            },
+            {
+              "name": "PhoneNumber",
+              "label": "PhoneNumber"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUser"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Payments \u0026 Transactions",
+      "description": "Manage payment flows and statuses",
+      "ui": {
+        "icon": "FaMoneyCheckAlt"
+      },
+      "entities": [
+        {
+          "table": "payments",
+          "label": "payments",
+          "Identifier": "Id",
+          "description": "Payment transactions",
+          "displayFields": [
+            {
+              "name": "MerchantTransactionId",
+              "label": "MerchantTransactionId"
+            },
+            {
+              "name": "PaymentId",
+              "label": "PaymentId"
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId"
+            },
+            {
+              "name": "GatewaysId",
+              "label": "GatewaysId"
+            },
+            {
+              "name": "StatusId",
+              "label": "StatusId"
+            },
+            {
+              "name": "Amount",
+              "label": "Amount"
+            },
+            {
+              "name": "CurrencyId",
+              "label": "CurrencyId"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "IsTest",
+              "label": "IsTest"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            },
+            {
+              "name": "ExpiryAt",
+              "label": "ExpiryAt"
+            },
+            {
+              "name": "PaymentData",
+              "label": "PaymentData"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "MerchantTransactionId",
+              "label": "MerchantTransactionId",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "PaymentId",
+              "label": "PaymentId",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId",
+              "type": "lookup",
+              "relation": {
+                "table": "clients",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "GatewaysId",
+              "label": "GatewaysId",
+              "type": "lookup",
+              "relation": {
+                "table": "paymentgateways",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "StatusId",
+              "label": "StatusId",
+              "type": "lookup",
+              "relation": {
+                "table": "paymentstatus",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Amount",
+              "label": "Amount",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "CurrencyId",
+              "label": "CurrencyId",
+              "type": "lookup",
+              "relation": {
+                "table": "currencies",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "IsTest",
+              "label": "IsTest",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "ExpiryAt",
+              "label": "ExpiryAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "PaymentData",
+              "label": "PaymentData",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "MerchantTransactionId",
+              "label": "MerchantTransactionId",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "PaymentId",
+              "label": "PaymentId",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId",
+              "type": "lookup",
+              "relation": {
+                "table": "clients",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "GatewaysId",
+              "label": "GatewaysId",
+              "type": "lookup",
+              "relation": {
+                "table": "paymentgateways",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "StatusId",
+              "label": "StatusId",
+              "type": "lookup",
+              "relation": {
+                "table": "paymentstatus",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Amount",
+              "label": "Amount",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "CurrencyId",
+              "label": "CurrencyId",
+              "type": "lookup",
+              "relation": {
+                "table": "currencies",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "IsTest",
+              "label": "IsTest",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "ExpiryAt",
+              "label": "ExpiryAt",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "PaymentData",
+              "label": "PaymentData",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "MerchantTransactionId",
+            "PaymentId",
+            "ClientId",
+            "GatewaysId",
+            "StatusId",
+            "Amount",
+            "CurrencyId",
+            "UserId",
+            "IsTest",
+            "CreatedAt",
+            "ExpiryAt",
+            "PaymentData"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "MerchantTransactionId",
+              "label": "MerchantTransactionId"
+            },
+            {
+              "name": "PaymentId",
+              "label": "PaymentId"
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId"
+            },
+            {
+              "name": "GatewaysId",
+              "label": "GatewaysId"
+            },
+            {
+              "name": "StatusId",
+              "label": "StatusId"
+            },
+            {
+              "name": "Amount",
+              "label": "Amount"
+            },
+            {
+              "name": "CurrencyId",
+              "label": "CurrencyId"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "IsTest",
+              "label": "IsTest"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            },
+            {
+              "name": "ExpiryAt",
+              "label": "ExpiryAt"
+            },
+            {
+              "name": "PaymentData",
+              "label": "PaymentData"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCreditCard"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "paymentstatus",
+          "label": "paymentstatus",
+          "Identifier": "Id",
+          "description": "Payment statuses",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Description"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaInfoCircle"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "currencies",
+          "label": "currencies",
+          "Identifier": "Id",
+          "description": "Supported currencies",
+          "displayFields": [
+            {
+              "name": "ClientId",
+              "label": "ClientId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "ClientId",
+              "label": "ClientId",
+              "type": "select",
+              "relation": {
+                "table": "clients",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "ClientId",
+              "label": "ClientId",
+              "type": "select",
+              "relation": {
+                "table": "clients",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "ClientId",
+            "Name"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaDollarSign"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Integrations",
+      "description": "Third-party integrations and configurations",
+      "ui": {
+        "icon": "FaPlug"
+      },
+      "entities": [
+        {
+          "table": "paymentgateways",
+          "label": "paymentgateways",
+          "Identifier": "Id",
+          "description": "Payment gateway configs",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "ApiKey",
+              "label": "ApiKey"
+            },
+            {
+              "name": "SecretKey",
+              "label": "SecretKey"
+            },
+            {
+              "name": "EndpointURL",
+              "label": "EndpointURL"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ApiKey",
+              "label": "ApiKey",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "SecretKey",
+              "label": "SecretKey",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "EndpointURL",
+              "label": "EndpointURL",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ApiKey",
+              "label": "ApiKey",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "SecretKey",
+              "label": "SecretKey",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "EndpointURL",
+              "label": "EndpointURL",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "ApiKey",
+            "SecretKey",
+            "EndpointURL",
+            "Status",
+            "CreatedAt"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "ApiKey",
+              "label": "ApiKey"
+            },
+            {
+              "name": "SecretKey",
+              "label": "SecretKey"
+            },
+            {
+              "name": "EndpointURL",
+              "label": "EndpointURL"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaServer"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "webhooks",
+          "label": "webhooks",
+          "Identifier": "Id",
+          "description": "Webhook logs",
+          "displayFields": [
+            {
+              "name": "PaymentId",
+              "label": "PaymentId"
+            },
+            {
+              "name": "GatewayId",
+              "label": "GatewayId"
+            },
+            {
+              "name": "WebhookData",
+              "label": "WebhookData"
+            },
+            {
+              "name": "Processed",
+              "label": "Processed"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "PaymentId",
+              "label": "PaymentId",
+              "type": "lookup",
+              "relation": {
+                "table": "payments",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "GatewayId",
+              "label": "GatewayId",
+              "type": "lookup",
+              "relation": {
+                "table": "paymentgateways",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "WebhookData",
+              "label": "WebhookData",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Processed",
+              "label": "Processed",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "PaymentId",
+              "label": "PaymentId",
+              "type": "lookup",
+              "relation": {
+                "table": "payments",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "GatewayId",
+              "label": "GatewayId",
+              "type": "lookup",
+              "relation": {
+                "table": "paymentgateways",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "WebhookData",
+              "label": "WebhookData",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Processed",
+              "label": "Processed",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "PaymentId",
+            "GatewayId",
+            "WebhookData",
+            "Processed",
+            "CreatedAt"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "PaymentId",
+              "label": "PaymentId"
+            },
+            {
+              "name": "GatewayId",
+              "label": "GatewayId"
+            },
+            {
+              "name": "WebhookData",
+              "label": "WebhookData"
+            },
+            {
+              "name": "Processed",
+              "label": "Processed"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaNetworkWired"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Ungrouped",
+      "description": "Auto-generated group: Ungrouped",
+      "ui": {
+        "icon": "MdWidgets"
+      },
+      "entities": []
+    }
+  ]
+}
