@@ -401,7 +401,7 @@
                 "table": "paymentgateways",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Id", "Name"
                 ]
               }
             },
