@@ -384,7 +384,7 @@
             {
               "name": "ClientId",
               "label": "ClientId",
-              "type": "lookup",
+              "type": "select",
               "relation": {
                 "table": "clients",
                 "valueField": "Id",
@@ -396,7 +396,7 @@
             {
               "name": "GatewaysId",
               "label": "GatewaysId",
-              "type": "lookup",
+              "type": "select",
               "relation": {
                 "table": "paymentgateways",
                 "valueField": "Id",
