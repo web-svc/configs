@@ -389,7 +389,7 @@
                 "table": "clients",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Id", "Name"
                 ]
               }
             },
