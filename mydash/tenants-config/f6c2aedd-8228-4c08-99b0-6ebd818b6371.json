@@ -1,0 +1,4749 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "description": "Authentication \u0026 App Management Database",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": [
+          {
+            "label": "appcustomfields Summary",
+            "entity": "appcustomfields",
+            "fields": [
+              "1"
+            ],
+            "groupBy": "CustomFieldId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "appcustomfieldvalues Summary",
+            "entity": "appcustomfieldvalues",
+            "fields": [
+              "1",
+              "2",
+              "3",
+              "25"
+            ],
+            "groupBy": "AppId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "apps Summary",
+            "entity": "apps",
+            "fields": [
+              "1",
+              "2"
+            ],
+            "groupBy": "ClientTypeId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "authproviders Summary",
+            "entity": "authproviders",
+            "fields": [
+              "Default",
+              "Facebook",
+              "Google",
+              "LinkedIn",
+              "MAILOTP",
+              "Microsoft",
+              "SMSOTP",
+              "Twitter",
+              "TwitterV1",
+              "Yahoo"
+            ],
+            "groupBy": "Name",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "clienttypes Summary",
+            "entity": "clienttypes",
+            "fields": [
+              "Confidential",
+              "Public"
+            ],
+            "groupBy": "Name",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "customfields Summary",
+            "entity": "customfields",
+            "fields": [
+              "1"
+            ],
+            "groupBy": "FieldTypeId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "fieldentities Summary",
+            "entity": "fieldentities",
+            "fields": [
+              "Apps",
+              "Users"
+            ],
+            "groupBy": "Name",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "fieldtypes Summary",
+            "entity": "fieldtypes",
+            "fields": [
+              "checkbox",
+              "date",
+              "datetime",
+              "dropdown",
+              "email",
+              "number",
+              "radio",
+              "text",
+              "textarea",
+              "url"
+            ],
+            "groupBy": "Name",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "roles Summary",
+            "entity": "roles",
+            "fields": [
+              "1"
+            ],
+            "groupBy": "AppId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "test Summary",
+            "entity": "test",
+            "fields": [
+              "1",
+              "2",
+              "6",
+              "11",
+              "12",
+              "13",
+              "19",
+              "20",
+              "21"
+            ],
+            "groupBy": "ColumnTest",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "users Summary",
+            "entity": "users",
+            "fields": [
+              "52216b5a-f157-4a08-89c5-3d5c8ea3c75d",
+              "615a178f-4d12-11f0-aed0-0201f6a3966e",
+              "80d97ea7-5356-11f0-aed0-0201f6a3966e",
+              "a6878f2f-4d12-11f0-aed0-0201f6a3966e"
+            ],
+            "groupBy": "WebGuid",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "view_customfieldsappDetails Summary",
+            "entity": "view_customfieldsappDetails",
+            "fields": [
+              "1"
+            ],
+            "groupBy": "CustomFieldId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total appLoginProviders",
+          "display": "count(*) as display",
+          "entity": "appLoginProviders",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total appcustomfields",
+          "display": "count(*) as display",
+          "entity": "appcustomfields",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total appcustomfieldvalues",
+          "display": "count(*) as display",
+          "entity": "appcustomfieldvalues",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total apphierarchy",
+          "display": "count(*) as display",
+          "entity": "apphierarchy",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total apps",
+          "display": "count(*) as display",
+          "entity": "apps",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total authproviders",
+          "display": "count(*) as display",
+          "entity": "authproviders",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total clientauthenticationrequests",
+          "display": "count(*) as display",
+          "entity": "clientauthenticationrequests",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total clienttypes",
+          "display": "count(*) as display",
+          "entity": "clienttypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total customfields",
+          "display": "count(*) as display",
+          "entity": "customfields",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total fieldentities",
+          "display": "count(*) as display",
+          "entity": "fieldentities",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total fieldtypes",
+          "display": "count(*) as display",
+          "entity": "fieldtypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total roles",
+          "display": "count(*) as display",
+          "entity": "roles",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total test",
+          "display": "count(*) as display",
+          "entity": "test",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total userapploginproviders",
+          "display": "count(*) as display",
+          "entity": "userapploginproviders",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total usercustomfieldvalues",
+          "display": "count(*) as display",
+          "entity": "usercustomfieldvalues",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total userinapps",
+          "display": "count(*) as display",
+          "entity": "userinapps",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total userinroles",
+          "display": "count(*) as display",
+          "entity": "userinroles",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total users",
+          "display": "count(*) as display",
+          "entity": "users",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total view_customfieldsappDetails",
+          "display": "count(*) as display",
+          "entity": "view_customfieldsappDetails",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 appLoginProviders",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "appLoginProviders",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 appcustomfields",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "appcustomfields",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 appcustomfieldvalues",
+          "display": "FieldValue",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "appcustomfieldvalues",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 apps",
+          "display": "ClientId,Secret,Name,TagLine",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "apps",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 authproviders",
+          "display": "Name,Description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "authproviders",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 clientauthenticationrequests",
+          "display": "EventHistory",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CodeRequestDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "clientauthenticationrequests",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 clienttypes",
+          "display": "Name,Description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "clienttypes",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 customfields",
+          "display": "FieldName,Description,DefaultValue",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "customfields",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 fieldentities",
+          "display": "Name,Description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "fieldentities",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 fieldtypes",
+          "display": "Name,Description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "fieldtypes",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 roles",
+          "display": "InnerName,Name,Description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "roles",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 userapploginproviders",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "userapploginproviders",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 usercustomfieldvalues",
+          "display": "FieldValue",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "usercustomfieldvalues",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 userinapps",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "userinapps",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 userinroles",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "userinroles",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 users",
+          "display": "WebGuid,Email,Mobile,Name",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "users",
+          "filter": "IsActive eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "appLoginProviders Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "appLoginProviders",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "appcustomfields Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "appcustomfields",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "appcustomfieldvalues Table",
+          "display": "FieldValue",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "appcustomfieldvalues",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "apps Table",
+          "display": "ClientId,Secret,Name,TagLine",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "apps",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "authproviders Table",
+          "display": "Name,Description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "authproviders",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "clientauthenticationrequests Table",
+          "display": "EventHistory",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CodeRequestDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "clientauthenticationrequests",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "clienttypes Table",
+          "display": "Name,Description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "clienttypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "customfields Table",
+          "display": "FieldName,Description,DefaultValue",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "customfields",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "fieldentities Table",
+          "display": "Name,Description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "fieldentities",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "fieldtypes Table",
+          "display": "Name,Description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "fieldtypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "roles Table",
+          "display": "InnerName,Name,Description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "roles",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "userapploginproviders Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "userapploginproviders",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "usercustomfieldvalues Table",
+          "display": "FieldValue",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "usercustomfieldvalues",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "userinapps Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "userinapps",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "userinroles Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "userinroles",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "users Table",
+          "display": "WebGuid,Email,Mobile,Name",
+          "limit": 5,
+          "filter": "IsActive eq \u00271\u0027",
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "users",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": {
+        "label": "Quick Actions",
+        "roles": [
+          "root",
+          "admin",
+          "hr"
+        ],
+        "items": [
+          {
+            "label": "Add appLoginProviders",
+            "action": "create",
+            "entity": "appLoginProviders",
+            "group": "appLoginProviders",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          },
+          {
+            "label": "Add appcustomfields",
+            "action": "create",
+            "entity": "appcustomfields",
+            "group": "appcustomfields",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          }
+        ]
+      },
+      "reports": [
+        {
+          "label": "Monthly Joinees",
+          "filter": "Status eq \u0027Active\u0027",
+          "entity": "appLoginProviders",
+          "exportable": true,
+          "roles": [
+            "root",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "calendar",
+      "roles": [
+        "root",
+        "hr",
+        "manager"
+      ],
+      "calendarConfig": [
+        {
+          "entity": "appLoginProviders",
+          "titleField": "Id",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "appcustomfields",
+          "titleField": "Id",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "appcustomfieldvalues",
+          "titleField": "Id",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "apps",
+          "titleField": "Name",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "ClientTypeId",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "authproviders",
+          "titleField": "Name",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "clientauthenticationrequests",
+          "titleField": "EventHistory",
+          "startDateField": "CodeRequestDate",
+          "endDateField": "CodeRequestDate",
+          "colorField": "TokenRequestDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "clienttypes",
+          "titleField": "Name",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "customfields",
+          "titleField": "FieldName",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "FieldTypeId",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "fieldentities",
+          "titleField": "Name",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "fieldtypes",
+          "titleField": "Name",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "roles",
+          "titleField": "InnerName",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "userapploginproviders",
+          "titleField": "Id",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "usercustomfieldvalues",
+          "titleField": "Id",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "userinapps",
+          "titleField": "Id",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "userinroles",
+          "titleField": "Id",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "CreationDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "users",
+          "titleField": "Name",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "LastActivityDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Applications",
+      "description": "Manage apps, hierarchies, and their settings",
+      "ui": {
+        "icon": "MdApps"
+      },
+      "entities": [
+        {
+          "table": "apps",
+          "label": "apps",
+          "Identifier": "Id",
+          "description": "Applications",
+          "displayFields": [
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId"
+            },
+            {
+              "name": "Secret",
+              "label": "Secret"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "TagLine",
+              "label": "TagLine"
+            },
+            {
+              "name": "LogoUrl",
+              "label": "LogoUrl"
+            },
+            {
+              "name": "RedirectUrl",
+              "label": "RedirectUrl"
+            },
+            {
+              "name": "ClientTypeId",
+              "label": "ClientTypeId"
+            },
+            {
+              "name": "AutoActivateUser",
+              "label": "AutoActivateUser"
+            },
+            {
+              "name": "MaxLoginAttempts",
+              "label": "MaxLoginAttempts"
+            },
+            {
+              "name": "IsEmailVerificationRequired",
+              "label": "IsEmailVerificationRequired"
+            },
+            {
+              "name": "IsMobileVerificationRequired",
+              "label": "IsMobileVerificationRequired"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Secret",
+              "label": "Secret",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "TagLine",
+              "label": "TagLine",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "LogoUrl",
+              "label": "LogoUrl",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "RedirectUrl",
+              "label": "RedirectUrl",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ClientTypeId",
+              "label": "ClientTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "clienttypes",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AutoActivateUser",
+              "label": "AutoActivateUser",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "MaxLoginAttempts",
+              "label": "MaxLoginAttempts",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "IsEmailVerificationRequired",
+              "label": "IsEmailVerificationRequired",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "IsMobileVerificationRequired",
+              "label": "IsMobileVerificationRequired",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Secret",
+              "label": "Secret",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "TagLine",
+              "label": "TagLine",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "LogoUrl",
+              "label": "LogoUrl",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "RedirectUrl",
+              "label": "RedirectUrl",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "ClientTypeId",
+              "label": "ClientTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "clienttypes",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AutoActivateUser",
+              "label": "AutoActivateUser",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "MaxLoginAttempts",
+              "label": "MaxLoginAttempts",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "IsEmailVerificationRequired",
+              "label": "IsEmailVerificationRequired",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "IsMobileVerificationRequired",
+              "label": "IsMobileVerificationRequired",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "UserId",
+            "ClientId",
+            "Secret",
+            "Name",
+            "TagLine",
+            "LogoUrl",
+            "RedirectUrl",
+            "ClientTypeId",
+            "AutoActivateUser",
+            "MaxLoginAttempts",
+            "IsEmailVerificationRequired",
+            "IsMobileVerificationRequired",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "ClientId",
+              "label": "ClientId"
+            },
+            {
+              "name": "Secret",
+              "label": "Secret"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "TagLine",
+              "label": "TagLine"
+            },
+            {
+              "name": "LogoUrl",
+              "label": "LogoUrl"
+            },
+            {
+              "name": "RedirectUrl",
+              "label": "RedirectUrl"
+            },
+            {
+              "name": "ClientTypeId",
+              "label": "ClientTypeId"
+            },
+            {
+              "name": "AutoActivateUser",
+              "label": "AutoActivateUser"
+            },
+            {
+              "name": "MaxLoginAttempts",
+              "label": "MaxLoginAttempts"
+            },
+            {
+              "name": "IsEmailVerificationRequired",
+              "label": "IsEmailVerificationRequired"
+            },
+            {
+              "name": "IsMobileVerificationRequired",
+              "label": "IsMobileVerificationRequired"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaAppStore"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "appLoginProviders",
+          "label": "appLoginProviders",
+          "Identifier": "Id",
+          "description": "App Auth Providers",
+          "displayFields": [
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "AuthProviderId",
+              "label": "AuthProviderId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AuthProviderId",
+              "label": "AuthProviderId",
+              "type": "select",
+              "relation": {
+                "table": "authproviders",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AuthProviderId",
+              "label": "AuthProviderId",
+              "type": "select",
+              "relation": {
+                "table": "authproviders",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "AppId",
+            "AuthProviderId",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "AuthProviderId",
+              "label": "AuthProviderId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaPlug"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "appcustomfields",
+          "label": "appcustomfields",
+          "Identifier": "Id",
+          "description": "App Custom Fields",
+          "displayFields": [
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "select",
+              "relation": {
+                "table": "customfields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "select",
+              "relation": {
+                "table": "customfields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "CustomFieldId",
+            "AppId",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaSlidersH"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "appcustomfieldvalues",
+          "label": "appcustomfieldvalues",
+          "Identifier": "Id",
+          "description": "Custom Field Values",
+          "displayFields": [
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue"
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "lookup",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "lookup",
+              "relation": {
+                "table": "customfields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "lookup",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "lookup",
+              "relation": {
+                "table": "customfields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "AppId",
+            "FieldValue",
+            "CustomFieldId",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue"
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaDatabase"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "apphierarchy",
+          "label": "apphierarchy",
+          "Identifier": "ParentAppId",
+          "description": "App Hierarchy",
+          "displayFields": [
+            {
+              "name": "ParentAppId",
+              "label": "ParentAppId"
+            },
+            {
+              "name": "ChildAppId",
+              "label": "ChildAppId"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "ParentAppId",
+              "label": "ParentAppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChildAppId",
+              "label": "ChildAppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            }
+          ],
+          "createFields": [
+            {
+              "name": "ParentAppId",
+              "label": "ParentAppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "ChildAppId",
+              "label": "ChildAppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            }
+          ],
+          "searchFields": [
+            "ParentAppId",
+            "ChildAppId"
+          ],
+          "viewFields": [
+            {
+              "name": "ParentAppId",
+              "label": "ParentAppId"
+            },
+            {
+              "name": "ChildAppId",
+              "label": "ChildAppId"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaSitemap"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "ParentAppId",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Authentication",
+      "description": "Authentication providers and user auth connections",
+      "ui": {
+        "icon": "MdSecurity"
+      },
+      "entities": [
+        {
+          "table": "authproviders",
+          "label": "authproviders",
+          "Identifier": "Id",
+          "description": "Auth Providers",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Description",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaKey"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "clienttypes",
+          "label": "clienttypes",
+          "Identifier": "Id",
+          "description": "Client Types",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Description",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaPuzzlePiece"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "userapploginproviders",
+          "label": "userapploginproviders",
+          "Identifier": "Id",
+          "description": "User App Auth Links",
+          "displayFields": [
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "AuthProviderId",
+              "label": "AuthProviderId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "lookup",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AuthProviderId",
+              "label": "AuthProviderId",
+              "type": "lookup",
+              "relation": {
+                "table": "authproviders",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "lookup",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AuthProviderId",
+              "label": "AuthProviderId",
+              "type": "lookup",
+              "relation": {
+                "table": "authproviders",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "UserId",
+            "AppId",
+            "AuthProviderId",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "AuthProviderId",
+              "label": "AuthProviderId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUserLock"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "description": "User accounts, roles, and associations",
+      "ui": {
+        "icon": "MdPeople"
+      },
+      "entities": [
+        {
+          "table": "users",
+          "label": "users",
+          "Identifier": "Id",
+          "description": "Users",
+          "displayFields": [
+            {
+              "name": "WebGuid",
+              "label": "WebGuid"
+            },
+            {
+              "name": "Email",
+              "label": "Email"
+            },
+            {
+              "name": "Mobile",
+              "label": "Mobile"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Password",
+              "label": "Password"
+            },
+            {
+              "name": "IsActive",
+              "label": "IsActive"
+            },
+            {
+              "name": "LoginAttempt",
+              "label": "LoginAttempt"
+            },
+            {
+              "name": "IsEmailVerified",
+              "label": "IsEmailVerified"
+            },
+            {
+              "name": "IsMobileVerified",
+              "label": "IsMobileVerified"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "LastActivityDate",
+              "label": "LastActivityDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "WebGuid",
+              "label": "WebGuid",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Email",
+              "label": "Email",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Mobile",
+              "label": "Mobile",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Password",
+              "label": "Password",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "IsActive",
+              "label": "IsActive",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "LoginAttempt",
+              "label": "LoginAttempt",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "IsEmailVerified",
+              "label": "IsEmailVerified",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "IsMobileVerified",
+              "label": "IsMobileVerified",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "LastActivityDate",
+              "label": "LastActivityDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "WebGuid",
+              "label": "WebGuid",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Email",
+              "label": "Email",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Mobile",
+              "label": "Mobile",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Password",
+              "label": "Password",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "IsActive",
+              "label": "IsActive",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "LoginAttempt",
+              "label": "LoginAttempt",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "IsEmailVerified",
+              "label": "IsEmailVerified",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "IsMobileVerified",
+              "label": "IsMobileVerified",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "LastActivityDate",
+              "label": "LastActivityDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "WebGuid",
+            "Email",
+            "Mobile",
+            "Name",
+            "Password",
+            "IsActive",
+            "LoginAttempt",
+            "IsEmailVerified",
+            "IsMobileVerified",
+            "CreationDate",
+            "UpdateDate",
+            "LastActivityDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "WebGuid",
+              "label": "WebGuid"
+            },
+            {
+              "name": "Email",
+              "label": "Email"
+            },
+            {
+              "name": "Mobile",
+              "label": "Mobile"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Password",
+              "label": "Password"
+            },
+            {
+              "name": "IsActive",
+              "label": "IsActive"
+            },
+            {
+              "name": "LoginAttempt",
+              "label": "LoginAttempt"
+            },
+            {
+              "name": "IsEmailVerified",
+              "label": "IsEmailVerified"
+            },
+            {
+              "name": "IsMobileVerified",
+              "label": "IsMobileVerified"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            },
+            {
+              "name": "LastActivityDate",
+              "label": "LastActivityDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUser"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "userinapps",
+          "label": "userinapps",
+          "Identifier": "Id",
+          "description": "Users in Apps",
+          "displayFields": [
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "select",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "select",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "select",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "UserId",
+            "AppId",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUserFriends"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "userinroles",
+          "label": "userinroles",
+          "Identifier": "Id",
+          "description": "Users in Roles",
+          "displayFields": [
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "RoleId",
+              "label": "RoleId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "select",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "RoleId",
+              "label": "RoleId",
+              "type": "select",
+              "relation": {
+                "table": "roles",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "select",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "RoleId",
+              "label": "RoleId",
+              "type": "select",
+              "relation": {
+                "table": "roles",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "UserId",
+            "RoleId",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "RoleId",
+              "label": "RoleId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUserTag"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "roles",
+          "label": "roles",
+          "Identifier": "Id",
+          "description": "Roles",
+          "displayFields": [
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "InnerName",
+              "label": "InnerName"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "lookup",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "InnerName",
+              "label": "InnerName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "lookup",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "InnerName",
+              "label": "InnerName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "AppId",
+            "InnerName",
+            "Name",
+            "Description",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "InnerName",
+              "label": "InnerName"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUserShield"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "usercustomfieldvalues",
+          "label": "usercustomfieldvalues",
+          "Identifier": "Id",
+          "description": "User Custom Field Values",
+          "displayFields": [
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue"
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "lookup",
+              "relation": {
+                "table": "customfields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "lookup",
+              "relation": {
+                "table": "customfields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "UserId",
+            "FieldValue",
+            "CustomFieldId",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue"
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUserEdit"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Custom Fields",
+      "description": "Dynamic user-defined fields and types",
+      "ui": {
+        "icon": "MdTune"
+      },
+      "entities": [
+        {
+          "table": "customfields",
+          "label": "customfields",
+          "Identifier": "Id",
+          "description": "Custom Fields",
+          "displayFields": [
+            {
+              "name": "FieldName",
+              "label": "FieldName"
+            },
+            {
+              "name": "IsMandatory",
+              "label": "IsMandatory"
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId"
+            },
+            {
+              "name": "FieldEntityId",
+              "label": "FieldEntityId"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "FieldName",
+              "label": "FieldName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "IsMandatory",
+              "label": "IsMandatory",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "fieldtypes",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldEntityId",
+              "label": "FieldEntityId",
+              "type": "lookup",
+              "relation": {
+                "table": "fieldentities",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "FieldName",
+              "label": "FieldName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "IsMandatory",
+              "label": "IsMandatory",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "fieldtypes",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "FieldEntityId",
+              "label": "FieldEntityId",
+              "type": "lookup",
+              "relation": {
+                "table": "fieldentities",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "FieldName",
+            "IsMandatory",
+            "FieldTypeId",
+            "FieldEntityId",
+            "Description",
+            "DefaultValue",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName"
+            },
+            {
+              "name": "IsMandatory",
+              "label": "IsMandatory"
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId"
+            },
+            {
+              "name": "FieldEntityId",
+              "label": "FieldEntityId"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaListAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "fieldentities",
+          "label": "fieldentities",
+          "Identifier": "Id",
+          "description": "Field Entities",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Description",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCubes"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "fieldtypes",
+          "label": "fieldtypes",
+          "Identifier": "Id",
+          "description": "Field Types",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Description",
+            "CreationDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTags"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "view_customfieldsappDetails",
+          "label": "view_customfieldsappDetails",
+          "Identifier": "CustomFieldId",
+          "description": "Custom Fields View",
+          "displayFields": [
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName"
+            },
+            {
+              "name": "IsMandatory",
+              "label": "IsMandatory"
+            },
+            {
+              "name": "FieldTypeName",
+              "label": "FieldTypeName"
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "IsMandatory",
+              "label": "IsMandatory",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "FieldTypeName",
+              "label": "FieldTypeName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "number",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "IsMandatory",
+              "label": "IsMandatory",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "FieldTypeName",
+              "label": "FieldTypeName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "number",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "CustomFieldId",
+            "FieldName",
+            "IsMandatory",
+            "FieldTypeName",
+            "DefaultValue",
+            "AppId"
+          ],
+          "viewFields": [
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName"
+            },
+            {
+              "name": "IsMandatory",
+              "label": "IsMandatory"
+            },
+            {
+              "name": "FieldTypeName",
+              "label": "FieldTypeName"
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTable"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "CustomFieldId",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Client Auth Flows",
+      "description": "Client request tracking and flows",
+      "ui": {
+        "icon": "MdCompareArrows"
+      },
+      "entities": [
+        {
+          "table": "clientauthenticationrequests",
+          "label": "clientauthenticationrequests",
+          "Identifier": "Id",
+          "description": "Client Auth Requests",
+          "displayFields": [
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "EventHistory",
+              "label": "EventHistory"
+            },
+            {
+              "name": "CodeRequestDate",
+              "label": "CodeRequestDate"
+            },
+            {
+              "name": "CodeIssueDate",
+              "label": "CodeIssueDate"
+            },
+            {
+              "name": "TokenRequestDate",
+              "label": "TokenRequestDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "lookup",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "EventHistory",
+              "label": "EventHistory",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CodeRequestDate",
+              "label": "CodeRequestDate",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "CodeIssueDate",
+              "label": "CodeIssueDate",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "TokenRequestDate",
+              "label": "TokenRequestDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "type": "lookup",
+              "relation": {
+                "table": "apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "type": "lookup",
+              "relation": {
+                "table": "users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ]
+              }
+            },
+            {
+              "name": "EventHistory",
+              "label": "EventHistory",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "CodeRequestDate",
+              "label": "CodeRequestDate",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "CodeIssueDate",
+              "label": "CodeIssueDate",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "TokenRequestDate",
+              "label": "TokenRequestDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "AppId",
+            "UserId",
+            "EventHistory",
+            "CodeRequestDate",
+            "CodeIssueDate",
+            "TokenRequestDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "EventHistory",
+              "label": "EventHistory"
+            },
+            {
+              "name": "CodeRequestDate",
+              "label": "CodeRequestDate"
+            },
+            {
+              "name": "CodeIssueDate",
+              "label": "CodeIssueDate"
+            },
+            {
+              "name": "TokenRequestDate",
+              "label": "TokenRequestDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaExchangeAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Ungrouped",
+      "description": "Auto-generated group: Ungrouped",
+      "ui": {
+        "icon": "MdWidgets"
+      },
+      "entities": [
+        {
+          "table": "test",
+          "label": "test",
+          "Identifier": "ColumnTest",
+          "description": "Test Table",
+          "displayFields": [
+            {
+              "name": "Descgg",
+              "label": "Descgg"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Descgg",
+              "label": "Descgg",
+              "type": "number",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Descgg",
+              "label": "Descgg",
+              "type": "number",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "ColumnTest",
+            "Descgg"
+          ],
+          "viewFields": [
+            {
+              "name": "ColumnTest",
+              "label": "ColumnTest"
+            },
+            {
+              "name": "Descgg",
+              "label": "Descgg"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaFlask"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "ColumnTest",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    }
+  ]
+}
