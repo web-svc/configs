@@ -1,0 +1,546 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "description": "Test database for managing employee-related data.",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": []
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total employee_profiles",
+          "display": "count(*) as display",
+          "entity": "employee_profiles",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 employee_profiles",
+          "display": "first_name,last_name,email,bio",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "joining_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "employee_profiles",
+          "filter": "status eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityView": [
+        {
+          "label": "employee_profiles Table",
+          "display": "first_name,last_name,email,bio",
+          "limit": 5,
+          "filter": "status eq \u00271\u0027",
+          "orderBy": [
+            {
+              "column": "joining_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "employee_profiles",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": {
+        "label": "Quick Actions",
+        "roles": [
+          "root",
+          "admin",
+          "hr"
+        ],
+        "items": [
+          {
+            "label": "Add employee_profiles",
+            "action": "create",
+            "entity": "employee_profiles",
+            "group": "employee_profiles",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          }
+        ]
+      },
+      "reports": [
+        {
+          "label": "Monthly Joinees",
+          "filter": "Status eq \u0027Active\u0027",
+          "entity": "employee_profiles",
+          "exportable": true,
+          "roles": [
+            "root",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "kanban",
+      "roles": [
+        "root",
+        "manager"
+      ],
+      "kanbanConfig": [
+        {
+          "entity": "employee_profiles",
+          "statusField": "status",
+          "columns": [
+            "To Do",
+            "In Progress",
+            "Done"
+          ],
+          "displayFields": [
+            "first_name",
+            "last_name",
+            "email"
+          ],
+          "roles": [
+            "root",
+            "manager"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "calendar",
+      "roles": [
+        "root",
+        "hr",
+        "manager"
+      ],
+      "calendarConfig": [
+        {
+          "entity": "employee_profiles",
+          "titleField": "first_name",
+          "startDateField": "joining_date",
+          "endDateField": "joining_date",
+          "colorField": "status",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Employee Management",
+      "description": "Manage employee profiles and related details",
+      "ui": {
+        "icon": "MdPeople"
+      },
+      "entities": [
+        {
+          "table": "employee_profiles",
+          "label": "employee_profiles",
+          "Identifier": "employee_id",
+          "description": "Employee Profiles",
+          "displayFields": [
+            {
+              "name": "first_name",
+              "label": "first_name"
+            },
+            {
+              "name": "last_name",
+              "label": "last_name"
+            },
+            {
+              "name": "email",
+              "label": "email"
+            },
+            {
+              "name": "is_active",
+              "label": "is_active"
+            },
+            {
+              "name": "age",
+              "label": "age"
+            },
+            {
+              "name": "salary",
+              "label": "salary"
+            },
+            {
+              "name": "joining_date",
+              "label": "joining_date"
+            },
+            {
+              "name": "last_login",
+              "label": "last_login"
+            },
+            {
+              "name": "work_hours",
+              "label": "work_hours"
+            },
+            {
+              "name": "bio",
+              "label": "bio"
+            },
+            {
+              "name": "profile_image",
+              "label": "profile_image"
+            },
+            {
+              "name": "location",
+              "label": "location"
+            },
+            {
+              "name": "status",
+              "label": "status"
+            },
+            {
+              "name": "preferences",
+              "label": "preferences"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "first_name",
+              "label": "first_name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "last_name",
+              "label": "last_name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "email",
+              "label": "email",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "is_active",
+              "label": "is_active",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "age",
+              "label": "age",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "salary",
+              "label": "salary",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "joining_date",
+              "label": "joining_date",
+              "type": "date",
+              "relation": null
+            },
+            {
+              "name": "last_login",
+              "label": "last_login",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "work_hours",
+              "label": "work_hours",
+              "type": "time",
+              "relation": null
+            },
+            {
+              "name": "bio",
+              "label": "bio",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "profile_image",
+              "label": "profile_image",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "location",
+              "label": "location",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "preferences",
+              "label": "preferences",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "first_name",
+              "label": "first_name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "last_name",
+              "label": "last_name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "email",
+              "label": "email",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "is_active",
+              "label": "is_active",
+              "type": "checkbox",
+              "relation": null
+            },
+            {
+              "name": "age",
+              "label": "age",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "salary",
+              "label": "salary",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "joining_date",
+              "label": "joining_date",
+              "type": "date",
+              "relation": null
+            },
+            {
+              "name": "last_login",
+              "label": "last_login",
+              "type": "datetime",
+              "relation": null
+            },
+            {
+              "name": "work_hours",
+              "label": "work_hours",
+              "type": "time",
+              "relation": null
+            },
+            {
+              "name": "bio",
+              "label": "bio",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "profile_image",
+              "label": "profile_image",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "location",
+              "label": "location",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "preferences",
+              "label": "preferences",
+              "type": "text",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "employee_id",
+            "first_name",
+            "last_name",
+            "email",
+            "is_active",
+            "age",
+            "salary",
+            "joining_date",
+            "last_login",
+            "work_hours",
+            "bio",
+            "profile_image",
+            "location",
+            "status",
+            "preferences",
+            "created_at",
+            "updated_at"
+          ],
+          "viewFields": [
+            {
+              "name": "employee_id",
+              "label": "employee_id"
+            },
+            {
+              "name": "first_name",
+              "label": "first_name"
+            },
+            {
+              "name": "last_name",
+              "label": "last_name"
+            },
+            {
+              "name": "email",
+              "label": "email"
+            },
+            {
+              "name": "is_active",
+              "label": "is_active"
+            },
+            {
+              "name": "age",
+              "label": "age"
+            },
+            {
+              "name": "salary",
+              "label": "salary"
+            },
+            {
+              "name": "joining_date",
+              "label": "joining_date"
+            },
+            {
+              "name": "last_login",
+              "label": "last_login"
+            },
+            {
+              "name": "work_hours",
+              "label": "work_hours"
+            },
+            {
+              "name": "bio",
+              "label": "bio"
+            },
+            {
+              "name": "profile_image",
+              "label": "profile_image"
+            },
+            {
+              "name": "location",
+              "label": "location"
+            },
+            {
+              "name": "status",
+              "label": "status"
+            },
+            {
+              "name": "preferences",
+              "label": "preferences"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            },
+            {
+              "name": "updated_at",
+              "label": "updated_at"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUserTie"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "employee_id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    }
+  ]
+}
