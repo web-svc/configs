@@ -1009,7 +1009,7 @@
             {
               "name": "GatewaysId",
               "label": "GatewaysId",
-              "type": "lookup",
+              "type": "select",
               "relation": {
                 "table": "paymentgateways",
                 "valueField": "Id",
@@ -1021,7 +1021,7 @@
             {
               "name": "StatusId",
               "label": "StatusId",
-              "type": "lookup",
+              "type": "select",
               "relation": {
                 "table": "paymentstatus",
                 "valueField": "Id",
