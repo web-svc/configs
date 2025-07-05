@@ -2495,7 +2495,7 @@
                 "table": "audiences",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Id", "Name"
                 ]
               }
             },
