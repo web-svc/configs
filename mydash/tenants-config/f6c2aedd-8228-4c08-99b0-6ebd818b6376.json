@@ -1398,7 +1398,7 @@
             {
               "name": "MetaJSON",
               "label": "MetaJSON",
-              "type": "textarea",
+              "type": "text",
               "relation": null
             }
           ],
