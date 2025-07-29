@@ -1502,11 +1502,11 @@
           "displayFields": [
             {
               "name": "TemplateId",
-              "label": "TemplateId"
+              "label": "Template Id"
             },
             {
               "name": "VarName",
-              "label": "VarName"
+              "label": "Var Name"
             },
             {
               "name": "VarTypeId",
@@ -1519,28 +1519,24 @@
             {
               "name": "DefaultValue",
               "label": "DefaultValue"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
             }
           ],
           "editFields": [
             {
               "name": "TemplateId",
-              "label": "TemplateId",
+              "label": "Template Id",
               "type": "lookup",
               "relation": {
                 "table": "templates",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Slug", "Version"
                 ]
               }
             },
             {
               "name": "VarName",
-              "label": "VarName",
+              "label": "Var Name",
               "type": "text",
               "relation": null
             },
@@ -1552,39 +1548,33 @@
                 "table": "variable_types",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Name"
                 ]
               }
             },
             {
               "name": "IsRequired",
               "label": "IsRequired",
-              "type": "dropdown",
+              "type": "toggle",
               "relation": null
             },
             {
               "name": "DefaultValue",
               "label": "DefaultValue",
               "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
               "relation": null
             }
           ],
           "createFields": [
             {
               "name": "TemplateId",
-              "label": "TemplateId",
+              "label": "Template",
               "type": "lookup",
               "relation": {
                 "table": "templates",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Slug", "Version"
                 ]
               }
             },
@@ -1602,26 +1592,20 @@
                 "table": "variable_types",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Name"
                 ]
               }
             },
             {
               "name": "IsRequired",
               "label": "IsRequired",
-              "type": "segmented",
+              "type": "checkbox",
               "relation": null
             },
             {
               "name": "DefaultValue",
               "label": "DefaultValue",
               "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
               "relation": null
             }
           ],
@@ -1631,9 +1615,7 @@
             "VarName",
             "VarTypeId",
             "IsRequired",
-            "DefaultValue",
-            "CreationDate",
-            "UpdateDate"
+            "DefaultValue"
           ],
           "viewFields": [
             {
