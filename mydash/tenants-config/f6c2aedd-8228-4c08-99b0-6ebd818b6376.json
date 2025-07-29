@@ -1256,14 +1256,6 @@
           "description": "Message Templates",
           "displayFields": [
             {
-              "name": "TenantId",
-              "label": "TenantId"
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId"
-            },
-            {
               "name": "Slug",
               "label": "Slug"
             },
@@ -1278,18 +1270,6 @@
             {
               "name": "Title",
               "label": "Title"
-            },
-            {
-              "name": "Content",
-              "label": "Content"
-            },
-            {
-              "name": "MetaJSON",
-              "label": "MetaJSON"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
             }
           ],
           "editFields": [
