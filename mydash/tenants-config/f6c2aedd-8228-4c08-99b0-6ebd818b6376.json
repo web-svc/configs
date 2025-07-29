@@ -1356,7 +1356,7 @@
             {
               "name": "ChannelId",
               "label": "Channel",
-              "type": "lookup",
+              "type": "select",
               "relation": {
                 "table": "channels",
                 "valueField": "Id",
@@ -1398,7 +1398,7 @@
             {
               "name": "MetaJSON",
               "label": "MetaJSON",
-              "type": "text",
+              "type": "textarea",
               "relation": null
             }
           ],
