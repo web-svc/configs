@@ -1343,31 +1343,31 @@
           "createFields": [
             {
               "name": "TenantId",
-              "label": "TenantId",
+              "label": "Tenant",
               "type": "lookup",
               "relation": {
                 "table": "tenants",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Name", "Domain"
                 ]
               }
             },
             {
               "name": "ChannelId",
-              "label": "ChannelId",
+              "label": "Channel",
               "type": "lookup",
               "relation": {
                 "table": "channels",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Name"
                 ]
               }
             },
             {
               "name": "Slug",
-              "label": "Slug",
+              "label": "Slug (Name)",
               "type": "text",
               "relation": null
             },
@@ -1399,12 +1399,6 @@
               "name": "MetaJSON",
               "label": "MetaJSON",
               "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
               "relation": null
             }
           ],
