@@ -1,0 +1,4715 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "description": "Database schema for hosting and domain product management with pricing and addon configurations.",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": [
+          {
+            "label": "addons Summary",
+            "entity": "addons",
+            "fields": [
+              "Additional Storage",
+              "Antivirus Filter",
+              "Cloud Backup",
+              "SiteLock"
+            ],
+            "groupBy": "name",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "badgetypes Summary",
+            "entity": "badgetypes",
+            "fields": [
+              "button",
+              "checkbox",
+              "dropdown",
+              "input",
+              "label",
+              "radio"
+            ],
+            "groupBy": "name",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "hostingplanpricing Summary",
+            "entity": "hostingplanpricing",
+            "fields": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "groupBy": "planTypeId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "hostingplans Summary",
+            "entity": "hostingplans",
+            "fields": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ],
+            "groupBy": "hostingSubProductId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "hostingplanstags Summary",
+            "entity": "hostingplanstags",
+            "fields": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21"
+            ],
+            "groupBy": "planId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "hostingproducts Summary",
+            "entity": "hostingproducts",
+            "fields": [
+              "2"
+            ],
+            "groupBy": "mainProductTypeId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "hostingproductstags Summary",
+            "entity": "hostingproductstags",
+            "fields": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "groupBy": "hostingProductId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "hostingsubproducts Summary",
+            "entity": "hostingsubproducts",
+            "fields": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "groupBy": "hostingProductId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "hostingsubproductstags Summary",
+            "entity": "hostingsubproductstags",
+            "fields": [
+              "1",
+              "5",
+              "6",
+              "10",
+              "11",
+              "12"
+            ],
+            "groupBy": "hostingSubProductId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "mainproducttypes Summary",
+            "entity": "mainproducttypes",
+            "fields": [
+              "Domain",
+              "Hosting"
+            ],
+            "groupBy": "name",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "plantypes Summary",
+            "entity": "plantypes",
+            "fields": [
+              "month"
+            ],
+            "groupBy": "name",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "tags Summary",
+            "entity": "tags",
+            "fields": [
+              "2"
+            ],
+            "groupBy": "badgeTypeId",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total addons",
+          "display": "count(*) as display",
+          "entity": "addons",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total badgetypes",
+          "display": "count(*) as display",
+          "entity": "badgetypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total domainaddonpricing",
+          "display": "count(*) as display",
+          "entity": "domainaddonpricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total domainaddons",
+          "display": "count(*) as display",
+          "entity": "domainaddons",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total domainpricing",
+          "display": "count(*) as display",
+          "entity": "domainpricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total domainproducts",
+          "display": "count(*) as display",
+          "entity": "domainproducts",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingaddonpricing",
+          "display": "count(*) as display",
+          "entity": "hostingaddonpricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingaddons",
+          "display": "count(*) as display",
+          "entity": "hostingaddons",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingplanpricing",
+          "display": "count(*) as display",
+          "entity": "hostingplanpricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingplanpricingtags",
+          "display": "count(*) as display",
+          "entity": "hostingplanpricingtags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingplans",
+          "display": "count(*) as display",
+          "entity": "hostingplans",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingplanstags",
+          "display": "count(*) as display",
+          "entity": "hostingplanstags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingproducts",
+          "display": "count(*) as display",
+          "entity": "hostingproducts",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingproductstags",
+          "display": "count(*) as display",
+          "entity": "hostingproductstags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingsubproducts",
+          "display": "count(*) as display",
+          "entity": "hostingsubproducts",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total hostingsubproductstags",
+          "display": "count(*) as display",
+          "entity": "hostingsubproductstags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total mainproducttypes",
+          "display": "count(*) as display",
+          "entity": "mainproducttypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total plantypes",
+          "display": "count(*) as display",
+          "entity": "plantypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total tags",
+          "display": "count(*) as display",
+          "entity": "tags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 addons",
+          "display": "name,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "addons",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 badgetypes",
+          "display": "name,description,style",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "badgetypes",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 domainaddonpricing",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "domainaddonpricing",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 domainaddons",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "domainaddons",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 domainpricing",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "domainpricing",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 domainproducts",
+          "display": "productName,tld",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "domainproducts",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingaddonpricing",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingaddonpricing",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingaddons",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingaddons",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingplanpricing",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingplanpricing",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingplanpricingtags",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingplanpricingtags",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingplans",
+          "display": "name,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingplans",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingplanstags",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingplanstags",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingproducts",
+          "display": "name,description,iconUrl",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingproducts",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingproductstags",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingproductstags",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingsubproducts",
+          "display": "name,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingsubproducts",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 hostingsubproductstags",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingsubproductstags",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 mainproducttypes",
+          "display": "name,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "mainproducttypes",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 plantypes",
+          "display": "name,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "plantypes",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 tags",
+          "display": "name,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tags",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "addons Table",
+          "display": "name,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "addons",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "badgetypes Table",
+          "display": "name,description,style",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "badgetypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "domainaddonpricing Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "domainaddonpricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "domainaddons Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "domainaddons",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "domainpricing Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "domainpricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "domainproducts Table",
+          "display": "productName,tld",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "domainproducts",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingaddonpricing Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingaddonpricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingaddons Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingaddons",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingplanpricing Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingplanpricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingplanpricingtags Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingplanpricingtags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingplans Table",
+          "display": "name,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingplans",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingplanstags Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingplanstags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingproducts Table",
+          "display": "name,description,iconUrl",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingproducts",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingproductstags Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingproductstags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingsubproducts Table",
+          "display": "name,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingsubproducts",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "hostingsubproductstags Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hostingsubproductstags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "mainproducttypes Table",
+          "display": "name,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "mainproducttypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "plantypes Table",
+          "display": "name,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "plantypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "tags Table",
+          "display": "name,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": {
+        "label": "Quick Actions",
+        "roles": [
+          "root",
+          "admin",
+          "hr"
+        ],
+        "items": [
+          {
+            "label": "Add addons",
+            "action": "create",
+            "entity": "addons",
+            "group": "addons",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          },
+          {
+            "label": "Add badgetypes",
+            "action": "create",
+            "entity": "badgetypes",
+            "group": "badgetypes",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          }
+        ]
+      },
+      "reports": [
+        {
+          "label": "Monthly Joinees",
+          "filter": "Status eq \u0027Active\u0027",
+          "entity": "addons",
+          "exportable": true,
+          "roles": [
+            "root",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "calendar",
+      "roles": [
+        "root",
+        "hr",
+        "manager"
+      ],
+      "calendarConfig": [
+        {
+          "entity": "addons",
+          "titleField": "name",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "badgetypes",
+          "titleField": "name",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "domainaddonpricing",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "planTypeId",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "domainaddons",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "domainpricing",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "domainproducts",
+          "titleField": "productName",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "mainProductTypeId",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingaddonpricing",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "planTypeId",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingaddons",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingplanpricing",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "planTypeId",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingplanpricingtags",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingplans",
+          "titleField": "name",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingplanstags",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingproducts",
+          "titleField": "name",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "mainProductTypeId",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingproductstags",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingsubproducts",
+          "titleField": "name",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "hostingsubproductstags",
+          "titleField": "id",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "mainproducttypes",
+          "titleField": "name",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "plantypes",
+          "titleField": "name",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "updateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "tags",
+          "titleField": "name",
+          "startDateField": "creationDate",
+          "endDateField": "creationDate",
+          "colorField": "badgeTypeId",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Domains",
+      "description": "Manage domain-related products, pricing, and addons",
+      "ui": {
+        "icon": "MdLanguage"
+      },
+      "entities": [
+        {
+          "table": "domainproducts",
+          "label": "domainproducts",
+          "Identifier": "id",
+          "description": "Domain Products",
+          "displayFields": [
+            {
+              "name": "productName",
+              "label": "productName"
+            },
+            {
+              "name": "tld",
+              "label": "tld"
+            },
+            {
+              "name": "mainProductTypeId",
+              "label": "mainProductTypeId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "productName",
+              "label": "productName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "tld",
+              "label": "tld",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "mainProductTypeId",
+              "label": "mainProductTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "mainproducttypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "productName",
+              "label": "productName",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "tld",
+              "label": "tld",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "mainProductTypeId",
+              "label": "mainProductTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "mainproducttypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "productName",
+            "tld",
+            "mainProductTypeId",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "productName",
+              "label": "productName"
+            },
+            {
+              "name": "tld",
+              "label": "tld"
+            },
+            {
+              "name": "mainProductTypeId",
+              "label": "mainProductTypeId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaGlobe"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "domainpricing",
+          "label": "domainpricing",
+          "Identifier": "id",
+          "description": "Domain Pricing",
+          "displayFields": [
+            {
+              "name": "domainProductId",
+              "label": "domainProductId"
+            },
+            {
+              "name": "registerPrice",
+              "label": "registerPrice"
+            },
+            {
+              "name": "transferPrice",
+              "label": "transferPrice"
+            },
+            {
+              "name": "renewPrice",
+              "label": "renewPrice"
+            },
+            {
+              "name": "restorePrice",
+              "label": "restorePrice"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "domainProductId",
+              "label": "domainProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "domainproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "registerPrice",
+              "label": "registerPrice",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "transferPrice",
+              "label": "transferPrice",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "renewPrice",
+              "label": "renewPrice",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "restorePrice",
+              "label": "restorePrice",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "domainProductId",
+              "label": "domainProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "domainproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "registerPrice",
+              "label": "registerPrice",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "transferPrice",
+              "label": "transferPrice",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "renewPrice",
+              "label": "renewPrice",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "restorePrice",
+              "label": "restorePrice",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "domainProductId",
+            "registerPrice",
+            "transferPrice",
+            "renewPrice",
+            "restorePrice",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "domainProductId",
+              "label": "domainProductId"
+            },
+            {
+              "name": "registerPrice",
+              "label": "registerPrice"
+            },
+            {
+              "name": "transferPrice",
+              "label": "transferPrice"
+            },
+            {
+              "name": "renewPrice",
+              "label": "renewPrice"
+            },
+            {
+              "name": "restorePrice",
+              "label": "restorePrice"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaMoneyBillWave"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "domainaddons",
+          "label": "domainaddons",
+          "Identifier": "id",
+          "description": "Domain Addons",
+          "displayFields": [
+            {
+              "name": "addOnId",
+              "label": "addOnId"
+            },
+            {
+              "name": "domainProductId",
+              "label": "domainProductId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "addOnId",
+              "label": "addOnId",
+              "type": "lookup",
+              "relation": {
+                "table": "addons",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "domainProductId",
+              "label": "domainProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "domainproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "addOnId",
+              "label": "addOnId",
+              "type": "lookup",
+              "relation": {
+                "table": "addons",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "domainProductId",
+              "label": "domainProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "domainproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "addOnId",
+            "domainProductId",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "addOnId",
+              "label": "addOnId"
+            },
+            {
+              "name": "domainProductId",
+              "label": "domainProductId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaPlusCircle"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "domainaddonpricing",
+          "label": "domainaddonpricing",
+          "Identifier": "id",
+          "description": "Domain Addon Pricing",
+          "displayFields": [
+            {
+              "name": "domainAddOnId",
+              "label": "domainAddOnId"
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId"
+            },
+            {
+              "name": "price",
+              "label": "price"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "domainAddOnId",
+              "label": "domainAddOnId",
+              "type": "lookup",
+              "relation": {
+                "table": "domainaddons",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "plantypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "domainAddOnId",
+              "label": "domainAddOnId",
+              "type": "lookup",
+              "relation": {
+                "table": "domainaddons",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "plantypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "domainAddOnId",
+            "planTypeId",
+            "price",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "domainAddOnId",
+              "label": "domainAddOnId"
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId"
+            },
+            {
+              "name": "price",
+              "label": "price"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaDollarSign"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Hosting",
+      "description": "Manage hosting plans, products, and pricing structures",
+      "ui": {
+        "icon": "MdStorage"
+      },
+      "entities": [
+        {
+          "table": "hostingproducts",
+          "label": "hostingproducts",
+          "Identifier": "id",
+          "description": "Hosting Products",
+          "displayFields": [
+            {
+              "name": "mainProductTypeId",
+              "label": "mainProductTypeId"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "iconUrl",
+              "label": "iconUrl"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "mainProductTypeId",
+              "label": "mainProductTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "mainproducttypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "iconUrl",
+              "label": "iconUrl",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "mainProductTypeId",
+              "label": "mainProductTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "mainproducttypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "iconUrl",
+              "label": "iconUrl",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "mainProductTypeId",
+            "name",
+            "description",
+            "iconUrl",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "mainProductTypeId",
+              "label": "mainProductTypeId"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "iconUrl",
+              "label": "iconUrl"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaServer"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "hostingsubproducts",
+          "label": "hostingsubproducts",
+          "Identifier": "id",
+          "description": "Hosting Subproducts",
+          "displayFields": [
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "hostingProductId",
+            "name",
+            "description",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBoxOpen"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "hostingplans",
+          "label": "hostingplans",
+          "Identifier": "id",
+          "description": "Hosting Plans",
+          "displayFields": [
+            {
+              "name": "hostingSubProductId",
+              "label": "hostingSubProductId"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "hostingSubProductId",
+              "label": "hostingSubProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingsubproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "hostingSubProductId",
+              "label": "hostingSubProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingsubproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "hostingSubProductId",
+            "name",
+            "description",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "hostingSubProductId",
+              "label": "hostingSubProductId"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaLayerGroup"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "hostingaddons",
+          "label": "hostingaddons",
+          "Identifier": "id",
+          "description": "Hosting Addons",
+          "displayFields": [
+            {
+              "name": "addOnId",
+              "label": "addOnId"
+            },
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "addOnId",
+              "label": "addOnId",
+              "type": "lookup",
+              "relation": {
+                "table": "addons",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "addOnId",
+              "label": "addOnId",
+              "type": "lookup",
+              "relation": {
+                "table": "addons",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "addOnId",
+            "hostingProductId",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "addOnId",
+              "label": "addOnId"
+            },
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaPlus"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "hostingplanpricing",
+          "label": "hostingplanpricing",
+          "Identifier": "id",
+          "description": "Hosting Plan Pricing",
+          "displayFields": [
+            {
+              "name": "planId",
+              "label": "planId"
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId"
+            },
+            {
+              "name": "price",
+              "label": "price"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "planId",
+              "label": "planId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingplans",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "plantypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "planId",
+              "label": "planId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingplans",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "plantypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "planId",
+            "planTypeId",
+            "price",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "planId",
+              "label": "planId"
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId"
+            },
+            {
+              "name": "price",
+              "label": "price"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTags"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "hostingaddonpricing",
+          "label": "hostingaddonpricing",
+          "Identifier": "id",
+          "description": "Hosting Addon Pricing",
+          "displayFields": [
+            {
+              "name": "hostingAddOnId",
+              "label": "hostingAddOnId"
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId"
+            },
+            {
+              "name": "price",
+              "label": "price"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "hostingAddOnId",
+              "label": "hostingAddOnId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingaddons",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "plantypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "hostingAddOnId",
+              "label": "hostingAddOnId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingaddons",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "plantypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "hostingAddOnId",
+            "planTypeId",
+            "price",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "hostingAddOnId",
+              "label": "hostingAddOnId"
+            },
+            {
+              "name": "planTypeId",
+              "label": "planTypeId"
+            },
+            {
+              "name": "price",
+              "label": "price"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaDollarSign"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "hostingplanpricingtags",
+          "label": "hostingplanpricingtags",
+          "Identifier": "id",
+          "description": "Plan Pricing Tags",
+          "displayFields": [
+            {
+              "name": "pricingId",
+              "label": "pricingId"
+            },
+            {
+              "name": "tagId",
+              "label": "tagId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "pricingId",
+              "label": "pricingId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingplanpricing",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "tagId",
+              "label": "tagId",
+              "type": "lookup",
+              "relation": {
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "pricingId",
+              "label": "pricingId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingplanpricing",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "tagId",
+              "label": "tagId",
+              "type": "lookup",
+              "relation": {
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "pricingId",
+            "tagId",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "pricingId",
+              "label": "pricingId"
+            },
+            {
+              "name": "tagId",
+              "label": "tagId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTag"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "hostingplanstags",
+          "label": "hostingplanstags",
+          "Identifier": "id",
+          "description": "Hosting Plan Tags",
+          "displayFields": [
+            {
+              "name": "planId",
+              "label": "planId"
+            },
+            {
+              "name": "tagId",
+              "label": "tagId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "planId",
+              "label": "planId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingplans",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "tagId",
+              "label": "tagId",
+              "type": "lookup",
+              "relation": {
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "planId",
+              "label": "planId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingplans",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "tagId",
+              "label": "tagId",
+              "type": "lookup",
+              "relation": {
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "planId",
+            "tagId",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "planId",
+              "label": "planId"
+            },
+            {
+              "name": "tagId",
+              "label": "tagId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTag"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "hostingproductstags",
+          "label": "hostingproductstags",
+          "Identifier": "id",
+          "description": "Hosting Product Tags",
+          "displayFields": [
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId"
+            },
+            {
+              "name": "tagId",
+              "label": "tagId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "tagId",
+              "label": "tagId",
+              "type": "lookup",
+              "relation": {
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "tagId",
+              "label": "tagId",
+              "type": "lookup",
+              "relation": {
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "hostingProductId",
+            "tagId",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "hostingProductId",
+              "label": "hostingProductId"
+            },
+            {
+              "name": "tagId",
+              "label": "tagId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTags"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "hostingsubproductstags",
+          "label": "hostingsubproductstags",
+          "Identifier": "id",
+          "description": "Subproduct Tags",
+          "displayFields": [
+            {
+              "name": "hostingSubProductId",
+              "label": "hostingSubProductId"
+            },
+            {
+              "name": "tagId",
+              "label": "tagId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "hostingSubProductId",
+              "label": "hostingSubProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingsubproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "tagId",
+              "label": "tagId",
+              "type": "lookup",
+              "relation": {
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "hostingSubProductId",
+              "label": "hostingSubProductId",
+              "type": "lookup",
+              "relation": {
+                "table": "hostingsubproducts",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "tagId",
+              "label": "tagId",
+              "type": "lookup",
+              "relation": {
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "hostingSubProductId",
+            "tagId",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "hostingSubProductId",
+              "label": "hostingSubProductId"
+            },
+            {
+              "name": "tagId",
+              "label": "tagId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTag"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Products \u0026 Metadata",
+      "description": "Define product types, plans, and tags",
+      "ui": {
+        "icon": "MdCategory"
+      },
+      "entities": [
+        {
+          "table": "addons",
+          "label": "addons",
+          "Identifier": "id",
+          "description": "Addon Definitions",
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "description",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaPuzzlePiece"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "mainproducttypes",
+          "label": "mainproducttypes",
+          "Identifier": "id",
+          "description": "Main Product Types",
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "description",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCubes"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "plantypes",
+          "label": "plantypes",
+          "Identifier": "id",
+          "description": "Plan Types",
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "monthCount",
+              "label": "monthCount"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "monthCount",
+              "label": "monthCount",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "monthCount",
+              "label": "monthCount",
+              "type": "number",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "description",
+            "monthCount",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "monthCount",
+              "label": "monthCount"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCalendarAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "tags",
+          "label": "tags",
+          "Identifier": "id",
+          "description": "Tags",
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "badgeTypeId",
+              "label": "badgeTypeId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "badgeTypeId",
+              "label": "badgeTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "badgetypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "badgeTypeId",
+              "label": "badgeTypeId",
+              "type": "lookup",
+              "relation": {
+                "table": "badgetypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ]
+              }
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "description",
+            "badgeTypeId",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "badgeTypeId",
+              "label": "badgeTypeId"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTag"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "badgetypes",
+          "label": "badgetypes",
+          "Identifier": "id",
+          "description": "Badge Types",
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "style",
+              "label": "style"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "style",
+              "label": "style",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "style",
+              "label": "style",
+              "type": "text",
+              "relation": null
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate",
+              "type": "datetime",
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "description",
+            "style",
+            "creationDate",
+            "updateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "style",
+              "label": "style"
+            },
+            {
+              "name": "creationDate",
+              "label": "creationDate"
+            },
+            {
+              "name": "updateDate",
+              "label": "updateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCertificate"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Ungrouped",
+      "description": "Auto-generated group: Ungrouped",
+      "ui": {
+        "icon": "MdWidgets"
+      },
+      "entities": []
+    }
+  ]
+}
