@@ -1,6 +1,6 @@
 {
   "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
-  "description": "Test database for managing employee-related data.",
+  "description": "Database for managing company employee profiles and related info",
   "dashboard": [
     {
       "viewType": "summary",
@@ -62,7 +62,7 @@
           ]
         }
       ],
-      "entityView": [
+      "entityViews": [
         {
           "label": "employee_profiles Table",
           "display": "first_name,last_name,email,bio",
@@ -177,8 +177,8 @@
   ],
   "groups": [
     {
-      "name": "Employee Management",
-      "description": "Manage employee profiles and related details",
+      "name": "HR",
+      "description": "Human Resources and employee information",
       "ui": {
         "icon": "MdPeople"
       },
@@ -246,175 +246,295 @@
               "label": "preferences"
             }
           ],
-          "editFields": [
-            {
-              "name": "first_name",
-              "label": "first_name",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "last_name",
-              "label": "last_name",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "email",
-              "label": "email",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "is_active",
-              "label": "is_active",
-              "type": "checkbox",
-              "relation": null
-            },
-            {
-              "name": "age",
-              "label": "age",
-              "type": "number",
-              "relation": null
-            },
-            {
-              "name": "salary",
-              "label": "salary",
-              "type": "number",
-              "relation": null
-            },
-            {
-              "name": "joining_date",
-              "label": "joining_date",
-              "type": "date",
-              "relation": null
-            },
-            {
-              "name": "last_login",
-              "label": "last_login",
-              "type": "datetime",
-              "relation": null
-            },
-            {
-              "name": "work_hours",
-              "label": "work_hours",
-              "type": "time",
-              "relation": null
-            },
-            {
-              "name": "bio",
-              "label": "bio",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "profile_image",
-              "label": "profile_image",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "location",
-              "label": "location",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "status",
-              "label": "status",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "preferences",
-              "label": "preferences",
-              "type": "text",
-              "relation": null
-            }
-          ],
           "createFields": [
             {
               "name": "first_name",
               "label": "first_name",
               "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "last_name",
               "label": "last_name",
               "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "email",
               "label": "email",
               "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "is_active",
               "label": "is_active",
               "type": "checkbox",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "1",
               "relation": null
             },
             {
               "name": "age",
               "label": "age",
               "type": "number",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "salary",
               "label": "salary",
               "type": "number",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "joining_date",
               "label": "joining_date",
               "type": "date",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "last_login",
               "label": "last_login",
               "type": "datetime",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "work_hours",
               "label": "work_hours",
               "type": "time",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "bio",
               "label": "bio",
               "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "profile_image",
               "label": "profile_image",
               "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "location",
               "label": "location",
               "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             },
             {
               "name": "status",
               "label": "status",
               "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": [
+                "Active",
+                "Inactive",
+                "On Leave"
+              ],
+              "defaultvalue": "Active",
               "relation": null
             },
             {
               "name": "preferences",
               "label": "preferences",
               "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "first_name",
+              "label": "first_name",
+              "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "last_name",
+              "label": "last_name",
+              "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "email",
+              "label": "email",
+              "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "is_active",
+              "label": "is_active",
+              "type": "segmented",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "1",
+              "relation": null
+            },
+            {
+              "name": "age",
+              "label": "age",
+              "type": "number",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "salary",
+              "label": "salary",
+              "type": "number",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "joining_date",
+              "label": "joining_date",
+              "type": "date",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "last_login",
+              "label": "last_login",
+              "type": "datetime",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "work_hours",
+              "label": "work_hours",
+              "type": "time",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "bio",
+              "label": "bio",
+              "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "profile_image",
+              "label": "profile_image",
+              "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "location",
+              "label": "location",
+              "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": [
+                "Active",
+                "Inactive",
+                "On Leave"
+              ],
+              "defaultvalue": "Active",
+              "relation": null
+            },
+            {
+              "name": "preferences",
+              "label": "preferences",
+              "type": "text",
+              "ismandatory": false,
+              "isuuiddefault": false,
+              "enumvalues": null,
+              "defaultvalue": "",
               "relation": null
             }
           ],
@@ -526,7 +646,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaUserTie"
+            "icon": "FaIdBadge"
           },
           "accessRoles": [
             "root"
