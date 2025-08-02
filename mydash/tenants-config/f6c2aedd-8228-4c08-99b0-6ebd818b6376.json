@@ -1,6 +1,6 @@
 {
   "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
-  "description": "Messaging and notification platform with templates, channels, throttling, and delivery infrastructure.",
+  "description": "Messaging and notification platform database",
   "dashboard": [
     {
       "viewType": "summary",
@@ -9,47 +9,7 @@
         "admin"
       ],
       "summaryConfig": {
-        "sections": [
-          {
-            "label": "channels Summary",
-            "entity": "channels",
-            "fields": [
-              "to send the emails"
-            ],
-            "groupBy": "Description",
-            "roles": [
-              "root",
-              "admin",
-              "hr"
-            ]
-          },
-          {
-            "label": "templates Summary",
-            "entity": "templates",
-            "fields": [
-              "welcome_letter"
-            ],
-            "groupBy": "Slug",
-            "roles": [
-              "root",
-              "admin",
-              "hr"
-            ]
-          },
-          {
-            "label": "tenants Summary",
-            "entity": "tenants",
-            "fields": [
-              "Mestro"
-            ],
-            "groupBy": "Name",
-            "roles": [
-              "root",
-              "admin",
-              "hr"
-            ]
-          }
-        ]
+        "sections": []
       }
     },
     {
@@ -257,7 +217,7 @@
         },
         {
           "label": "Recent 1 channel_connections",
-          "display": "Config",
+          "display": "ConnectionId,Name,Description,Config",
           "limit": 5,
           "orderBy": [
             {
@@ -369,7 +329,7 @@
         },
         {
           "label": "Recent 1 message_logs",
-          "display": "MessageId,QueueId,ProviderStatus,ProviderMessageId",
+          "display": "MessageId,ProviderStatus,ProviderMessageId,Status",
           "limit": 5,
           "orderBy": [
             {
@@ -397,7 +357,7 @@
         },
         {
           "label": "Recent 1 outbound_queue",
-          "display": "Id,TemplateId,Recipient,Parameters",
+          "display": "QueueId,Recipient,Parameters,LastErrorCode",
           "limit": 5,
           "orderBy": [
             {
@@ -509,7 +469,7 @@
         },
         {
           "label": "Recent 1 template_variables",
-          "display": "TemplateId,VarName,DefaultValue",
+          "display": "VarName,DefaultValue",
           "limit": 5,
           "orderBy": [
             {
@@ -537,7 +497,7 @@
         },
         {
           "label": "Recent 1 templates",
-          "display": "Id,Slug,Locale,Title",
+          "display": "TemplateId,Slug,Title,Content",
           "limit": 5,
           "orderBy": [
             {
@@ -565,7 +525,7 @@
         },
         {
           "label": "Recent 1 tenants",
-          "display": "Name,Domain,Description",
+          "display": "TenantId,Name,Domain,Description",
           "limit": 5,
           "orderBy": [
             {
@@ -651,7 +611,7 @@
         },
         {
           "label": "channel_connections Table",
-          "display": "Config",
+          "display": "ConnectionId,Name,Description,Config",
           "limit": 5,
           "filter": null,
           "orderBy": [
@@ -763,7 +723,7 @@
         },
         {
           "label": "message_logs Table",
-          "display": "MessageId,QueueId,ProviderStatus,ProviderMessageId",
+          "display": "MessageId,ProviderStatus,ProviderMessageId,Status",
           "limit": 5,
           "filter": "ProviderStatus eq \u00271\u0027",
           "orderBy": [
@@ -791,7 +751,7 @@
         },
         {
           "label": "outbound_queue Table",
-          "display": "Id,TemplateId,Recipient,Parameters",
+          "display": "QueueId,Recipient,Parameters,LastErrorCode",
           "limit": 5,
           "filter": "Status eq \u00271\u0027",
           "orderBy": [
@@ -903,7 +863,7 @@
         },
         {
           "label": "template_variables Table",
-          "display": "TemplateId,VarName,DefaultValue",
+          "display": "VarName,DefaultValue",
           "limit": 5,
           "filter": null,
           "orderBy": [
@@ -931,7 +891,7 @@
         },
         {
           "label": "templates Table",
-          "display": "Id,Slug,Locale,Title",
+          "display": "TemplateId,Slug,Title,Content",
           "limit": 5,
           "filter": null,
           "orderBy": [
@@ -959,7 +919,7 @@
         },
         {
           "label": "tenants Table",
-          "display": "Name,Domain,Description",
+          "display": "TenantId,Name,Domain,Description",
           "limit": 5,
           "filter": null,
           "orderBy": [
@@ -1124,7 +1084,7 @@
         },
         {
           "entity": "channel_connections",
-          "titleField": "Id",
+          "titleField": "Name",
           "startDateField": "VerifiedAt",
           "endDateField": "VerifiedAt",
           "colorField": "UpdateDate",
@@ -1172,7 +1132,7 @@
         },
         {
           "entity": "message_logs",
-          "titleField": "MessageId",
+          "titleField": "Id",
           "startDateField": "LogDate",
           "endDateField": "LogDate",
           "colorField": "ProviderStatus",
@@ -1283,2019 +1243,17 @@
   ],
   "groups": [
     {
-      "name": "Messaging",
-      "description": "Manage message queueing, sending, and recipient tracking",
-      "ui": {
-        "icon": "MdSend"
-      },
-      "entities": [
-        {
-          "table": "outbound_queue",
-          "label": "outbound_queue",
-          "Identifier": "Id",
-          "description": "Pending messages queue",
-          "displayFields": [
-            {
-              "name": "ConnectionId",
-              "label": "ConnectionId"
-            },
-            {
-              "name": "TemplateId",
-              "label": "TemplateId"
-            },
-            {
-              "name": "Recipient",
-              "label": "Recipient"
-            },
-            {
-              "name": "Parameters",
-              "label": "Parameters"
-            },
-            {
-              "name": "ScheduledAt",
-              "label": "ScheduledAt"
-            },
-            {
-              "name": "Status",
-              "label": "Status"
-            },
-            {
-              "name": "Attempts",
-              "label": "Attempts"
-            },
-            {
-              "name": "MaxRetries",
-              "label": "MaxRetries"
-            },
-            {
-              "name": "LastErrorCode",
-              "label": "LastErrorCode"
-            },
-            {
-              "name": "LastErrorMsg",
-              "label": "LastErrorMsg"
-            },
-            {
-              "name": "NextAttemptAt",
-              "label": "NextAttemptAt"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            }
-          ],
-          "createFields": [
-            {
-              "name": "ConnectionId",
-              "label": "ConnectionId",
-              "placeholder": "Enter ConnectionId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "channel_connections",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "TemplateId",
-              "label": "TemplateId",
-              "placeholder": "Enter TemplateId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "templates",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "Recipient",
-              "label": "Recipient",
-              "placeholder": "Enter Recipient",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Parameters",
-              "label": "Parameters",
-              "placeholder": "Enter Parameters",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "ScheduledAt",
-              "label": "ScheduledAt",
-              "placeholder": "Enter ScheduledAt",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Status",
-              "label": "Status",
-              "placeholder": "Enter Status",
-              "type": "dropdown",
-              "required": false,
-              "options": [
-                {
-                  "Label": "PENDING",
-                  "Value": "PENDING"
-                },
-                {
-                  "Label": "IN_PROGRESS",
-                  "Value": "IN_PROGRESS"
-                },
-                {
-                  "Label": "SENT",
-                  "Value": "SENT"
-                },
-                {
-                  "Label": "DELIVERED",
-                  "Value": "DELIVERED"
-                },
-                {
-                  "Label": "FAILED",
-                  "Value": "FAILED"
-                },
-                {
-                  "Label": "ON_HOLD",
-                  "Value": "ON_HOLD"
-                },
-                {
-                  "Label": "CANCELLED",
-                  "Value": "CANCELLED"
-                }
-              ],
-              "defaultvalue": "\u0027PENDING\u0027",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Attempts",
-              "label": "Attempts",
-              "placeholder": "Enter Attempts",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "0",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "MaxRetries",
-              "label": "MaxRetries",
-              "placeholder": "Enter MaxRetries",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "3",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "LastErrorCode",
-              "label": "LastErrorCode",
-              "placeholder": "Enter LastErrorCode",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "LastErrorMsg",
-              "label": "LastErrorMsg",
-              "placeholder": "Enter LastErrorMsg",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "NextAttemptAt",
-              "label": "NextAttemptAt",
-              "placeholder": "Enter NextAttemptAt",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "editFields": [
-            {
-              "name": "ConnectionId",
-              "label": "ConnectionId",
-              "placeholder": "Enter ConnectionId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "channel_connections",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "TemplateId",
-              "label": "TemplateId",
-              "placeholder": "Enter TemplateId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "templates",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "Recipient",
-              "label": "Recipient",
-              "placeholder": "Enter Recipient",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Parameters",
-              "label": "Parameters",
-              "placeholder": "Enter Parameters",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "ScheduledAt",
-              "label": "ScheduledAt",
-              "placeholder": "Enter ScheduledAt",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Status",
-              "label": "Status",
-              "placeholder": "Enter Status",
-              "type": "dropdown",
-              "required": false,
-              "options": [
-                {
-                  "Label": "PENDING",
-                  "Value": "PENDING"
-                },
-                {
-                  "Label": "IN_PROGRESS",
-                  "Value": "IN_PROGRESS"
-                },
-                {
-                  "Label": "SENT",
-                  "Value": "SENT"
-                },
-                {
-                  "Label": "DELIVERED",
-                  "Value": "DELIVERED"
-                },
-                {
-                  "Label": "FAILED",
-                  "Value": "FAILED"
-                },
-                {
-                  "Label": "ON_HOLD",
-                  "Value": "ON_HOLD"
-                },
-                {
-                  "Label": "CANCELLED",
-                  "Value": "CANCELLED"
-                }
-              ],
-              "defaultvalue": "\u0027PENDING\u0027",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Attempts",
-              "label": "Attempts",
-              "placeholder": "Enter Attempts",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "0",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "MaxRetries",
-              "label": "MaxRetries",
-              "placeholder": "Enter MaxRetries",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "3",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "LastErrorCode",
-              "label": "LastErrorCode",
-              "placeholder": "Enter LastErrorCode",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "LastErrorMsg",
-              "label": "LastErrorMsg",
-              "placeholder": "Enter LastErrorMsg",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "NextAttemptAt",
-              "label": "NextAttemptAt",
-              "placeholder": "Enter NextAttemptAt",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "ConnectionId",
-            "TemplateId",
-            "Recipient",
-            "Parameters",
-            "ScheduledAt",
-            "Status",
-            "Attempts",
-            "MaxRetries",
-            "LastErrorCode",
-            "LastErrorMsg",
-            "NextAttemptAt",
-            "CreationDate",
-            "UpdateDate"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "ConnectionId",
-              "label": "ConnectionId"
-            },
-            {
-              "name": "TemplateId",
-              "label": "TemplateId"
-            },
-            {
-              "name": "Recipient",
-              "label": "Recipient"
-            },
-            {
-              "name": "Parameters",
-              "label": "Parameters"
-            },
-            {
-              "name": "ScheduledAt",
-              "label": "ScheduledAt"
-            },
-            {
-              "name": "Status",
-              "label": "Status"
-            },
-            {
-              "name": "Attempts",
-              "label": "Attempts"
-            },
-            {
-              "name": "MaxRetries",
-              "label": "MaxRetries"
-            },
-            {
-              "name": "LastErrorCode",
-              "label": "LastErrorCode"
-            },
-            {
-              "name": "LastErrorMsg",
-              "label": "LastErrorMsg"
-            },
-            {
-              "name": "NextAttemptAt",
-              "label": "NextAttemptAt"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            },
-            {
-              "name": "UpdateDate",
-              "label": "UpdateDate"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaPaperPlane"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": true
-        },
-        {
-          "table": "outbound_recipients",
-          "label": "outbound_recipients",
-          "Identifier": "Id",
-          "description": "Message recipients",
-          "displayFields": [
-            {
-              "name": "QueueId",
-              "label": "QueueId"
-            },
-            {
-              "name": "Address",
-              "label": "Address"
-            },
-            {
-              "name": "RecipientType",
-              "label": "RecipientType"
-            }
-          ],
-          "createFields": [
-            {
-              "name": "QueueId",
-              "label": "QueueId",
-              "placeholder": "Enter QueueId",
-              "type": "select",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "outbound_queue",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "Address",
-              "label": "Address",
-              "placeholder": "Enter Address",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "RecipientType",
-              "label": "RecipientType",
-              "placeholder": "Enter RecipientType",
-              "type": "dropdown",
-              "required": false,
-              "options": [
-                {
-                  "Label": "TO",
-                  "Value": "TO"
-                },
-                {
-                  "Label": "CC",
-                  "Value": "CC"
-                },
-                {
-                  "Label": "BCC",
-                  "Value": "BCC"
-                }
-              ],
-              "defaultvalue": "\u0027TO\u0027",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "editFields": [
-            {
-              "name": "QueueId",
-              "label": "QueueId",
-              "placeholder": "Enter QueueId",
-              "type": "select",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "outbound_queue",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "Address",
-              "label": "Address",
-              "placeholder": "Enter Address",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "RecipientType",
-              "label": "RecipientType",
-              "placeholder": "Enter RecipientType",
-              "type": "dropdown",
-              "required": false,
-              "options": [
-                {
-                  "Label": "TO",
-                  "Value": "TO"
-                },
-                {
-                  "Label": "CC",
-                  "Value": "CC"
-                },
-                {
-                  "Label": "BCC",
-                  "Value": "BCC"
-                }
-              ],
-              "defaultvalue": "\u0027TO\u0027",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "QueueId",
-            "Address",
-            "RecipientType"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "QueueId",
-              "label": "QueueId"
-            },
-            {
-              "name": "Address",
-              "label": "Address"
-            },
-            {
-              "name": "RecipientType",
-              "label": "RecipientType"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaUserCircle"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": false
-        },
-        {
-          "table": "message_logs",
-          "label": "message_logs",
-          "Identifier": "MessageId",
-          "description": "Sent message logs",
-          "displayFields": [
-            {
-              "name": "QueueId",
-              "label": "QueueId"
-            },
-            {
-              "name": "ProviderStatus",
-              "label": "ProviderStatus"
-            },
-            {
-              "name": "ProviderMessageId",
-              "label": "ProviderMessageId"
-            },
-            {
-              "name": "Status",
-              "label": "Status"
-            },
-            {
-              "name": "LogDate",
-              "label": "LogDate"
-            },
-            {
-              "name": "DetailsJSON",
-              "label": "DetailsJSON"
-            }
-          ],
-          "createFields": [
-            {
-              "name": "QueueId",
-              "label": "QueueId",
-              "placeholder": "Enter QueueId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "outbound_queue",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "ProviderStatus",
-              "label": "ProviderStatus",
-              "placeholder": "Enter ProviderStatus",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "ProviderMessageId",
-              "label": "ProviderMessageId",
-              "placeholder": "Enter ProviderMessageId",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Status",
-              "label": "Status",
-              "placeholder": "Enter Status",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "LogDate",
-              "label": "LogDate",
-              "placeholder": "Enter LogDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "DetailsJSON",
-              "label": "DetailsJSON",
-              "placeholder": "Enter DetailsJSON",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "editFields": [
-            {
-              "name": "QueueId",
-              "label": "QueueId",
-              "placeholder": "Enter QueueId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "outbound_queue",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "ProviderStatus",
-              "label": "ProviderStatus",
-              "placeholder": "Enter ProviderStatus",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "ProviderMessageId",
-              "label": "ProviderMessageId",
-              "placeholder": "Enter ProviderMessageId",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Status",
-              "label": "Status",
-              "placeholder": "Enter Status",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "LogDate",
-              "label": "LogDate",
-              "placeholder": "Enter LogDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "DetailsJSON",
-              "label": "DetailsJSON",
-              "placeholder": "Enter DetailsJSON",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "MessageId",
-            "QueueId",
-            "ProviderStatus",
-            "ProviderMessageId",
-            "Status",
-            "LogDate",
-            "DetailsJSON"
-          ],
-          "viewFields": [
-            {
-              "name": "MessageId",
-              "label": "MessageId"
-            },
-            {
-              "name": "QueueId",
-              "label": "QueueId"
-            },
-            {
-              "name": "ProviderStatus",
-              "label": "ProviderStatus"
-            },
-            {
-              "name": "ProviderMessageId",
-              "label": "ProviderMessageId"
-            },
-            {
-              "name": "Status",
-              "label": "Status"
-            },
-            {
-              "name": "LogDate",
-              "label": "LogDate"
-            },
-            {
-              "name": "DetailsJSON",
-              "label": "DetailsJSON"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaEnvelopeOpenText"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "MessageId",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": false
-        }
-      ]
-    },
-    {
-      "name": "Templates",
-      "description": "Define content templates and their variables",
-      "ui": {
-        "icon": "MdTextFields"
-      },
-      "entities": [
-        {
-          "table": "templates",
-          "label": "templates",
-          "Identifier": "Id",
-          "description": "Message templates",
-          "displayFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId"
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId"
-            },
-            {
-              "name": "Slug",
-              "label": "Slug"
-            },
-            {
-              "name": "Version",
-              "label": "Version"
-            },
-            {
-              "name": "Locale",
-              "label": "Locale"
-            },
-            {
-              "name": "Title",
-              "label": "Title"
-            },
-            {
-              "name": "Content",
-              "label": "Content"
-            },
-            {
-              "name": "MetaJSON",
-              "label": "MetaJSON"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            }
-          ],
-          "createFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "placeholder": "Enter TenantId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId",
-              "placeholder": "Enter ChannelId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "channels",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "Slug",
-              "label": "Slug",
-              "placeholder": "Enter Slug",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Version",
-              "label": "Version",
-              "placeholder": "Enter Version",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "1",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "Locale",
-              "label": "Locale",
-              "placeholder": "Enter Locale",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "\u0027en-US\u0027",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Title",
-              "label": "Title",
-              "placeholder": "Enter Title",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Content",
-              "label": "Content",
-              "placeholder": "Enter Content",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "MetaJSON",
-              "label": "MetaJSON",
-              "placeholder": "Enter MetaJSON",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "editFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "placeholder": "Enter TenantId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId",
-              "placeholder": "Enter ChannelId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "channels",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "Slug",
-              "label": "Slug",
-              "placeholder": "Enter Slug",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Version",
-              "label": "Version",
-              "placeholder": "Enter Version",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "1",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "Locale",
-              "label": "Locale",
-              "placeholder": "Enter Locale",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "\u0027en-US\u0027",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Title",
-              "label": "Title",
-              "placeholder": "Enter Title",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Content",
-              "label": "Content",
-              "placeholder": "Enter Content",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "MetaJSON",
-              "label": "MetaJSON",
-              "placeholder": "Enter MetaJSON",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "TenantId",
-            "ChannelId",
-            "Slug",
-            "Version",
-            "Locale",
-            "Title",
-            "Content",
-            "MetaJSON",
-            "CreationDate",
-            "UpdateDate"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "TenantId",
-              "label": "TenantId"
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId"
-            },
-            {
-              "name": "Slug",
-              "label": "Slug"
-            },
-            {
-              "name": "Version",
-              "label": "Version"
-            },
-            {
-              "name": "Locale",
-              "label": "Locale"
-            },
-            {
-              "name": "Title",
-              "label": "Title"
-            },
-            {
-              "name": "Content",
-              "label": "Content"
-            },
-            {
-              "name": "MetaJSON",
-              "label": "MetaJSON"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            },
-            {
-              "name": "UpdateDate",
-              "label": "UpdateDate"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaFileAlt"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": true
-        },
-        {
-          "table": "template_variables",
-          "label": "template_variables",
-          "Identifier": "Id",
-          "description": "Template variables",
-          "displayFields": [
-            {
-              "name": "TemplateId",
-              "label": "TemplateId"
-            },
-            {
-              "name": "VarName",
-              "label": "VarName"
-            },
-            {
-              "name": "VarTypeId",
-              "label": "VarTypeId"
-            },
-            {
-              "name": "IsRequired",
-              "label": "IsRequired"
-            },
-            {
-              "name": "DefaultValue",
-              "label": "DefaultValue"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            }
-          ],
-          "createFields": [
-            {
-              "name": "TemplateId",
-              "label": "TemplateId",
-              "placeholder": "Enter TemplateId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "templates",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "VarName",
-              "label": "VarName",
-              "placeholder": "Enter VarName",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "VarTypeId",
-              "label": "VarTypeId",
-              "placeholder": "Enter VarTypeId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "variable_types",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "IsRequired",
-              "label": "IsRequired",
-              "placeholder": "Enter IsRequired",
-              "type": "chips",
-              "required": false,
-              "options": [
-                {
-                  "Label": "Yes",
-                  "Value": "1"
-                },
-                {
-                  "Label": "No",
-                  "Value": "0"
-                }
-              ],
-              "defaultvalue": "1",
-              "constraints": {
-                "min": -128,
-                "max": 127
-              },
-              "relation": null
-            },
-            {
-              "name": "DefaultValue",
-              "label": "DefaultValue",
-              "placeholder": "Enter DefaultValue",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "editFields": [
-            {
-              "name": "TemplateId",
-              "label": "TemplateId",
-              "placeholder": "Enter TemplateId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "templates",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "VarName",
-              "label": "VarName",
-              "placeholder": "Enter VarName",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "VarTypeId",
-              "label": "VarTypeId",
-              "placeholder": "Enter VarTypeId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "variable_types",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "IsRequired",
-              "label": "IsRequired",
-              "placeholder": "Enter IsRequired",
-              "type": "checkbox",
-              "required": false,
-              "options": [
-                {
-                  "Label": "Yes",
-                  "Value": "1"
-                },
-                {
-                  "Label": "No",
-                  "Value": "0"
-                }
-              ],
-              "defaultvalue": "1",
-              "constraints": {
-                "min": -128,
-                "max": 127
-              },
-              "relation": null
-            },
-            {
-              "name": "DefaultValue",
-              "label": "DefaultValue",
-              "placeholder": "Enter DefaultValue",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "TemplateId",
-            "VarName",
-            "VarTypeId",
-            "IsRequired",
-            "DefaultValue",
-            "CreationDate",
-            "UpdateDate"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "TemplateId",
-              "label": "TemplateId"
-            },
-            {
-              "name": "VarName",
-              "label": "VarName"
-            },
-            {
-              "name": "VarTypeId",
-              "label": "VarTypeId"
-            },
-            {
-              "name": "IsRequired",
-              "label": "IsRequired"
-            },
-            {
-              "name": "DefaultValue",
-              "label": "DefaultValue"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            },
-            {
-              "name": "UpdateDate",
-              "label": "UpdateDate"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaCode"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": false
-        },
-        {
-          "table": "variable_types",
-          "label": "variable_types",
-          "Identifier": "Id",
-          "description": "Variable data types",
-          "displayFields": [
-            {
-              "name": "Name",
-              "label": "Name"
-            },
-            {
-              "name": "Description",
-              "label": "Description"
-            },
-            {
-              "name": "ValidationJson",
-              "label": "ValidationJson"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            }
-          ],
-          "createFields": [
-            {
-              "name": "Name",
-              "label": "Name",
-              "placeholder": "Enter Name",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Description",
-              "label": "Description",
-              "placeholder": "Enter Description",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "ValidationJson",
-              "label": "ValidationJson",
-              "placeholder": "Enter ValidationJson",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "editFields": [
-            {
-              "name": "Name",
-              "label": "Name",
-              "placeholder": "Enter Name",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "Description",
-              "label": "Description",
-              "placeholder": "Enter Description",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "ValidationJson",
-              "label": "ValidationJson",
-              "placeholder": "Enter ValidationJson",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "Name",
-            "Description",
-            "ValidationJson",
-            "CreationDate",
-            "UpdateDate"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "Name",
-              "label": "Name"
-            },
-            {
-              "name": "Description",
-              "label": "Description"
-            },
-            {
-              "name": "ValidationJson",
-              "label": "ValidationJson"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            },
-            {
-              "name": "UpdateDate",
-              "label": "UpdateDate"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaShapes"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": true
-        }
-      ]
-    },
-    {
       "name": "Channels",
-      "description": "Configure delivery channels, providers, and limits",
+      "description": "Manage messaging channels and their configurations",
       "ui": {
-        "icon": "MdWifiTethering"
+        "icon": "MdShare"
       },
       "entities": [
         {
           "table": "channels",
           "label": "channels",
           "Identifier": "Id",
-          "description": "Communication channels",
+          "description": "Channels",
           "displayFields": [
             {
               "name": "Name",
@@ -3409,6 +1367,220 @@
             {
               "name": "Id",
               "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaShareAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "channel_providers",
+          "label": "channel_providers",
+          "Identifier": "Id",
+          "description": "Channel providers",
+          "displayFields": [
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "placeholder": "Enter ChannelId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "placeholder": "Enter ChannelId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "ChannelId",
+            "Name",
+            "Description",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
             },
             {
               "name": "Name",
@@ -3464,8 +1636,20 @@
           "table": "channel_connections",
           "label": "channel_connections",
           "Identifier": "Id",
-          "description": "Channel connection settings",
+          "description": "Channel connections",
           "displayFields": [
+            {
+              "name": "ConnectionId",
+              "label": "ConnectionId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
             {
               "name": "TenantId",
               "label": "TenantId"
@@ -3504,6 +1688,48 @@
             }
           ],
           "createFields": [
+            {
+              "name": "ConnectionId",
+              "label": "ConnectionId",
+              "placeholder": "Enter ConnectionId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
             {
               "name": "TenantId",
               "label": "TenantId",
@@ -3653,6 +1879,48 @@
             }
           ],
           "editFields": [
+            {
+              "name": "ConnectionId",
+              "label": "ConnectionId",
+              "placeholder": "Enter ConnectionId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
             {
               "name": "TenantId",
               "label": "TenantId",
@@ -3803,6 +2071,9 @@
           ],
           "searchFields": [
             "Id",
+            "ConnectionId",
+            "Name",
+            "Description",
             "TenantId",
             "ChannelId",
             "ProviderId",
@@ -3818,6 +2089,18 @@
             {
               "name": "Id",
               "label": "Id"
+            },
+            {
+              "name": "ConnectionId",
+              "label": "ConnectionId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
             },
             {
               "name": "TenantId",
@@ -3894,22 +2177,38 @@
           "isSearchRealtime": true
         },
         {
-          "table": "channel_providers",
-          "label": "channel_providers",
+          "table": "frequency_caps",
+          "label": "frequency_caps",
           "Identifier": "Id",
-          "description": "Message providers",
+          "description": "Frequency caps",
           "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
             {
               "name": "ChannelId",
               "label": "ChannelId"
             },
             {
-              "name": "Name",
-              "label": "Name"
+              "name": "Recipient",
+              "label": "Recipient"
             },
             {
-              "name": "Description",
-              "label": "Description"
+              "name": "MaxCount",
+              "label": "MaxCount"
+            },
+            {
+              "name": "PeriodHours",
+              "label": "PeriodHours"
+            },
+            {
+              "name": "WindowStart",
+              "label": "WindowStart"
+            },
+            {
+              "name": "CountSoFar",
+              "label": "CountSoFar"
             },
             {
               "name": "CreationDate",
@@ -3917,6 +2216,24 @@
             }
           ],
           "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
             {
               "name": "ChannelId",
               "label": "ChannelId",
@@ -3936,9 +2253,9 @@
               }
             },
             {
-              "name": "Name",
-              "label": "Name",
-              "placeholder": "Enter Name",
+              "name": "Recipient",
+              "label": "Recipient",
+              "placeholder": "Enter Recipient",
               "type": "text",
               "required": true,
               "options": [],
@@ -3950,16 +2267,58 @@
               "relation": null
             },
             {
-              "name": "Description",
-              "label": "Description",
-              "placeholder": "Enter Description",
-              "type": "text",
-              "required": false,
+              "name": "MaxCount",
+              "label": "MaxCount",
+              "placeholder": "Enter MaxCount",
+              "type": "number",
+              "required": true,
               "options": [],
-              "defaultvalue": "NULL",
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "PeriodHours",
+              "label": "PeriodHours",
+              "placeholder": "Enter PeriodHours",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "WindowStart",
+              "label": "WindowStart",
+              "placeholder": "Enter WindowStart",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CountSoFar",
+              "label": "CountSoFar",
+              "placeholder": "Enter CountSoFar",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
               },
               "relation": null
             },
@@ -3980,6 +2339,24 @@
           ],
           "editFields": [
             {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
               "name": "ChannelId",
               "label": "ChannelId",
               "placeholder": "Enter ChannelId",
@@ -3998,9 +2375,9 @@
               }
             },
             {
-              "name": "Name",
-              "label": "Name",
-              "placeholder": "Enter Name",
+              "name": "Recipient",
+              "label": "Recipient",
+              "placeholder": "Enter Recipient",
               "type": "text",
               "required": true,
               "options": [],
@@ -4012,16 +2389,58 @@
               "relation": null
             },
             {
-              "name": "Description",
-              "label": "Description",
-              "placeholder": "Enter Description",
-              "type": "text",
-              "required": false,
+              "name": "MaxCount",
+              "label": "MaxCount",
+              "placeholder": "Enter MaxCount",
+              "type": "number",
+              "required": true,
               "options": [],
-              "defaultvalue": "NULL",
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "PeriodHours",
+              "label": "PeriodHours",
+              "placeholder": "Enter PeriodHours",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "WindowStart",
+              "label": "WindowStart",
+              "placeholder": "Enter WindowStart",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CountSoFar",
+              "label": "CountSoFar",
+              "placeholder": "Enter CountSoFar",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
               },
               "relation": null
             },
@@ -4042,9 +2461,13 @@
           ],
           "searchFields": [
             "Id",
+            "TenantId",
             "ChannelId",
-            "Name",
-            "Description",
+            "Recipient",
+            "MaxCount",
+            "PeriodHours",
+            "WindowStart",
+            "CountSoFar",
             "CreationDate",
             "UpdateDate"
           ],
@@ -4054,16 +2477,32 @@
               "label": "Id"
             },
             {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
               "name": "ChannelId",
               "label": "ChannelId"
             },
             {
-              "name": "Name",
-              "label": "Name"
+              "name": "Recipient",
+              "label": "Recipient"
             },
             {
-              "name": "Description",
-              "label": "Description"
+              "name": "MaxCount",
+              "label": "MaxCount"
+            },
+            {
+              "name": "PeriodHours",
+              "label": "PeriodHours"
+            },
+            {
+              "name": "WindowStart",
+              "label": "WindowStart"
+            },
+            {
+              "name": "CountSoFar",
+              "label": "CountSoFar"
             },
             {
               "name": "CreationDate",
@@ -4093,7 +2532,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaBuilding"
+            "icon": "FaClock"
           },
           "accessRoles": [
             "root"
@@ -4105,13 +2544,13 @@
               "direction": "asc"
             }
           ],
-          "isSearchRealtime": true
+          "isSearchRealtime": false
         },
         {
           "table": "provider_quotas",
           "label": "provider_quotas",
           "Identifier": "Id",
-          "description": "Provider usage quotas",
+          "description": "Provider quotas",
           "displayFields": [
             {
               "name": "ConnectionId",
@@ -4682,376 +3121,6 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaHourglassHalf"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": false
-        },
-        {
-          "table": "frequency_caps",
-          "label": "frequency_caps",
-          "Identifier": "Id",
-          "description": "Rate limiting rules",
-          "displayFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId"
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId"
-            },
-            {
-              "name": "Recipient",
-              "label": "Recipient"
-            },
-            {
-              "name": "MaxCount",
-              "label": "MaxCount"
-            },
-            {
-              "name": "PeriodHours",
-              "label": "PeriodHours"
-            },
-            {
-              "name": "WindowStart",
-              "label": "WindowStart"
-            },
-            {
-              "name": "CountSoFar",
-              "label": "CountSoFar"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            }
-          ],
-          "createFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "placeholder": "Enter TenantId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId",
-              "placeholder": "Enter ChannelId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "channels",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "Recipient",
-              "label": "Recipient",
-              "placeholder": "Enter Recipient",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "MaxCount",
-              "label": "MaxCount",
-              "placeholder": "Enter MaxCount",
-              "type": "number",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "PeriodHours",
-              "label": "PeriodHours",
-              "placeholder": "Enter PeriodHours",
-              "type": "number",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "WindowStart",
-              "label": "WindowStart",
-              "placeholder": "Enter WindowStart",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CountSoFar",
-              "label": "CountSoFar",
-              "placeholder": "Enter CountSoFar",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "0",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "editFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "placeholder": "Enter TenantId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId",
-              "placeholder": "Enter ChannelId",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "table": "channels",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "Recipient",
-              "label": "Recipient",
-              "placeholder": "Enter Recipient",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "MaxCount",
-              "label": "MaxCount",
-              "placeholder": "Enter MaxCount",
-              "type": "number",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "PeriodHours",
-              "label": "PeriodHours",
-              "placeholder": "Enter PeriodHours",
-              "type": "number",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "WindowStart",
-              "label": "WindowStart",
-              "placeholder": "Enter WindowStart",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CountSoFar",
-              "label": "CountSoFar",
-              "placeholder": "Enter CountSoFar",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "0",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "current_timestamp()",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "TenantId",
-            "ChannelId",
-            "Recipient",
-            "MaxCount",
-            "PeriodHours",
-            "WindowStart",
-            "CountSoFar",
-            "CreationDate",
-            "UpdateDate"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "TenantId",
-              "label": "TenantId"
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId"
-            },
-            {
-              "name": "Recipient",
-              "label": "Recipient"
-            },
-            {
-              "name": "MaxCount",
-              "label": "MaxCount"
-            },
-            {
-              "name": "PeriodHours",
-              "label": "PeriodHours"
-            },
-            {
-              "name": "WindowStart",
-              "label": "WindowStart"
-            },
-            {
-              "name": "CountSoFar",
-              "label": "CountSoFar"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            },
-            {
-              "name": "UpdateDate",
-              "label": "UpdateDate"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
             "icon": "FaTachometerAlt"
           },
           "accessRoles": [
@@ -5070,7 +3139,7 @@
           "table": "suppression_list",
           "label": "suppression_list",
           "Identifier": "Id",
-          "description": "Suppressed recipients",
+          "description": "Suppression list",
           "displayFields": [
             {
               "name": "TenantId",
@@ -5383,18 +3452,2153 @@
       ]
     },
     {
-      "name": "System",
-      "description": "Control tenants, variable types, and system logs",
+      "name": "Templates",
+      "description": "Messaging templates and related variables",
       "ui": {
-        "icon": "MdSettings"
+        "icon": "MdDescription"
+      },
+      "entities": [
+        {
+          "table": "templates",
+          "label": "templates",
+          "Identifier": "Id",
+          "description": "Templates",
+          "displayFields": [
+            {
+              "name": "TemplateId",
+              "label": "TemplateId"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "Slug",
+              "label": "Slug"
+            },
+            {
+              "name": "Version",
+              "label": "Version"
+            },
+            {
+              "name": "Locale",
+              "label": "Locale"
+            },
+            {
+              "name": "Title",
+              "label": "Title"
+            },
+            {
+              "name": "Content",
+              "label": "Content"
+            },
+            {
+              "name": "MetaJSON",
+              "label": "MetaJSON"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TemplateId",
+              "label": "TemplateId",
+              "placeholder": "Enter TemplateId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "placeholder": "Enter ChannelId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Slug",
+              "label": "Slug",
+              "placeholder": "Enter Slug",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Version",
+              "label": "Version",
+              "placeholder": "Enter Version",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "Locale",
+              "label": "Locale",
+              "placeholder": "Enter Locale",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "En US",
+                  "Value": "en-US"
+                },
+                {
+                  "Label": "Hi IN",
+                  "Value": "hi-IN"
+                }
+              ],
+              "defaultvalue": "\u0027en-US\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Title",
+              "label": "Title",
+              "placeholder": "Enter Title",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Content",
+              "label": "Content",
+              "placeholder": "Enter Content",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "MetaJSON",
+              "label": "MetaJSON",
+              "placeholder": "Enter MetaJSON",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TemplateId",
+              "label": "TemplateId",
+              "placeholder": "Enter TemplateId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "placeholder": "Enter ChannelId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "channels",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Slug",
+              "label": "Slug",
+              "placeholder": "Enter Slug",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Version",
+              "label": "Version",
+              "placeholder": "Enter Version",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "Locale",
+              "label": "Locale",
+              "placeholder": "Enter Locale",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "En US",
+                  "Value": "en-US"
+                },
+                {
+                  "Label": "Hi IN",
+                  "Value": "hi-IN"
+                }
+              ],
+              "defaultvalue": "\u0027en-US\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Title",
+              "label": "Title",
+              "placeholder": "Enter Title",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Content",
+              "label": "Content",
+              "placeholder": "Enter Content",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "MetaJSON",
+              "label": "MetaJSON",
+              "placeholder": "Enter MetaJSON",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TemplateId",
+            "TenantId",
+            "ChannelId",
+            "Slug",
+            "Version",
+            "Locale",
+            "Title",
+            "Content",
+            "MetaJSON",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId"
+            },
+            {
+              "name": "Slug",
+              "label": "Slug"
+            },
+            {
+              "name": "Version",
+              "label": "Version"
+            },
+            {
+              "name": "Locale",
+              "label": "Locale"
+            },
+            {
+              "name": "Title",
+              "label": "Title"
+            },
+            {
+              "name": "Content",
+              "label": "Content"
+            },
+            {
+              "name": "MetaJSON",
+              "label": "MetaJSON"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaFileCode"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "template_variables",
+          "label": "template_variables",
+          "Identifier": "Id",
+          "description": "Template variables",
+          "displayFields": [
+            {
+              "name": "TemplateId",
+              "label": "TemplateId"
+            },
+            {
+              "name": "VarName",
+              "label": "VarName"
+            },
+            {
+              "name": "VarTypeId",
+              "label": "VarTypeId"
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired"
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TemplateId",
+              "label": "TemplateId",
+              "placeholder": "Enter TemplateId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "templates",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "VarName",
+              "label": "VarName",
+              "placeholder": "Enter VarName",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "VarTypeId",
+              "label": "VarTypeId",
+              "placeholder": "Enter VarTypeId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "variable_types",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired",
+              "placeholder": "Enter IsRequired",
+              "type": "chips",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue",
+              "placeholder": "Enter DefaultValue",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TemplateId",
+              "label": "TemplateId",
+              "placeholder": "Enter TemplateId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "templates",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "VarName",
+              "label": "VarName",
+              "placeholder": "Enter VarName",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "VarTypeId",
+              "label": "VarTypeId",
+              "placeholder": "Enter VarTypeId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "variable_types",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired",
+              "placeholder": "Enter IsRequired",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue",
+              "placeholder": "Enter DefaultValue",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TemplateId",
+            "VarName",
+            "VarTypeId",
+            "IsRequired",
+            "DefaultValue",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId"
+            },
+            {
+              "name": "VarName",
+              "label": "VarName"
+            },
+            {
+              "name": "VarTypeId",
+              "label": "VarTypeId"
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired"
+            },
+            {
+              "name": "DefaultValue",
+              "label": "DefaultValue"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCode"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "variable_types",
+          "label": "variable_types",
+          "Identifier": "Id",
+          "description": "Variable types",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "ValidationJson",
+              "label": "ValidationJson"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ValidationJson",
+              "label": "ValidationJson",
+              "placeholder": "Enter ValidationJson",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ValidationJson",
+              "label": "ValidationJson",
+              "placeholder": "Enter ValidationJson",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Description",
+            "ValidationJson",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "ValidationJson",
+              "label": "ValidationJson"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCogs"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Outbound Messaging",
+      "description": "Handles outbound message flow and processing",
+      "ui": {
+        "icon": "MdSend"
+      },
+      "entities": [
+        {
+          "table": "outbound_queue",
+          "label": "outbound_queue",
+          "Identifier": "Id",
+          "description": "Outbound queue",
+          "displayFields": [
+            {
+              "name": "QueueId",
+              "label": "QueueId"
+            },
+            {
+              "name": "ConnectionId",
+              "label": "ConnectionId"
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId"
+            },
+            {
+              "name": "Recipient",
+              "label": "Recipient"
+            },
+            {
+              "name": "Parameters",
+              "label": "Parameters"
+            },
+            {
+              "name": "ScheduledAt",
+              "label": "ScheduledAt"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            },
+            {
+              "name": "Attempts",
+              "label": "Attempts"
+            },
+            {
+              "name": "MaxRetries",
+              "label": "MaxRetries"
+            },
+            {
+              "name": "LastErrorCode",
+              "label": "LastErrorCode"
+            },
+            {
+              "name": "LastErrorMsg",
+              "label": "LastErrorMsg"
+            },
+            {
+              "name": "NextAttemptAt",
+              "label": "NextAttemptAt"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "QueueId",
+              "label": "QueueId",
+              "placeholder": "Enter QueueId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ConnectionId",
+              "label": "ConnectionId",
+              "placeholder": "Enter ConnectionId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "channel_connections",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId",
+              "placeholder": "Enter TemplateId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "templates",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Recipient",
+              "label": "Recipient",
+              "placeholder": "Enter Recipient",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Parameters",
+              "label": "Parameters",
+              "placeholder": "Enter Parameters",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ScheduledAt",
+              "label": "ScheduledAt",
+              "placeholder": "Enter ScheduledAt",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "PENDING",
+                  "Value": "PENDING"
+                },
+                {
+                  "Label": "IN_PROGRESS",
+                  "Value": "IN_PROGRESS"
+                },
+                {
+                  "Label": "SENT",
+                  "Value": "SENT"
+                },
+                {
+                  "Label": "DELIVERED",
+                  "Value": "DELIVERED"
+                },
+                {
+                  "Label": "FAILED",
+                  "Value": "FAILED"
+                },
+                {
+                  "Label": "ON_HOLD",
+                  "Value": "ON_HOLD"
+                },
+                {
+                  "Label": "CANCELLED",
+                  "Value": "CANCELLED"
+                }
+              ],
+              "defaultvalue": "\u0027PENDING\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Attempts",
+              "label": "Attempts",
+              "placeholder": "Enter Attempts",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "MaxRetries",
+              "label": "MaxRetries",
+              "placeholder": "Enter MaxRetries",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "3",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "LastErrorCode",
+              "label": "LastErrorCode",
+              "placeholder": "Enter LastErrorCode",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "LastErrorMsg",
+              "label": "LastErrorMsg",
+              "placeholder": "Enter LastErrorMsg",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "NextAttemptAt",
+              "label": "NextAttemptAt",
+              "placeholder": "Enter NextAttemptAt",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "QueueId",
+              "label": "QueueId",
+              "placeholder": "Enter QueueId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ConnectionId",
+              "label": "ConnectionId",
+              "placeholder": "Enter ConnectionId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "channel_connections",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId",
+              "placeholder": "Enter TemplateId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "templates",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Recipient",
+              "label": "Recipient",
+              "placeholder": "Enter Recipient",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Parameters",
+              "label": "Parameters",
+              "placeholder": "Enter Parameters",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ScheduledAt",
+              "label": "ScheduledAt",
+              "placeholder": "Enter ScheduledAt",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "PENDING",
+                  "Value": "PENDING"
+                },
+                {
+                  "Label": "IN_PROGRESS",
+                  "Value": "IN_PROGRESS"
+                },
+                {
+                  "Label": "SENT",
+                  "Value": "SENT"
+                },
+                {
+                  "Label": "DELIVERED",
+                  "Value": "DELIVERED"
+                },
+                {
+                  "Label": "FAILED",
+                  "Value": "FAILED"
+                },
+                {
+                  "Label": "ON_HOLD",
+                  "Value": "ON_HOLD"
+                },
+                {
+                  "Label": "CANCELLED",
+                  "Value": "CANCELLED"
+                }
+              ],
+              "defaultvalue": "\u0027PENDING\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Attempts",
+              "label": "Attempts",
+              "placeholder": "Enter Attempts",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "MaxRetries",
+              "label": "MaxRetries",
+              "placeholder": "Enter MaxRetries",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "3",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "LastErrorCode",
+              "label": "LastErrorCode",
+              "placeholder": "Enter LastErrorCode",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "LastErrorMsg",
+              "label": "LastErrorMsg",
+              "placeholder": "Enter LastErrorMsg",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "NextAttemptAt",
+              "label": "NextAttemptAt",
+              "placeholder": "Enter NextAttemptAt",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "QueueId",
+            "ConnectionId",
+            "TemplateId",
+            "Recipient",
+            "Parameters",
+            "ScheduledAt",
+            "Status",
+            "Attempts",
+            "MaxRetries",
+            "LastErrorCode",
+            "LastErrorMsg",
+            "NextAttemptAt",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "QueueId",
+              "label": "QueueId"
+            },
+            {
+              "name": "ConnectionId",
+              "label": "ConnectionId"
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId"
+            },
+            {
+              "name": "Recipient",
+              "label": "Recipient"
+            },
+            {
+              "name": "Parameters",
+              "label": "Parameters"
+            },
+            {
+              "name": "ScheduledAt",
+              "label": "ScheduledAt"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            },
+            {
+              "name": "Attempts",
+              "label": "Attempts"
+            },
+            {
+              "name": "MaxRetries",
+              "label": "MaxRetries"
+            },
+            {
+              "name": "LastErrorCode",
+              "label": "LastErrorCode"
+            },
+            {
+              "name": "LastErrorMsg",
+              "label": "LastErrorMsg"
+            },
+            {
+              "name": "NextAttemptAt",
+              "label": "NextAttemptAt"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaEnvelopeOpen"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "outbound_recipients",
+          "label": "outbound_recipients",
+          "Identifier": "Id",
+          "description": "Outbound recipients",
+          "displayFields": [
+            {
+              "name": "QueueId",
+              "label": "QueueId"
+            },
+            {
+              "name": "Address",
+              "label": "Address"
+            },
+            {
+              "name": "RecipientType",
+              "label": "RecipientType"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "QueueId",
+              "label": "QueueId",
+              "placeholder": "Enter QueueId",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "outbound_queue",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Address",
+              "label": "Address",
+              "placeholder": "Enter Address",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "RecipientType",
+              "label": "RecipientType",
+              "placeholder": "Enter RecipientType",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "TO",
+                  "Value": "TO"
+                },
+                {
+                  "Label": "CC",
+                  "Value": "CC"
+                },
+                {
+                  "Label": "BCC",
+                  "Value": "BCC"
+                }
+              ],
+              "defaultvalue": "\u0027TO\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "QueueId",
+              "label": "QueueId",
+              "placeholder": "Enter QueueId",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "outbound_queue",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Address",
+              "label": "Address",
+              "placeholder": "Enter Address",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "RecipientType",
+              "label": "RecipientType",
+              "placeholder": "Enter RecipientType",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "TO",
+                  "Value": "TO"
+                },
+                {
+                  "Label": "CC",
+                  "Value": "CC"
+                },
+                {
+                  "Label": "BCC",
+                  "Value": "BCC"
+                }
+              ],
+              "defaultvalue": "\u0027TO\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "QueueId",
+            "Address",
+            "RecipientType"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "QueueId",
+              "label": "QueueId"
+            },
+            {
+              "name": "Address",
+              "label": "Address"
+            },
+            {
+              "name": "RecipientType",
+              "label": "RecipientType"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUser"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "message_logs",
+          "label": "message_logs",
+          "Identifier": "Id",
+          "description": "Message logs",
+          "displayFields": [
+            {
+              "name": "MessageId",
+              "label": "MessageId"
+            },
+            {
+              "name": "QueueId",
+              "label": "QueueId"
+            },
+            {
+              "name": "ProviderStatus",
+              "label": "ProviderStatus"
+            },
+            {
+              "name": "ProviderMessageId",
+              "label": "ProviderMessageId"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            },
+            {
+              "name": "LogDate",
+              "label": "LogDate"
+            },
+            {
+              "name": "DetailsJSON",
+              "label": "DetailsJSON"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "MessageId",
+              "label": "MessageId",
+              "placeholder": "Enter MessageId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "QueueId",
+              "label": "QueueId",
+              "placeholder": "Enter QueueId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "outbound_queue",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ProviderStatus",
+              "label": "ProviderStatus",
+              "placeholder": "Enter ProviderStatus",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ProviderMessageId",
+              "label": "ProviderMessageId",
+              "placeholder": "Enter ProviderMessageId",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Enter Status",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "LogDate",
+              "label": "LogDate",
+              "placeholder": "Enter LogDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "DetailsJSON",
+              "label": "DetailsJSON",
+              "placeholder": "Enter DetailsJSON",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "MessageId",
+              "label": "MessageId",
+              "placeholder": "Enter MessageId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "QueueId",
+              "label": "QueueId",
+              "placeholder": "Enter QueueId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "outbound_queue",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ProviderStatus",
+              "label": "ProviderStatus",
+              "placeholder": "Enter ProviderStatus",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ProviderMessageId",
+              "label": "ProviderMessageId",
+              "placeholder": "Enter ProviderMessageId",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Enter Status",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "LogDate",
+              "label": "LogDate",
+              "placeholder": "Enter LogDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "DetailsJSON",
+              "label": "DetailsJSON",
+              "placeholder": "Enter DetailsJSON",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "MessageId",
+            "QueueId",
+            "ProviderStatus",
+            "ProviderMessageId",
+            "Status",
+            "LogDate",
+            "DetailsJSON"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "MessageId",
+              "label": "MessageId"
+            },
+            {
+              "name": "QueueId",
+              "label": "QueueId"
+            },
+            {
+              "name": "ProviderStatus",
+              "label": "ProviderStatus"
+            },
+            {
+              "name": "ProviderMessageId",
+              "label": "ProviderMessageId"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            },
+            {
+              "name": "LogDate",
+              "label": "LogDate"
+            },
+            {
+              "name": "DetailsJSON",
+              "label": "DetailsJSON"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaFileAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Tenants \u0026 Configuration",
+      "description": "Tenant and system-level configurations",
+      "ui": {
+        "icon": "MdBusiness"
       },
       "entities": [
         {
           "table": "tenants",
           "label": "tenants",
           "Identifier": "Id",
-          "description": "Tenant organizations",
+          "description": "Tenants",
           "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
             {
               "name": "Name",
               "label": "Name"
@@ -5413,6 +5617,20 @@
             }
           ],
           "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
             {
               "name": "Name",
               "label": "Name",
@@ -5472,6 +5690,20 @@
           ],
           "editFields": [
             {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "uuid",
+              "required": false,
+              "options": [],
+              "defaultvalue": "uuid()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
               "name": "Name",
               "label": "Name",
               "placeholder": "Enter Name",
@@ -5530,6 +5762,7 @@
           ],
           "searchFields": [
             "Id",
+            "TenantId",
             "Name",
             "Domain",
             "Description",
@@ -5540,6 +5773,10 @@
             {
               "name": "Id",
               "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
             },
             {
               "name": "Name",
@@ -5594,12 +5831,21 @@
             }
           ],
           "isSearchRealtime": true
-        },
+        }
+      ]
+    },
+    {
+      "name": "Audit \u0026 Logs",
+      "description": "Track activity logs and audit history",
+      "ui": {
+        "icon": "MdHistory"
+      },
+      "entities": [
         {
           "table": "audit_trail",
           "label": "audit_trail",
           "Identifier": "Id",
-          "description": "Change history log",
+          "description": "Audit trail",
           "displayFields": [
             {
               "name": "EntityType",
@@ -5924,7 +6170,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaHistory"
+            "icon": "FaListAlt"
           },
           "accessRoles": [
             "root"
@@ -5939,6 +6185,14 @@
           "isSearchRealtime": false
         }
       ]
+    },
+    {
+      "name": "Ungrouped",
+      "description": "Auto-generated group: Ungrouped",
+      "ui": {
+        "icon": "MdWidgets"
+      },
+      "entities": []
     }
   ]
 }
