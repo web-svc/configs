@@ -1,6 +1,6 @@
 {
   "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
-  "description": "Database for managing employee profile information.",
+  "description": "Database for managing employee profiles and tenant information",
   "dashboard": [
     {
       "viewType": "summary",
@@ -30,6 +30,17 @@
             "admin",
             "hr"
           ]
+        },
+        {
+          "type": "stat",
+          "label": "Total tenants",
+          "display": "count(*) as display",
+          "entity": "tenants",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
         }
       ],
       "recentRecords": [
@@ -45,6 +56,34 @@
           ],
           "entity": "employee_profiles",
           "filter": "status eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 tenants",
+          "display": "TenantId,Name,Domain,Description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tenants",
+          "filter": null,
           "roles": [
             "root",
             "admin",
@@ -90,6 +129,34 @@
               ]
             }
           ]
+        },
+        {
+          "label": "tenants Table",
+          "display": "TenantId,Name,Domain,Description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreationDate",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tenants",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
         }
       ],
       "actions": {
@@ -105,6 +172,16 @@
             "action": "create",
             "entity": "employee_profiles",
             "group": "employee_profiles",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          },
+          {
+            "label": "Add tenants",
+            "action": "create",
+            "entity": "tenants",
+            "group": "tenants",
             "roles": [
               "root",
               "admin"
@@ -171,14 +248,26 @@
             "hr",
             "manager"
           ]
+        },
+        {
+          "entity": "tenants",
+          "titleField": "Name",
+          "startDateField": "CreationDate",
+          "endDateField": "CreationDate",
+          "colorField": "UpdateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
         }
       ]
     }
   ],
   "groups": [
     {
-      "name": "HR Management",
-      "description": "Handles employee records and personal details",
+      "name": "Employee Management",
+      "description": "Manage employee records and profiles",
       "ui": {
         "icon": "MdPeople"
       },
@@ -293,7 +382,7 @@
               "name": "is_active",
               "label": "is_active",
               "placeholder": "Enter is_active",
-              "type": "dropdown",
+              "type": "toggle",
               "required": false,
               "options": [
                 {
@@ -803,6 +892,194 @@
           "orderBy": [
             {
               "column": "employee_id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Tenant Management",
+      "description": "Manage tenant data and domains",
+      "ui": {
+        "icon": "MdBusiness"
+      },
+      "entities": [
+        {
+          "table": "tenants",
+          "label": "tenants",
+          "Identifier": "Id",
+          "description": "Tenant Records",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Domain",
+              "label": "Domain"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Domain",
+              "label": "Domain",
+              "placeholder": "Enter Domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Domain",
+              "label": "Domain",
+              "placeholder": "Enter Domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TenantId",
+            "Name",
+            "Domain",
+            "Description",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Domain",
+              "label": "Domain"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBuilding"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
               "direction": "asc"
             }
           ],
