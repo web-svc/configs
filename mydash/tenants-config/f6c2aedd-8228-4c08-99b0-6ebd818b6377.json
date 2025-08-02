@@ -1,6 +1,6 @@
 {
   "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
-  "description": "Marketing automation platform with audience management, campaign orchestration, and contact data",
+  "description": "Customer engagement and campaign management database.",
   "dashboard": [
     {
       "viewType": "summary",
@@ -929,16 +929,201 @@
   "groups": [
     {
       "name": "Audience Management",
-      "description": "Manage audiences and their members",
+      "description": "Manage contacts, audience groups, and custom fields",
       "ui": {
         "icon": "MdGroup"
       },
       "entities": [
         {
+          "table": "audience_members",
+          "label": "audience_members",
+          "Identifier": "Id",
+          "description": "Audience Members",
+          "displayFields": [
+            {
+              "name": "AudienceId",
+              "label": "AudienceId"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "AudienceId",
+              "label": "AudienceId",
+              "placeholder": "Enter AudienceId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "audiences",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "placeholder": "Enter ContactId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "AudienceId",
+              "label": "AudienceId",
+              "placeholder": "Enter AudienceId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "audiences",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "placeholder": "Enter ContactId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "AudienceId",
+            "ContactId",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "AudienceId",
+              "label": "AudienceId"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUsers"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
           "table": "audiences",
           "label": "audiences",
           "Identifier": "Id",
-          "description": "Target audience groups",
+          "description": "Audiences",
           "displayFields": [
             {
               "name": "TenantId",
@@ -957,67 +1142,127 @@
               "label": "CreationDate"
             }
           ],
-          "editFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "type": "lookup",
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "Name",
-              "label": "Name",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Description",
-              "label": "Description",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
           "createFields": [
             {
               "name": "TenantId",
               "label": "TenantId",
+              "placeholder": "Enter TenantId",
               "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
               "relation": {
                 "table": "tenants",
                 "valueField": "Id",
                 "labelFields": [
                   "Id"
-                ]
+                ],
+                "limit": 5
               }
             },
             {
               "name": "Name",
               "label": "Name",
+              "placeholder": "Enter Name",
               "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "Description",
               "label": "Description",
+              "placeholder": "Enter Description",
               "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "CreationDate",
               "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
               "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             }
           ],
@@ -1074,7 +1319,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaUsers"
+            "icon": "FaUserFriends"
           },
           "accessRoles": [
             "root"
@@ -1089,92 +1334,223 @@
           "isSearchRealtime": true
         },
         {
-          "table": "audience_members",
-          "label": "audience_members",
+          "table": "contacts",
+          "label": "contacts",
           "Identifier": "Id",
-          "description": "Members within an audience",
+          "description": "Contacts",
           "displayFields": [
             {
-              "name": "AudienceId",
-              "label": "AudienceId"
+              "name": "TenantId",
+              "label": "TenantId"
             },
             {
-              "name": "ContactId",
-              "label": "ContactId"
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Email",
+              "label": "Email"
+            },
+            {
+              "name": "Phone",
+              "label": "Phone"
+            },
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp"
             },
             {
               "name": "CreationDate",
               "label": "CreationDate"
             }
           ],
-          "editFields": [
+          "createFields": [
             {
-              "name": "AudienceId",
-              "label": "AudienceId",
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
               "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
               "relation": {
-                "table": "audiences",
+                "table": "tenants",
                 "valueField": "Id",
                 "labelFields": [
                   "Id"
-                ]
+                ],
+                "limit": 5
               }
             },
             {
-              "name": "ContactId",
-              "label": "ContactId",
-              "type": "lookup",
-              "relation": {
-                "table": "contacts",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Email",
+              "label": "Email",
+              "placeholder": "Enter Email",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Phone",
+              "label": "Phone",
+              "placeholder": "Enter Phone",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp",
+              "placeholder": "Enter WhatsApp",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
             },
             {
               "name": "CreationDate",
               "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
               "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             }
           ],
-          "createFields": [
+          "editFields": [
             {
-              "name": "AudienceId",
-              "label": "AudienceId",
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
               "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
               "relation": {
-                "table": "audiences",
+                "table": "tenants",
                 "valueField": "Id",
                 "labelFields": [
                   "Id"
-                ]
+                ],
+                "limit": 5
               }
             },
             {
-              "name": "ContactId",
-              "label": "ContactId",
-              "type": "lookup",
-              "relation": {
-                "table": "contacts",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Email",
+              "label": "Email",
+              "placeholder": "Enter Email",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Phone",
+              "label": "Phone",
+              "placeholder": "Enter Phone",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp",
+              "placeholder": "Enter WhatsApp",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
             },
             {
               "name": "CreationDate",
               "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
               "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             }
           ],
           "searchFields": [
             "Id",
-            "AudienceId",
-            "ContactId",
+            "TenantId",
+            "Name",
+            "Email",
+            "Phone",
+            "WhatsApp",
             "CreationDate",
             "UpdateDate"
           ],
@@ -1184,12 +1560,24 @@
               "label": "Id"
             },
             {
-              "name": "AudienceId",
-              "label": "AudienceId"
+              "name": "TenantId",
+              "label": "TenantId"
             },
             {
-              "name": "ContactId",
-              "label": "ContactId"
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Email",
+              "label": "Email"
+            },
+            {
+              "name": "Phone",
+              "label": "Phone"
+            },
+            {
+              "name": "WhatsApp",
+              "label": "WhatsApp"
             },
             {
               "name": "CreationDate",
@@ -1219,7 +1607,229 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaUserPlus"
+            "icon": "FaAddressBook"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "contact_field_values",
+          "label": "contact_field_values",
+          "Identifier": "Id",
+          "description": "Contact Field Values",
+          "displayFields": [
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "placeholder": "Enter ContactId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "placeholder": "Enter CustomFieldId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "custom_fields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue",
+              "placeholder": "Enter FieldValue",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "placeholder": "Enter ContactId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId",
+              "placeholder": "Enter CustomFieldId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "custom_fields",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue",
+              "placeholder": "Enter FieldValue",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "ContactId",
+            "CustomFieldId",
+            "FieldValue",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId"
+            },
+            {
+              "name": "CustomFieldId",
+              "label": "CustomFieldId"
+            },
+            {
+              "name": "FieldValue",
+              "label": "FieldValue"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaListAlt"
           },
           "accessRoles": [
             "root"
@@ -1232,12 +1842,458 @@
             }
           ],
           "isSearchRealtime": false
+        },
+        {
+          "table": "custom_fields",
+          "label": "custom_fields",
+          "Identifier": "Id",
+          "description": "Custom Fields",
+          "displayFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName"
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId"
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName",
+              "placeholder": "Enter FieldName",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId",
+              "placeholder": "Enter FieldTypeId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "fieldtypes",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired",
+              "placeholder": "Enter IsRequired",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName",
+              "placeholder": "Enter FieldName",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId",
+              "placeholder": "Enter FieldTypeId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "fieldtypes",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired",
+              "placeholder": "Enter IsRequired",
+              "type": "button-group",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "TenantId",
+            "FieldName",
+            "FieldTypeId",
+            "IsRequired",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "TenantId",
+              "label": "TenantId"
+            },
+            {
+              "name": "FieldName",
+              "label": "FieldName"
+            },
+            {
+              "name": "FieldTypeId",
+              "label": "FieldTypeId"
+            },
+            {
+              "name": "IsRequired",
+              "label": "IsRequired"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaSlidersH"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "fieldtypes",
+          "label": "fieldtypes",
+          "Identifier": "Id",
+          "description": "Field Types",
+          "displayFields": [
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            }
+          ],
+          "createFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "Name",
+            "Description",
+            "CreationDate",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Description",
+              "label": "Description"
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaShapes"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
         }
       ]
     },
     {
       "name": "Campaign Management",
-      "description": "Create and monitor campaign jobs and recipients",
+      "description": "Create, schedule, and monitor campaigns",
       "ui": {
         "icon": "MdCampaign"
       },
@@ -1246,7 +2302,7 @@
           "table": "campaigns",
           "label": "campaigns",
           "Identifier": "Id",
-          "description": "Marketing campaigns",
+          "description": "Campaigns",
           "displayFields": [
             {
               "name": "TenantId",
@@ -1301,187 +2357,471 @@
               "label": "CreationDate"
             }
           ],
-          "editFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "type": "lookup",
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "Name",
-              "label": "Name",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Description",
-              "label": "Description",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "ChannelId",
-              "label": "ChannelId",
-              "type": "number",
-              "relation": null
-            },
-            {
-              "name": "TemplateId",
-              "label": "TemplateId",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "ConnectionId",
-              "label": "ConnectionId",
-              "type": "number",
-              "relation": null
-            },
-            {
-              "name": "AudienceId",
-              "label": "AudienceId",
-              "type": "lookup",
-              "relation": {
-                "table": "audiences",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "ScheduleType",
-              "label": "ScheduleType",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "ScheduleConfig",
-              "label": "ScheduleConfig",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "ScheduledAt",
-              "label": "ScheduledAt",
-              "type": "datetime",
-              "relation": null
-            },
-            {
-              "name": "EndAt",
-              "label": "EndAt",
-              "type": "datetime",
-              "relation": null
-            },
-            {
-              "name": "Status",
-              "label": "Status",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
           "createFields": [
             {
               "name": "TenantId",
               "label": "TenantId",
+              "placeholder": "Enter TenantId",
               "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
               "relation": {
                 "table": "tenants",
                 "valueField": "Id",
                 "labelFields": [
                   "Id"
-                ]
+                ],
+                "limit": 5
               }
             },
             {
               "name": "Name",
               "label": "Name",
+              "placeholder": "Enter Name",
               "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "Description",
               "label": "Description",
+              "placeholder": "Enter Description",
               "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "ChannelId",
               "label": "ChannelId",
+              "placeholder": "Enter ChannelId",
               "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
               "relation": null
             },
             {
               "name": "TemplateId",
               "label": "TemplateId",
+              "placeholder": "Enter TemplateId",
               "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "ConnectionId",
               "label": "ConnectionId",
+              "placeholder": "Enter ConnectionId",
               "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
               "relation": null
             },
             {
               "name": "AudienceId",
               "label": "AudienceId",
+              "placeholder": "Enter AudienceId",
               "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
               "relation": {
                 "table": "audiences",
                 "valueField": "Id",
                 "labelFields": [
                   "Id"
-                ]
+                ],
+                "limit": 5
               }
             },
             {
               "name": "ScheduleType",
               "label": "ScheduleType",
-              "type": "text",
+              "placeholder": "Enter ScheduleType",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "ONCE",
+                  "Value": "ONCE"
+                },
+                {
+                  "Label": "RECURRING",
+                  "Value": "RECURRING"
+                },
+                {
+                  "Label": "DRIP",
+                  "Value": "DRIP"
+                },
+                {
+                  "Label": "EVERGREEN",
+                  "Value": "EVERGREEN"
+                },
+                {
+                  "Label": "SMART",
+                  "Value": "SMART"
+                }
+              ],
+              "defaultvalue": "\u0027ONCE\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "ScheduleConfig",
               "label": "ScheduleConfig",
+              "placeholder": "Enter ScheduleConfig",
               "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "ScheduledAt",
               "label": "ScheduledAt",
+              "placeholder": "Enter ScheduledAt",
               "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "EndAt",
               "label": "EndAt",
+              "placeholder": "Enter EndAt",
               "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "Status",
               "label": "Status",
-              "type": "text",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Draft",
+                  "Value": "Draft"
+                },
+                {
+                  "Label": "Scheduled",
+                  "Value": "Scheduled"
+                },
+                {
+                  "Label": "Running",
+                  "Value": "Running"
+                },
+                {
+                  "Label": "Completed",
+                  "Value": "Completed"
+                },
+                {
+                  "Label": "Cancelled",
+                  "Value": "Cancelled"
+                }
+              ],
+              "defaultvalue": "\u0027Draft\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "CreationDate",
               "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
               "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "TenantId",
+              "label": "TenantId",
+              "placeholder": "Enter TenantId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "tenants",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "Description",
+              "placeholder": "Enter Description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ChannelId",
+              "label": "ChannelId",
+              "placeholder": "Enter ChannelId",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "TemplateId",
+              "label": "TemplateId",
+              "placeholder": "Enter TemplateId",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ConnectionId",
+              "label": "ConnectionId",
+              "placeholder": "Enter ConnectionId",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "AudienceId",
+              "label": "AudienceId",
+              "placeholder": "Enter AudienceId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "audiences",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ScheduleType",
+              "label": "ScheduleType",
+              "placeholder": "Enter ScheduleType",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "ONCE",
+                  "Value": "ONCE"
+                },
+                {
+                  "Label": "RECURRING",
+                  "Value": "RECURRING"
+                },
+                {
+                  "Label": "DRIP",
+                  "Value": "DRIP"
+                },
+                {
+                  "Label": "EVERGREEN",
+                  "Value": "EVERGREEN"
+                },
+                {
+                  "Label": "SMART",
+                  "Value": "SMART"
+                }
+              ],
+              "defaultvalue": "\u0027ONCE\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ScheduleConfig",
+              "label": "ScheduleConfig",
+              "placeholder": "Enter ScheduleConfig",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "ScheduledAt",
+              "label": "ScheduledAt",
+              "placeholder": "Enter ScheduledAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "EndAt",
+              "label": "EndAt",
+              "placeholder": "Enter EndAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Draft",
+                  "Value": "Draft"
+                },
+                {
+                  "Label": "Scheduled",
+                  "Value": "Scheduled"
+                },
+                {
+                  "Label": "Running",
+                  "Value": "Running"
+                },
+                {
+                  "Label": "Completed",
+                  "Value": "Completed"
+                },
+                {
+                  "Label": "Cancelled",
+                  "Value": "Cancelled"
+                }
+              ],
+              "defaultvalue": "\u0027Draft\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             }
           ],
@@ -1601,7 +2941,7 @@
           "table": "campaign_jobs",
           "label": "campaign_jobs",
           "Identifier": "Id",
-          "description": "Scheduled campaign jobs",
+          "description": "Campaign Jobs",
           "displayFields": [
             {
               "name": "CampaignId",
@@ -1632,103 +2972,245 @@
               "label": "CreationDate"
             }
           ],
-          "editFields": [
-            {
-              "name": "CampaignId",
-              "label": "CampaignId",
-              "type": "lookup",
-              "relation": {
-                "table": "campaigns",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "RunAt",
-              "label": "RunAt",
-              "type": "datetime",
-              "relation": null
-            },
-            {
-              "name": "Status",
-              "label": "Status",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "TotalPlanned",
-              "label": "TotalPlanned",
-              "type": "number",
-              "relation": null
-            },
-            {
-              "name": "TotalSent",
-              "label": "TotalSent",
-              "type": "number",
-              "relation": null
-            },
-            {
-              "name": "TotalFailed",
-              "label": "TotalFailed",
-              "type": "number",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
           "createFields": [
             {
               "name": "CampaignId",
               "label": "CampaignId",
+              "placeholder": "Enter CampaignId",
               "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
               "relation": {
                 "table": "campaigns",
                 "valueField": "Id",
                 "labelFields": [
                   "Id"
-                ]
+                ],
+                "limit": 5
               }
             },
             {
               "name": "RunAt",
               "label": "RunAt",
+              "placeholder": "Enter RunAt",
               "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "Status",
               "label": "Status",
-              "type": "text",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Pending",
+                  "Value": "Pending"
+                },
+                {
+                  "Label": "Inprogress",
+                  "Value": "InProgress"
+                },
+                {
+                  "Label": "Completed",
+                  "Value": "Completed"
+                },
+                {
+                  "Label": "Failed",
+                  "Value": "Failed"
+                }
+              ],
+              "defaultvalue": "\u0027Pending\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "TotalPlanned",
               "label": "TotalPlanned",
+              "placeholder": "Enter TotalPlanned",
               "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
               "relation": null
             },
             {
               "name": "TotalSent",
               "label": "TotalSent",
+              "placeholder": "Enter TotalSent",
               "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
               "relation": null
             },
             {
               "name": "TotalFailed",
               "label": "TotalFailed",
+              "placeholder": "Enter TotalFailed",
               "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
               "relation": null
             },
             {
               "name": "CreationDate",
               "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
               "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "CampaignId",
+              "label": "CampaignId",
+              "placeholder": "Enter CampaignId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "campaigns",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "RunAt",
+              "label": "RunAt",
+              "placeholder": "Enter RunAt",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Pending",
+                  "Value": "Pending"
+                },
+                {
+                  "Label": "Inprogress",
+                  "Value": "InProgress"
+                },
+                {
+                  "Label": "Completed",
+                  "Value": "Completed"
+                },
+                {
+                  "Label": "Failed",
+                  "Value": "Failed"
+                }
+              ],
+              "defaultvalue": "\u0027Pending\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "TotalPlanned",
+              "label": "TotalPlanned",
+              "placeholder": "Enter TotalPlanned",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "TotalSent",
+              "label": "TotalSent",
+              "placeholder": "Enter TotalSent",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "TotalFailed",
+              "label": "TotalFailed",
+              "placeholder": "Enter TotalFailed",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             }
           ],
@@ -1818,7 +3300,7 @@
           "table": "campaign_job_recipients",
           "label": "campaign_job_recipients",
           "Identifier": "Id",
-          "description": "Recipients of campaign jobs",
+          "description": "Job Recipients",
           "displayFields": [
             {
               "name": "JobId",
@@ -1845,103 +3327,217 @@
               "label": "CreationDate"
             }
           ],
-          "editFields": [
-            {
-              "name": "JobId",
-              "label": "JobId",
-              "type": "lookup",
-              "relation": {
-                "table": "campaign_jobs",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "ContactId",
-              "label": "ContactId",
-              "type": "lookup",
-              "relation": {
-                "table": "contacts",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "OutboundQueueId",
-              "label": "OutboundQueueId",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Status",
-              "label": "Status",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Reason",
-              "label": "Reason",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
           "createFields": [
             {
               "name": "JobId",
               "label": "JobId",
+              "placeholder": "Enter JobId",
               "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
               "relation": {
                 "table": "campaign_jobs",
                 "valueField": "Id",
                 "labelFields": [
                   "Id"
-                ]
+                ],
+                "limit": 5
               }
             },
             {
               "name": "ContactId",
               "label": "ContactId",
+              "placeholder": "Enter ContactId",
               "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
               "relation": {
                 "table": "contacts",
                 "valueField": "Id",
                 "labelFields": [
                   "Id"
-                ]
+                ],
+                "limit": 5
               }
             },
             {
               "name": "OutboundQueueId",
               "label": "OutboundQueueId",
+              "placeholder": "Enter OutboundQueueId",
               "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "Status",
               "label": "Status",
-              "type": "text",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Planned",
+                  "Value": "Planned"
+                },
+                {
+                  "Label": "Queued",
+                  "Value": "Queued"
+                },
+                {
+                  "Label": "Skipped",
+                  "Value": "Skipped"
+                }
+              ],
+              "defaultvalue": "\u0027Planned\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "Reason",
               "label": "Reason",
+              "placeholder": "Enter Reason",
               "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "CreationDate",
               "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
               "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "JobId",
+              "label": "JobId",
+              "placeholder": "Enter JobId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "campaign_jobs",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ContactId",
+              "label": "ContactId",
+              "placeholder": "Enter ContactId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "table": "contacts",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "OutboundQueueId",
+              "label": "OutboundQueueId",
+              "placeholder": "Enter OutboundQueueId",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Planned",
+                  "Value": "Planned"
+                },
+                {
+                  "Label": "Queued",
+                  "Value": "Queued"
+                },
+                {
+                  "Label": "Skipped",
+                  "Value": "Skipped"
+                }
+              ],
+              "defaultvalue": "\u0027Planned\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Reason",
+              "label": "Reason",
+              "placeholder": "Enter Reason",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreationDate",
+              "label": "CreationDate",
+              "placeholder": "Enter CreationDate",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             }
           ],
@@ -2008,7 +3604,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaEnvelope"
+            "icon": "FaUserCheck"
           },
           "accessRoles": [
             "root"
@@ -2021,685 +3617,6 @@
             }
           ],
           "isSearchRealtime": false
-        }
-      ]
-    },
-    {
-      "name": "Contact Management",
-      "description": "Manage contacts and custom fields",
-      "ui": {
-        "icon": "MdContactPage"
-      },
-      "entities": [
-        {
-          "table": "contacts",
-          "label": "contacts",
-          "Identifier": "Id",
-          "description": "Customer contacts",
-          "displayFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId"
-            },
-            {
-              "name": "Name",
-              "label": "Name"
-            },
-            {
-              "name": "Email",
-              "label": "Email"
-            },
-            {
-              "name": "Phone",
-              "label": "Phone"
-            },
-            {
-              "name": "WhatsApp",
-              "label": "WhatsApp"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            }
-          ],
-          "editFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "type": "lookup",
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "Name",
-              "label": "Name",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Email",
-              "label": "Email",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Phone",
-              "label": "Phone",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "WhatsApp",
-              "label": "WhatsApp",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
-          "createFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "type": "lookup",
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "Name",
-              "label": "Name",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Email",
-              "label": "Email",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Phone",
-              "label": "Phone",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "WhatsApp",
-              "label": "WhatsApp",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "TenantId",
-            "Name",
-            "Email",
-            "Phone",
-            "WhatsApp",
-            "CreationDate",
-            "UpdateDate"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "TenantId",
-              "label": "TenantId"
-            },
-            {
-              "name": "Name",
-              "label": "Name"
-            },
-            {
-              "name": "Email",
-              "label": "Email"
-            },
-            {
-              "name": "Phone",
-              "label": "Phone"
-            },
-            {
-              "name": "WhatsApp",
-              "label": "WhatsApp"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            },
-            {
-              "name": "UpdateDate",
-              "label": "UpdateDate"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaAddressBook"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": true
-        },
-        {
-          "table": "contact_field_values",
-          "label": "contact_field_values",
-          "Identifier": "Id",
-          "description": "Values for custom contact fields",
-          "displayFields": [
-            {
-              "name": "ContactId",
-              "label": "ContactId"
-            },
-            {
-              "name": "CustomFieldId",
-              "label": "CustomFieldId"
-            },
-            {
-              "name": "FieldValue",
-              "label": "FieldValue"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            }
-          ],
-          "editFields": [
-            {
-              "name": "ContactId",
-              "label": "ContactId",
-              "type": "lookup",
-              "relation": {
-                "table": "contacts",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "CustomFieldId",
-              "label": "CustomFieldId",
-              "type": "lookup",
-              "relation": {
-                "table": "custom_fields",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "FieldValue",
-              "label": "FieldValue",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
-          "createFields": [
-            {
-              "name": "ContactId",
-              "label": "ContactId",
-              "type": "lookup",
-              "relation": {
-                "table": "contacts",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "CustomFieldId",
-              "label": "CustomFieldId",
-              "type": "lookup",
-              "relation": {
-                "table": "custom_fields",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "FieldValue",
-              "label": "FieldValue",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "ContactId",
-            "CustomFieldId",
-            "FieldValue",
-            "CreationDate",
-            "UpdateDate"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "ContactId",
-              "label": "ContactId"
-            },
-            {
-              "name": "CustomFieldId",
-              "label": "CustomFieldId"
-            },
-            {
-              "name": "FieldValue",
-              "label": "FieldValue"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            },
-            {
-              "name": "UpdateDate",
-              "label": "UpdateDate"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaListUl"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": false
-        },
-        {
-          "table": "custom_fields",
-          "label": "custom_fields",
-          "Identifier": "Id",
-          "description": "Customizable contact fields",
-          "displayFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId"
-            },
-            {
-              "name": "FieldName",
-              "label": "FieldName"
-            },
-            {
-              "name": "FieldTypeId",
-              "label": "FieldTypeId"
-            },
-            {
-              "name": "IsRequired",
-              "label": "IsRequired"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            }
-          ],
-          "editFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "type": "lookup",
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "FieldName",
-              "label": "FieldName",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "FieldTypeId",
-              "label": "FieldTypeId",
-              "type": "lookup",
-              "relation": {
-                "table": "fieldtypes",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "IsRequired",
-              "label": "IsRequired",
-              "type": "checkbox",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
-          "createFields": [
-            {
-              "name": "TenantId",
-              "label": "TenantId",
-              "type": "lookup",
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "FieldName",
-              "label": "FieldName",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "FieldTypeId",
-              "label": "FieldTypeId",
-              "type": "lookup",
-              "relation": {
-                "table": "fieldtypes",
-                "valueField": "Id",
-                "labelFields": [
-                  "Id"
-                ]
-              }
-            },
-            {
-              "name": "IsRequired",
-              "label": "IsRequired",
-              "type": "chips",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "TenantId",
-            "FieldName",
-            "FieldTypeId",
-            "IsRequired",
-            "CreationDate",
-            "UpdateDate"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "TenantId",
-              "label": "TenantId"
-            },
-            {
-              "name": "FieldName",
-              "label": "FieldName"
-            },
-            {
-              "name": "FieldTypeId",
-              "label": "FieldTypeId"
-            },
-            {
-              "name": "IsRequired",
-              "label": "IsRequired"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            },
-            {
-              "name": "UpdateDate",
-              "label": "UpdateDate"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaSlidersH"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": true
-        },
-        {
-          "table": "fieldtypes",
-          "label": "fieldtypes",
-          "Identifier": "Id",
-          "description": "Types of custom fields",
-          "displayFields": [
-            {
-              "name": "Name",
-              "label": "Name"
-            },
-            {
-              "name": "Description",
-              "label": "Description"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            }
-          ],
-          "editFields": [
-            {
-              "name": "Name",
-              "label": "Name",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Description",
-              "label": "Description",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
-          "createFields": [
-            {
-              "name": "Name",
-              "label": "Name",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Description",
-              "label": "Description",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "Id",
-            "Name",
-            "Description",
-            "CreationDate",
-            "UpdateDate"
-          ],
-          "viewFields": [
-            {
-              "name": "Id",
-              "label": "Id"
-            },
-            {
-              "name": "Name",
-              "label": "Name"
-            },
-            {
-              "name": "Description",
-              "label": "Description"
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate"
-            },
-            {
-              "name": "UpdateDate",
-              "label": "UpdateDate"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaThList"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "Id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": true
         }
       ]
     },
@@ -2714,7 +3631,7 @@
           "table": "tenants",
           "label": "tenants",
           "Identifier": "Id",
-          "description": "Tenant organizations",
+          "description": "Tenants",
           "displayFields": [
             {
               "name": "Name",
@@ -2729,43 +3646,91 @@
               "label": "CreatedAt"
             }
           ],
-          "editFields": [
-            {
-              "name": "Name",
-              "label": "Name",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "Domain",
-              "label": "Domain",
-              "type": "text",
-              "relation": null
-            },
-            {
-              "name": "CreatedAt",
-              "label": "CreatedAt",
-              "type": "datetime",
-              "relation": null
-            }
-          ],
           "createFields": [
             {
               "name": "Name",
               "label": "Name",
+              "placeholder": "Enter Name",
               "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "Domain",
               "label": "Domain",
+              "placeholder": "Enter Domain",
               "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "CreatedAt",
               "label": "CreatedAt",
+              "placeholder": "Enter CreatedAt",
               "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Domain",
+              "label": "Domain",
+              "placeholder": "Enter Domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "NULL",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "placeholder": "Enter CreatedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "current_timestamp()",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             }
           ],
