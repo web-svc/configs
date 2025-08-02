@@ -267,7 +267,7 @@
   "groups": [
     {
       "name": "Employee Management",
-      "description": "Manage employee records and profiles",
+      "description": "Manage employee-related data",
       "ui": {
         "icon": "MdPeople"
       },
@@ -382,7 +382,7 @@
               "name": "is_active",
               "label": "is_active",
               "placeholder": "Enter is_active",
-              "type": "toggle",
+              "type": "chips",
               "required": false,
               "options": [
                 {
@@ -602,7 +602,7 @@
               "name": "is_active",
               "label": "is_active",
               "placeholder": "Enter is_active",
-              "type": "checkbox",
+              "type": "dropdown",
               "required": false,
               "options": [
                 {
@@ -901,7 +901,7 @@
     },
     {
       "name": "Tenant Management",
-      "description": "Manage tenant data and domains",
+      "description": "Manage tenant organizations and domains",
       "ui": {
         "icon": "MdBusiness"
       },
@@ -910,7 +910,7 @@
           "table": "tenants",
           "label": "tenants",
           "Identifier": "Id",
-          "description": "Tenant Records",
+          "description": "Tenants",
           "displayFields": [
             {
               "name": "Name",
