@@ -1,6 +1,6 @@
 {
   "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
-  "description": "Employee management database",
+  "description": "Database for managing employee profile information.",
   "dashboard": [
     {
       "viewType": "summary",
@@ -177,8 +177,8 @@
   ],
   "groups": [
     {
-      "name": "HR",
-      "description": "Employee profiles and related HR data",
+      "name": "HR Management",
+      "description": "Handles employee records and personal details",
       "ui": {
         "icon": "MdPeople"
       },
@@ -250,145 +250,219 @@
             {
               "name": "first_name",
               "label": "first_name",
+              "placeholder": "Enter first_name",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "last_name",
               "label": "last_name",
+              "placeholder": "Enter last_name",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "email",
               "label": "email",
+              "placeholder": "Enter email",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "is_active",
               "label": "is_active",
-              "type": "checkbox",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "placeholder": "Enter is_active",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
               "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
               "relation": null
             },
             {
               "name": "age",
               "label": "age",
+              "placeholder": "Enter age",
               "type": "number",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": 0,
+                "max": 255
+              },
               "relation": null
             },
             {
               "name": "salary",
               "label": "salary",
+              "placeholder": "Enter salary",
               "type": "number",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "joining_date",
               "label": "joining_date",
+              "placeholder": "Enter joining_date",
               "type": "date",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "last_login",
               "label": "last_login",
+              "placeholder": "Enter last_login",
               "type": "datetime",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "work_hours",
               "label": "work_hours",
+              "placeholder": "Enter work_hours",
               "type": "time",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "bio",
               "label": "bio",
+              "placeholder": "Enter bio",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "profile_image",
               "label": "profile_image",
-              "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "placeholder": "Enter profile_image",
+              "type": "file",
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "location",
               "label": "location",
+              "placeholder": "Enter location",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "status",
               "label": "status",
-              "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": [
-                "Active",
-                "Inactive",
-                "On Leave"
+              "placeholder": "Enter status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Active",
+                  "Value": "Active"
+                },
+                {
+                  "Label": "Inactive",
+                  "Value": "Inactive"
+                },
+                {
+                  "Label": "On Leave",
+                  "Value": "On Leave"
+                }
               ],
               "defaultvalue": "Active",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "preferences",
               "label": "preferences",
-              "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "placeholder": "Enter preferences",
+              "type": "json",
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             }
           ],
@@ -396,145 +470,219 @@
             {
               "name": "first_name",
               "label": "first_name",
+              "placeholder": "Enter first_name",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "last_name",
               "label": "last_name",
+              "placeholder": "Enter last_name",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "email",
               "label": "email",
+              "placeholder": "Enter email",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "is_active",
               "label": "is_active",
-              "type": "toggle",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "placeholder": "Enter is_active",
+              "type": "checkbox",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
               "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
               "relation": null
             },
             {
               "name": "age",
               "label": "age",
+              "placeholder": "Enter age",
               "type": "number",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": 0,
+                "max": 255
+              },
               "relation": null
             },
             {
               "name": "salary",
               "label": "salary",
+              "placeholder": "Enter salary",
               "type": "number",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "joining_date",
               "label": "joining_date",
+              "placeholder": "Enter joining_date",
               "type": "date",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "last_login",
               "label": "last_login",
+              "placeholder": "Enter last_login",
               "type": "datetime",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "work_hours",
               "label": "work_hours",
+              "placeholder": "Enter work_hours",
               "type": "time",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "bio",
               "label": "bio",
+              "placeholder": "Enter bio",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "profile_image",
               "label": "profile_image",
-              "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "placeholder": "Enter profile_image",
+              "type": "file",
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "location",
               "label": "location",
+              "placeholder": "Enter location",
               "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "status",
               "label": "status",
-              "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": [
-                "Active",
-                "Inactive",
-                "On Leave"
+              "placeholder": "Enter status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Active",
+                  "Value": "Active"
+                },
+                {
+                  "Label": "Inactive",
+                  "Value": "Inactive"
+                },
+                {
+                  "Label": "On Leave",
+                  "Value": "On Leave"
+                }
               ],
               "defaultvalue": "Active",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             },
             {
               "name": "preferences",
               "label": "preferences",
-              "type": "text",
-              "ismandatory": false,
-              "isuuiddefault": false,
-              "enumvalues": null,
+              "placeholder": "Enter preferences",
+              "type": "json",
+              "required": false,
+              "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
               "relation": null
             }
           ],
