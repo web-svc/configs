@@ -1,6 +1,6 @@
 {
   "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
-  "description": "Customer engagement and campaign management database",
+  "description": "Database for managing marketing campaigns, contacts, and audience targeting.",
   "dashboard": [
     {
       "viewType": "summary",
@@ -942,8 +942,8 @@
   ],
   "groups": [
     {
-      "name": "Campaigns",
-      "description": "Manage marketing campaigns, including jobs and audiences",
+      "name": "Campaign Management",
+      "description": "Manage campaigns, jobs, and recipients",
       "ui": {
         "icon": "MdCampaign"
       },
@@ -2334,7 +2334,16 @@
             }
           ],
           "isSearchRealtime": false
-        },
+        }
+      ]
+    },
+    {
+      "name": "Audience Management",
+      "description": "Organize audiences and their members",
+      "ui": {
+        "icon": "MdGroup"
+      },
+      "entities": [
         {
           "table": "audiences",
           "label": "audiences",
@@ -2540,7 +2549,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaBullseye"
+            "icon": "FaUserFriends"
           },
           "accessRoles": [
             "root"
@@ -2558,10 +2567,20 @@
           "table": "audience_members",
           "label": "audience_members",
           "Identifier": "Id",
-          "description": "Audience Memberships",
+          "description": "Audience Members",
           "features": {
             "bulkActions": {
               "actions": [
+                {
+                  "type": "upload",
+                  "label": "Upload audience_members",
+                  "description": "Upload CSV to add audience_members entries in bulk",
+                  "endpoint": "/bulk/audience_members",
+                  "MaxSize": "10MB",
+                  "AllowedExtensions": [
+                    ".csv"
+                  ]
+                },
                 {
                   "type": "filterBulkAdd",
                   "label": "Add by Filter",
@@ -2829,7 +2848,7 @@
       ]
     },
     {
-      "name": "Contacts",
+      "name": "Contact Management",
       "description": "Manage contacts and their custom fields",
       "ui": {
         "icon": "MdContacts"
@@ -2852,125 +2871,6 @@
                   "AllowedExtensions": [
                     ".csv"
                   ]
-                },
-                {
-                  "type": "filterBulkAdd",
-                  "label": "Add by Filter",
-                  "description": "Add entries to contacts using filters",
-                  "filterEndpoint": "/contacts",
-                  "endpoint": "/bulk/contacts",
-                  "filterableFields": [
-                    {
-                      "name": "Id",
-                      "label": "Id",
-                      "type": "number",
-                      "filter": {
-                        "operators": [
-                          "eq",
-                          "ge",
-                          "le",
-                          "between"
-                        ],
-                        "defaultOperator": "between"
-                      }
-                    },
-                    {
-                      "name": "TenantId",
-                      "label": "Tenantid",
-                      "type": "relation",
-                      "filter": {
-                        "operators": [
-                          "eq",
-                          "ge",
-                          "le",
-                          "between"
-                        ],
-                        "defaultOperator": "between"
-                      },
-                      "relatedEntity": "tenants"
-                    },
-                    {
-                      "name": "Name",
-                      "label": "Name",
-                      "type": "text",
-                      "filter": {
-                        "operators": [
-                          "eq",
-                          "contains",
-                          "startsWith",
-                          "endsWith"
-                        ],
-                        "defaultOperator": "eq"
-                      }
-                    },
-                    {
-                      "name": "Email",
-                      "label": "Email",
-                      "type": "text",
-                      "filter": {
-                        "operators": [
-                          "eq",
-                          "contains",
-                          "startsWith",
-                          "endsWith"
-                        ],
-                        "defaultOperator": "eq"
-                      }
-                    },
-                    {
-                      "name": "Phone",
-                      "label": "Phone",
-                      "type": "text",
-                      "filter": {
-                        "operators": [
-                          "eq",
-                          "contains",
-                          "startsWith",
-                          "endsWith"
-                        ],
-                        "defaultOperator": "eq"
-                      }
-                    },
-                    {
-                      "name": "WhatsApp",
-                      "label": "Whatsapp",
-                      "type": "text",
-                      "filter": {
-                        "operators": [
-                          "eq",
-                          "contains",
-                          "startsWith",
-                          "endsWith"
-                        ],
-                        "defaultOperator": "eq"
-                      }
-                    },
-                    {
-                      "name": "CreationDate",
-                      "label": "Creationdate",
-                      "type": "datetime",
-                      "filter": {
-                        "operators": [
-                          "eq",
-                          "before",
-                          "after",
-                          "between"
-                        ],
-                        "defaultOperator": "between"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "type": "apiSource",
-                  "label": "Pull from External API",
-                  "description": "Fetch contacts from external system",
-                  "endpoint": "/bulk/contacts",
-                  "sourceUrl": "https://your-api/contacts",
-                  "auth": {
-                    "type": "bearer",
-                    "token": "{{env.API_SOURCE_TOKEN}}"
-                  }
                 }
               ]
             }
@@ -3352,7 +3252,7 @@
               "name": "IsRequired",
               "label": "IsRequired",
               "placeholder": "Enter IsRequired",
-              "type": "dropdown",
+              "type": "button-group",
               "required": false,
               "options": [
                 {
@@ -3533,7 +3433,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaClipboardList"
+            "icon": "FaTags"
           },
           "accessRoles": [
             "root"
@@ -3933,7 +3833,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaListAlt"
+            "icon": "FaShapes"
           },
           "accessRoles": [
             "root"
