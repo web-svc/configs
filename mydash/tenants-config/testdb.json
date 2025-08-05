@@ -1,6 +1,6 @@
 {
   "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
-  "description": "Database for managing employee profiles and tenant information",
+  "description": "Database for managing employees and tenant information",
   "dashboard": [
     {
       "viewType": "summary",
@@ -267,7 +267,7 @@
   "groups": [
     {
       "name": "Employee Management",
-      "description": "Manage employee-related data",
+      "description": "Manage employee profiles and details",
       "ui": {
         "icon": "MdPeople"
       },
@@ -277,6 +277,7 @@
           "label": "employee_profiles",
           "Identifier": "employee_id",
           "description": "Employee Profiles",
+          "features": {},
           "displayFields": [
             {
               "name": "first_name",
@@ -382,7 +383,7 @@
               "name": "is_active",
               "label": "is_active",
               "placeholder": "Enter is_active",
-              "type": "chips",
+              "type": "toggle",
               "required": false,
               "options": [
                 {
@@ -602,7 +603,7 @@
               "name": "is_active",
               "label": "is_active",
               "placeholder": "Enter is_active",
-              "type": "dropdown",
+              "type": "button-group",
               "required": false,
               "options": [
                 {
@@ -883,7 +884,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaUserTie"
+            "icon": "FaUser"
           },
           "accessRoles": [
             "root"
@@ -901,7 +902,7 @@
     },
     {
       "name": "Tenant Management",
-      "description": "Manage tenant organizations and domains",
+      "description": "Manage multi-tenant system data",
       "ui": {
         "icon": "MdBusiness"
       },
@@ -911,6 +912,94 @@
           "label": "tenants",
           "Identifier": "Id",
           "description": "Tenants",
+          "features": {
+            "bulkActions": {
+              "actions": [
+                {
+                  "type": "upload",
+                  "label": "Upload tenants",
+                  "description": "Upload CSV to add tenants entries in bulk",
+                  "endpoint": "/bulk/tenants"
+                },
+                {
+                  "type": "filterBulkAdd",
+                  "label": "Add by Filter",
+                  "description": "Add entries to tenants using filters",
+                  "filterEndpoint": "/tenants",
+                  "endpoint": "/bulk/tenants",
+                  "filterableFields": [
+                    {
+                      "name": "Id",
+                      "label": "Id",
+                      "type": "number",
+                      "filter": {
+                        "operators": [
+                          "eq",
+                          "ge",
+                          "le",
+                          "between"
+                        ],
+                        "defaultOperator": "between"
+                      }
+                    },
+                    {
+                      "name": "Name",
+                      "label": "Name",
+                      "type": "text",
+                      "filter": {
+                        "operators": [
+                          "eq",
+                          "contains",
+                          "startsWith",
+                          "endsWith"
+                        ],
+                        "defaultOperator": "eq"
+                      }
+                    },
+                    {
+                      "name": "Domain",
+                      "label": "Domain",
+                      "type": "text",
+                      "filter": {
+                        "operators": [
+                          "eq",
+                          "contains",
+                          "startsWith",
+                          "endsWith"
+                        ],
+                        "defaultOperator": "eq"
+                      }
+                    },
+                    {
+                      "name": "Description",
+                      "label": "Description",
+                      "type": "text",
+                      "filter": {
+                        "operators": [
+                          "eq",
+                          "contains",
+                          "startsWith",
+                          "endsWith"
+                        ],
+                        "defaultOperator": "eq"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "apiSource",
+                  "label": "Pull from External API",
+                  "description": "Fetch tenants from external system",
+                  "endpoint": "/bulk/tenants",
+                  "sourceUrl": "https://your-api/tenants",
+                  "auth": {
+                    "type": "bearer",
+                    "token": "{{env.API_SOURCE_TOKEN}}"
+                  }
+                }
+              ]
+            }
+          },
           "displayFields": [
             {
               "name": "Name",
