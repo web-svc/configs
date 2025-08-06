@@ -3290,7 +3290,7 @@
               "relation": {
                 "table": "audiences",
                 "valueField": "Id",
-                "labelFields": "audiences.Id"
+                "labelFields": "audiences.name"
               }
             },
             {
@@ -3299,7 +3299,7 @@
               "relation": {
                 "table": "contacts",
                 "valueField": "Id",
-                "labelFields": "contacts.Id"
+                "labelFields": "contacts.name"
               }
             },
             {
