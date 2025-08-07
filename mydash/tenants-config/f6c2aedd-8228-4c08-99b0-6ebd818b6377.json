@@ -2974,7 +2974,7 @@
               "relation": {
                 "table": "tenants",
                 "valueField": "Id",
-                "labelFields": "tenants.Id"
+                "labelFields": "tenants.name"
               }
             },
             {
