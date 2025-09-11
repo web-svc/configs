@@ -4055,7 +4055,7 @@
         },
         {
           "table": "tenants",
-          "label": "tenants",
+          "label": "Tenants",
           "Identifier": "Id",
           "description": "Tenant organizations",
           "features": {},
@@ -4086,7 +4086,7 @@
               "name": "TenantId",
               "label": "TenantId",
               "placeholder": "Enter TenantId",
-              "type": "text",
+              "type": "uuid",
               "required": true,
               "options": [],
               "defaultvalue": "",
