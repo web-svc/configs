@@ -2728,7 +2728,7 @@
                 "table": "audiences",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id-name"
+                  "name"
                 ],
                 "limit": 5
               }
@@ -2746,7 +2746,7 @@
                 "table": "contacts",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id-name"
+                  "name"
                 ],
                 "limit": 5
               }
