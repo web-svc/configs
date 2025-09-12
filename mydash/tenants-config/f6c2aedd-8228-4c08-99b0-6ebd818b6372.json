@@ -2728,7 +2728,7 @@
                 "table": "audiences",
                 "valueField": "Id",
                 "labelFields": [
-                  "name"
+                  "Id"
                 ],
                 "limit": 5
               }
@@ -2746,7 +2746,7 @@
                 "table": "contacts",
                 "valueField": "Id",
                 "labelFields": [
-                  "name"
+                  "Id"
                 ],
                 "limit": 5
               }
@@ -3022,7 +3022,7 @@
               "relation": {
                 "table": "tenants",
                 "valueField": "Id",
-                "labelFields": "tenants.Id"
+                "labelFields": "tenants.name"
               }
             },
             {
@@ -3043,11 +3043,6 @@
             {
               "name": "WhatsApp",
               "label": "WhatsApp",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
               "relation": null
             }
           ],
@@ -3120,20 +3115,6 @@
               "required": false,
               "options": [],
               "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
