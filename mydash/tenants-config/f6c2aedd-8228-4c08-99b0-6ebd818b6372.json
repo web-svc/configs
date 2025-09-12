@@ -1015,11 +1015,6 @@
               "name": "Status",
               "label": "Status",
               "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "relation": null
             }
           ],
           "createFields": [
@@ -1041,7 +1036,7 @@
               "name": "TenantId",
               "label": "TenantId",
               "placeholder": "Enter TenantId",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -1249,20 +1244,6 @@
                 }
               ],
               "defaultvalue": "\u0027Draft\u0027",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -1289,7 +1270,7 @@
               "name": "TenantId",
               "label": "TenantId",
               "placeholder": "Enter TenantId",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -1497,20 +1478,6 @@
                 }
               ],
               "defaultvalue": "\u0027Draft\u0027",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -1680,11 +1647,6 @@
               "name": "Reason",
               "label": "Reason",
               "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "relation": null
             }
           ],
           "createFields": [
@@ -1692,7 +1654,7 @@
               "name": "CampaignId",
               "label": "CampaignId",
               "placeholder": "Enter CampaignId",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -1801,20 +1763,6 @@
               "required": false,
               "options": [],
               "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -1827,7 +1775,7 @@
               "name": "CampaignId",
               "label": "CampaignId",
               "placeholder": "Enter CampaignId",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -1936,20 +1884,6 @@
               "required": false,
               "options": [],
               "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -2083,11 +2017,6 @@
               "name": "Reason",
               "label": "Reason",
               "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "relation": null
             }
           ],
           "createFields": [
@@ -2095,7 +2024,7 @@
               "name": "JobId",
               "label": "JobId",
               "placeholder": "Enter JobId",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -2176,20 +2105,6 @@
               "required": false,
               "options": [],
               "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -2202,7 +2117,7 @@
               "name": "JobId",
               "label": "JobId",
               "placeholder": "Enter JobId",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -2283,20 +2198,6 @@
               "required": false,
               "options": [],
               "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
