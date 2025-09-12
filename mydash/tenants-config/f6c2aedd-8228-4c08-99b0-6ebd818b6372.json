@@ -4018,11 +4018,6 @@
               "name": "Domain",
               "label": "Domain",
               "relation": null
-            },
-            {
-              "name": "CreatedAt",
-              "label": "CreatedAt",
-              "relation": null
             }
           ],
           "createFields": [
@@ -4033,7 +4028,6 @@
               "type": "uuid",
               "required": true,
               "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -4047,7 +4041,6 @@
               "type": "text",
               "required": true,
               "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -4061,21 +4054,6 @@
               "type": "text",
               "required": false,
               "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreatedAt",
-              "label": "CreatedAt",
-              "placeholder": "Enter CreatedAt",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -4091,7 +4069,6 @@
               "type": "text",
               "required": true,
               "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -4105,7 +4082,6 @@
               "type": "text",
               "required": true,
               "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
@@ -4119,21 +4095,6 @@
               "type": "text",
               "required": false,
               "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreatedAt",
-              "label": "CreatedAt",
-              "placeholder": "Enter CreatedAt",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
