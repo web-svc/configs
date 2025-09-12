@@ -2696,7 +2696,7 @@
           "displayFields": [
             {
               "name": "AudienceId",
-              "label": "AudienceId",
+              "label": "Audience Teams",
               "relation": {
                 "table": "audiences",
                 "valueField": "Id",
@@ -2705,7 +2705,7 @@
             },
             {
               "name": "ContactId",
-              "label": "ContactId",
+              "label": "Team Members",
               "relation": {
                 "table": "contacts",
                 "valueField": "Id",
