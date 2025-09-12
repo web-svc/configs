@@ -2323,10 +2323,9 @@
               "name": "TenantId",
               "label": "TenantId",
               "placeholder": "Enter TenantId",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
-              "defaultvalue": "",
               "constraints": null,
               "relation": {
                 "table": "tenants",
@@ -2344,7 +2343,6 @@
               "type": "text",
               "required": false,
               "options": [],
-              "defaultvalue": "NULL",
               "constraints": {
                 "min": null,
                 "max": null
@@ -2358,7 +2356,6 @@
               "type": "text",
               "required": false,
               "options": [],
-              "defaultvalue": "NULL",
               "constraints": {
                 "min": null,
                 "max": null
@@ -2371,10 +2368,9 @@
               "name": "TenantId",
               "label": "TenantId",
               "placeholder": "Enter TenantId",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
-              "defaultvalue": "",
               "constraints": null,
               "relation": {
                 "table": "tenants",
@@ -2392,7 +2388,6 @@
               "type": "text",
               "required": false,
               "options": [],
-              "defaultvalue": "NULL",
               "constraints": {
                 "min": null,
                 "max": null
@@ -2406,21 +2401,6 @@
               "type": "text",
               "required": false,
               "options": [],
-              "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
