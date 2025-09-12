@@ -1948,17 +1948,17 @@
           "permissions": {
             "allowCreate": {
               "accessRoles": [
-                "root"
+                ""
               ]
             },
             "allowEdit": {
               "accessRoles": [
-                "root"
+                ""
               ]
             },
             "allowDelete": {
               "accessRoles": [
-                "root"
+                ""
               ]
             }
           },
@@ -2252,17 +2252,17 @@
           "permissions": {
             "allowCreate": {
               "accessRoles": [
-                "root"
+                ""
               ]
             },
             "allowEdit": {
               "accessRoles": [
-                "root"
+                ""
               ]
             },
             "allowDelete": {
               "accessRoles": [
-                "root"
+                ""
               ]
             }
           },
