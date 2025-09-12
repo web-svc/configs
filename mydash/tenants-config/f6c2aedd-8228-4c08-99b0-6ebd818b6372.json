@@ -2415,11 +2415,6 @@
               "name": "Description",
               "label": "Description",
               "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "relation": null
             }
           ],
           "createFields": [
@@ -2463,20 +2458,6 @@
               "required": false,
               "options": [],
               "defaultvalue": "NULL",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
