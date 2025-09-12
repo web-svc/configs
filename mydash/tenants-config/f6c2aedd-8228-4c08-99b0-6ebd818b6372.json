@@ -2062,11 +2062,11 @@
             },
             {
               "name": "ContactId",
-              "label": "ContactId",
+              "label": "Members",
               "relation": {
                 "table": "contacts",
                 "valueField": "Id",
-                "labelFields": "contacts.Id"
+                "labelFields": "contacts.name"
               }
             },
             {
