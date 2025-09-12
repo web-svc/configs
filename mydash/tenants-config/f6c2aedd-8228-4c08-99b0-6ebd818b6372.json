@@ -4006,17 +4006,17 @@
           "displayFields": [
             {
               "name": "TenantId",
-              "label": "TenantId",
+              "label": "Organization Id",
               "relation": null
             },
             {
               "name": "Name",
-              "label": "Name",
+              "label": "Organization Name",
               "relation": null
             },
             {
               "name": "Domain",
-              "label": "Domain",
+              "label": "Domain/Website",
               "relation": null
             }
           ],
