@@ -2717,7 +2717,7 @@
           "createFields": [
             {
               "name": "AudienceId",
-              "label": "AudienceId",
+              "label": "Audience Teams",
               "placeholder": "Enter AudienceId",
               "type": "lookup",
               "required": true,
@@ -2728,14 +2728,14 @@
                 "table": "audiences",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Id-name"
                 ],
                 "limit": 5
               }
             },
             {
               "name": "ContactId",
-              "label": "ContactId",
+              "label": "Team Members",
               "placeholder": "Enter ContactId",
               "type": "lookup",
               "required": true,
@@ -2746,7 +2746,7 @@
                 "table": "contacts",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Id-name"
                 ],
                 "limit": 5
               }
