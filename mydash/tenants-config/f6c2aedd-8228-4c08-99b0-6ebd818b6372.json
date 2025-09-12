@@ -2700,7 +2700,7 @@
               "relation": {
                 "table": "audiences",
                 "valueField": "Id",
-                "labelFields": "audiences.Id"
+                "labelFields": "audiences.name"
               }
             },
             {
@@ -2709,14 +2709,10 @@
               "relation": {
                 "table": "contacts",
                 "valueField": "Id",
-                "labelFields": "contacts.Id"
+                "labelFields": "contacts.name"
               }
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "relation": null
             }
+            
           ],
           "createFields": [
             {
@@ -2754,20 +2750,6 @@
                 ],
                 "limit": 5
               }
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
             }
           ],
           "editFields": [
