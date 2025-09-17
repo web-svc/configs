@@ -3857,7 +3857,7 @@
         },
         {
           "table": "fieldtypes",
-          "label": "fieldtypes",
+          "label": "Field Types",
           "Identifier": "Id",
           "description": "Field type definitions",
           "features": {},
@@ -3871,18 +3871,13 @@
               "name": "Description",
               "label": "Description",
               "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "relation": null
             }
           ],
           "createFields": [
             {
               "name": "Name",
               "label": "Name",
-              "placeholder": "Enter Name",
+              "placeholder": "Name of the field (e.g., “Email”, “Country”)",
               "type": "text",
               "required": true,
               "options": [],
@@ -3896,23 +3891,9 @@
             {
               "name": "Description",
               "label": "Description",
-              "placeholder": "Enter Description",
+              "placeholder": "Short description about what the field stores",
               "type": "text",
               "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
               "options": [],
               "defaultvalue": "",
               "constraints": {
@@ -3950,20 +3931,6 @@
                 "max": null
               },
               "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
             }
           ],
           "searchFields": [
@@ -3980,19 +3947,19 @@
             },
             {
               "name": "Name",
-              "label": "Name"
+              "label": "Field Name"
             },
             {
               "name": "Description",
-              "label": "Description"
+              "label": "Field Description"
             },
             {
               "name": "CreationDate",
-              "label": "CreationDate"
+              "label": "Date Created"
             },
             {
               "name": "UpdateDate",
-              "label": "UpdateDate"
+              "label": "Date Updated"
             }
           ],
           "permissions": {
@@ -4137,7 +4104,7 @@
               "name": "Domain",
               "label": "Website Url",
               "placeholder": "Enter Website Url",
-              "type": "text",
+              "type": "url",
               "required": false,
               "options": [],
               "defaultvalue": "",
