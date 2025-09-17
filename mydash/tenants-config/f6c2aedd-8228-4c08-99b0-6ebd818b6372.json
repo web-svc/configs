@@ -3877,7 +3877,7 @@
             {
               "name": "Name",
               "label": "Name",
-              "placeholder": "Name of the field (e.g., “Email”, “Country”)",
+              "placeholder": "field ttype (e.g., “text”, “dropdown”)",
               "type": "text",
               "required": true,
               "options": [],
@@ -3891,7 +3891,7 @@
             {
               "name": "Description",
               "label": "Description",
-              "placeholder": "Short description about what the field stores",
+              "placeholder": "Short description of the type",
               "type": "text",
               "required": false,
               "options": [],
@@ -3947,11 +3947,11 @@
             },
             {
               "name": "Name",
-              "label": "Field Name"
+              "label": "Name"
             },
             {
               "name": "Description",
-              "label": "Field Description"
+              "label": "Description"
             },
             {
               "name": "CreationDate",
