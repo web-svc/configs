@@ -3589,6 +3589,11 @@
               "name": "IsRequired",
               "label": "Mandatory",
               "relation": null
+            },
+            {
+              "name": "DefaultValue",
+              "label": "Default Value",
+              "relation": null
             }
           ],
           "createFields": [
@@ -3662,6 +3667,20 @@
               "constraints": {
                 "min": -128,
                 "max": 127
+              },
+              "relation": null
+            },
+            {
+              "name": "DefaultValue",
+              "label": "Default Value",
+              "placeholder": "Enter default value e.g for dropdown Male|Fale|Other",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
               },
               "relation": null
             }
@@ -3739,6 +3758,20 @@
                 "max": 127
               },
               "relation": null
+            },
+            {
+              "name": "DefaultValue",
+              "label": "Default Value",
+              "placeholder": "Enter default value e.g for dropdown Male|Fale|Other",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
             }
           ],
           "searchFields": [
@@ -3770,6 +3803,10 @@
             {
               "name": "IsRequired",
               "label": "IsRequired"
+            },
+            {
+              "name": "DefaultValue",
+              "label": "Default Value"
             },
             {
               "name": "CreationDate",
