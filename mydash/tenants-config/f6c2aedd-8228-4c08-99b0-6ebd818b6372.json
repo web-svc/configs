@@ -4060,7 +4060,7 @@
               "name": "Domain",
               "label": "Website Url",
               "placeholder": "Enter Domain",
-              "type": "text",
+              "type": "url",
               "required": false,
               "options": [],
               "defaultvalue": "",
