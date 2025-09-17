@@ -4039,7 +4039,7 @@
       "entities": [
         {
           "table": "tenants",
-          "label": "tenants",
+          "label": "Organizations",
           "Identifier": "Id",
           "description": "Tenant organizations",
           "features": {},
