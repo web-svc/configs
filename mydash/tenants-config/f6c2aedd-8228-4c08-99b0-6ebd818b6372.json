@@ -4107,20 +4107,6 @@
                 "max": null
               },
               "relation": null
-            },
-            {
-              "name": "CreatedAt",
-              "label": "CreatedAt",
-              "placeholder": "Enter CreatedAt",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
             }
           ],
           "editFields": [
@@ -4165,21 +4151,7 @@
                 "max": null
               },
               "relation": null
-            },
-            {
-              "name": "CreatedAt",
-              "label": "CreatedAt",
-              "placeholder": "Enter CreatedAt",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
+            }            
           ],
           "searchFields": [
             "Id",
