@@ -3566,7 +3566,7 @@
         },
         {
           "table": "custom_fields",
-          "label": "custom_fields",
+          "label": "Custom Fields",
           "Identifier": "Id",
           "description": "Contact custom fields",
           "features": {},
