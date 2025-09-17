@@ -3587,12 +3587,7 @@
             },
             {
               "name": "IsRequired",
-              "label": "IsRequired",
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
+              "label": "Mandatory",
               "relation": null
             }
           ],
@@ -3601,7 +3596,7 @@
               "name": "TenantId",
               "label": "TenantId",
               "placeholder": "Enter TenantId",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -3610,14 +3605,14 @@
                 "table": "tenants",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Id", "Name"
                 ],
                 "limit": 5
               }
             },
             {
               "name": "FieldName",
-              "label": "FieldName",
+              "label": "Field Name",
               "placeholder": "Enter FieldName",
               "type": "text",
               "required": false,
@@ -3631,9 +3626,9 @@
             },
             {
               "name": "FieldTypeId",
-              "label": "FieldTypeId",
-              "placeholder": "Enter FieldTypeId",
-              "type": "lookup",
+              "label": "Field Type",
+              "placeholder": "Enter Field Type",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -3642,16 +3637,16 @@
                 "table": "fieldtypes",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Name"
                 ],
                 "limit": 5
               }
             },
             {
               "name": "IsRequired",
-              "label": "IsRequired",
-              "placeholder": "Enter IsRequired",
-              "type": "segmented",
+              "label": "Mandatory",
+              "placeholder": "Choose Yes/ No",
+              "type": "dropdown",
               "required": false,
               "options": [
                 {
@@ -3669,28 +3664,14 @@
                 "max": 127
               },
               "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
             }
           ],
           "editFields": [
             {
               "name": "TenantId",
-              "label": "TenantId",
-              "placeholder": "Enter TenantId",
-              "type": "lookup",
+              "label": "Account Id",
+              "placeholder": "Choose Account Id",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -3699,15 +3680,15 @@
                 "table": "tenants",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Id","Name"
                 ],
                 "limit": 5
               }
             },
             {
               "name": "FieldName",
-              "label": "FieldName",
-              "placeholder": "Enter FieldName",
+              "label": "Field Name",
+              "placeholder": "Enter Field Name",
               "type": "text",
               "required": false,
               "options": [],
@@ -3720,9 +3701,9 @@
             },
             {
               "name": "FieldTypeId",
-              "label": "FieldTypeId",
-              "placeholder": "Enter FieldTypeId",
-              "type": "lookup",
+              "label": "Field Type",
+              "placeholder": "Enter Field Type",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -3731,15 +3712,15 @@
                 "table": "fieldtypes",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id"
+                  "Name"
                 ],
                 "limit": 5
               }
             },
             {
               "name": "IsRequired",
-              "label": "IsRequired",
-              "placeholder": "Enter IsRequired",
+              "label": "Mandatory",
+              "placeholder": "Choose yes or no",
               "type": "chips",
               "required": false,
               "options": [
@@ -3756,20 +3737,6 @@
               "constraints": {
                 "min": -128,
                 "max": 127
-              },
-              "relation": null
-            },
-            {
-              "name": "CreationDate",
-              "label": "CreationDate",
-              "placeholder": "Enter CreationDate",
-              "type": "datetime",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
               },
               "relation": null
             }
