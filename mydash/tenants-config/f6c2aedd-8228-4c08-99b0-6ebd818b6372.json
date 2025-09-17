@@ -3599,7 +3599,7 @@
           "createFields": [
             {
               "name": "TenantId",
-              "label": "TenantId",
+              "label": "Choose the Account",
               "placeholder": "Enter TenantId",
               "type": "select",
               "required": true,
@@ -3610,7 +3610,7 @@
                 "table": "tenants",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id", "Name"
+                  "Name"
                 ],
                 "limit": 5
               }
@@ -3688,7 +3688,7 @@
           "editFields": [
             {
               "name": "TenantId",
-              "label": "Account Id",
+              "label": "Choose Account Name",
               "placeholder": "Choose Account Id",
               "type": "select",
               "required": true,
@@ -3699,7 +3699,7 @@
                 "table": "tenants",
                 "valueField": "Id",
                 "labelFields": [
-                  "Id","Name"
+                  "Name"
                 ],
                 "limit": 5
               }
