@@ -3572,22 +3572,13 @@
           "features": {},
           "displayFields": [
             {
-              "name": "TenantId",
-              "label": "TenantId",
-              "relation": {
-                "table": "tenants",
-                "valueField": "Id",
-                "labelFields": "tenants.Id"
-              }
-            },
-            {
               "name": "FieldName",
-              "label": "FieldName",
+              "label": "Field Name",
               "relation": null
             },
             {
               "name": "FieldTypeId",
-              "label": "FieldTypeId",
+              "label": "Field Type",
               "relation": {
                 "table": "fieldtypes",
                 "valueField": "Id",
@@ -4061,7 +4052,7 @@
               "label": "Website Url",
               "placeholder": "Enter Domain",
               "type": "url",
-              "required": false,
+              "required": true,
               "options": [],
               "defaultvalue": "",
               "constraints": {
@@ -4105,7 +4096,7 @@
               "label": "Website Url",
               "placeholder": "Enter Website Url",
               "type": "url",
-              "required": false,
+              "required": true,
               "options": [],
               "defaultvalue": "",
               "constraints": {
