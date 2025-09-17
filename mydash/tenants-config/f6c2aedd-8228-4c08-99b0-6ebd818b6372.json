@@ -4046,30 +4046,25 @@
           "displayFields": [
             {
               "name": "TenantId",
-              "label": "TenantId",
+              "label": "Account Id",
               "relation": null
             },
             {
               "name": "Name",
-              "label": "Name",
+              "label": "Business Name",
               "relation": null
             },
             {
               "name": "Domain",
-              "label": "Domain",
-              "relation": null
-            },
-            {
-              "name": "CreatedAt",
-              "label": "CreatedAt",
+              "label": "Website Url",
               "relation": null
             }
           ],
           "createFields": [
             {
               "name": "TenantId",
-              "label": "TenantId",
-              "placeholder": "Enter TenantId",
+              "label": "Account Id",
+              "placeholder": "Enter Account Id",
               "type": "text",
               "required": true,
               "options": [],
@@ -4082,8 +4077,8 @@
             },
             {
               "name": "Name",
-              "label": "Name",
-              "placeholder": "Enter Name",
+              "label": "Business Name",
+              "placeholder": "Enter Business Name",
               "type": "text",
               "required": true,
               "options": [],
@@ -4096,7 +4091,7 @@
             },
             {
               "name": "Domain",
-              "label": "Domain",
+              "label": "Website Url",
               "placeholder": "Enter Domain",
               "type": "text",
               "required": false,
@@ -4112,8 +4107,8 @@
           "editFields": [
             {
               "name": "TenantId",
-              "label": "TenantId",
-              "placeholder": "Enter TenantId",
+              "label": "Account Id",
+              "placeholder": "Enter Account Id",
               "type": "text",
               "required": true,
               "options": [],
@@ -4126,8 +4121,8 @@
             },
             {
               "name": "Name",
-              "label": "Name",
-              "placeholder": "Enter Name",
+              "label": "Business Name",
+              "placeholder": "Enter Business Name",
               "type": "text",
               "required": true,
               "options": [],
@@ -4140,8 +4135,8 @@
             },
             {
               "name": "Domain",
-              "label": "Domain",
-              "placeholder": "Enter Domain",
+              "label": "Website Url",
+              "placeholder": "Enter Website Url",
               "type": "text",
               "required": false,
               "options": [],
@@ -4171,11 +4166,11 @@
             },
             {
               "name": "Name",
-              "label": "Name"
+              "label": "Business Name"
             },
             {
               "name": "Domain",
-              "label": "Domain"
+              "label": "Website Url"
             },
             {
               "name": "CreatedAt",
