@@ -3740,7 +3740,7 @@
               "name": "IsRequired",
               "label": "Mandatory",
               "placeholder": "Choose yes or no",
-              "type": "chips",
+              "type": "dropdown",
               "required": false,
               "options": [
                 {
