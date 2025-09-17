@@ -4174,7 +4174,7 @@
             },
             {
               "name": "CreatedAt",
-              "label": "CreatedAt"
+              "label": "Date Created"
             }
           ],
           "permissions": {
