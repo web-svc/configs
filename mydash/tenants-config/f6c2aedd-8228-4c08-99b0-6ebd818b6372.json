@@ -3914,9 +3914,9 @@
 						{
 							"name": "Domain",
 							"label": "Website Url",
-							"placeholder": "Enter Domain",
+							"placeholder": ""Enter Website Url e.g https://example.com",
 							"type": "url",
-							"required": true,
+							"required": false,
 							"options": [],
 							"defaultvalue": "",
 							"constraints": {
@@ -3958,9 +3958,9 @@
 						{
 							"name": "Domain",
 							"label": "Website Url",
-							"placeholder": "Enter Website Url",
+							"placeholder": "Enter Website Url e.g https://example.com",
 							"type": "url",
-							"required": true,
+							"required": false,
 							"options": [],
 							"defaultvalue": "",
 							"constraints": {
