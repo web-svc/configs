@@ -3363,7 +3363,7 @@
 					"createFields": [
 						{
 							"name": "ContactId",
-							"label": "ContactId",
+							"label": "Choose Contacts",
 							"placeholder": "Enter ContactId",
 							"type": "lookup",
 							"required": true,
@@ -3374,7 +3374,7 @@
 								"table": "contacts",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"Name", "Email"
 								],
 								"limit": 5
 							}
@@ -3383,7 +3383,7 @@
 							"name": "CustomFieldId",
 							"label": "CustomFieldId",
 							"placeholder": "Enter CustomFieldId",
-							"type": "lookup",
+							"type": "select",
 							"required": true,
 							"options": null,
 							"defaultvalue": "",
@@ -3392,7 +3392,7 @@
 								"table": "custom_fields",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"FieldName"
 								],
 								"limit": 5
 							}
@@ -3403,20 +3403,6 @@
 							"placeholder": "Enter FieldValue",
 							"type": "text",
 							"required": false,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate",
-							"placeholder": "Enter CreationDate",
-							"type": "datetime",
-							"required": true,
 							"options": [],
 							"defaultvalue": "",
 							"constraints": {
@@ -3429,7 +3415,7 @@
 					"editFields": [
 						{
 							"name": "ContactId",
-							"label": "ContactId",
+							"label": "Choose Contact",
 							"placeholder": "Enter ContactId",
 							"type": "lookup",
 							"required": true,
@@ -3440,7 +3426,7 @@
 								"table": "contacts",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"Name", "Email"
 								],
 								"limit": 5
 							}
@@ -3449,7 +3435,7 @@
 							"name": "CustomFieldId",
 							"label": "CustomFieldId",
 							"placeholder": "Enter CustomFieldId",
-							"type": "lookup",
+							"type": "select",
 							"required": true,
 							"options": null,
 							"defaultvalue": "",
@@ -3458,7 +3444,7 @@
 								"table": "custom_fields",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"FieldName"
 								],
 								"limit": 5
 							}
@@ -3469,20 +3455,6 @@
 							"placeholder": "Enter FieldValue",
 							"type": "text",
 							"required": false,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate",
-							"placeholder": "Enter CreationDate",
-							"type": "datetime",
-							"required": true,
 							"options": [],
 							"defaultvalue": "",
 							"constraints": {
