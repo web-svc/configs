@@ -7,7 +7,7 @@
         "x-Database": "xxxx-yyyy"
       }
     },
-    "connectionsDb": {
+    "unifiedmessagingDb": {
       "url": "https://crud.webapis.in/api/v1/crud/",
       "headers": {
         "x-Database": "zzzz-1111"
@@ -1602,8 +1602,13 @@
 						},
 						{
 							"name": "ChannelId",
-							"label": "ChannelId",
-							"relation": null
+							"label": "Choose Channels",
+							"relation": {
+				                "datasource": "unifiedmessagingDb",
+				                "table": "channels",
+				                "valueField": "Id",
+				                "labelFields": ["audiences.Name"]
+				              }
 						},
 						{
 							"name": "TemplateId",
