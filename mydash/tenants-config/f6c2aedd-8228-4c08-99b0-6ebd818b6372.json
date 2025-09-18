@@ -232,8 +232,8 @@
 					]
 				},
 				{
-					"label": "Recent 1 campaigns",
-					"display": "CampaignId,Name,Description,ScheduleConfig",
+					"label": "Recent Campaigns",
+					"display": "Name,Description,ScheduleType,ScheduledAt,Status",
 					"limit": 5,
 					"orderBy": [
 						{
@@ -242,7 +242,7 @@
 						}
 					],
 					"entity": "campaigns",
-					"filter": "Status eq '1'",
+					"filter": "Status in ('Scheduled','Running')",
 					"roles": [
 						"root",
 						"admin",
