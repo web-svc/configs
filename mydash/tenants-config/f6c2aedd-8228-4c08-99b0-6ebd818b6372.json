@@ -3342,7 +3342,7 @@
 							"relation": {
 								"table": "contacts",
 								"valueField": "Id",
-								"labelFields": "contacts.Name"
+								"labelFields": "contacts.Email"
 							}
 						},
 						{
