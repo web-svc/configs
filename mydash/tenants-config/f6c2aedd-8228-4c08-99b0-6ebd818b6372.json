@@ -68,7 +68,7 @@
 						"label": "campaign_job_recipients Summary",
 						"entity": "campaign_job_recipients",
 						"fields": [
-							"Queued"
+							"OutboundQueueId"
 						],
 						"groupBy": "Status",
 						"roles": [
