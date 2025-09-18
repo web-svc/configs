@@ -176,35 +176,7 @@
 			],
 			"recentRecords": [
 				{
-					"label": "Recent 1 audience_members",
-					"display": "",
-					"limit": 5,
-					"orderBy": [
-						{
-							"column": "CreationDate",
-							"direction": "desc"
-						}
-					],
-					"entity": "audience_members",
-					"filter": null,
-					"roles": [
-						"root",
-						"admin",
-						"hr"
-					],
-					"actions": [
-						{
-							"label": "View",
-							"action": "view",
-							"roles": [
-								"root",
-								"hr"
-							]
-						}
-					]
-				},
-				{
-					"label": "Recent 1 audiences",
+					"label": "Latest Audience Groups",
 					"display": "Name,Description",
 					"limit": 5,
 					"orderBy": [
@@ -232,36 +204,8 @@
 					]
 				},
 				{
-					"label": "Recent 1 campaign_job_recipients",
-					"display": "OutboundQueueId,Reason",
-					"limit": 5,
-					"orderBy": [
-						{
-							"column": "CreationDate",
-							"direction": "desc"
-						}
-					],
-					"entity": "campaign_job_recipients",
-					"filter": "Status eq '1'",
-					"roles": [
-						"root",
-						"admin",
-						"hr"
-					],
-					"actions": [
-						{
-							"label": "View",
-							"action": "view",
-							"roles": [
-								"root",
-								"hr"
-							]
-						}
-					]
-				},
-				{
-					"label": "Recent 1 campaign_jobs",
-					"display": "Reason",
+					"label": "Latest Campaign Runs",
+					"display": "CampaignId, Status, TotalPlanned, TotalSent, TotalFailed, Reason",
 					"limit": 5,
 					"orderBy": [
 						{
@@ -270,7 +214,7 @@
 						}
 					],
 					"entity": "campaign_jobs",
-					"filter": "Status eq '1'",
+					"filter": "Status in ('Pending','InProgress','Failed')",
 					"roles": [
 						"root",
 						"admin",
