@@ -3914,7 +3914,7 @@
 						{
 							"name": "Domain",
 							"label": "Website Url",
-							"placeholder": ""Enter Website Url e.g https://example.com",
+							"placeholder": "Enter Website Url e.g https://example.com",
 							"type": "url",
 							"required": false,
 							"options": [],
