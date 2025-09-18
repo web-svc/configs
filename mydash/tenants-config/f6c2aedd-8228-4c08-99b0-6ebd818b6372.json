@@ -3331,7 +3331,7 @@
 				},
 				{
 					"table": "contact_field_values",
-					"label": "contact_field_values",
+					"label": "Contacts Additional Info",
 					"Identifier": "Id",
 					"description": "Contact custom field values",
 					"features": {},
@@ -3356,7 +3356,7 @@
 						},
 						{
 							"name": "FieldValue",
-							"label": "FieldValue",
+							"label": "Field Value",
 							"relation": null
 						}
 					],
@@ -3533,7 +3533,7 @@
 				},
 				{
 					"table": "custom_fields",
-					"label": "Custom Fields (Contacts)",
+					"label": "Custom Fields",
 					"Identifier": "Id",
 					"description": "Additional custom information fields you can define for your Contacts",
 					"features": {},
