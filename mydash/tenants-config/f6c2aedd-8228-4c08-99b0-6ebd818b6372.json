@@ -3338,30 +3338,25 @@
 					"displayFields": [
 						{
 							"name": "ContactId",
-							"label": "ContactId",
+							"label": "Contact",
 							"relation": {
 								"table": "contacts",
 								"valueField": "Id",
-								"labelFields": "contacts.Id"
+								"labelFields": "contacts.Name as Contact"
 							}
 						},
 						{
 							"name": "CustomFieldId",
-							"label": "CustomFieldId",
+							"label": "Field Name",
 							"relation": {
 								"table": "custom_fields",
 								"valueField": "Id",
-								"labelFields": "custom_fields.Id"
+								"labelFields": "custom_fields.FieldName as 'Field Name'"
 							}
 						},
 						{
 							"name": "FieldValue",
 							"label": "FieldValue",
-							"relation": null
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate",
 							"relation": null
 						}
 					],
