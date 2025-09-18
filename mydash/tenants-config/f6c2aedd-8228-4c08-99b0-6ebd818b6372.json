@@ -3775,7 +3775,7 @@
 							"relation": {
 								"table": "fieldtypes",
 								"valueField": "Id",
-								"labelFields": "fieldtypes.Id"
+								"labelFields": "fieldtypes.Name"
 							}
 						},
 						{
