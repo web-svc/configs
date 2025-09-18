@@ -1108,20 +1108,20 @@
 					"displayFields": [
 						{
 							"name": "AudienceId",
-							"label": "AudienceId",
+							"label": "Audience Group",
 							"relation": {
 								"table": "audiences",
 								"valueField": "Id",
-								"labelFields": "audiences.Id"
+								"labelFields": "audiences.Name"
 							}
 						},
 						{
 							"name": "ContactId",
-							"label": "ContactId",
+							"label": "Contact",
 							"relation": {
 								"table": "contacts",
 								"valueField": "Id",
-								"labelFields": "contacts.Id"
+								"labelFields": "contacts.Name"
 							}
 						},
 						{
