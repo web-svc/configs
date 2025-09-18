@@ -1,4 +1,4 @@
-{
+{ 
   "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
   "datasources": {
     "channelsDb": {
