@@ -1834,18 +1834,6 @@
 								{
 									"Label": "Scheduled",
 									"Value": "Scheduled"
-								},
-								{
-									"Label": "Running",
-									"Value": "Running"
-								},
-								{
-									"Label": "Completed",
-									"Value": "Completed"
-								},
-								{
-									"Label": "Cancelled",
-									"Value": "Cancelled"
 								}
 							],
 							"defaultvalue": "'Draft'",
@@ -2062,27 +2050,15 @@
 							"required": false,
 							"options": [
 								{
-									"Label": "Draft",
-									"Value": "Draft"
-								},
-								{
 									"Label": "Scheduled",
 									"Value": "Scheduled"
-								},
-								{
-									"Label": "Running",
-									"Value": "Running"
-								},
-								{
-									"Label": "Completed",
-									"Value": "Completed"
 								},
 								{
 									"Label": "Cancelled",
 									"Value": "Cancelled"
 								}
 							],
-							"defaultvalue": "'Draft'",
+							"defaultvalue": "'Scheduled'",
 							"constraints": {
 								"min": null,
 								"max": null
