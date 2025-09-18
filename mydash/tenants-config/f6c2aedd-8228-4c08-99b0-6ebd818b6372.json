@@ -1330,12 +1330,7 @@
 						{
 							"name": "ChannelId",
 							"label": "Choose Channels",
-							"relation": {
-				                "datasource": "unifiedmessagingDb",
-				                "table": "channels",
-				                "valueField": "Id",
-				                "labelFields": ["audiences.Name"]
-				              }
+							"relation": null
 						},
 						{
 							"name": "TemplateId",
