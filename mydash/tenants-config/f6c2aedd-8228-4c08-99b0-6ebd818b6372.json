@@ -3374,7 +3374,8 @@
 								"table": "contacts",
 								"valueField": "Id",
 								"labelFields": [
-									"Name", "Email"
+									"Name",
+									"Email"
 								],
 								"limit": 5
 							}
@@ -3426,7 +3427,8 @@
 								"table": "contacts",
 								"valueField": "Id",
 								"labelFields": [
-									"Name", "Email"
+									"Name",
+									"Email"
 								],
 								"limit": 5
 							}
@@ -3530,292 +3532,6 @@
 						}
 					],
 					"isSearchRealtime": false
-				},
-				{
-					"table": "custom_fields",
-					"label": "Custom Fields",
-					"Identifier": "Id",
-					"description": "Additional custom information fields you can define for your Contacts",
-					"features": {},
-					"displayFields": [
-						{
-							"name": "FieldName",
-							"label": "Field Name",
-							"relation": null
-						},
-						{
-							"name": "FieldTypeId",
-							"label": "Field Type",
-							"relation": {
-								"table": "fieldtypes",
-								"valueField": "Id",
-								"labelFields": "fieldtypes.Id"
-							}
-						},
-						{
-							"name": "IsRequired",
-							"label": "Mandatory",
-							"relation": null
-						},
-						{
-							"name": "DefaultValue",
-							"label": "Default Value",
-							"relation": null
-						}
-					],
-					"createFields": [
-						{
-							"name": "TenantId",
-							"label": "Choose the Account",
-							"placeholder": "Enter TenantId",
-							"type": "select",
-							"required": true,
-							"options": null,
-							"defaultvalue": "",
-							"constraints": null,
-							"relation": {
-								"table": "tenants",
-								"valueField": "Id",
-								"labelFields": [
-									"Name"
-								],
-								"limit": 5
-							}
-						},
-						{
-							"name": "FieldName",
-							"label": "Field Name",
-							"placeholder": "Enter FieldName",
-							"type": "text",
-							"required": false,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
-						},
-						{
-							"name": "FieldTypeId",
-							"label": "Field Type",
-							"placeholder": "Enter Field Type",
-							"type": "select",
-							"required": true,
-							"options": null,
-							"defaultvalue": "",
-							"constraints": null,
-							"relation": {
-								"table": "fieldtypes",
-								"valueField": "Id",
-								"labelFields": [
-									"Name"
-								],
-								"limit": 5
-							}
-						},
-						{
-							"name": "IsRequired",
-							"label": "Mandatory",
-							"placeholder": "Choose Yes/ No",
-							"type": "dropdown",
-							"required": false,
-							"options": [
-								{
-									"Label": "Yes",
-									"Value": "1"
-								},
-								{
-									"Label": "No",
-									"Value": "0"
-								}
-							],
-							"defaultvalue": "0",
-							"constraints": {
-								"min": -128,
-								"max": 127
-							},
-							"relation": null
-						},
-						{
-							"name": "DefaultValue",
-							"label": "Default Value",
-							"placeholder": "Enter default value e.g for dropdown Male|Fale|Other",
-							"type": "text",
-							"required": false,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
-						}
-					],
-					"editFields": [
-						{
-							"name": "TenantId",
-							"label": "Choose Account Name",
-							"placeholder": "Choose Account Id",
-							"type": "select",
-							"required": true,
-							"options": null,
-							"defaultvalue": "",
-							"constraints": null,
-							"relation": {
-								"table": "tenants",
-								"valueField": "Id",
-								"labelFields": [
-									"Name"
-								],
-								"limit": 5
-							}
-						},
-						{
-							"name": "FieldName",
-							"label": "Field Name",
-							"placeholder": "Enter Field Name",
-							"type": "text",
-							"required": false,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
-						},
-						{
-							"name": "FieldTypeId",
-							"label": "Field Type",
-							"placeholder": "Enter Field Type",
-							"type": "select",
-							"required": true,
-							"options": null,
-							"defaultvalue": "",
-							"constraints": null,
-							"relation": {
-								"table": "fieldtypes",
-								"valueField": "Id",
-								"labelFields": [
-									"Name"
-								],
-								"limit": 5
-							}
-						},
-						{
-							"name": "IsRequired",
-							"label": "Mandatory",
-							"placeholder": "Choose yes or no",
-							"type": "dropdown",
-							"required": false,
-							"options": [
-								{
-									"Label": "Yes",
-									"Value": "1"
-								},
-								{
-									"Label": "No",
-									"Value": "0"
-								}
-							],
-							"defaultvalue": "0",
-							"constraints": {
-								"min": -128,
-								"max": 127
-							},
-							"relation": null
-						},
-						{
-							"name": "DefaultValue",
-							"label": "Default Value",
-							"placeholder": "Enter default value e.g for dropdown Male|Fale|Other",
-							"type": "text",
-							"required": false,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
-						}
-					],
-					"searchFields": [
-						"Id",
-						"TenantId",
-						"FieldName",
-						"FieldTypeId",
-						"IsRequired",
-						"CreationDate",
-						"UpdateDate"
-					],
-					"viewFields": [
-						{
-							"name": "Id",
-							"label": "Id"
-						},
-						{
-							"name": "TenantId",
-							"label": "TenantId"
-						},
-						{
-							"name": "FieldName",
-							"label": "FieldName"
-						},
-						{
-							"name": "FieldTypeId",
-							"label": "FieldTypeId"
-						},
-						{
-							"name": "IsRequired",
-							"label": "IsRequired"
-						},
-						{
-							"name": "DefaultValue",
-							"label": "Default Value"
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate"
-						},
-						{
-							"name": "UpdateDate",
-							"label": "UpdateDate"
-						}
-					],
-					"permissions": {
-						"allowCreate": {
-							"accessRoles": [
-								"root"
-							]
-						},
-						"allowEdit": {
-							"accessRoles": [
-								"root"
-							]
-						},
-						"allowDelete": {
-							"accessRoles": [
-								"root"
-							]
-						}
-					},
-					"pagination": true,
-					"ui": {
-						"icon": "FaRegListAlt"
-					},
-					"accessRoles": [
-						"root"
-					],
-					"limit": 20,
-					"orderBy": [
-						{
-							"column": "Id",
-							"direction": "asc"
-						}
-					],
-					"isSearchRealtime": true
 				}
 			]
 		},
@@ -4126,6 +3842,292 @@
 					"pagination": true,
 					"ui": {
 						"icon": "FaCogs"
+					},
+					"accessRoles": [
+						"root"
+					],
+					"limit": 20,
+					"orderBy": [
+						{
+							"column": "Id",
+							"direction": "asc"
+						}
+					],
+					"isSearchRealtime": true
+				},
+				{
+					"table": "custom_fields",
+					"label": "Custom Fields",
+					"Identifier": "Id",
+					"description": "Additional custom information fields you can define for your Contacts",
+					"features": {},
+					"displayFields": [
+						{
+							"name": "FieldName",
+							"label": "Field Name",
+							"relation": null
+						},
+						{
+							"name": "FieldTypeId",
+							"label": "Field Type",
+							"relation": {
+								"table": "fieldtypes",
+								"valueField": "Id",
+								"labelFields": "fieldtypes.Id"
+							}
+						},
+						{
+							"name": "IsRequired",
+							"label": "Mandatory",
+							"relation": null
+						},
+						{
+							"name": "DefaultValue",
+							"label": "Default Value",
+							"relation": null
+						}
+					],
+					"createFields": [
+						{
+							"name": "TenantId",
+							"label": "Choose the Account",
+							"placeholder": "Enter TenantId",
+							"type": "select",
+							"required": true,
+							"options": null,
+							"defaultvalue": "",
+							"constraints": null,
+							"relation": {
+								"table": "tenants",
+								"valueField": "Id",
+								"labelFields": [
+									"Name"
+								],
+								"limit": 5
+							}
+						},
+						{
+							"name": "FieldName",
+							"label": "Field Name",
+							"placeholder": "Enter FieldName",
+							"type": "text",
+							"required": false,
+							"options": [],
+							"defaultvalue": "",
+							"constraints": {
+								"min": null,
+								"max": null
+							},
+							"relation": null
+						},
+						{
+							"name": "FieldTypeId",
+							"label": "Field Type",
+							"placeholder": "Enter Field Type",
+							"type": "select",
+							"required": true,
+							"options": null,
+							"defaultvalue": "",
+							"constraints": null,
+							"relation": {
+								"table": "fieldtypes",
+								"valueField": "Id",
+								"labelFields": [
+									"Name"
+								],
+								"limit": 5
+							}
+						},
+						{
+							"name": "IsRequired",
+							"label": "Mandatory",
+							"placeholder": "Choose Yes/ No",
+							"type": "dropdown",
+							"required": false,
+							"options": [
+								{
+									"Label": "Yes",
+									"Value": "1"
+								},
+								{
+									"Label": "No",
+									"Value": "0"
+								}
+							],
+							"defaultvalue": "0",
+							"constraints": {
+								"min": -128,
+								"max": 127
+							},
+							"relation": null
+						},
+						{
+							"name": "DefaultValue",
+							"label": "Default Value",
+							"placeholder": "Enter default value e.g for dropdown Male|Fale|Other",
+							"type": "text",
+							"required": false,
+							"options": [],
+							"defaultvalue": "",
+							"constraints": {
+								"min": null,
+								"max": null
+							},
+							"relation": null
+						}
+					],
+					"editFields": [
+						{
+							"name": "TenantId",
+							"label": "Choose Account Name",
+							"placeholder": "Choose Account Id",
+							"type": "select",
+							"required": true,
+							"options": null,
+							"defaultvalue": "",
+							"constraints": null,
+							"relation": {
+								"table": "tenants",
+								"valueField": "Id",
+								"labelFields": [
+									"Name"
+								],
+								"limit": 5
+							}
+						},
+						{
+							"name": "FieldName",
+							"label": "Field Name",
+							"placeholder": "Enter Field Name",
+							"type": "text",
+							"required": false,
+							"options": [],
+							"defaultvalue": "",
+							"constraints": {
+								"min": null,
+								"max": null
+							},
+							"relation": null
+						},
+						{
+							"name": "FieldTypeId",
+							"label": "Field Type",
+							"placeholder": "Enter Field Type",
+							"type": "select",
+							"required": true,
+							"options": null,
+							"defaultvalue": "",
+							"constraints": null,
+							"relation": {
+								"table": "fieldtypes",
+								"valueField": "Id",
+								"labelFields": [
+									"Name"
+								],
+								"limit": 5
+							}
+						},
+						{
+							"name": "IsRequired",
+							"label": "Mandatory",
+							"placeholder": "Choose yes or no",
+							"type": "dropdown",
+							"required": false,
+							"options": [
+								{
+									"Label": "Yes",
+									"Value": "1"
+								},
+								{
+									"Label": "No",
+									"Value": "0"
+								}
+							],
+							"defaultvalue": "0",
+							"constraints": {
+								"min": -128,
+								"max": 127
+							},
+							"relation": null
+						},
+						{
+							"name": "DefaultValue",
+							"label": "Default Value",
+							"placeholder": "Enter default value e.g for dropdown Male|Fale|Other",
+							"type": "text",
+							"required": false,
+							"options": [],
+							"defaultvalue": "",
+							"constraints": {
+								"min": null,
+								"max": null
+							},
+							"relation": null
+						}
+					],
+					"searchFields": [
+						"Id",
+						"TenantId",
+						"FieldName",
+						"FieldTypeId",
+						"IsRequired",
+						"CreationDate",
+						"UpdateDate"
+					],
+					"viewFields": [
+						{
+							"name": "Id",
+							"label": "Id"
+						},
+						{
+							"name": "TenantId",
+							"label": "TenantId"
+						},
+						{
+							"name": "FieldName",
+							"label": "FieldName"
+						},
+						{
+							"name": "FieldTypeId",
+							"label": "FieldTypeId"
+						},
+						{
+							"name": "IsRequired",
+							"label": "IsRequired"
+						},
+						{
+							"name": "DefaultValue",
+							"label": "Default Value"
+						},
+						{
+							"name": "CreationDate",
+							"label": "CreationDate"
+						},
+						{
+							"name": "UpdateDate",
+							"label": "UpdateDate"
+						}
+					],
+					"permissions": {
+						"allowCreate": {
+							"accessRoles": [
+								"root"
+							]
+						},
+						"allowEdit": {
+							"accessRoles": [
+								"root"
+							]
+						},
+						"allowDelete": {
+							"accessRoles": [
+								"root"
+							]
+						}
+					},
+					"pagination": true,
+					"ui": {
+						"icon": "FaRegListAlt"
 					},
 					"accessRoles": [
 						"root"
