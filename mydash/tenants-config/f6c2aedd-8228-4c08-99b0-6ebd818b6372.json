@@ -3566,9 +3566,9 @@
 				},
 				{
 					"table": "custom_fields",
-					"label": "Custom Fields",
+					"label": "Custom Fields (Contacts)",
 					"Identifier": "Id",
-					"description": "Contact custom fields",
+					"description": "Additional custom information fields you can define for your Contacts",
 					"features": {},
 					"displayFields": [
 						{
