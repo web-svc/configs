@@ -3342,7 +3342,7 @@
 							"relation": {
 								"table": "contacts",
 								"valueField": "Id",
-								"labelFields": "contacts.Name as Contact"
+								"labelFields": "contacts.Name"
 							}
 						},
 						{
@@ -3351,7 +3351,7 @@
 							"relation": {
 								"table": "custom_fields",
 								"valueField": "Id",
-								"labelFields": "custom_fields.FieldName as 'Field Name'"
+								"labelFields": "custom_fields.FieldName"
 							}
 						},
 						{
