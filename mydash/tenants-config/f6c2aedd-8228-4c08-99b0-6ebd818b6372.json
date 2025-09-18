@@ -81,7 +81,7 @@
 						"label": "campaign_jobs Summary",
 						"entity": "campaign_jobs",
 						"fields": [
-							"Completed"
+							"CampaignId", "RunAt", "Status"
 						],
 						"groupBy": "Status",
 						"roles": [
