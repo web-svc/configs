@@ -1552,7 +1552,7 @@
 			"entities": [
 				{
 					"table": "campaigns",
-					"label": "campaigns",
+					"label": "Campaigns",
 					"Identifier": "Id",
 					"description": "Marketing campaigns",
 					"features": {},
@@ -1561,15 +1561,6 @@
 							"name": "CampaignId",
 							"label": "CampaignId",
 							"relation": null
-						},
-						{
-							"name": "TenantId",
-							"label": "TenantId",
-							"relation": {
-								"table": "tenants",
-								"valueField": "Id",
-								"labelFields": "tenants.Id"
-							}
 						},
 						{
 							"name": "Name",
@@ -1598,21 +1589,16 @@
 						},
 						{
 							"name": "AudienceId",
-							"label": "AudienceId",
+							"label": "Audience",
 							"relation": {
 								"table": "audiences",
 								"valueField": "Id",
-								"labelFields": "audiences.Id"
+								"labelFields": "audiences.Name"
 							}
 						},
 						{
 							"name": "ScheduleType",
 							"label": "ScheduleType",
-							"relation": null
-						},
-						{
-							"name": "ScheduleConfig",
-							"label": "ScheduleConfig",
 							"relation": null
 						},
 						{
@@ -1653,9 +1639,9 @@
 						},
 						{
 							"name": "TenantId",
-							"label": "TenantId",
+							"label": "Choose Account",
 							"placeholder": "Enter TenantId",
-							"type": "lookup",
+							"type": "select",
 							"required": true,
 							"options": null,
 							"defaultvalue": "",
@@ -1664,7 +1650,7 @@
 								"table": "tenants",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"Name"
 								],
 								"limit": 5
 							}
@@ -1699,8 +1685,8 @@
 						},
 						{
 							"name": "ChannelId",
-							"label": "ChannelId",
-							"placeholder": "Enter ChannelId",
+							"label": "Channel Id",
+							"placeholder": "Enter Channel Id from unified messaging",
 							"type": "number",
 							"required": true,
 							"options": [],
@@ -1714,7 +1700,7 @@
 						{
 							"name": "TemplateId",
 							"label": "TemplateId",
-							"placeholder": "Enter TemplateId",
+							"placeholder": "Enter Template Id from unified messaging",
 							"type": "number",
 							"required": true,
 							"options": [],
@@ -1728,7 +1714,7 @@
 						{
 							"name": "ConnectionId",
 							"label": "ConnectionId",
-							"placeholder": "Enter ConnectionId",
+							"placeholder": "Enter Connection Id from unified messaging",
 							"type": "number",
 							"required": true,
 							"options": [],
@@ -1741,7 +1727,7 @@
 						},
 						{
 							"name": "AudienceId",
-							"label": "AudienceId",
+							"label": "Choose Audience",
 							"placeholder": "Enter AudienceId",
 							"type": "lookup",
 							"required": true,
@@ -1752,7 +1738,7 @@
 								"table": "audiences",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"Name"
 								],
 								"limit": 5
 							}
@@ -1868,26 +1854,12 @@
 								"max": null
 							},
 							"relation": null
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate",
-							"placeholder": "Enter CreationDate",
-							"type": "datetime",
-							"required": true,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
 						}
 					],
 					"editFields": [
 						{
 							"name": "CampaignId",
-							"label": "CampaignId",
+							"label": "Campaign Id",
 							"placeholder": "Enter CampaignId",
 							"type": "text",
 							"required": true,
@@ -1901,9 +1873,9 @@
 						},
 						{
 							"name": "TenantId",
-							"label": "TenantId",
+							"label": "Choose Account",
 							"placeholder": "Enter TenantId",
-							"type": "lookup",
+							"type": "select",
 							"required": true,
 							"options": null,
 							"defaultvalue": "",
@@ -1912,7 +1884,7 @@
 								"table": "tenants",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"Name"
 								],
 								"limit": 5
 							}
@@ -1989,7 +1961,7 @@
 						},
 						{
 							"name": "AudienceId",
-							"label": "AudienceId",
+							"label": "Choose Audience",
 							"placeholder": "Enter AudienceId",
 							"type": "lookup",
 							"required": true,
@@ -2000,7 +1972,7 @@
 								"table": "audiences",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"Name"
 								],
 								"limit": 5
 							}
@@ -2111,20 +2083,6 @@
 								}
 							],
 							"defaultvalue": "'Draft'",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate",
-							"placeholder": "Enter CreationDate",
-							"type": "datetime",
-							"required": true,
-							"options": [],
-							"defaultvalue": "",
 							"constraints": {
 								"min": null,
 								"max": null
@@ -2902,20 +2860,6 @@
 								"max": null
 							},
 							"relation": null
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate",
-							"placeholder": "Enter CreationDate",
-							"type": "datetime",
-							"required": true,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
 						}
 					],
 					"searchFields": [
@@ -3061,7 +3005,7 @@
 					"createFields": [
 						{
 							"name": "TenantId",
-							"label": "TenantId",
+							"label": "Choose Account",
 							"placeholder": "Enter TenantId",
 							"type": "select",
 							"required": true,
@@ -3137,7 +3081,7 @@
 					"editFields": [
 						{
 							"name": "TenantId",
-							"label": "TenantId",
+							"label": "Choose Account",
 							"placeholder": "Enter TenantId",
 							"type": "select",
 							"required": true,
