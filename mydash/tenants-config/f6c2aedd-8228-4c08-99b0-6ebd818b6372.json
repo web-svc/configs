@@ -17,13 +17,13 @@
   "links": {
     "links": [
       {
-        "label": "View External App",
-        "url": "https://external.app/",
+        "label": "Track",
+        "url": "https://campaign.websvc.in/unified/",
         "target": "_blank"
       },
       {
         "label": "Open Admin",
-        "url": "https://admin.external.app/",
+        "url": "https://campaign.websvc.in/loginlink/",
         "target": "_blank"
       }
     ]
