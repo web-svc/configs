@@ -3038,15 +3038,6 @@
 					},
 					"displayFields": [
 						{
-							"name": "TenantId",
-							"label": "TenantId",
-							"relation": {
-								"table": "tenants",
-								"valueField": "Id",
-								"labelFields": "tenants.Id"
-							}
-						},
-						{
 							"name": "Name",
 							"label": "Name",
 							"relation": null
@@ -3065,11 +3056,6 @@
 							"name": "WhatsApp",
 							"label": "WhatsApp",
 							"relation": null
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate",
-							"relation": null
 						}
 					],
 					"createFields": [
@@ -3077,7 +3063,7 @@
 							"name": "TenantId",
 							"label": "TenantId",
 							"placeholder": "Enter TenantId",
-							"type": "lookup",
+							"type": "select",
 							"required": true,
 							"options": null,
 							"defaultvalue": "",
@@ -3086,7 +3072,7 @@
 								"table": "tenants",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"Name"
 								],
 								"limit": 5
 							}
@@ -3139,20 +3125,6 @@
 							"placeholder": "Enter WhatsApp",
 							"type": "text",
 							"required": false,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate",
-							"placeholder": "Enter CreationDate",
-							"type": "datetime",
-							"required": true,
 							"options": [],
 							"defaultvalue": "",
 							"constraints": {
@@ -3167,7 +3139,7 @@
 							"name": "TenantId",
 							"label": "TenantId",
 							"placeholder": "Enter TenantId",
-							"type": "lookup",
+							"type": "select",
 							"required": true,
 							"options": null,
 							"defaultvalue": "",
@@ -3176,7 +3148,7 @@
 								"table": "tenants",
 								"valueField": "Id",
 								"labelFields": [
-									"Id"
+									"Name"
 								],
 								"limit": 5
 							}
@@ -3229,20 +3201,6 @@
 							"placeholder": "Enter WhatsApp",
 							"type": "text",
 							"required": false,
-							"options": [],
-							"defaultvalue": "",
-							"constraints": {
-								"min": null,
-								"max": null
-							},
-							"relation": null
-						},
-						{
-							"name": "CreationDate",
-							"label": "CreationDate",
-							"placeholder": "Enter CreationDate",
-							"type": "datetime",
-							"required": true,
 							"options": [],
 							"defaultvalue": "",
 							"constraints": {
