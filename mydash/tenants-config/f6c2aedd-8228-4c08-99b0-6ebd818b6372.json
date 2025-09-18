@@ -3331,7 +3331,7 @@
 				},
 				{
 					"table": "contact_field_values",
-					"label": "Contacts Additional Info",
+					"label": "Additional Info",
 					"Identifier": "Id",
 					"description": "Contact custom field values",
 					"features": {},
