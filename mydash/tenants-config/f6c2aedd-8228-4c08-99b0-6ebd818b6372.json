@@ -142,42 +142,9 @@
 			"widgets": [
 				{
 					"type": "stat",
-					"label": "Total audience_members",
-					"display": "count(*) as display",
-					"entity": "audience_members",
-					"roles": [
-						"root",
-						"admin",
-						"hr"
-					]
-				},
-				{
-					"type": "stat",
 					"label": "Total audiences",
 					"display": "count(*) as display",
 					"entity": "audiences",
-					"roles": [
-						"root",
-						"admin",
-						"hr"
-					]
-				},
-				{
-					"type": "stat",
-					"label": "Total campaign_job_recipients",
-					"display": "count(*) as display",
-					"entity": "campaign_job_recipients",
-					"roles": [
-						"root",
-						"admin",
-						"hr"
-					]
-				},
-				{
-					"type": "stat",
-					"label": "Total campaign_jobs",
-					"display": "count(*) as display",
-					"entity": "campaign_jobs",
 					"roles": [
 						"root",
 						"admin",
@@ -197,53 +164,9 @@
 				},
 				{
 					"type": "stat",
-					"label": "Total contact_field_values",
-					"display": "count(*) as display",
-					"entity": "contact_field_values",
-					"roles": [
-						"root",
-						"admin",
-						"hr"
-					]
-				},
-				{
-					"type": "stat",
 					"label": "Total contacts",
 					"display": "count(*) as display",
 					"entity": "contacts",
-					"roles": [
-						"root",
-						"admin",
-						"hr"
-					]
-				},
-				{
-					"type": "stat",
-					"label": "Total custom_fields",
-					"display": "count(*) as display",
-					"entity": "custom_fields",
-					"roles": [
-						"root",
-						"admin",
-						"hr"
-					]
-				},
-				{
-					"type": "stat",
-					"label": "Total fieldtypes",
-					"display": "count(*) as display",
-					"entity": "fieldtypes",
-					"roles": [
-						"root",
-						"admin",
-						"hr"
-					]
-				},
-				{
-					"type": "stat",
-					"label": "Total tenants",
-					"display": "count(*) as display",
-					"entity": "tenants",
 					"roles": [
 						"root",
 						"admin",
