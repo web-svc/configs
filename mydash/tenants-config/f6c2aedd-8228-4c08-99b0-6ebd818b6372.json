@@ -1526,7 +1526,7 @@
 									"Value": "SMART"
 								}
 							],
-							"defaultvalue": "'ONCE'",
+							"defaultvalue": "ONCE",
 							"constraints": {
 								"min": null,
 								"max": null
@@ -1591,7 +1591,7 @@
 									"Value": "Scheduled"
 								}
 							],
-							"defaultvalue": "'Draft'",
+							"defaultvalue": "Draft",
 							"constraints": {
 								"min": null,
 								"max": null
