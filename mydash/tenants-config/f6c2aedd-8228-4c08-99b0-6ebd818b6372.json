@@ -1537,7 +1537,7 @@
 							"name": "ScheduleConfig",
 							"label": "ScheduleConfig",
 							"placeholder": "Enter ScheduleConfig",
-							"type": "text",
+							"type": "json",
 							"required": false,
 							"options": [],
 							"defaultvalue": "",
