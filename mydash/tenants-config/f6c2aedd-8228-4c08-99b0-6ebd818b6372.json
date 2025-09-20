@@ -21,14 +21,14 @@
         "url": "https://campaign.websvc.in/unified/",
         "target": "_blank",
 		"position": "header",
-		"icon":"MdAddLink"
+		"icon":"FaExternalLinkAlt"
       },
       {
         "label": "Open Admin",
         "url": "https://campaign.websvc.in/loginlink/",
         "target": "_blank",
 		"position": "header",
-		"icon":"MdAddLink"
+		"icon":"FaUserShield"
       }
     ]
   },
