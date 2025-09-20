@@ -19,12 +19,16 @@
       {
         "label": "Track",
         "url": "https://campaign.websvc.in/unified/",
-        "target": "_blank"
+        "target": "_blank",
+		"position": "header",
+		"icon":"MdAddLink"
       },
       {
         "label": "Open Admin",
         "url": "https://campaign.websvc.in/loginlink/",
-        "target": "_blank"
+        "target": "_blank",
+		"position": "header",
+		"icon":"MdAddLink"
       }
     ]
   },
