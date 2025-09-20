@@ -10,7 +10,7 @@
     "unifiedmessagingDb": {
       "url": "https://crud.webapis.in/api/v1/crud/",
       "headers": {
-        "x-Database": "zzzz-1111"
+        "x-Database": "f6c2aedd-8228-4c08-99b0-6ebd818b6372"
       }
     }
   },
@@ -1442,7 +1442,7 @@
 							"name": "ChannelId",
 							"label": "Channel Id",
 							"placeholder": "Enter Channel Id from unified messaging",
-							"type": "number",
+							"type": "select",
 							"required": true,
 							"options": [],
 							"defaultvalue": "",
@@ -1450,7 +1450,15 @@
 								"min": -2147483648,
 								"max": 2147483647
 							},
-							"relation": null
+							"relation": {
+								"datasource": "unifiedmessagingDb",
+								"table": "channels",
+								"valueField": "Id",
+								"labelFields": [
+									"Id", "Name"
+								],
+								"limit": 5
+							}
 						},
 						{
 							"name": "TemplateId",
