@@ -1464,7 +1464,7 @@
 							"name": "TemplateId",
 							"label": "TemplateId",
 							"placeholder": "Enter Template Id from unified messaging",
-							"type": "number",
+							"type": "lookup",
 							"required": true,
 							"options": [],
 							"defaultvalue": "",
@@ -1472,7 +1472,15 @@
 								"min": -2147483648,
 								"max": 2147483647
 							},
-							"relation": null
+							"relation": {
+								"datasource": "unifiedmessagingDb",
+								"table": "templates",
+								"valueField": "Id",
+								"labelFields": [
+									"Id", "Slug"
+								],
+								"limit": 5
+							}
 						},
 						{
 							"name": "ConnectionId",
