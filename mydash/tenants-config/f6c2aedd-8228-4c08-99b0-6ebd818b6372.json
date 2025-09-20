@@ -14,7 +14,7 @@
       }
     }
   },
-  "links": {
+  "ui": {
     "links": [
       {
         "label": "Track",
