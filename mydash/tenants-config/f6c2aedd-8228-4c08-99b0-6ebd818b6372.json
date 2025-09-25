@@ -2914,6 +2914,17 @@
 								"max": null
 							},
 							"relation": null
+						},
+						{
+							"name": "contact_field_values",
+							"label": "Additional Info",
+							"placeholder": "Contact Additional Info",
+							"type": "table",
+							"required": true,
+							"relation": {
+								"table": "contact_field_values",
+								"valueField": "ContactId"
+							}
 						}
 					],
 					"searchFields": [
