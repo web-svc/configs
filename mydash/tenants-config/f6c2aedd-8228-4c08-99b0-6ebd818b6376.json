@@ -1,0 +1,2019 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "datasources": {
+    "channelsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "xxxx-yyyy"
+      }
+    },
+    "connectionsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "zzzz-1111"
+      }
+    }
+  },
+  "links": {
+    "links": [
+      {
+        "label": "View External App",
+        "url": "https://external.app/",
+        "target": "_blank"
+      },
+      {
+        "label": "Open Admin",
+        "url": "https://admin.external.app/",
+        "target": "_blank"
+      }
+    ]
+  },
+  "description": "Database for managing messaging apps, their users, and message delivery tracking.",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": []
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total Apps",
+          "display": "count(*) as display",
+          "entity": "Apps",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total Consumers",
+          "display": "count(*) as display",
+          "entity": "Consumers",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total DeliveredMessages",
+          "display": "count(*) as display",
+          "entity": "DeliveredMessages",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total Messages",
+          "display": "count(*) as display",
+          "entity": "Messages",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total Users",
+          "display": "count(*) as display",
+          "entity": "Users",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 Apps",
+          "display": "AppId,Name,Domain",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreatedAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "Apps",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 Consumers",
+          "display": "WS_Url",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "ConnectedAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "Consumers",
+          "filter": "IsActive eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 DeliveredMessages",
+          "display": "",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "DeliveredAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "DeliveredMessages",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 Messages",
+          "display": "Title,Body,Metadata",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreatedAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "Messages",
+          "filter": "Status eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 Users",
+          "display": "ExternalRef,Name",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "CreatedAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "Users",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "Apps Table",
+          "display": "AppId,Name,Domain",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreatedAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "Apps",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Consumers Table",
+          "display": "WS_Url",
+          "limit": 5,
+          "filter": "IsActive eq \u00271\u0027",
+          "orderBy": [
+            {
+              "column": "ConnectedAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "Consumers",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "DeliveredMessages Table",
+          "display": "",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "DeliveredAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "DeliveredMessages",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Messages Table",
+          "display": "Title,Body,Metadata",
+          "limit": 5,
+          "filter": "Status eq \u00271\u0027",
+          "orderBy": [
+            {
+              "column": "CreatedAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "Messages",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Users Table",
+          "display": "ExternalRef,Name",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "CreatedAt",
+              "direction": "desc"
+            }
+          ],
+          "entity": "Users",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": {
+        "label": "Quick Actions",
+        "roles": [
+          "root",
+          "admin",
+          "hr"
+        ],
+        "items": [
+          {
+            "label": "Add Apps",
+            "action": "create",
+            "entity": "Apps",
+            "group": "Apps",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          },
+          {
+            "label": "Add Consumers",
+            "action": "create",
+            "entity": "Consumers",
+            "group": "Consumers",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          }
+        ]
+      },
+      "reports": [
+        {
+          "label": "Monthly Joinees",
+          "filter": "Status eq \u0027Active\u0027",
+          "entity": "Apps",
+          "exportable": true,
+          "roles": [
+            "root",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "kanban",
+      "roles": [
+        "root",
+        "manager"
+      ],
+      "kanbanConfig": [
+        {
+          "entity": "Messages",
+          "statusField": "Status",
+          "columns": [
+            "To Do",
+            "In Progress",
+            "Done"
+          ],
+          "displayFields": [
+            "Title",
+            "Body",
+            "Metadata"
+          ],
+          "roles": [
+            "root",
+            "manager"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "calendar",
+      "roles": [
+        "root",
+        "hr",
+        "manager"
+      ],
+      "calendarConfig": [
+        {
+          "entity": "Apps",
+          "titleField": "Name",
+          "startDateField": "CreatedAt",
+          "endDateField": "CreatedAt",
+          "colorField": "UpdateDate",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "Consumers",
+          "titleField": "Id",
+          "startDateField": "ConnectedAt",
+          "endDateField": "ConnectedAt",
+          "colorField": "DeviceType",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Applications",
+      "description": "Manage messaging apps and configuration",
+      "ui": {
+        "icon": "MdApps"
+      },
+      "entities": [
+        {
+          "table": "Apps",
+          "label": "Apps",
+          "Identifier": "Id",
+          "description": "Messaging applications",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "relation": null
+            },
+            {
+              "name": "Domain",
+              "label": "Domain",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "placeholder": "Enter AppId",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Domain",
+              "label": "Domain",
+              "placeholder": "Enter Domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "placeholder": "Enter CreatedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "placeholder": "Enter AppId",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Domain",
+              "label": "Domain",
+              "placeholder": "Enter Domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "placeholder": "Enter CreatedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "AppId",
+            "Name",
+            "Domain",
+            "CreatedAt",
+            "UpdateDate"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "Domain",
+              "label": "Domain"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            },
+            {
+              "name": "UpdateDate",
+              "label": "UpdateDate"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaThLarge"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Users \u0026 Consumers",
+      "description": "Manage users and their connected consumer devices",
+      "ui": {
+        "icon": "MdPeople"
+      },
+      "entities": [
+        {
+          "table": "Users",
+          "label": "Users",
+          "Identifier": "Id",
+          "description": "End users",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "relation": {
+                "datasource": null,
+                "table": "Apps",
+                "valueField": "Id",
+                "labelFields": "Apps.Id"
+              }
+            },
+            {
+              "name": "ExternalRef",
+              "label": "ExternalRef",
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "placeholder": "Enter AppId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ExternalRef",
+              "label": "ExternalRef",
+              "placeholder": "Enter ExternalRef",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "placeholder": "Enter CreatedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "placeholder": "Enter AppId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ExternalRef",
+              "label": "ExternalRef",
+              "placeholder": "Enter ExternalRef",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Name",
+              "label": "Name",
+              "placeholder": "Enter Name",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "placeholder": "Enter CreatedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "AppId",
+            "ExternalRef",
+            "Name",
+            "CreatedAt"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "ExternalRef",
+              "label": "ExternalRef"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUser"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "Consumers",
+          "label": "Consumers",
+          "Identifier": "Id",
+          "description": "App consumer connections",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "relation": {
+                "datasource": null,
+                "table": "Users",
+                "valueField": "Id",
+                "labelFields": "Users.Id"
+              }
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "relation": {
+                "datasource": null,
+                "table": "Apps",
+                "valueField": "Id",
+                "labelFields": "Apps.Id"
+              }
+            },
+            {
+              "name": "DeviceType",
+              "label": "DeviceType",
+              "relation": null
+            },
+            {
+              "name": "WS_Url",
+              "label": "WS_Url",
+              "relation": null
+            },
+            {
+              "name": "IsActive",
+              "label": "IsActive",
+              "relation": null
+            },
+            {
+              "name": "ConnectedAt",
+              "label": "ConnectedAt",
+              "relation": null
+            },
+            {
+              "name": "DisconnectedAt",
+              "label": "DisconnectedAt",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "placeholder": "Enter UserId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "placeholder": "Enter AppId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "DeviceType",
+              "label": "DeviceType",
+              "placeholder": "Enter DeviceType",
+              "type": "dropdown",
+              "required": true,
+              "options": [
+                {
+                  "Label": "Browser",
+                  "Value": "browser"
+                },
+                {
+                  "Label": "Mobile",
+                  "Value": "mobile"
+                },
+                {
+                  "Label": "Service",
+                  "Value": "service"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "WS_Url",
+              "label": "WS_Url",
+              "placeholder": "Enter WS_Url",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "IsActive",
+              "label": "IsActive",
+              "placeholder": "Enter IsActive",
+              "type": "segmented",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            },
+            {
+              "name": "ConnectedAt",
+              "label": "ConnectedAt",
+              "placeholder": "Enter ConnectedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "DisconnectedAt",
+              "label": "DisconnectedAt",
+              "placeholder": "Enter DisconnectedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "UserId",
+              "label": "UserId",
+              "placeholder": "Enter UserId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "placeholder": "Enter AppId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "DeviceType",
+              "label": "DeviceType",
+              "placeholder": "Enter DeviceType",
+              "type": "dropdown",
+              "required": true,
+              "options": [
+                {
+                  "Label": "Browser",
+                  "Value": "browser"
+                },
+                {
+                  "Label": "Mobile",
+                  "Value": "mobile"
+                },
+                {
+                  "Label": "Service",
+                  "Value": "service"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "WS_Url",
+              "label": "WS_Url",
+              "placeholder": "Enter WS_Url",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "IsActive",
+              "label": "IsActive",
+              "placeholder": "Enter IsActive",
+              "type": "checkbox",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            },
+            {
+              "name": "ConnectedAt",
+              "label": "ConnectedAt",
+              "placeholder": "Enter ConnectedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "DisconnectedAt",
+              "label": "DisconnectedAt",
+              "placeholder": "Enter DisconnectedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "UserId",
+            "AppId",
+            "DeviceType",
+            "WS_Url",
+            "IsActive",
+            "ConnectedAt",
+            "DisconnectedAt"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "UserId",
+              "label": "UserId"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "DeviceType",
+              "label": "DeviceType"
+            },
+            {
+              "name": "WS_Url",
+              "label": "WS_Url"
+            },
+            {
+              "name": "IsActive",
+              "label": "IsActive"
+            },
+            {
+              "name": "ConnectedAt",
+              "label": "ConnectedAt"
+            },
+            {
+              "name": "DisconnectedAt",
+              "label": "DisconnectedAt"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaMobileAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Messaging",
+      "description": "Track messages and their delivery status",
+      "ui": {
+        "icon": "MdMessage"
+      },
+      "entities": [
+        {
+          "table": "Messages",
+          "label": "Messages",
+          "Identifier": "Id",
+          "description": "App messages",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "relation": {
+                "datasource": null,
+                "table": "Apps",
+                "valueField": "Id",
+                "labelFields": "Apps.Id"
+              }
+            },
+            {
+              "name": "TargetType",
+              "label": "TargetType",
+              "relation": null
+            },
+            {
+              "name": "TargetId",
+              "label": "TargetId",
+              "relation": {
+                "datasource": null,
+                "table": "Users",
+                "valueField": "Id",
+                "labelFields": "Users.Id"
+              }
+            },
+            {
+              "name": "Title",
+              "label": "Title",
+              "relation": null
+            },
+            {
+              "name": "Body",
+              "label": "Body",
+              "relation": null
+            },
+            {
+              "name": "Metadata",
+              "label": "Metadata",
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "placeholder": "Enter AppId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "TargetType",
+              "label": "TargetType",
+              "placeholder": "Enter TargetType",
+              "type": "dropdown",
+              "required": true,
+              "options": [
+                {
+                  "Label": "App",
+                  "Value": "app"
+                },
+                {
+                  "Label": "User",
+                  "Value": "user"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "TargetId",
+              "label": "TargetId",
+              "placeholder": "Enter TargetId",
+              "type": "lookup",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Title",
+              "label": "Title",
+              "placeholder": "Enter Title",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Body",
+              "label": "Body",
+              "placeholder": "Enter Body",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Metadata",
+              "label": "Metadata",
+              "placeholder": "Enter Metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Pending",
+                  "Value": "pending"
+                },
+                {
+                  "Label": "Delivered",
+                  "Value": "delivered"
+                },
+                {
+                  "Label": "Acknowledged",
+                  "Value": "acknowledged"
+                }
+              ],
+              "defaultvalue": "\u0027pending\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "placeholder": "Enter CreatedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "AppId",
+              "label": "AppId",
+              "placeholder": "Enter AppId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Apps",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "TargetType",
+              "label": "TargetType",
+              "placeholder": "Enter TargetType",
+              "type": "dropdown",
+              "required": true,
+              "options": [
+                {
+                  "Label": "App",
+                  "Value": "app"
+                },
+                {
+                  "Label": "User",
+                  "Value": "user"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "TargetId",
+              "label": "TargetId",
+              "placeholder": "Enter TargetId",
+              "type": "lookup",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Users",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "Title",
+              "label": "Title",
+              "placeholder": "Enter Title",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Body",
+              "label": "Body",
+              "placeholder": "Enter Body",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Metadata",
+              "label": "Metadata",
+              "placeholder": "Enter Metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Status",
+              "label": "Status",
+              "placeholder": "Enter Status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Pending",
+                  "Value": "pending"
+                },
+                {
+                  "Label": "Delivered",
+                  "Value": "delivered"
+                },
+                {
+                  "Label": "Acknowledged",
+                  "Value": "acknowledged"
+                }
+              ],
+              "defaultvalue": "\u0027pending\u0027",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt",
+              "placeholder": "Enter CreatedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "AppId",
+            "TargetType",
+            "TargetId",
+            "Title",
+            "Body",
+            "Metadata",
+            "Status",
+            "CreatedAt"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "AppId",
+              "label": "AppId"
+            },
+            {
+              "name": "TargetType",
+              "label": "TargetType"
+            },
+            {
+              "name": "TargetId",
+              "label": "TargetId"
+            },
+            {
+              "name": "Title",
+              "label": "Title"
+            },
+            {
+              "name": "Body",
+              "label": "Body"
+            },
+            {
+              "name": "Metadata",
+              "label": "Metadata"
+            },
+            {
+              "name": "Status",
+              "label": "Status"
+            },
+            {
+              "name": "CreatedAt",
+              "label": "CreatedAt"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaEnvelope"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "DeliveredMessages",
+          "label": "DeliveredMessages",
+          "Identifier": "Id",
+          "description": "Tracked message deliveries",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "MessageId",
+              "label": "MessageId",
+              "relation": {
+                "datasource": null,
+                "table": "Messages",
+                "valueField": "Id",
+                "labelFields": "Messages.Id"
+              }
+            },
+            {
+              "name": "ConsumerId",
+              "label": "ConsumerId",
+              "relation": {
+                "datasource": null,
+                "table": "Consumers",
+                "valueField": "Id",
+                "labelFields": "Consumers.Id"
+              }
+            },
+            {
+              "name": "DeliveredAt",
+              "label": "DeliveredAt",
+              "relation": null
+            },
+            {
+              "name": "AcknowledgedAt",
+              "label": "AcknowledgedAt",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "MessageId",
+              "label": "MessageId",
+              "placeholder": "Enter MessageId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Messages",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ConsumerId",
+              "label": "ConsumerId",
+              "placeholder": "Enter ConsumerId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Consumers",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "DeliveredAt",
+              "label": "DeliveredAt",
+              "placeholder": "Enter DeliveredAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "AcknowledgedAt",
+              "label": "AcknowledgedAt",
+              "placeholder": "Enter AcknowledgedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "MessageId",
+              "label": "MessageId",
+              "placeholder": "Enter MessageId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Messages",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "ConsumerId",
+              "label": "ConsumerId",
+              "placeholder": "Enter ConsumerId",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "Consumers",
+                "valueField": "Id",
+                "labelFields": [
+                  "Id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "DeliveredAt",
+              "label": "DeliveredAt",
+              "placeholder": "Enter DeliveredAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "AcknowledgedAt",
+              "label": "AcknowledgedAt",
+              "placeholder": "Enter AcknowledgedAt",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "Id",
+            "MessageId",
+            "ConsumerId",
+            "DeliveredAt",
+            "AcknowledgedAt"
+          ],
+          "viewFields": [
+            {
+              "name": "Id",
+              "label": "Id"
+            },
+            {
+              "name": "MessageId",
+              "label": "MessageId"
+            },
+            {
+              "name": "ConsumerId",
+              "label": "ConsumerId"
+            },
+            {
+              "name": "DeliveredAt",
+              "label": "DeliveredAt"
+            },
+            {
+              "name": "AcknowledgedAt",
+              "label": "AcknowledgedAt"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCheckCircle"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "Id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    }
+  ]
+}
