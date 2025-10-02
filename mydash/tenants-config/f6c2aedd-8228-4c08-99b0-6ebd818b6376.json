@@ -1346,7 +1346,7 @@
       },
       "entities": [
         {
-          "table": "Messages",
+          "table": "messages",
           "label": "Messages",
           "Identifier": "Id",
           "description": "App messages",
