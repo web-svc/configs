@@ -1625,6 +1625,20 @@
 								"max": null
 							},
 							"relation": null
+						},
+						{
+							"name": "CreatedBy",
+							"label": "Created By",
+							"placeholder": "Enter CreatedBy",
+							"type": "autoload_loggedin_user",
+							"required": false,
+							"options": [],
+							"defaultvalue": "root",
+							"constraints": {
+								"min": null,
+								"max": null
+							},
+							"relation": null
 						}
 					],
 					"editFields": [
