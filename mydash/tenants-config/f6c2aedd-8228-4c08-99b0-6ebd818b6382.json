@@ -1,0 +1,1097 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "datasources": {
+    "channelsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "xxxx-yyyy"
+      }
+    },
+    "connectionsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "zzzz-1111"
+      }
+    }
+  },
+  "ui": {
+    "links": [
+      {
+        "label": "View External App",
+        "url": "https://external.app/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaExternalLinkAlt"
+      },
+      {
+        "label": "Open Admin",
+        "url": "https://admin.external.app/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaUserShield"
+      }
+    ]
+  },
+  "description": "Database for managing HSN/SAC tax codes and tax profiles for businesses",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": [
+          {
+            "label": "hsn_sac_codes Summary",
+            "entity": "hsn_sac_codes",
+            "fields": [
+              "SAC"
+            ],
+            "groupBy": "type",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "tax_profiles Summary",
+            "entity": "tax_profiles",
+            "fields": [
+              "1"
+            ],
+            "groupBy": "tenant_id",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total hsn_sac_codes",
+          "display": "count(*) as display",
+          "entity": "hsn_sac_codes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total tax_profiles",
+          "display": "count(*) as display",
+          "entity": "tax_profiles",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 hsn_sac_codes",
+          "display": "code,description,metadata",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "effective_from",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hsn_sac_codes",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 tax_profiles",
+          "display": "profile_name,gstin,business_state",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tax_profiles",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "hsn_sac_codes Table",
+          "display": "code,description,metadata",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "effective_from",
+              "direction": "desc"
+            }
+          ],
+          "entity": "hsn_sac_codes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "tax_profiles Table",
+          "display": "profile_name,gstin,business_state",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tax_profiles",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": {
+        "label": "Quick Actions",
+        "roles": [
+          "root",
+          "admin",
+          "hr"
+        ],
+        "items": [
+          {
+            "label": "Add hsn_sac_codes",
+            "action": "create",
+            "entity": "hsn_sac_codes",
+            "group": "hsn_sac_codes",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          },
+          {
+            "label": "Add tax_profiles",
+            "action": "create",
+            "entity": "tax_profiles",
+            "group": "tax_profiles",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          }
+        ]
+      },
+      "reports": [
+        {
+          "label": "Monthly Joinees",
+          "filter": "Status eq \u0027Active\u0027",
+          "entity": "hsn_sac_codes",
+          "exportable": true,
+          "roles": [
+            "root",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "calendar",
+      "roles": [
+        "root",
+        "hr",
+        "manager"
+      ],
+      "calendarConfig": [
+        {
+          "entity": "hsn_sac_codes",
+          "titleField": "id",
+          "startDateField": "effective_from",
+          "endDateField": "effective_from",
+          "colorField": "type",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "tax_profiles",
+          "titleField": "profile_name",
+          "startDateField": "created_at",
+          "endDateField": "created_at",
+          "colorField": "created_at",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Tax Configuration",
+      "description": "Manage tax codes and business tax profiles",
+      "ui": {
+        "icon": "MdGavel"
+      },
+      "entities": [
+        {
+          "table": "hsn_sac_codes",
+          "label": "hsn_sac_codes",
+          "Identifier": "id",
+          "description": "HSN/SAC Codes",
+          "features": {
+            "bulkActions": {
+              "actions": [
+                {
+                  "type": "upload",
+                  "label": "Upload hsn_sac_codes",
+                  "description": "Upload CSV to add hsn_sac_codes entries in bulk",
+                  "endpoint": "/bulk/hsn_sac_codes",
+                  "MaxSize": "10MB",
+                  "AllowedExtensions": [
+                    ".csv"
+                  ]
+                }
+              ]
+            }
+          },
+          "displayFields": [
+            {
+              "name": "code",
+              "label": "code",
+              "relation": null
+            },
+            {
+              "name": "type",
+              "label": "type",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "relation": null
+            },
+            {
+              "name": "gst_rate",
+              "label": "gst_rate",
+              "relation": null
+            },
+            {
+              "name": "cgst_rate",
+              "label": "cgst_rate",
+              "relation": null
+            },
+            {
+              "name": "sgst_rate",
+              "label": "sgst_rate",
+              "relation": null
+            },
+            {
+              "name": "igst_rate",
+              "label": "igst_rate",
+              "relation": null
+            },
+            {
+              "name": "effective_from",
+              "label": "effective_from",
+              "relation": null
+            },
+            {
+              "name": "effective_to",
+              "label": "effective_to",
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "code",
+              "label": "code",
+              "placeholder": "Enter code",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "type",
+              "label": "type",
+              "placeholder": "Enter type",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "HSN",
+                  "Value": "HSN"
+                },
+                {
+                  "Label": "SAC",
+                  "Value": "SAC"
+                }
+              ],
+              "defaultvalue": "HSN",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "gst_rate",
+              "label": "gst_rate",
+              "placeholder": "Enter gst_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "cgst_rate",
+              "label": "cgst_rate",
+              "placeholder": "Enter cgst_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "sgst_rate",
+              "label": "sgst_rate",
+              "placeholder": "Enter sgst_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "igst_rate",
+              "label": "igst_rate",
+              "placeholder": "Enter igst_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "effective_from",
+              "label": "effective_from",
+              "placeholder": "Enter effective_from",
+              "type": "date",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "effective_to",
+              "label": "effective_to",
+              "placeholder": "Enter effective_to",
+              "type": "date",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "code",
+              "label": "code",
+              "placeholder": "Enter code",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "type",
+              "label": "type",
+              "placeholder": "Enter type",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "HSN",
+                  "Value": "HSN"
+                },
+                {
+                  "Label": "SAC",
+                  "Value": "SAC"
+                }
+              ],
+              "defaultvalue": "HSN",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "gst_rate",
+              "label": "gst_rate",
+              "placeholder": "Enter gst_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "cgst_rate",
+              "label": "cgst_rate",
+              "placeholder": "Enter cgst_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "sgst_rate",
+              "label": "sgst_rate",
+              "placeholder": "Enter sgst_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "igst_rate",
+              "label": "igst_rate",
+              "placeholder": "Enter igst_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "effective_from",
+              "label": "effective_from",
+              "placeholder": "Enter effective_from",
+              "type": "date",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "effective_to",
+              "label": "effective_to",
+              "placeholder": "Enter effective_to",
+              "type": "date",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "code",
+            "type",
+            "description",
+            "gst_rate",
+            "cgst_rate",
+            "sgst_rate",
+            "igst_rate",
+            "effective_from",
+            "effective_to",
+            "metadata"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "code",
+              "label": "code"
+            },
+            {
+              "name": "type",
+              "label": "type"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "gst_rate",
+              "label": "gst_rate"
+            },
+            {
+              "name": "cgst_rate",
+              "label": "cgst_rate"
+            },
+            {
+              "name": "sgst_rate",
+              "label": "sgst_rate"
+            },
+            {
+              "name": "igst_rate",
+              "label": "igst_rate"
+            },
+            {
+              "name": "effective_from",
+              "label": "effective_from"
+            },
+            {
+              "name": "effective_to",
+              "label": "effective_to"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTags"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "tax_profiles",
+          "label": "tax_profiles",
+          "Identifier": "id",
+          "description": "Tax Profiles",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "relation": null
+            },
+            {
+              "name": "profile_name",
+              "label": "profile_name",
+              "relation": null
+            },
+            {
+              "name": "gstin",
+              "label": "gstin",
+              "relation": null
+            },
+            {
+              "name": "business_state",
+              "label": "business_state",
+              "relation": null
+            },
+            {
+              "name": "default_tax_rate",
+              "label": "default_tax_rate",
+              "relation": null
+            },
+            {
+              "name": "active",
+              "label": "active",
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "profile_name",
+              "label": "profile_name",
+              "placeholder": "Enter profile_name",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "Default GST Profile",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "gstin",
+              "label": "gstin",
+              "placeholder": "Enter gstin",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "business_state",
+              "label": "business_state",
+              "placeholder": "Enter business_state",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "default_tax_rate",
+              "label": "default_tax_rate",
+              "placeholder": "Enter default_tax_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "18.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "active",
+              "label": "active",
+              "placeholder": "Enter active",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "placeholder": "Enter created_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "profile_name",
+              "label": "profile_name",
+              "placeholder": "Enter profile_name",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "Default GST Profile",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "gstin",
+              "label": "gstin",
+              "placeholder": "Enter gstin",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "business_state",
+              "label": "business_state",
+              "placeholder": "Enter business_state",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "default_tax_rate",
+              "label": "default_tax_rate",
+              "placeholder": "Enter default_tax_rate",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "18.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "active",
+              "label": "active",
+              "placeholder": "Enter active",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "placeholder": "Enter created_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "tenant_id",
+            "profile_name",
+            "gstin",
+            "business_state",
+            "default_tax_rate",
+            "active",
+            "created_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "tenant_id",
+              "label": "tenant_id"
+            },
+            {
+              "name": "profile_name",
+              "label": "profile_name"
+            },
+            {
+              "name": "gstin",
+              "label": "gstin"
+            },
+            {
+              "name": "business_state",
+              "label": "business_state"
+            },
+            {
+              "name": "default_tax_rate",
+              "label": "default_tax_rate"
+            },
+            {
+              "name": "active",
+              "label": "active"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUserTie"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    }
+  ]
+}
