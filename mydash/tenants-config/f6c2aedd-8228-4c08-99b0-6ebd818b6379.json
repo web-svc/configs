@@ -1,0 +1,3326 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "datasources": {
+    "channelsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "xxxx-yyyy"
+      }
+    },
+    "connectionsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "zzzz-1111"
+      }
+    }
+  },
+  "ui": {
+    "links": [
+      {
+        "label": "View External App",
+        "url": "https://external.app/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaExternalLinkAlt"
+      },
+      {
+        "label": "Open Admin",
+        "url": "https://admin.external.app/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaUserShield"
+      }
+    ]
+  },
+  "description": "Billing and invoicing management database",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": []
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total invoice_items",
+          "display": "count(*) as display",
+          "entity": "invoice_items",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total invoice_payments",
+          "display": "count(*) as display",
+          "entity": "invoice_payments",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total invoices",
+          "display": "count(*) as display",
+          "entity": "invoices",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total ledger_entries",
+          "display": "count(*) as display",
+          "entity": "ledger_entries",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total refunds",
+          "display": "count(*) as display",
+          "entity": "refunds",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total tenants",
+          "display": "count(*) as display",
+          "entity": "tenants",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 invoice_payments",
+          "display": "payment_reference,payment_method",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "paid_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "invoice_payments",
+          "filter": "status eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 invoices",
+          "display": "invoice_uid,invoice_number,order_uid,user_uid",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "billing_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "invoices",
+          "filter": "status eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 ledger_entries",
+          "display": "description,reference_uid",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "ledger_entries",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 refunds",
+          "display": "refund_uid,payment_reference,refund_reason,metadata",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "refund_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "refunds",
+          "filter": "status eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 tenants",
+          "display": "tenant_id,name,domain,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tenants",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "invoice_payments Table",
+          "display": "payment_reference,payment_method",
+          "limit": 5,
+          "filter": "status eq \u00271\u0027",
+          "orderBy": [
+            {
+              "column": "paid_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "invoice_payments",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "invoices Table",
+          "display": "invoice_uid,invoice_number,order_uid,user_uid",
+          "limit": 5,
+          "filter": "status eq \u00271\u0027",
+          "orderBy": [
+            {
+              "column": "billing_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "invoices",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "ledger_entries Table",
+          "display": "description,reference_uid",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "ledger_entries",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "refunds Table",
+          "display": "refund_uid,payment_reference,refund_reason,metadata",
+          "limit": 5,
+          "filter": "status eq \u00271\u0027",
+          "orderBy": [
+            {
+              "column": "refund_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "refunds",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "tenants Table",
+          "display": "tenant_id,name,domain,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tenants",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": {
+        "label": "Quick Actions",
+        "roles": [
+          "root",
+          "admin",
+          "hr"
+        ],
+        "items": [
+          {
+            "label": "Add invoice_items",
+            "action": "create",
+            "entity": "invoice_items",
+            "group": "invoice_items",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          },
+          {
+            "label": "Add invoice_payments",
+            "action": "create",
+            "entity": "invoice_payments",
+            "group": "invoice_payments",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          }
+        ]
+      },
+      "reports": [
+        {
+          "label": "Monthly Joinees",
+          "filter": "Status eq \u0027Active\u0027",
+          "entity": "invoice_items",
+          "exportable": true,
+          "roles": [
+            "root",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "kanban",
+      "roles": [
+        "root",
+        "manager"
+      ],
+      "kanbanConfig": [
+        {
+          "entity": "invoice_payments",
+          "statusField": "status",
+          "columns": [
+            "To Do",
+            "In Progress",
+            "Done"
+          ],
+          "displayFields": [
+            "payment_reference",
+            "payment_method"
+          ],
+          "roles": [
+            "root",
+            "manager"
+          ]
+        },
+        {
+          "entity": "invoices",
+          "statusField": "status",
+          "columns": [
+            "To Do",
+            "In Progress",
+            "Done"
+          ],
+          "displayFields": [
+            "invoice_number",
+            "currency",
+            "due_amount"
+          ],
+          "roles": [
+            "root",
+            "manager"
+          ]
+        },
+        {
+          "entity": "refunds",
+          "statusField": "status",
+          "columns": [
+            "To Do",
+            "In Progress",
+            "Done"
+          ],
+          "displayFields": [
+            "payment_reference",
+            "refund_reason",
+            "metadata"
+          ],
+          "roles": [
+            "root",
+            "manager"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "calendar",
+      "roles": [
+        "root",
+        "hr",
+        "manager"
+      ],
+      "calendarConfig": [
+        {
+          "entity": "invoice_payments",
+          "titleField": "id",
+          "startDateField": "paid_at",
+          "endDateField": "paid_at",
+          "colorField": "status",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "invoices",
+          "titleField": "id",
+          "startDateField": "billing_date",
+          "endDateField": "billing_date",
+          "colorField": "status",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "ledger_entries",
+          "titleField": "id",
+          "startDateField": "created_at",
+          "endDateField": "created_at",
+          "colorField": "entry_type",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "refunds",
+          "titleField": "id",
+          "startDateField": "refund_date",
+          "endDateField": "refund_date",
+          "colorField": "status",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "tenants",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "update_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Invoices \u0026 Payments",
+      "description": "Manage invoices, invoice items, payments, and refunds",
+      "ui": {
+        "icon": "MdReceipt"
+      },
+      "entities": [
+        {
+          "table": "invoices",
+          "label": "invoices",
+          "Identifier": "id",
+          "description": "Customer invoices",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": "tenants.id"
+              }
+            },
+            {
+              "name": "invoice_uid",
+              "label": "invoice_uid",
+              "relation": null
+            },
+            {
+              "name": "invoice_number",
+              "label": "invoice_number",
+              "relation": null
+            },
+            {
+              "name": "order_uid",
+              "label": "order_uid",
+              "relation": null
+            },
+            {
+              "name": "user_uid",
+              "label": "user_uid",
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "relation": null
+            },
+            {
+              "name": "currency",
+              "label": "currency",
+              "relation": null
+            },
+            {
+              "name": "subtotal",
+              "label": "subtotal",
+              "relation": null
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount",
+              "relation": null
+            },
+            {
+              "name": "discount_amount",
+              "label": "discount_amount",
+              "relation": null
+            },
+            {
+              "name": "total_amount",
+              "label": "total_amount",
+              "relation": null
+            },
+            {
+              "name": "paid_amount",
+              "label": "paid_amount",
+              "relation": null
+            },
+            {
+              "name": "due_amount",
+              "label": "due_amount",
+              "relation": null
+            },
+            {
+              "name": "billing_date",
+              "label": "billing_date",
+              "relation": null
+            },
+            {
+              "name": "due_date",
+              "label": "due_date",
+              "relation": null
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference",
+              "relation": null
+            },
+            {
+              "name": "pdf_url",
+              "label": "pdf_url",
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "invoice_uid",
+              "label": "invoice_uid",
+              "placeholder": "Enter invoice_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "invoice_number",
+              "label": "invoice_number",
+              "placeholder": "Enter invoice_number",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "order_uid",
+              "label": "order_uid",
+              "placeholder": "Enter order_uid",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "user_uid",
+              "label": "user_uid",
+              "placeholder": "Enter user_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "placeholder": "Enter status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Draft",
+                  "Value": "draft"
+                },
+                {
+                  "Label": "Unpaid",
+                  "Value": "unpaid"
+                },
+                {
+                  "Label": "Paid",
+                  "Value": "paid"
+                },
+                {
+                  "Label": "Refunded",
+                  "Value": "refunded"
+                },
+                {
+                  "Label": "Overdue",
+                  "Value": "overdue"
+                },
+                {
+                  "Label": "Cancelled",
+                  "Value": "cancelled"
+                }
+              ],
+              "defaultvalue": "draft",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currency",
+              "label": "currency",
+              "placeholder": "Enter currency",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "INR",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "subtotal",
+              "label": "subtotal",
+              "placeholder": "Enter subtotal",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount",
+              "placeholder": "Enter tax_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "discount_amount",
+              "label": "discount_amount",
+              "placeholder": "Enter discount_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "total_amount",
+              "label": "total_amount",
+              "placeholder": "Enter total_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "paid_amount",
+              "label": "paid_amount",
+              "placeholder": "Enter paid_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "due_amount",
+              "label": "due_amount",
+              "placeholder": "Enter due_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "billing_date",
+              "label": "billing_date",
+              "placeholder": "Enter billing_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "due_date",
+              "label": "due_date",
+              "placeholder": "Enter due_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference",
+              "placeholder": "Enter payment_reference",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "pdf_url",
+              "label": "pdf_url",
+              "placeholder": "Enter pdf_url",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "placeholder": "Enter created_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "invoice_uid",
+              "label": "invoice_uid",
+              "placeholder": "Enter invoice_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "invoice_number",
+              "label": "invoice_number",
+              "placeholder": "Enter invoice_number",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "order_uid",
+              "label": "order_uid",
+              "placeholder": "Enter order_uid",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "user_uid",
+              "label": "user_uid",
+              "placeholder": "Enter user_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "placeholder": "Enter status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Draft",
+                  "Value": "draft"
+                },
+                {
+                  "Label": "Unpaid",
+                  "Value": "unpaid"
+                },
+                {
+                  "Label": "Paid",
+                  "Value": "paid"
+                },
+                {
+                  "Label": "Refunded",
+                  "Value": "refunded"
+                },
+                {
+                  "Label": "Overdue",
+                  "Value": "overdue"
+                },
+                {
+                  "Label": "Cancelled",
+                  "Value": "cancelled"
+                }
+              ],
+              "defaultvalue": "draft",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currency",
+              "label": "currency",
+              "placeholder": "Enter currency",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "INR",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "subtotal",
+              "label": "subtotal",
+              "placeholder": "Enter subtotal",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount",
+              "placeholder": "Enter tax_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "discount_amount",
+              "label": "discount_amount",
+              "placeholder": "Enter discount_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "total_amount",
+              "label": "total_amount",
+              "placeholder": "Enter total_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "paid_amount",
+              "label": "paid_amount",
+              "placeholder": "Enter paid_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "due_amount",
+              "label": "due_amount",
+              "placeholder": "Enter due_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "billing_date",
+              "label": "billing_date",
+              "placeholder": "Enter billing_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "due_date",
+              "label": "due_date",
+              "placeholder": "Enter due_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference",
+              "placeholder": "Enter payment_reference",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "pdf_url",
+              "label": "pdf_url",
+              "placeholder": "Enter pdf_url",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "placeholder": "Enter created_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "tenant_id",
+            "invoice_uid",
+            "invoice_number",
+            "order_uid",
+            "user_uid",
+            "status",
+            "currency",
+            "subtotal",
+            "tax_amount",
+            "discount_amount",
+            "total_amount",
+            "paid_amount",
+            "due_amount",
+            "billing_date",
+            "due_date",
+            "payment_reference",
+            "pdf_url",
+            "metadata",
+            "created_at",
+            "updated_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "tenant_id",
+              "label": "tenant_id"
+            },
+            {
+              "name": "invoice_uid",
+              "label": "invoice_uid"
+            },
+            {
+              "name": "invoice_number",
+              "label": "invoice_number"
+            },
+            {
+              "name": "order_uid",
+              "label": "order_uid"
+            },
+            {
+              "name": "user_uid",
+              "label": "user_uid"
+            },
+            {
+              "name": "status",
+              "label": "status"
+            },
+            {
+              "name": "currency",
+              "label": "currency"
+            },
+            {
+              "name": "subtotal",
+              "label": "subtotal"
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount"
+            },
+            {
+              "name": "discount_amount",
+              "label": "discount_amount"
+            },
+            {
+              "name": "total_amount",
+              "label": "total_amount"
+            },
+            {
+              "name": "paid_amount",
+              "label": "paid_amount"
+            },
+            {
+              "name": "due_amount",
+              "label": "due_amount"
+            },
+            {
+              "name": "billing_date",
+              "label": "billing_date"
+            },
+            {
+              "name": "due_date",
+              "label": "due_date"
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference"
+            },
+            {
+              "name": "pdf_url",
+              "label": "pdf_url"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            },
+            {
+              "name": "updated_at",
+              "label": "updated_at"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaFileInvoice"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "invoice_items",
+          "label": "invoice_items",
+          "Identifier": "id",
+          "description": "Items listed in an invoice",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "relation": {
+                "datasource": null,
+                "table": "invoices",
+                "valueField": "id",
+                "labelFields": "invoices.id"
+              }
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "relation": null
+            },
+            {
+              "name": "product_ref",
+              "label": "product_ref",
+              "relation": null
+            },
+            {
+              "name": "plan_ref",
+              "label": "plan_ref",
+              "relation": null
+            },
+            {
+              "name": "quantity",
+              "label": "quantity",
+              "relation": null
+            },
+            {
+              "name": "unit_price",
+              "label": "unit_price",
+              "relation": null
+            },
+            {
+              "name": "subtotal",
+              "label": "subtotal",
+              "relation": null
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount",
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "placeholder": "Enter invoice_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "invoices",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "product_ref",
+              "label": "product_ref",
+              "placeholder": "Enter product_ref",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "plan_ref",
+              "label": "plan_ref",
+              "placeholder": "Enter plan_ref",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "quantity",
+              "label": "quantity",
+              "placeholder": "Enter quantity",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "unit_price",
+              "label": "unit_price",
+              "placeholder": "Enter unit_price",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "subtotal",
+              "label": "subtotal",
+              "placeholder": "Enter subtotal",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount",
+              "placeholder": "Enter tax_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "placeholder": "Enter invoice_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "invoices",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "product_ref",
+              "label": "product_ref",
+              "placeholder": "Enter product_ref",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "plan_ref",
+              "label": "plan_ref",
+              "placeholder": "Enter plan_ref",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "quantity",
+              "label": "quantity",
+              "placeholder": "Enter quantity",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "unit_price",
+              "label": "unit_price",
+              "placeholder": "Enter unit_price",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "subtotal",
+              "label": "subtotal",
+              "placeholder": "Enter subtotal",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount",
+              "placeholder": "Enter tax_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "invoice_id",
+            "description",
+            "product_ref",
+            "plan_ref",
+            "quantity",
+            "unit_price",
+            "subtotal",
+            "tax_amount",
+            "metadata"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "invoice_id",
+              "label": "invoice_id"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "product_ref",
+              "label": "product_ref"
+            },
+            {
+              "name": "plan_ref",
+              "label": "plan_ref"
+            },
+            {
+              "name": "quantity",
+              "label": "quantity"
+            },
+            {
+              "name": "unit_price",
+              "label": "unit_price"
+            },
+            {
+              "name": "subtotal",
+              "label": "subtotal"
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaList"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "invoice_payments",
+          "label": "invoice_payments",
+          "Identifier": "id",
+          "description": "Payments made against invoices",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "relation": {
+                "datasource": null,
+                "table": "invoices",
+                "valueField": "id",
+                "labelFields": "invoices.id"
+              }
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference",
+              "relation": null
+            },
+            {
+              "name": "payment_method",
+              "label": "payment_method",
+              "relation": null
+            },
+            {
+              "name": "amount",
+              "label": "amount",
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "relation": null
+            },
+            {
+              "name": "paid_at",
+              "label": "paid_at",
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "placeholder": "Enter invoice_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "invoices",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference",
+              "placeholder": "Enter payment_reference",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "payment_method",
+              "label": "payment_method",
+              "placeholder": "Enter payment_method",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "amount",
+              "label": "amount",
+              "placeholder": "Enter amount",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "placeholder": "Enter status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Pending",
+                  "Value": "pending"
+                },
+                {
+                  "Label": "Success",
+                  "Value": "success"
+                },
+                {
+                  "Label": "Failed",
+                  "Value": "failed"
+                },
+                {
+                  "Label": "Refunded",
+                  "Value": "refunded"
+                }
+              ],
+              "defaultvalue": "pending",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "paid_at",
+              "label": "paid_at",
+              "placeholder": "Enter paid_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "placeholder": "Enter created_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "placeholder": "Enter invoice_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "invoices",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference",
+              "placeholder": "Enter payment_reference",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "payment_method",
+              "label": "payment_method",
+              "placeholder": "Enter payment_method",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "amount",
+              "label": "amount",
+              "placeholder": "Enter amount",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "placeholder": "Enter status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Pending",
+                  "Value": "pending"
+                },
+                {
+                  "Label": "Success",
+                  "Value": "success"
+                },
+                {
+                  "Label": "Failed",
+                  "Value": "failed"
+                },
+                {
+                  "Label": "Refunded",
+                  "Value": "refunded"
+                }
+              ],
+              "defaultvalue": "pending",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "paid_at",
+              "label": "paid_at",
+              "placeholder": "Enter paid_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "placeholder": "Enter created_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "invoice_id",
+            "payment_reference",
+            "payment_method",
+            "amount",
+            "status",
+            "paid_at",
+            "created_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "invoice_id",
+              "label": "invoice_id"
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference"
+            },
+            {
+              "name": "payment_method",
+              "label": "payment_method"
+            },
+            {
+              "name": "amount",
+              "label": "amount"
+            },
+            {
+              "name": "status",
+              "label": "status"
+            },
+            {
+              "name": "paid_at",
+              "label": "paid_at"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCreditCard"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "refunds",
+          "label": "refunds",
+          "Identifier": "id",
+          "description": "Issued invoice refunds",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "relation": {
+                "datasource": null,
+                "table": "invoices",
+                "valueField": "id",
+                "labelFields": "invoices.id"
+              }
+            },
+            {
+              "name": "refund_uid",
+              "label": "refund_uid",
+              "relation": null
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference",
+              "relation": null
+            },
+            {
+              "name": "refund_amount",
+              "label": "refund_amount",
+              "relation": null
+            },
+            {
+              "name": "refund_reason",
+              "label": "refund_reason",
+              "relation": null
+            },
+            {
+              "name": "refund_date",
+              "label": "refund_date",
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "placeholder": "Enter invoice_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "invoices",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "refund_uid",
+              "label": "refund_uid",
+              "placeholder": "Enter refund_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference",
+              "placeholder": "Enter payment_reference",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "refund_amount",
+              "label": "refund_amount",
+              "placeholder": "Enter refund_amount",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "refund_reason",
+              "label": "refund_reason",
+              "placeholder": "Enter refund_reason",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "refund_date",
+              "label": "refund_date",
+              "placeholder": "Enter refund_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "placeholder": "Enter status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Initiated",
+                  "Value": "initiated"
+                },
+                {
+                  "Label": "Processed",
+                  "Value": "processed"
+                },
+                {
+                  "Label": "Failed",
+                  "Value": "failed"
+                }
+              ],
+              "defaultvalue": "initiated",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "placeholder": "Enter invoice_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "invoices",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "refund_uid",
+              "label": "refund_uid",
+              "placeholder": "Enter refund_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference",
+              "placeholder": "Enter payment_reference",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "refund_amount",
+              "label": "refund_amount",
+              "placeholder": "Enter refund_amount",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "refund_reason",
+              "label": "refund_reason",
+              "placeholder": "Enter refund_reason",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "refund_date",
+              "label": "refund_date",
+              "placeholder": "Enter refund_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "status",
+              "placeholder": "Enter status",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Initiated",
+                  "Value": "initiated"
+                },
+                {
+                  "Label": "Processed",
+                  "Value": "processed"
+                },
+                {
+                  "Label": "Failed",
+                  "Value": "failed"
+                }
+              ],
+              "defaultvalue": "initiated",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "invoice_id",
+            "refund_uid",
+            "payment_reference",
+            "refund_amount",
+            "refund_reason",
+            "refund_date",
+            "status",
+            "metadata"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "invoice_id",
+              "label": "invoice_id"
+            },
+            {
+              "name": "refund_uid",
+              "label": "refund_uid"
+            },
+            {
+              "name": "payment_reference",
+              "label": "payment_reference"
+            },
+            {
+              "name": "refund_amount",
+              "label": "refund_amount"
+            },
+            {
+              "name": "refund_reason",
+              "label": "refund_reason"
+            },
+            {
+              "name": "refund_date",
+              "label": "refund_date"
+            },
+            {
+              "name": "status",
+              "label": "status"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUndo"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Accounting",
+      "description": "Track financial ledger entries and related accounting data",
+      "ui": {
+        "icon": "MdAccountBalance"
+      },
+      "entities": [
+        {
+          "table": "ledger_entries",
+          "label": "ledger_entries",
+          "Identifier": "id",
+          "description": "Ledger accounting entries",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": "tenants.id"
+              }
+            },
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "relation": null
+            },
+            {
+              "name": "entry_type",
+              "label": "entry_type",
+              "relation": null
+            },
+            {
+              "name": "account_type",
+              "label": "account_type",
+              "relation": null
+            },
+            {
+              "name": "amount",
+              "label": "amount",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "relation": null
+            },
+            {
+              "name": "reference_uid",
+              "label": "reference_uid",
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "placeholder": "Enter invoice_id",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "entry_type",
+              "label": "entry_type",
+              "placeholder": "Enter entry_type",
+              "type": "dropdown",
+              "required": true,
+              "options": [
+                {
+                  "Label": "Debit",
+                  "Value": "debit"
+                },
+                {
+                  "Label": "Credit",
+                  "Value": "credit"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "account_type",
+              "label": "account_type",
+              "placeholder": "Enter account_type",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Receivable",
+                  "Value": "receivable"
+                },
+                {
+                  "Label": "Revenue",
+                  "Value": "revenue"
+                },
+                {
+                  "Label": "Tax",
+                  "Value": "tax"
+                },
+                {
+                  "Label": "Discount",
+                  "Value": "discount"
+                },
+                {
+                  "Label": "Refund",
+                  "Value": "refund"
+                },
+                {
+                  "Label": "Adjustment",
+                  "Value": "adjustment"
+                }
+              ],
+              "defaultvalue": "receivable",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "amount",
+              "label": "amount",
+              "placeholder": "Enter amount",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "reference_uid",
+              "label": "reference_uid",
+              "placeholder": "Enter reference_uid",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "placeholder": "Enter created_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "invoice_id",
+              "label": "invoice_id",
+              "placeholder": "Enter invoice_id",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "entry_type",
+              "label": "entry_type",
+              "placeholder": "Enter entry_type",
+              "type": "dropdown",
+              "required": true,
+              "options": [
+                {
+                  "Label": "Debit",
+                  "Value": "debit"
+                },
+                {
+                  "Label": "Credit",
+                  "Value": "credit"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "account_type",
+              "label": "account_type",
+              "placeholder": "Enter account_type",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Receivable",
+                  "Value": "receivable"
+                },
+                {
+                  "Label": "Revenue",
+                  "Value": "revenue"
+                },
+                {
+                  "Label": "Tax",
+                  "Value": "tax"
+                },
+                {
+                  "Label": "Discount",
+                  "Value": "discount"
+                },
+                {
+                  "Label": "Refund",
+                  "Value": "refund"
+                },
+                {
+                  "Label": "Adjustment",
+                  "Value": "adjustment"
+                }
+              ],
+              "defaultvalue": "receivable",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "amount",
+              "label": "amount",
+              "placeholder": "Enter amount",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "reference_uid",
+              "label": "reference_uid",
+              "placeholder": "Enter reference_uid",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "created_at",
+              "placeholder": "Enter created_at",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "tenant_id",
+            "invoice_id",
+            "entry_type",
+            "account_type",
+            "amount",
+            "description",
+            "reference_uid",
+            "created_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "tenant_id",
+              "label": "tenant_id"
+            },
+            {
+              "name": "invoice_id",
+              "label": "invoice_id"
+            },
+            {
+              "name": "entry_type",
+              "label": "entry_type"
+            },
+            {
+              "name": "account_type",
+              "label": "account_type"
+            },
+            {
+              "name": "amount",
+              "label": "amount"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "reference_uid",
+              "label": "reference_uid"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBook"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Tenancy",
+      "description": "Manage tenants and tenant-specific settings",
+      "ui": {
+        "icon": "MdBusiness"
+      },
+      "entities": [
+        {
+          "table": "tenants",
+          "label": "tenants",
+          "Identifier": "id",
+          "description": "System tenants",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "relation": null
+            },
+            {
+              "name": "domain",
+              "label": "domain",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "domain",
+              "label": "domain",
+              "placeholder": "Enter domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "domain",
+              "label": "domain",
+              "placeholder": "Enter domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "tenant_id",
+            "name",
+            "domain",
+            "description",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "tenant_id",
+              "label": "tenant_id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "domain",
+              "label": "domain"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBuilding"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    }
+  ]
+}
