@@ -1,0 +1,1429 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "datasources": {
+    "channelsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "xxxx-yyyy"
+      }
+    },
+    "connectionsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "zzzz-1111"
+      }
+    }
+  },
+  "ui": {
+    "links": [
+      {
+        "label": "View External App",
+        "url": "https://external.app/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaExternalLinkAlt"
+      },
+      {
+        "label": "Open Admin",
+        "url": "https://admin.external.app/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaUserShield"
+      }
+    ]
+  },
+  "description": "Database for managing subscription entitlements, usage tracking, and tenant information.",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": []
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total subscription_entitlements",
+          "display": "count(*) as display",
+          "entity": "subscription_entitlements",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total subscription_usage",
+          "display": "count(*) as display",
+          "entity": "subscription_usage",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total tenants",
+          "display": "count(*) as display",
+          "entity": "tenants",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 subscription_entitlements",
+          "display": "subscription_uid,metric,metadata",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "period_start",
+              "direction": "desc"
+            }
+          ],
+          "entity": "subscription_entitlements",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 subscription_usage",
+          "display": "subscription_uid,metric,metadata",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "usage_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "subscription_usage",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 tenants",
+          "display": "tenant_uid,name,domain,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tenants",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "subscription_entitlements Table",
+          "display": "subscription_uid,metric,metadata",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "period_start",
+              "direction": "desc"
+            }
+          ],
+          "entity": "subscription_entitlements",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "subscription_usage Table",
+          "display": "subscription_uid,metric,metadata",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "usage_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "subscription_usage",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "tenants Table",
+          "display": "tenant_uid,name,domain,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tenants",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": {
+        "label": "Quick Actions",
+        "roles": [
+          "root",
+          "admin",
+          "hr"
+        ],
+        "items": [
+          {
+            "label": "Add subscription_entitlements",
+            "action": "create",
+            "entity": "subscription_entitlements",
+            "group": "subscription_entitlements",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          },
+          {
+            "label": "Add subscription_usage",
+            "action": "create",
+            "entity": "subscription_usage",
+            "group": "subscription_usage",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          }
+        ]
+      },
+      "reports": [
+        {
+          "label": "Monthly Joinees",
+          "filter": "Status eq \u0027Active\u0027",
+          "entity": "subscription_entitlements",
+          "exportable": true,
+          "roles": [
+            "root",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "calendar",
+      "roles": [
+        "root",
+        "hr",
+        "manager"
+      ],
+      "calendarConfig": [
+        {
+          "entity": "subscription_entitlements",
+          "titleField": "id",
+          "startDateField": "period_start",
+          "endDateField": "period_start",
+          "colorField": "period_type",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "subscription_usage",
+          "titleField": "id",
+          "startDateField": "usage_date",
+          "endDateField": "usage_date",
+          "colorField": "creation_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "tenants",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "update_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Subscriptions",
+      "description": "Manage entitlements and usage tracking for subscriptions",
+      "ui": {
+        "icon": "MdSubscriptions"
+      },
+      "entities": [
+        {
+          "table": "subscription_entitlements",
+          "label": "subscription_entitlements",
+          "Identifier": "id",
+          "description": "Subscription Entitlements",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": "tenants.id"
+              }
+            },
+            {
+              "name": "subscription_uid",
+              "label": "subscription_uid",
+              "relation": null
+            },
+            {
+              "name": "metric",
+              "label": "metric",
+              "relation": null
+            },
+            {
+              "name": "total_allowed",
+              "label": "total_allowed",
+              "relation": null
+            },
+            {
+              "name": "period_type",
+              "label": "period_type",
+              "relation": null
+            },
+            {
+              "name": "period_start",
+              "label": "period_start",
+              "relation": null
+            },
+            {
+              "name": "period_end",
+              "label": "period_end",
+              "relation": null
+            },
+            {
+              "name": "consumed",
+              "label": "consumed",
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "subscription_uid",
+              "label": "subscription_uid",
+              "placeholder": "Enter subscription_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metric",
+              "label": "metric",
+              "placeholder": "Enter metric",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "total_allowed",
+              "label": "total_allowed",
+              "placeholder": "Enter total_allowed",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "period_type",
+              "label": "period_type",
+              "placeholder": "Enter period_type",
+              "type": "dropdown",
+              "required": true,
+              "options": [
+                {
+                  "Label": "HOURLY",
+                  "Value": "HOURLY"
+                },
+                {
+                  "Label": "DAILY",
+                  "Value": "DAILY"
+                },
+                {
+                  "Label": "WEEKLY",
+                  "Value": "WEEKLY"
+                },
+                {
+                  "Label": "MONTHLY",
+                  "Value": "MONTHLY"
+                },
+                {
+                  "Label": "YEARLY",
+                  "Value": "YEARLY"
+                },
+                {
+                  "Label": "LIFETIME",
+                  "Value": "LIFETIME"
+                },
+                {
+                  "Label": "CUSTOM",
+                  "Value": "CUSTOM"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "period_start",
+              "label": "period_start",
+              "placeholder": "Enter period_start",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "period_end",
+              "label": "period_end",
+              "placeholder": "Enter period_end",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "consumed",
+              "label": "consumed",
+              "placeholder": "Enter consumed",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "subscription_uid",
+              "label": "subscription_uid",
+              "placeholder": "Enter subscription_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metric",
+              "label": "metric",
+              "placeholder": "Enter metric",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "total_allowed",
+              "label": "total_allowed",
+              "placeholder": "Enter total_allowed",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "period_type",
+              "label": "period_type",
+              "placeholder": "Enter period_type",
+              "type": "dropdown",
+              "required": true,
+              "options": [
+                {
+                  "Label": "HOURLY",
+                  "Value": "HOURLY"
+                },
+                {
+                  "Label": "DAILY",
+                  "Value": "DAILY"
+                },
+                {
+                  "Label": "WEEKLY",
+                  "Value": "WEEKLY"
+                },
+                {
+                  "Label": "MONTHLY",
+                  "Value": "MONTHLY"
+                },
+                {
+                  "Label": "YEARLY",
+                  "Value": "YEARLY"
+                },
+                {
+                  "Label": "LIFETIME",
+                  "Value": "LIFETIME"
+                },
+                {
+                  "Label": "CUSTOM",
+                  "Value": "CUSTOM"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "period_start",
+              "label": "period_start",
+              "placeholder": "Enter period_start",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "period_end",
+              "label": "period_end",
+              "placeholder": "Enter period_end",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "consumed",
+              "label": "consumed",
+              "placeholder": "Enter consumed",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "tenant_id",
+            "subscription_uid",
+            "metric",
+            "total_allowed",
+            "period_type",
+            "period_start",
+            "period_end",
+            "consumed",
+            "metadata",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "tenant_id",
+              "label": "tenant_id"
+            },
+            {
+              "name": "subscription_uid",
+              "label": "subscription_uid"
+            },
+            {
+              "name": "metric",
+              "label": "metric"
+            },
+            {
+              "name": "total_allowed",
+              "label": "total_allowed"
+            },
+            {
+              "name": "period_type",
+              "label": "period_type"
+            },
+            {
+              "name": "period_start",
+              "label": "period_start"
+            },
+            {
+              "name": "period_end",
+              "label": "period_end"
+            },
+            {
+              "name": "consumed",
+              "label": "consumed"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root1"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root1"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root1"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTicketAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "subscription_usage",
+          "label": "subscription_usage",
+          "Identifier": "id",
+          "description": "Subscription Usage",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "subscription_uid",
+              "label": "subscription_uid",
+              "relation": {
+                "datasource": null,
+                "table": "subscription_entitlements",
+                "valueField": "subscription_uid",
+                "labelFields": "subscription_entitlements.subscription_uid"
+              }
+            },
+            {
+              "name": "metric",
+              "label": "metric",
+              "relation": null
+            },
+            {
+              "name": "usage_count",
+              "label": "usage_count",
+              "relation": null
+            },
+            {
+              "name": "usage_date",
+              "label": "usage_date",
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "subscription_uid",
+              "label": "subscription_uid",
+              "placeholder": "Enter subscription_uid",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "subscription_entitlements",
+                "valueField": "subscription_uid",
+                "labelFields": [
+                  "subscription_uid"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "metric",
+              "label": "metric",
+              "placeholder": "Enter metric",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "usage_count",
+              "label": "usage_count",
+              "placeholder": "Enter usage_count",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "usage_date",
+              "label": "usage_date",
+              "placeholder": "Enter usage_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "subscription_uid",
+              "label": "subscription_uid",
+              "placeholder": "Enter subscription_uid",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "subscription_entitlements",
+                "valueField": "subscription_uid",
+                "labelFields": [
+                  "subscription_uid"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "metric",
+              "label": "metric",
+              "placeholder": "Enter metric",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "usage_count",
+              "label": "usage_count",
+              "placeholder": "Enter usage_count",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "usage_date",
+              "label": "usage_date",
+              "placeholder": "Enter usage_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "subscription_uid",
+            "metric",
+            "usage_count",
+            "usage_date",
+            "metadata",
+            "creation_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "subscription_uid",
+              "label": "subscription_uid"
+            },
+            {
+              "name": "metric",
+              "label": "metric"
+            },
+            {
+              "name": "usage_count",
+              "label": "usage_count"
+            },
+            {
+              "name": "usage_date",
+              "label": "usage_date"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root1"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root1"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root1"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaChartBar"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Tenants",
+      "description": "Tenant and organization information",
+      "ui": {
+        "icon": "MdBusiness"
+      },
+      "entities": [
+        {
+          "table": "tenants",
+          "label": "tenants",
+          "Identifier": "id",
+          "description": "Tenants",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "tenant_uid",
+              "label": "tenant_uid",
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "relation": null
+            },
+            {
+              "name": "domain",
+              "label": "domain",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "tenant_uid",
+              "label": "tenant_uid",
+              "placeholder": "Enter tenant_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "domain",
+              "label": "domain",
+              "placeholder": "Enter domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "tenant_uid",
+              "label": "tenant_uid",
+              "placeholder": "Enter tenant_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "domain",
+              "label": "domain",
+              "placeholder": "Enter domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "tenant_uid",
+            "name",
+            "domain",
+            "description",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "tenant_uid",
+              "label": "tenant_uid"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "domain",
+              "label": "domain"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root1"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root1"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root1"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBuilding"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    }
+  ]
+}
