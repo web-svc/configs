@@ -32,7 +32,7 @@
       }
     ]
   },
-  "description": "E-commerce order management database",
+  "description": "Database for managing customers, orders, and tenants",
   "dashboard": [
     {
       "viewType": "summary",
@@ -388,276 +388,12 @@
   ],
   "groups": [
     {
-      "name": "Customers \u0026 Orders",
-      "description": "Manage customers, orders, and related order items",
+      "name": "Orders",
+      "description": "Manage customer orders and associated items",
       "ui": {
         "icon": "MdShoppingCart"
       },
       "entities": [
-        {
-          "table": "customers",
-          "label": "customers",
-          "Identifier": "id",
-          "description": "Customer profiles",
-          "features": {},
-          "displayFields": [
-            {
-              "name": "tenant_id",
-              "label": "tenant_id",
-              "relation": {
-                "datasource": null,
-                "table": "tenants",
-                "valueField": "id",
-                "labelFields": "tenants.id"
-              }
-            },
-            {
-              "name": "user_uid",
-              "label": "user_uid",
-              "relation": null
-            },
-            {
-              "name": "customer_alias",
-              "label": "customer_alias",
-              "relation": null
-            },
-            {
-              "name": "metadata",
-              "label": "metadata",
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "relation": null
-            }
-          ],
-          "createFields": [
-            {
-              "name": "tenant_id",
-              "label": "tenant_id",
-              "placeholder": "Enter tenant_id",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "datasource": null,
-                "table": "tenants",
-                "valueField": "id",
-                "labelFields": [
-                  "id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "user_uid",
-              "label": "user_uid",
-              "placeholder": "Enter user_uid",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "customer_alias",
-              "label": "customer_alias",
-              "placeholder": "Enter customer_alias",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "metadata",
-              "label": "metadata",
-              "placeholder": "Enter metadata",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "placeholder": "Enter creation_date",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "editFields": [
-            {
-              "name": "tenant_id",
-              "label": "tenant_id",
-              "placeholder": "Enter tenant_id",
-              "type": "lookup",
-              "required": true,
-              "options": null,
-              "defaultvalue": "",
-              "constraints": null,
-              "relation": {
-                "datasource": null,
-                "table": "tenants",
-                "valueField": "id",
-                "labelFields": [
-                  "id"
-                ],
-                "limit": 5
-              }
-            },
-            {
-              "name": "user_uid",
-              "label": "user_uid",
-              "placeholder": "Enter user_uid",
-              "type": "text",
-              "required": true,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "customer_alias",
-              "label": "customer_alias",
-              "placeholder": "Enter customer_alias",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "metadata",
-              "label": "metadata",
-              "placeholder": "Enter metadata",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "placeholder": "Enter creation_date",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            }
-          ],
-          "searchFields": [
-            "id",
-            "tenant_id",
-            "user_uid",
-            "customer_alias",
-            "metadata",
-            "creation_date",
-            "update_date"
-          ],
-          "viewFields": [
-            {
-              "name": "id",
-              "label": "id"
-            },
-            {
-              "name": "tenant_id",
-              "label": "tenant_id"
-            },
-            {
-              "name": "user_uid",
-              "label": "user_uid"
-            },
-            {
-              "name": "customer_alias",
-              "label": "customer_alias"
-            },
-            {
-              "name": "metadata",
-              "label": "metadata"
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date"
-            },
-            {
-              "name": "update_date",
-              "label": "update_date"
-            }
-          ],
-          "permissions": {
-            "allowCreate": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowEdit": {
-              "accessRoles": [
-                "root"
-              ]
-            },
-            "allowDelete": {
-              "accessRoles": [
-                "root"
-              ]
-            }
-          },
-          "pagination": true,
-          "ui": {
-            "icon": "FaUser"
-          },
-          "accessRoles": [
-            "root"
-          ],
-          "limit": 20,
-          "orderBy": [
-            {
-              "column": "id",
-              "direction": "asc"
-            }
-          ],
-          "isSearchRealtime": true
-        },
         {
           "table": "orders",
           "label": "orders",
@@ -1433,7 +1169,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaClipboardList"
+            "icon": "FaShoppingCart"
           },
           "accessRoles": [
             "root"
@@ -1470,6 +1206,11 @@
               "relation": null
             },
             {
+              "name": "hsn_sac_code",
+              "label": "hsn_sac_code",
+              "relation": null
+            },
+            {
               "name": "product_snapshot",
               "label": "product_snapshot",
               "relation": null
@@ -1490,8 +1231,33 @@
               "relation": null
             },
             {
+              "name": "unit",
+              "label": "unit",
+              "relation": null
+            },
+            {
               "name": "unit_price",
               "label": "unit_price",
+              "relation": null
+            },
+            {
+              "name": "amount",
+              "label": "amount",
+              "relation": null
+            },
+            {
+              "name": "discount",
+              "label": "discount",
+              "relation": null
+            },
+            {
+              "name": "taxable_value",
+              "label": "taxable_value",
+              "relation": null
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount",
               "relation": null
             },
             {
@@ -1529,6 +1295,20 @@
               "name": "product_ref",
               "label": "product_ref",
               "placeholder": "Enter product_ref",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "hsn_sac_code",
+              "label": "hsn_sac_code",
+              "placeholder": "Enter hsn_sac_code",
               "type": "text",
               "required": true,
               "options": [],
@@ -1596,6 +1376,20 @@
               "relation": null
             },
             {
+              "name": "unit",
+              "label": "unit",
+              "placeholder": "Enter unit",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "piece",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
               "name": "unit_price",
               "label": "unit_price",
               "placeholder": "Enter unit_price",
@@ -1603,6 +1397,62 @@
               "required": true,
               "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "amount",
+              "label": "amount",
+              "placeholder": "Enter amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "discount",
+              "label": "discount",
+              "placeholder": "Enter discount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "taxable_value",
+              "label": "taxable_value",
+              "placeholder": "Enter taxable_value",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount",
+              "placeholder": "Enter tax_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
               "constraints": {
                 "min": null,
                 "max": null
@@ -1673,6 +1523,20 @@
               "relation": null
             },
             {
+              "name": "hsn_sac_code",
+              "label": "hsn_sac_code",
+              "placeholder": "Enter hsn_sac_code",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
               "name": "product_snapshot",
               "label": "product_snapshot",
               "placeholder": "Enter product_snapshot",
@@ -1729,6 +1593,20 @@
               "relation": null
             },
             {
+              "name": "unit",
+              "label": "unit",
+              "placeholder": "Enter unit",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "piece",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
               "name": "unit_price",
               "label": "unit_price",
               "placeholder": "Enter unit_price",
@@ -1736,6 +1614,62 @@
               "required": true,
               "options": [],
               "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "amount",
+              "label": "amount",
+              "placeholder": "Enter amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "discount",
+              "label": "discount",
+              "placeholder": "Enter discount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "taxable_value",
+              "label": "taxable_value",
+              "placeholder": "Enter taxable_value",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount",
+              "placeholder": "Enter tax_amount",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
               "constraints": {
                 "min": null,
                 "max": null
@@ -1775,11 +1709,17 @@
             "id",
             "order_id",
             "product_ref",
+            "hsn_sac_code",
             "product_snapshot",
             "plan_ref",
             "name",
             "quantity",
+            "unit",
             "unit_price",
+            "amount",
+            "discount",
+            "taxable_value",
+            "tax_amount",
             "subtotal",
             "metadata"
           ],
@@ -1795,6 +1735,10 @@
             {
               "name": "product_ref",
               "label": "product_ref"
+            },
+            {
+              "name": "hsn_sac_code",
+              "label": "hsn_sac_code"
             },
             {
               "name": "product_snapshot",
@@ -1813,8 +1757,28 @@
               "label": "quantity"
             },
             {
+              "name": "unit",
+              "label": "unit"
+            },
+            {
               "name": "unit_price",
               "label": "unit_price"
+            },
+            {
+              "name": "amount",
+              "label": "amount"
+            },
+            {
+              "name": "discount",
+              "label": "discount"
+            },
+            {
+              "name": "taxable_value",
+              "label": "taxable_value"
+            },
+            {
+              "name": "tax_amount",
+              "label": "tax_amount"
             },
             {
               "name": "subtotal",
@@ -1844,7 +1808,7 @@
           },
           "pagination": true,
           "ui": {
-            "icon": "FaBoxOpen"
+            "icon": "FaListUl"
           },
           "accessRoles": [
             "root"
@@ -1861,17 +1825,281 @@
       ]
     },
     {
-      "name": "Tenant Management",
-      "description": "Manage tenant-level configurations and metadata",
+      "name": "Customers",
+      "description": "Customer and tenant information",
       "ui": {
-        "icon": "MdBusiness"
+        "icon": "MdPerson"
       },
       "entities": [
+        {
+          "table": "customers",
+          "label": "customers",
+          "Identifier": "id",
+          "description": "Customer profiles",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": "tenants.id"
+              }
+            },
+            {
+              "name": "user_uid",
+              "label": "user_uid",
+              "relation": null
+            },
+            {
+              "name": "customer_alias",
+              "label": "customer_alias",
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "user_uid",
+              "label": "user_uid",
+              "placeholder": "Enter user_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "customer_alias",
+              "label": "customer_alias",
+              "placeholder": "Enter customer_alias",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "user_uid",
+              "label": "user_uid",
+              "placeholder": "Enter user_uid",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "customer_alias",
+              "label": "customer_alias",
+              "placeholder": "Enter customer_alias",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "tenant_id",
+            "user_uid",
+            "customer_alias",
+            "metadata",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "tenant_id",
+              "label": "tenant_id"
+            },
+            {
+              "name": "user_uid",
+              "label": "user_uid"
+            },
+            {
+              "name": "customer_alias",
+              "label": "customer_alias"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaUser"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
         {
           "table": "tenants",
           "label": "tenants",
           "Identifier": "id",
-          "description": "Tenant settings",
+          "description": "Tenant details",
           "features": {},
           "displayFields": [
             {
