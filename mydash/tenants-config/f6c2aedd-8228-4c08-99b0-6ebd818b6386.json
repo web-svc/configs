@@ -17,15 +17,29 @@
   "ui": {
     "links": [
       {
-        "label": "View External App",
-        "url": "https://external.app/",
+        "label": "My Orders",
+        "url": "https://mydash.websvc.in/order/",
         "target": "_blank",
         "position": "header",
         "icon": "FaExternalLinkAlt"
       },
       {
         "label": "Open Admin",
-        "url": "https://admin.external.app/",
+        "url": "https://mydash.websvc.in/loginlink/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaUserShield"
+      },
+      {
+        "label": "My Invoice",
+        "url": "https://mydash.websvc.in/billing/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaUserShield"
+      },
+      {
+        "label": "My Payments",
+        "url": "https://mydash.websvc.in/paylink/",
         "target": "_blank",
         "position": "header",
         "icon": "FaUserShield"
