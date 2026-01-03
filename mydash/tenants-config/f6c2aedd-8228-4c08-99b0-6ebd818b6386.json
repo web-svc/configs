@@ -3024,7 +3024,7 @@
         "datasource": null,
         "table": "products",
         "valueField": "id",
-        "labelFields": ["id"],
+        "labelFields": ["id","Name"],
         "limit": 5
       }
     },
@@ -3041,7 +3041,7 @@
         "datasource": null,
         "table": "plans",
         "valueField": "id",
-        "labelFields": ["id"],
+        "labelFields": ["id","Name"],
         "limit": 5
       }
     },
@@ -3098,20 +3098,7 @@
       },
       "relation": null
     },
-    {
-      "name": "metadata",
-      "label": "metadata",
-      "placeholder": "Enter metadata",
-      "type": "text",
-      "required": false,
-      "options": [],
-      "defaultvalue": "",
-      "constraints": {
-        "min": null,
-        "max": null
-      },
-      "relation": null
-    }
+  
   ],
   "editFields": [
     {
