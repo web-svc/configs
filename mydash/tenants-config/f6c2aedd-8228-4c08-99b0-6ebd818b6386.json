@@ -860,22 +860,7 @@
           "label": "products",
           "Identifier": "id",
           "description": "Products",
-          "features": {
-            "bulkActions": {
-              "actions": [
-                {
-                  "type": "upload",
-                  "label": "Upload products",
-                  "description": "Upload CSV to add products entries in bulk",
-                  "endpoint": "/bulk/products",
-                  "MaxSize": "10MB",
-                  "AllowedExtensions": [
-                    ".csv"
-                  ]
-                }
-              ]
-            }
-          },
+          "features": { },
           "displayFields": [
 	{
 		"name": "product_type_id",
