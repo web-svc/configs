@@ -877,92 +877,47 @@
             }
           },
           "displayFields": [
-            {
-              "name": "tenant_id",
-              "label": "tenant_id",
-              "relation": {
-                "datasource": null,
-                "table": "tenants",
-                "valueField": "id",
-                "labelFields": "tenants.id"
-              }
-            },
-            {
-              "name": "product_type_id",
-              "label": "product_type_id",
-              "relation": {
-                "datasource": null,
-                "table": "product_types",
-                "valueField": "id",
-                "labelFields": "product_types.id"
-              }
-            },
-            {
-              "name": "category_id",
-              "label": "category_id",
-              "relation": {
-                "datasource": null,
-                "table": "product_categories",
-                "valueField": "id",
-                "labelFields": "product_categories.id"
-              }
-            },
-            {
-              "name": "parent_id",
-              "label": "parent_id",
-              "relation": {
-                "datasource": null,
-                "table": "products",
-                "valueField": "id",
-                "labelFields": "products.id"
-              }
-            },
-            {
-              "name": "code",
-              "label": "code",
-              "relation": null
-            },
-            {
-              "name": "sku",
-              "label": "sku",
-              "relation": null
-            },
-            {
-              "name": "version",
-              "label": "version",
-              "relation": null
-            },
-            {
-              "name": "name",
-              "label": "name",
-              "relation": null
-            },
-            {
-              "name": "description",
-              "label": "description",
-              "relation": null
-            },
-            {
-              "name": "metadata",
-              "label": "metadata",
-              "relation": null
-            },
-            {
-              "name": "created_by",
-              "label": "created_by",
-              "relation": null
-            },
-            {
-              "name": "updated_by",
-              "label": "updated_by",
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "relation": null
-            }
-          ],
+	{
+		"name": "product_type_id",
+		"label": "Product Type",
+		"relation": {
+			"datasource": null,
+			"table": "product_types",
+			"valueField": "id",
+			"labelFields": "product_types.id"
+		}
+	},
+	{
+		"name": "category_id",
+		"label": "Category",
+		"relation": {
+			"datasource": null,
+			"table": "product_categories",
+			"valueField": "id",
+			"labelFields": "product_categories.id"
+		}
+	},
+	{
+		"name": "code",
+		"label": "Product Code",
+		"relation": null
+	},
+	{
+		"name": "sku",
+		"label": "SKU",
+		"relation": null
+	},
+	{
+		"name": "name",
+		"label": "Name",
+		"relation": null
+	},
+	{
+		"name": "description",
+		"label": "Description",
+		"relation": null
+	}
+],
           "createFields": [
             {
               "name": "tenant_id",
