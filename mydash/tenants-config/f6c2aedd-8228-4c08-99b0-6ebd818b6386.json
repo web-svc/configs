@@ -3098,7 +3098,19 @@
       },
       "relation": null
     },
-     "relation": null
+     {
+      "name": "metadata",
+      "label": "metadata",
+      "placeholder": "Enter metadata",
+      "type": "text",
+      "required": false,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": null
+      },
+      "relation": null
     }
   
   ],
