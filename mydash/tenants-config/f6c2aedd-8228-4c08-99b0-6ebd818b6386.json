@@ -2961,7 +2961,7 @@
   "displayFields": [
     {
       "name": "product_id",
-      "label": "product_id",
+      "label": "Product Name",
       "relation": {
         "datasource": null,
         "table": "products",
@@ -2971,12 +2971,12 @@
     },
     {
       "name": "plan_id",
-      "label": "plan_id",
+      "label": "Plan Name",
       "relation": {
         "datasource": null,
         "table": "plans",
         "valueField": "id",
-        "labelFields": "plans.id"
+        "labelFields": "plans.name"
       }
     },
     {
