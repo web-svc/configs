@@ -3049,7 +3049,7 @@
       "name": "image_url",
       "label": "image_url",
       "placeholder": "Enter image URL",
-      "type": "text",
+      "type": "image",
       "required": true,
       "options": [],
       "defaultvalue": "",
