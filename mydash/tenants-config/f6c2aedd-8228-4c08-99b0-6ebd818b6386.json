@@ -1446,18 +1446,13 @@
           "features": {},
           "displayFields": [
             {
-              "name": "name",
+              "name": "Name",
               "label": "name",
               "relation": null
             },
             {
-              "name": "description",
+              "name": "Description",
               "label": "description",
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
               "relation": null
             }
           ],
@@ -1620,23 +1615,18 @@
           "displayFields": [
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "relation": null
             },
             {
               "name": "parent_id",
-              "label": "parent_id",
+              "label": "Parent Product",
               "relation": {
                 "datasource": null,
                 "table": "product_categories",
                 "valueField": "id",
-                "labelFields": "product_categories.id"
+                "labelFields": "product_categories.name"
               }
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "relation": null
             }
           ],
           "createFields": [
@@ -1808,52 +1798,42 @@
           "displayFields": [
             {
               "name": "product_id",
-              "label": "product_id",
+              "label": "Product Name",
               "relation": {
                 "datasource": null,
                 "table": "products",
                 "valueField": "id",
-                "labelFields": "products.id"
+                "labelFields": "products.name"
               }
             },
             {
               "name": "plan_id",
-              "label": "plan_id",
+              "label": "Plan Name",
               "relation": {
                 "datasource": null,
                 "table": "plans",
                 "valueField": "id",
-                "labelFields": "plans.id"
+                "labelFields": "plans.name"
               }
             },
             {
               "name": "action",
-              "label": "action",
+              "label": "Action",
               "relation": null
             },
             {
               "name": "duration_months",
-              "label": "duration_months",
+              "label": "Duration In Months",
               "relation": null
             },
             {
               "name": "price",
-              "label": "price",
+              "label": "Price",
               "relation": null
             },
             {
               "name": "currency",
-              "label": "currency",
-              "relation": null
-            },
-            {
-              "name": "metadata",
-              "label": "metadata",
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
+              "label": "Currency",
               "relation": null
             }
           ],
@@ -2259,22 +2239,22 @@
           "displayFields": [
             {
               "name": "product_id",
-              "label": "product_id",
+              "label": "Product Name",
               "relation": {
                 "datasource": null,
                 "table": "products",
                 "valueField": "id",
-                "labelFields": "products.id"
+                "labelFields": "products.name"
               }
             },
             {
               "name": "tag_id",
-              "label": "tag_id",
+              "label": "Tag",
               "relation": {
                 "datasource": null,
                 "table": "tags",
                 "valueField": "id",
-                "labelFields": "tags.id"
+                "labelFields": "tags.name"
               }
             }
           ],
@@ -2428,57 +2408,47 @@
           "displayFields": [
             {
               "name": "product_id",
-              "label": "product_id",
+              "label": "Product Name",
               "relation": {
                 "datasource": null,
                 "table": "products",
                 "valueField": "id",
-                "labelFields": "products.id"
+                "labelFields": "products.name"
               }
             },
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "relation": null
             },
             {
               "name": "description",
-              "label": "description",
+              "label": "Description",
               "relation": null
             },
             {
               "name": "billing_cycle",
-              "label": "billing_cycle",
+              "label": "Billing Cycle",
               "relation": null
             },
             {
               "name": "price",
-              "label": "price",
+              "label": "Price",
               "relation": null
             },
             {
               "name": "currency",
-              "label": "currency",
+              "label": "Currency",
               "relation": null
             },
             {
               "name": "trial_days",
-              "label": "trial_days",
+              "label": "Trial Days",
               "relation": null
             },
             {
               "name": "features",
-              "label": "features",
-              "relation": null
-            },
-            {
-              "name": "metadata",
-              "label": "metadata",
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
+              "label": "Features",
               "relation": null
             }
           ],
@@ -2936,32 +2906,22 @@
     },
     {
       "name": "image_url",
-      "label": "image_url",
+      "label": "Image Url",
       "relation": null
     },
     {
       "name": "alt_text",
-      "label": "alt_text",
+      "label": "Image Text",
       "relation": null
     },
     {
       "name": "is_primary",
-      "label": "is_primary",
+      "label": "Main Image?",
       "relation": null
     },
     {
       "name": "sort_order",
-      "label": "sort_order",
-      "relation": null
-    },
-    {
-      "name": "metadata",
-      "label": "metadata",
-      "relation": null
-    },
-    {
-      "name": "creation_date",
-      "label": "creation_date",
+      "label": "Display Sequence",
       "relation": null
     }
   ],
@@ -3228,27 +3188,17 @@
           "displayFields": [
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "relation": null
             },
             {
               "name": "description",
-              "label": "description",
+              "label": "Description",
               "relation": null
             },
             {
               "name": "price",
-              "label": "price",
-              "relation": null
-            },
-            {
-              "name": "metadata",
-              "label": "metadata",
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
+              "label": "Price",
               "relation": null
             }
           ],
@@ -3486,28 +3436,23 @@
           "displayFields": [
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "relation": null
             },
             {
               "name": "description",
-              "label": "description",
+              "label": "Description",
               "relation": null
             },
             {
               "name": "badgeTypeId",
-              "label": "badgeTypeId",
+              "label": "Dadge Type",
               "relation": {
                 "datasource": null,
                 "table": "badgetypes",
                 "valueField": "id",
-                "labelFields": "badgetypes.id"
+                "labelFields": "badgetypes.name"
               }
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "relation": null
             }
           ],
           "createFields": [
@@ -3712,22 +3657,17 @@
           "displayFields": [
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "relation": null
             },
             {
               "name": "description",
-              "label": "description",
+              "label": "Description",
               "relation": null
             },
             {
               "name": "style",
-              "label": "style",
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
+              "label": "Style",
               "relation": null
             }
           ],
@@ -3932,27 +3872,22 @@
           "displayFields": [
             {
               "name": "tenant_id",
-              "label": "tenant_id",
+              "label": "Business Name",
               "relation": null
             },
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "relation": null
             },
             {
               "name": "domain",
-              "label": "domain",
+              "label": "Domain",
               "relation": null
             },
             {
               "name": "description",
-              "label": "description",
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
+              "label": "Description",
               "relation": null
             }
           ],
