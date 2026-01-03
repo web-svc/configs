@@ -2953,6 +2953,317 @@
           "isSearchRealtime": true
         },
         {
+  "table": "product_images",
+  "label": "product_images",
+  "Identifier": "id",
+  "description": "Product & Plan Images",
+  "features": {},
+  "displayFields": [
+    {
+      "name": "product_id",
+      "label": "product_id",
+      "relation": {
+        "datasource": null,
+        "table": "products",
+        "valueField": "id",
+        "labelFields": "products.id"
+      }
+    },
+    {
+      "name": "plan_id",
+      "label": "plan_id",
+      "relation": {
+        "datasource": null,
+        "table": "plans",
+        "valueField": "id",
+        "labelFields": "plans.id"
+      }
+    },
+    {
+      "name": "image_url",
+      "label": "image_url",
+      "relation": null
+    },
+    {
+      "name": "alt_text",
+      "label": "alt_text",
+      "relation": null
+    },
+    {
+      "name": "is_primary",
+      "label": "is_primary",
+      "relation": null
+    },
+    {
+      "name": "sort_order",
+      "label": "sort_order",
+      "relation": null
+    },
+    {
+      "name": "metadata",
+      "label": "metadata",
+      "relation": null
+    },
+    {
+      "name": "creation_date",
+      "label": "creation_date",
+      "relation": null
+    }
+  ],
+  "createFields": [
+    {
+      "name": "product_id",
+      "label": "product_id",
+      "placeholder": "Select product",
+      "type": "lookup",
+      "required": true,
+      "options": null,
+      "defaultvalue": "",
+      "constraints": null,
+      "relation": {
+        "datasource": null,
+        "table": "products",
+        "valueField": "id",
+        "labelFields": ["id"],
+        "limit": 5
+      }
+    },
+    {
+      "name": "plan_id",
+      "label": "plan_id",
+      "placeholder": "Select plan (optional)",
+      "type": "lookup",
+      "required": false,
+      "options": null,
+      "defaultvalue": "",
+      "constraints": null,
+      "relation": {
+        "datasource": null,
+        "table": "plans",
+        "valueField": "id",
+        "labelFields": ["id"],
+        "limit": 5
+      }
+    },
+    {
+      "name": "image_url",
+      "label": "image_url",
+      "placeholder": "Enter image URL",
+      "type": "text",
+      "required": true,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": 1000
+      },
+      "relation": null
+    },
+    {
+      "name": "alt_text",
+      "label": "alt_text",
+      "placeholder": "Enter alt text",
+      "type": "text",
+      "required": false,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": 255
+      },
+      "relation": null
+    },
+    {
+      "name": "is_primary",
+      "label": "is_primary",
+      "placeholder": "Is primary image?",
+      "type": "boolean",
+      "required": false,
+      "options": [],
+      "defaultvalue": false,
+      "constraints": null,
+      "relation": null
+    },
+    {
+      "name": "sort_order",
+      "label": "sort_order",
+      "placeholder": "Enter sort order",
+      "type": "number",
+      "required": false,
+      "options": [],
+      "defaultvalue": 0,
+      "constraints": {
+        "min": 0,
+        "max": 2147483647
+      },
+      "relation": null
+    },
+    {
+      "name": "metadata",
+      "label": "metadata",
+      "placeholder": "Enter metadata",
+      "type": "text",
+      "required": false,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": null
+      },
+      "relation": null
+    }
+  ],
+  "editFields": [
+    {
+      "name": "product_id",
+      "label": "product_id",
+      "placeholder": "Select product",
+      "type": "lookup",
+      "required": true,
+      "options": null,
+      "defaultvalue": "",
+      "constraints": null,
+      "relation": {
+        "datasource": null,
+        "table": "products",
+        "valueField": "id",
+        "labelFields": ["id"],
+        "limit": 5
+      }
+    },
+    {
+      "name": "plan_id",
+      "label": "plan_id",
+      "placeholder": "Select plan (optional)",
+      "type": "lookup",
+      "required": false,
+      "options": null,
+      "defaultvalue": "",
+      "constraints": null,
+      "relation": {
+        "datasource": null,
+        "table": "plans",
+        "valueField": "id",
+        "labelFields": ["id"],
+        "limit": 5
+      }
+    },
+    {
+      "name": "image_url",
+      "label": "image_url",
+      "placeholder": "Enter image URL",
+      "type": "text",
+      "required": true,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": 1000
+      },
+      "relation": null
+    },
+    {
+      "name": "alt_text",
+      "label": "alt_text",
+      "placeholder": "Enter alt text",
+      "type": "text",
+      "required": false,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": 255
+      },
+      "relation": null
+    },
+    {
+      "name": "is_primary",
+      "label": "is_primary",
+      "placeholder": "Is primary image?",
+      "type": "boolean",
+      "required": false,
+      "options": [],
+      "defaultvalue": false,
+      "constraints": null,
+      "relation": null
+    },
+    {
+      "name": "sort_order",
+      "label": "sort_order",
+      "placeholder": "Enter sort order",
+      "type": "number",
+      "required": false,
+      "options": [],
+      "defaultvalue": 0,
+      "constraints": {
+        "min": 0,
+        "max": 2147483647
+      },
+      "relation": null
+    },
+    {
+      "name": "metadata",
+      "label": "metadata",
+      "placeholder": "Enter metadata",
+      "type": "text",
+      "required": false,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": null
+      },
+      "relation": null
+    }
+  ],
+  "searchFields": [
+    "id",
+    "product_id",
+    "plan_id",
+    "image_url",
+    "alt_text",
+    "is_primary",
+    "sort_order",
+    "creation_date",
+    "update_date"
+  ],
+  "viewFields": [
+    { "name": "id", "label": "id" },
+    { "name": "product_id", "label": "product_id" },
+    { "name": "plan_id", "label": "plan_id" },
+    { "name": "image_url", "label": "image_url" },
+    { "name": "alt_text", "label": "alt_text" },
+    { "name": "is_primary", "label": "is_primary" },
+    { "name": "sort_order", "label": "sort_order" },
+    { "name": "creation_date", "label": "creation_date" },
+    { "name": "update_date", "label": "update_date" }
+  ],
+  "permissions": {
+    "allowCreate": {
+      "accessRoles": ["root"]
+    },
+    "allowEdit": {
+      "accessRoles": ["root"]
+    },
+    "allowDelete": {
+      "accessRoles": ["root"]
+    }
+  },
+  "pagination": true,
+  "ui": {
+    "icon": "FaImage"
+  },
+  "accessRoles": ["root"],
+  "limit": 20,
+  "orderBy": [
+    {
+      "column": "sort_order",
+      "direction": "asc"
+    }
+  ],
+  "isSearchRealtime": true
+},
+        {
           "table": "addons",
           "label": "addons",
           "Identifier": "id",
