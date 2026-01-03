@@ -3015,7 +3015,7 @@
       "name": "product_id",
       "label": "Product Name",
       "placeholder": "Select product",
-      "type": "dropdown",
+      "type": "select",
       "required": true,
       "options": null,
       "defaultvalue": "",
