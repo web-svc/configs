@@ -3013,9 +3013,9 @@
   "createFields": [
     {
       "name": "product_id",
-      "label": "product_id",
+      "label": "Product Name",
       "placeholder": "Select product",
-      "type": "lookup",
+      "type": "dropdown",
       "required": true,
       "options": null,
       "defaultvalue": "",
