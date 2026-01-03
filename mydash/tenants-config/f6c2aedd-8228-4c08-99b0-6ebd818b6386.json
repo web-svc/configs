@@ -884,7 +884,7 @@
 			"datasource": null,
 			"table": "product_types",
 			"valueField": "id",
-			"labelFields": "product_types.id"
+			"labelFields": "product_types.name"
 		}
 	},
 	{
@@ -894,7 +894,7 @@
 			"datasource": null,
 			"table": "product_categories",
 			"valueField": "id",
-			"labelFields": "product_categories.id"
+			"labelFields": "product_categories.name"
 		}
 	},
 	{
