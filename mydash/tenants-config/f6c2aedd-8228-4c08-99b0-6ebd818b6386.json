@@ -3024,7 +3024,7 @@
         "datasource": null,
         "table": "products",
         "valueField": "id",
-        "labelFields": ["id","Name"],
+        "labelFields": ["id"],
         "limit": 5
       }
     },
@@ -3041,7 +3041,7 @@
         "datasource": null,
         "table": "plans",
         "valueField": "id",
-        "labelFields": ["id","Name"],
+        "labelFields": ["id"],
         "limit": 5
       }
     },
