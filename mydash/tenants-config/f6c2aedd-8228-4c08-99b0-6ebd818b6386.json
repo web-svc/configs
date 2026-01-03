@@ -978,7 +978,7 @@
                 "table": "tenants",
                 "valueField": "id",
                 "labelFields": [
-                  "id"
+                  "id", "Name"
                 ],
                 "limit": 5
               }
