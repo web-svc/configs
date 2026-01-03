@@ -1446,13 +1446,13 @@
           "features": {},
           "displayFields": [
             {
-              "name": "Name",
-              "label": "name",
+              "name": "name",
+              "label": "Name",
               "relation": null
             },
             {
-              "name": "Description",
-              "label": "description",
+              "name": "description",
+              "label": "Description",
               "relation": null
             }
           ],
