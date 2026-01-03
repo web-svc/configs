@@ -3865,19 +3865,19 @@
       "entities": [
         {
           "table": "tenants",
-          "label": "tenants",
+          "label": "Business Details",
           "Identifier": "id",
           "description": "Tenants",
           "features": {},
           "displayFields": [
             {
               "name": "tenant_id",
-              "label": "Business Name",
+              "label": "Business Id",
               "relation": null
             },
             {
               "name": "name",
-              "label": "Name",
+              "label": "Business Name",
               "relation": null
             },
             {
@@ -3894,7 +3894,7 @@
           "createFields": [
             {
               "name": "tenant_id",
-              "label": "tenant_id",
+              "label": "Business id",
               "placeholder": "Enter tenant_id",
               "type": "text",
               "required": true,
@@ -3908,7 +3908,7 @@
             },
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "placeholder": "Enter name",
               "type": "text",
               "required": true,
@@ -3922,7 +3922,7 @@
             },
             {
               "name": "domain",
-              "label": "domain",
+              "label": "Domain",
               "placeholder": "Enter domain",
               "type": "text",
               "required": false,
@@ -3936,23 +3936,9 @@
             },
             {
               "name": "description",
-              "label": "description",
+              "label": "Description",
               "placeholder": "Enter description",
               "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "placeholder": "Enter creation_date",
-              "type": "datetime",
               "required": false,
               "options": [],
               "defaultvalue": "",
@@ -3966,7 +3952,7 @@
           "editFields": [
             {
               "name": "tenant_id",
-              "label": "tenant_id",
+              "label": "Business Id",
               "placeholder": "Enter tenant_id",
               "type": "text",
               "required": true,
@@ -3980,7 +3966,7 @@
             },
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "placeholder": "Enter name",
               "type": "text",
               "required": true,
@@ -3994,7 +3980,7 @@
             },
             {
               "name": "domain",
-              "label": "domain",
+              "label": "Domain",
               "placeholder": "Enter domain",
               "type": "text",
               "required": false,
@@ -4008,23 +3994,9 @@
             },
             {
               "name": "description",
-              "label": "description",
+              "label": "Description",
               "placeholder": "Enter description",
               "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "placeholder": "Enter creation_date",
-              "type": "datetime",
               "required": false,
               "options": [],
               "defaultvalue": "",
@@ -4077,17 +4049,17 @@
           "permissions": {
             "allowCreate": {
               "accessRoles": [
-                "root"
+                "root_admin"
               ]
             },
             "allowEdit": {
               "accessRoles": [
-                "root"
+                "root_admin"
               ]
             },
             "allowDelete": {
               "accessRoles": [
-                "root"
+                "root_admin"
               ]
             }
           },
