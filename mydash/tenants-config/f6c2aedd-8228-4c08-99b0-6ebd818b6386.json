@@ -2931,9 +2931,9 @@
     {
       "name": "plan_id",
       "label": "plan_id",
-      "placeholder": "Select plan (optional)",
-      "type": "lookup",
-      "required": false,
+      "placeholder": "Select plan",
+      "type": "select",
+      "required": true,
       "options": null,
       "defaultvalue": "",
       "constraints": null,
