@@ -3006,7 +3006,7 @@
       "name": "product_id",
       "label": "product_id",
       "placeholder": "Select product",
-      "type": "lookup",
+      "type": "select",
       "required": true,
       "options": null,
       "defaultvalue": "",
@@ -3023,7 +3023,7 @@
       "name": "plan_id",
       "label": "plan_id",
       "placeholder": "Select plan (optional)",
-      "type": "lookup",
+      "type": "select",
       "required": false,
       "options": null,
       "defaultvalue": "",
@@ -3040,7 +3040,7 @@
       "name": "image_url",
       "label": "image_url",
       "placeholder": "Enter image URL",
-      "type": "text",
+      "type": "image",
       "required": true,
       "options": [],
       "defaultvalue": "",
@@ -3088,21 +3088,8 @@
         "max": 2147483647
       },
       "relation": null
-    },
-    {
-      "name": "metadata",
-      "label": "metadata",
-      "placeholder": "Enter metadata",
-      "type": "text",
-      "required": false,
-      "options": [],
-      "defaultvalue": "",
-      "constraints": {
-        "min": null,
-        "max": null
-      },
-      "relation": null
     }
+    
   ],
   "searchFields": [
     "id",
