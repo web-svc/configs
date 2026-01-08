@@ -2896,19 +2896,11 @@
     },
     {
       "name": "alt_text",
-      "label": "Image Text",
-      "relation": null
-    },
-    {
-      "name": "is_primary",
-      "label": "Main Image?",
-      "relation": null
-    },
-    {
-      "name": "sort_order",
-      "label": "Display Sequence",
+      "label": "Image Name",
       "relation": null
     }
+    
+   
   ],
   "createFields": [
     {
@@ -2930,7 +2922,7 @@
     },
     {
       "name": "plan_id",
-      "label": "plan_id",
+      "label": "Plan Name",
       "placeholder": "Select plan",
       "type": "select",
       "required": true,
@@ -2941,13 +2933,13 @@
         "datasource": null,
         "table": "plans",
         "valueField": "id",
-        "labelFields": ["id"],
+        "labelFields": ["id","name"],
         "limit": 5
       }
     },
     {
       "name": "image_url",
-      "label": "image_url",
+      "label": "Image Url",
       "placeholder": "Enter image URL",
       "type": "image",
       "required": true,
@@ -2961,7 +2953,7 @@
     },
     {
       "name": "alt_text",
-      "label": "alt_text",
+      "label": "Image Name",
       "placeholder": "Enter alt text",
       "type": "text",
       "required": false,
@@ -2972,39 +2964,16 @@
         "max": 255
       },
       "relation": null
-    },
-    {
-      "name": "is_primary",
-      "label": "is_primary",
-      "placeholder": "Is primary image?",
-      "type": "boolean",
-      "required": false,
-      "options": [],
-      "defaultvalue": false,
-      "constraints": null,
-      "relation": null
-    },
-    {
-      "name": "sort_order",
-      "label": "sort_order",
-      "placeholder": "Enter sort order",
-      "type": "number",
-      "required": false,
-      "options": [],
-      "defaultvalue": 0,
-      "constraints": {
-        "min": 0,
-        "max": 2147483647
-      },
-      "relation": null
     }
+   
+   
      
   
   ],
   "editFields": [
     {
       "name": "product_id",
-      "label": "product_id",
+      "label": "Product Name",
       "placeholder": "Select product",
       "type": "select",
       "required": true,
@@ -3015,13 +2984,13 @@
         "datasource": null,
         "table": "products",
         "valueField": "id",
-        "labelFields": ["id"],
+        "labelFields": ["id","name"],
         "limit": 5
       }
     },
     {
       "name": "plan_id",
-      "label": "plan_id",
+      "label": "Plan Name",
       "placeholder": "Select plan (optional)",
       "type": "select",
       "required": false,
@@ -3032,13 +3001,13 @@
         "datasource": null,
         "table": "plans",
         "valueField": "id",
-        "labelFields": ["id"],
+        "labelFields": ["id","name"],
         "limit": 5
       }
     },
     {
       "name": "image_url",
-      "label": "image_url",
+      "label": "Image Url",
       "placeholder": "Enter image URL",
       "type": "image",
       "required": true,
@@ -3052,7 +3021,7 @@
     },
     {
       "name": "alt_text",
-      "label": "alt_text",
+      "label": "Image Name",
       "placeholder": "Enter alt text",
       "type": "text",
       "required": false,
@@ -3063,32 +3032,8 @@
         "max": 255
       },
       "relation": null
-    },
-    {
-      "name": "is_primary",
-      "label": "is_primary",
-      "placeholder": "Is primary image?",
-      "type": "boolean",
-      "required": false,
-      "options": [],
-      "defaultvalue": false,
-      "constraints": null,
-      "relation": null
-    },
-    {
-      "name": "sort_order",
-      "label": "sort_order",
-      "placeholder": "Enter sort order",
-      "type": "number",
-      "required": false,
-      "options": [],
-      "defaultvalue": 0,
-      "constraints": {
-        "min": 0,
-        "max": 2147483647
-      },
-      "relation": null
     }
+   
     
   ],
   "searchFields": [
