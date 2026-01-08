@@ -857,7 +857,7 @@
       "entities": [
         {
           "table": "products",
-          "label": "products",
+          "label": "Add Products",
           "Identifier": "id",
           "description": "Products",
           "features": { },
