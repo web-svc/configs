@@ -2425,24 +2425,15 @@
               "name": "currency",
               "label": "Currency",
               "relation": null
-            },
-            {
-              "name": "trial_days",
-              "label": "Trial Days",
-              "relation": null
-            },
-            {
-              "name": "features",
-              "label": "Features",
-              "relation": null
             }
+            
           ],
           "createFields": [
             {
               "name": "product_id",
-              "label": "product_id",
+              "label": "Product Name",
               "placeholder": "Enter product_id",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -2452,14 +2443,14 @@
                 "table": "products",
                 "valueField": "id",
                 "labelFields": [
-                  "id"
+                  "id", "name"
                 ],
                 "limit": 5
               }
             },
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "placeholder": "Enter name",
               "type": "text",
               "required": true,
@@ -2473,7 +2464,7 @@
             },
             {
               "name": "description",
-              "label": "description",
+              "label": "Description",
               "placeholder": "Enter description",
               "type": "text",
               "required": false,
@@ -2487,7 +2478,7 @@
             },
             {
               "name": "billing_cycle",
-              "label": "billing_cycle",
+              "label": "Billing Cycle",
               "placeholder": "Enter billing_cycle",
               "type": "dropdown",
               "required": false,
@@ -2518,7 +2509,7 @@
             },
             {
               "name": "price",
-              "label": "price",
+              "label": "Price",
               "placeholder": "Enter price",
               "type": "number",
               "required": true,
@@ -2532,81 +2523,28 @@
             },
             {
               "name": "currency",
-              "label": "currency",
+              "label": "Currency",
               "placeholder": "Enter currency",
               "type": "text",
               "required": false,
               "options": [],
               "defaultvalue": "INR",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "trial_days",
-              "label": "trial_days",
-              "placeholder": "Enter trial_days",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "0",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "features",
-              "label": "features",
-              "placeholder": "Enter features",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "metadata",
-              "label": "metadata",
-              "placeholder": "Enter metadata",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "placeholder": "Enter creation_date",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
               },
               "relation": null
             }
+           
+           
+            
           ],
           "editFields": [
             {
               "name": "product_id",
-              "label": "product_id",
+              "label": "Product Name",
               "placeholder": "Enter product_id",
-              "type": "lookup",
+              "type": "select",
               "required": true,
               "options": null,
               "defaultvalue": "",
@@ -2616,14 +2554,14 @@
                 "table": "products",
                 "valueField": "id",
                 "labelFields": [
-                  "id"
+                  "id", "name"
                 ],
                 "limit": 5
               }
             },
             {
               "name": "name",
-              "label": "name",
+              "label": "Name",
               "placeholder": "Enter name",
               "type": "text",
               "required": true,
@@ -2636,7 +2574,7 @@
               "relation": null
             },
             {
-              "name": "description",
+              "name": "Description",
               "label": "description",
               "placeholder": "Enter description",
               "type": "text",
@@ -2651,7 +2589,7 @@
             },
             {
               "name": "billing_cycle",
-              "label": "billing_cycle",
+              "label": "Billing Cycle",
               "placeholder": "Enter billing_cycle",
               "type": "dropdown",
               "required": false,
@@ -2682,7 +2620,7 @@
             },
             {
               "name": "price",
-              "label": "price",
+              "label": "Price",
               "placeholder": "Enter price",
               "type": "number",
               "required": true,
@@ -2696,68 +2634,12 @@
             },
             {
               "name": "currency",
-              "label": "currency",
+              "label": "Currency",
               "placeholder": "Enter currency",
               "type": "text",
               "required": false,
               "options": [],
               "defaultvalue": "INR",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "trial_days",
-              "label": "trial_days",
-              "placeholder": "Enter trial_days",
-              "type": "number",
-              "required": false,
-              "options": [],
-              "defaultvalue": "0",
-              "constraints": {
-                "min": -2147483648,
-                "max": 2147483647
-              },
-              "relation": null
-            },
-            {
-              "name": "features",
-              "label": "features",
-              "placeholder": "Enter features",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "metadata",
-              "label": "metadata",
-              "placeholder": "Enter metadata",
-              "type": "text",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
-              "constraints": {
-                "min": null,
-                "max": null
-              },
-              "relation": null
-            },
-            {
-              "name": "creation_date",
-              "label": "creation_date",
-              "placeholder": "Enter creation_date",
-              "type": "datetime",
-              "required": false,
-              "options": [],
-              "defaultvalue": "",
               "constraints": {
                 "min": null,
                 "max": null
