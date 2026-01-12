@@ -1,1 +1,3871 @@
-
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "datasources": {
+    "channelsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "xxxx-yyyy"
+      }
+    },
+    "connectionsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "zzzz-1111"
+      }
+    }
+  },
+  "ui": {
+    "links": [
+      {
+        "label": "My Orders",
+        "url": "https://mydash.websvc.in/order/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaExternalLinkAlt"
+      },
+      {
+        "label": "Open Admin",
+        "url": "https://mydash.websvc.in/loginlink/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaUserShield"
+      },
+      {
+        "label": "My Invoice",
+        "url": "https://mydash.websvc.in/billing/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaUserShield"
+      },
+      {
+        "label": "My Payments",
+        "url": "https://mydash.websvc.in/paylink/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaUserShield"
+      }
+    ]
+  },
+  "description": "Database for managing products, plans, tags, and associated metadata for a multi-tenant system.",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": []
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total addons",
+          "display": "count(*) as display",
+          "entity": "addons",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total badgetypes",
+          "display": "count(*) as display",
+          "entity": "badgetypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total plans",
+          "display": "count(*) as display",
+          "entity": "plans",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total product_categories",
+          "display": "count(*) as display",
+          "entity": "product_categories",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total product_pricing",
+          "display": "count(*) as display",
+          "entity": "product_pricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total product_tags",
+          "display": "count(*) as display",
+          "entity": "product_tags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total product_types",
+          "display": "count(*) as display",
+          "entity": "product_types",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total products",
+          "display": "count(*) as display",
+          "entity": "products",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total tags",
+          "display": "count(*) as display",
+          "entity": "tags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total tenants",
+          "display": "count(*) as display",
+          "entity": "tenants",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 addons",
+          "display": "name,description,metadata",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "addons",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 badgetypes",
+          "display": "name,description,style",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "badgetypes",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 plans",
+          "display": "name,description,currency,features",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "plans",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 product_categories",
+          "display": "name",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "product_categories",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 product_pricing",
+          "display": "currency,metadata",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "product_pricing",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 product_types",
+          "display": "name,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "product_types",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 products",
+          "display": "code,sku,version,name",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "products",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 tags",
+          "display": "name,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tags",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 tenants",
+          "display": "tenant_id,name,domain,description",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tenants",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "addons Table",
+          "display": "name,description,metadata",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "addons",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "badgetypes Table",
+          "display": "name,description,style",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "badgetypes",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "plans Table",
+          "display": "name,description,currency,features",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "plans",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "product_categories Table",
+          "display": "name",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "product_categories",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "product_pricing Table",
+          "display": "currency,metadata",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "product_pricing",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "product_types Table",
+          "display": "name,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "product_types",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "products Table",
+          "display": "code,sku,version,name",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "products",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "tags Table",
+          "display": "name,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tags",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "tenants Table",
+          "display": "tenant_id,name,domain,description",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "creation_date",
+              "direction": "desc"
+            }
+          ],
+          "entity": "tenants",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": {
+        "label": "Quick Actions",
+        "roles": [
+          "root",
+          "admin",
+          "hr"
+        ],
+        "items": [
+          {
+            "label": "Add addons",
+            "action": "create",
+            "entity": "addons",
+            "group": "addons",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          },
+          {
+            "label": "Add badgetypes",
+            "action": "create",
+            "entity": "badgetypes",
+            "group": "badgetypes",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          }
+        ]
+      },
+      "reports": [
+        {
+          "label": "Monthly Joinees",
+          "filter": "Status eq \u0027Active\u0027",
+          "entity": "addons",
+          "exportable": true,
+          "roles": [
+            "root",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "calendar",
+      "roles": [
+        "root",
+        "hr",
+        "manager"
+      ],
+      "calendarConfig": [
+        {
+          "entity": "addons",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "update_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "badgetypes",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "update_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "plans",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "update_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "product_categories",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "update_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "product_pricing",
+          "titleField": "id",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "update_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "product_types",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "update_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "products",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "product_type_id",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "tags",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "badgeTypeId",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "tenants",
+          "titleField": "name",
+          "startDateField": "creation_date",
+          "endDateField": "creation_date",
+          "colorField": "update_date",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Products",
+      "description": "Tables related to products, their types, categories, and pricing",
+      "ui": {
+        "icon": "MdShoppingCart"
+      },
+      "entities": [
+        {
+          "table": "products",
+          "label": "Add Products",
+          "Identifier": "id",
+          "description": "Products",
+          "features": { },
+          "displayFields": [
+	{
+		"name": "product_type_id",
+		"label": "Product Type",
+		"relation": {
+			"datasource": null,
+			"table": "product_types",
+			"valueField": "id",
+			"labelFields": "product_types.name"
+		}
+	},
+	{
+		"name": "category_id",
+		"label": "Category",
+		"relation": {
+			"datasource": null,
+			"table": "product_categories",
+			"valueField": "id",
+			"labelFields": "product_categories.name"
+		}
+	},
+	{
+		"name": "code",
+		"label": "Product Code",
+		"relation": null
+	},
+	{
+		"name": "sku",
+		"label": "SKU",
+		"relation": null
+	},
+	{
+		"name": "name",
+		"label": "Name",
+		"relation": null
+	},
+	{
+		"name": "description",
+		"label": "Description",
+		"relation": null
+	}
+],
+          "createFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "select",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id", "Name"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "product_type_id",
+              "label": "product_type_id",
+              "placeholder": "Enter product_type_id",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "product_types",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "category_id",
+              "label": "category_id",
+              "placeholder": "Enter category_id",
+              "type": "select",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "product_categories",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "parent_id",
+              "label": "parent_id",
+              "placeholder": "Enter parent_id",
+              "type": "select",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "code",
+              "label": "code",
+              "placeholder": "Enter code",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "sku",
+              "label": "sku",
+              "placeholder": "Enter sku",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "version",
+              "label": "version",
+              "placeholder": "Enter version",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "json",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "created_by",
+              "label": "created_by",
+              "placeholder": "Enter created_by",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "updated_by",
+              "label": "updated_by",
+              "placeholder": "Enter updated_by",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "tenant_id",
+              "label": "tenant_id",
+              "placeholder": "Enter tenant_id",
+              "type": "select",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tenants",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "product_type_id",
+              "label": "product_type_id",
+              "placeholder": "Enter product_type_id",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "product_types",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "category_id",
+              "label": "category_id",
+              "placeholder": "Enter category_id",
+              "type": "select",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "product_categories",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "parent_id",
+              "label": "parent_id",
+              "placeholder": "Enter parent_id",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "code",
+              "label": "code",
+              "placeholder": "Enter code",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "sku",
+              "label": "sku",
+              "placeholder": "Enter sku",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "version",
+              "label": "version",
+              "placeholder": "Enter version",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "json",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "created_by",
+              "label": "created_by",
+              "placeholder": "Enter created_by",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "updated_by",
+              "label": "updated_by",
+              "placeholder": "Enter updated_by",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "tenant_id",
+            "product_type_id",
+            "category_id",
+            "parent_id",
+            "code",
+            "sku",
+            "version",
+            "name",
+            "description",
+            "metadata",
+            "created_by",
+            "updated_by",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "tenant_id",
+              "label": "tenant_id"
+            },
+            {
+              "name": "product_type_id",
+              "label": "product_type_id"
+            },
+            {
+              "name": "category_id",
+              "label": "category_id"
+            },
+            {
+              "name": "parent_id",
+              "label": "parent_id"
+            },
+            {
+              "name": "code",
+              "label": "code"
+            },
+            {
+              "name": "sku",
+              "label": "sku"
+            },
+            {
+              "name": "version",
+              "label": "version"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            },
+            {
+              "name": "created_by",
+              "label": "created_by"
+            },
+            {
+              "name": "updated_by",
+              "label": "updated_by"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBox"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "product_types",
+          "label": "product_types",
+          "Identifier": "id",
+          "description": "Product Types",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "description",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaList"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "product_categories",
+          "label": "product_categories",
+          "Identifier": "id",
+          "description": "Product Categories",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "relation": null
+            },
+            {
+              "name": "parent_id",
+              "label": "Parent Product",
+              "relation": {
+                "datasource": null,
+                "table": "product_categories",
+                "valueField": "id",
+                "labelFields": "product_categories.name"
+              }
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "parent_id",
+              "label": "parent_id",
+              "placeholder": "Enter parent_id",
+              "type": "select",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "product_categories",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "parent_id",
+              "label": "parent_id",
+              "placeholder": "Enter parent_id",
+              "type": "select",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "product_categories",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "parent_id",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "parent_id",
+              "label": "parent_id"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaFolderOpen"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "product_pricing",
+          "label": "product_pricing",
+          "Identifier": "id",
+          "description": "Product Pricing",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "product_id",
+              "label": "Product Name",
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": "products.name"
+              }
+            },
+            {
+              "name": "plan_id",
+              "label": "Plan Name",
+              "relation": {
+                "datasource": null,
+                "table": "plans",
+                "valueField": "id",
+                "labelFields": "plans.name"
+              }
+            },
+            {
+              "name": "action",
+              "label": "Action",
+              "relation": null
+            },
+            {
+              "name": "duration_months",
+              "label": "Duration In Months",
+              "relation": null
+            },
+            {
+              "name": "price",
+              "label": "Price",
+              "relation": null
+            },
+            {
+              "name": "currency",
+              "label": "Currency",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "product_id",
+              "label": "product_id",
+              "placeholder": "Enter product_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "plan_id",
+              "label": "plan_id",
+              "placeholder": "Enter plan_id",
+              "type": "lookup",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "plans",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "action",
+              "label": "action",
+              "placeholder": "Enter action",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Register",
+                  "Value": "register"
+                },
+                {
+                  "Label": "Renew",
+                  "Value": "renew"
+                },
+                {
+                  "Label": "Transfer",
+                  "Value": "transfer"
+                },
+                {
+                  "Label": "Restore",
+                  "Value": "restore"
+                },
+                {
+                  "Label": "Buy",
+                  "Value": "buy"
+                },
+                {
+                  "Label": "Sell",
+                  "Value": "sell"
+                },
+                {
+                  "Label": "Upgrade",
+                  "Value": "upgrade"
+                }
+              ],
+              "defaultvalue": "buy",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "duration_months",
+              "label": "duration_months",
+              "placeholder": "Enter duration_months",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "12",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "placeholder": "Enter price",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currency",
+              "label": "currency",
+              "placeholder": "Enter currency",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "INR",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "product_id",
+              "label": "product_id",
+              "placeholder": "Enter product_id",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "plan_id",
+              "label": "plan_id",
+              "placeholder": "Enter plan_id",
+              "type": "lookup",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "plans",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "action",
+              "label": "action",
+              "placeholder": "Enter action",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Register",
+                  "Value": "register"
+                },
+                {
+                  "Label": "Renew",
+                  "Value": "renew"
+                },
+                {
+                  "Label": "Transfer",
+                  "Value": "transfer"
+                },
+                {
+                  "Label": "Restore",
+                  "Value": "restore"
+                },
+                {
+                  "Label": "Buy",
+                  "Value": "buy"
+                },
+                {
+                  "Label": "Sell",
+                  "Value": "sell"
+                },
+                {
+                  "Label": "Upgrade",
+                  "Value": "upgrade"
+                }
+              ],
+              "defaultvalue": "buy",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "duration_months",
+              "label": "duration_months",
+              "placeholder": "Enter duration_months",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "12",
+              "constraints": {
+                "min": -2147483648,
+                "max": 2147483647
+              },
+              "relation": null
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "placeholder": "Enter price",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currency",
+              "label": "currency",
+              "placeholder": "Enter currency",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "INR",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "product_id",
+            "plan_id",
+            "action",
+            "duration_months",
+            "price",
+            "currency",
+            "metadata",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "product_id",
+              "label": "product_id"
+            },
+            {
+              "name": "plan_id",
+              "label": "plan_id"
+            },
+            {
+              "name": "action",
+              "label": "action"
+            },
+            {
+              "name": "duration_months",
+              "label": "duration_months"
+            },
+            {
+              "name": "price",
+              "label": "price"
+            },
+            {
+              "name": "currency",
+              "label": "currency"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTags"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "product_tags",
+          "label": "product_tags",
+          "Identifier": "id",
+          "description": "Product Tags",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "product_id",
+              "label": "Product Name",
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": "products.name"
+              }
+            },
+            {
+              "name": "tag_id",
+              "label": "Tag",
+              "relation": {
+                "datasource": null,
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": "tags.name"
+              }
+            }
+          ],
+          "createFields": [
+            {
+              "name": "product_id",
+              "label": "product_id",
+              "placeholder": "Enter product_id",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "tag_id",
+              "label": "tag_id",
+              "placeholder": "Enter tag_id",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            }
+          ],
+          "editFields": [
+            {
+              "name": "product_id",
+              "label": "product_id",
+              "placeholder": "Enter product_id",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "tag_id",
+              "label": "tag_id",
+              "placeholder": "Enter tag_id",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "tags",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            }
+          ],
+          "searchFields": [
+            "id",
+            "product_id",
+            "tag_id"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "product_id",
+              "label": "product_id"
+            },
+            {
+              "name": "tag_id",
+              "label": "tag_id"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTag"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Plans",
+      "description": "Tables defining product subscription plans and add-ons",
+      "ui": {
+        "icon": "MdEventNote"
+      },
+      "entities": [
+        {
+          "table": "plans",
+          "label": "plans",
+          "Identifier": "id",
+          "description": "Subscription Plans",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "product_id",
+              "label": "Product Name",
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": "products.name"
+              }
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "relation": null
+            },
+            {
+              "name": "billing_cycle",
+              "label": "Billing Cycle",
+              "relation": null
+            },
+            {
+              "name": "price",
+              "label": "Price",
+              "relation": null
+            },
+            {
+              "name": "currency",
+              "label": "Currency",
+              "relation": null
+            }
+            
+          ],
+          "createFields": [
+            {
+              "name": "product_id",
+              "label": "Product Name",
+              "placeholder": "Enter product_id",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": [
+                  "id", "name"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "billing_cycle",
+              "label": "Billing Cycle",
+              "placeholder": "Enter billing_cycle",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Monthly",
+                  "Value": "monthly"
+                },
+                {
+                  "Label": "Quarterly",
+                  "Value": "quarterly"
+                },
+                {
+                  "Label": "Yearly",
+                  "Value": "yearly"
+                },
+                {
+                  "Label": "Onetime",
+                  "Value": "onetime"
+                }
+              ],
+              "defaultvalue": "onetime",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "price",
+              "label": "Price",
+              "placeholder": "Enter price",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currency",
+              "label": "Currency",
+              "placeholder": "Enter currency",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "INR",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+           
+           
+            
+          ],
+          "editFields": [
+            {
+              "name": "product_id",
+              "label": "Product Name",
+              "placeholder": "Enter product_id",
+              "type": "select",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "products",
+                "valueField": "id",
+                "labelFields": [
+                  "id", "name"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "Description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "billing_cycle",
+              "label": "Billing Cycle",
+              "placeholder": "Enter billing_cycle",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Monthly",
+                  "Value": "monthly"
+                },
+                {
+                  "Label": "Quarterly",
+                  "Value": "quarterly"
+                },
+                {
+                  "Label": "Yearly",
+                  "Value": "yearly"
+                },
+                {
+                  "Label": "Onetime",
+                  "Value": "onetime"
+                }
+              ],
+              "defaultvalue": "onetime",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "price",
+              "label": "Price",
+              "placeholder": "Enter price",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currency",
+              "label": "Currency",
+              "placeholder": "Enter currency",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "INR",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "product_id",
+            "name",
+            "description",
+            "billing_cycle",
+            "price",
+            "currency",
+            "trial_days",
+            "features",
+            "metadata",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "product_id",
+              "label": "product_id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "billing_cycle",
+              "label": "billing_cycle"
+            },
+            {
+              "name": "price",
+              "label": "price"
+            },
+            {
+              "name": "currency",
+              "label": "currency"
+            },
+            {
+              "name": "trial_days",
+              "label": "trial_days"
+            },
+            {
+              "name": "features",
+              "label": "features"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaMoneyBillAlt"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+  "table": "product_images",
+  "label": "Product Images",
+  "Identifier": "id",
+  "description": "Product & Plan Images",
+  "features": {},
+  "displayFields": [
+    {
+      "name": "product_id",
+      "label": "Product Name",
+      "relation": {
+        "datasource": null,
+        "table": "products",
+        "valueField": "id",
+        "labelFields": "products.name"
+      }
+    },
+    {
+      "name": "plan_id",
+      "label": "Plan Name",
+      "relation": {
+        "datasource": null,
+        "table": "plans",
+        "valueField": "id",
+        "labelFields": "plans.name"
+      }
+    },
+    {
+      "name": "image_url",
+      "label": "Image Url",
+      "relation": null
+    },
+    {
+      "name": "alt_text",
+      "label": "Image Name",
+      "relation": null
+    }
+    
+   
+  ],
+  "createFields": [
+    {
+      "name": "product_id",
+      "label": "Product Name",
+      "placeholder": "Select product",
+      "type": "select",
+      "required": true,
+      "options": null,
+      "defaultvalue": "",
+      "constraints": null,
+      "relation": {
+        "datasource": null,
+        "table": "products",
+        "valueField": "id",
+        "labelFields": ["id","name"],
+        "limit": 5
+      }
+    },
+    {
+      "name": "plan_id",
+      "label": "Plan Name",
+      "placeholder": "Select plan",
+      "type": "select",
+      "required": true,
+      "options": null,
+      "defaultvalue": "",
+      "constraints": null,
+      "relation": {
+        "datasource": null,
+        "table": "plans",
+        "valueField": "id",
+        "labelFields": ["id","name"],
+        "limit": 5
+      }
+    },
+    {
+      "name": "image_url",
+      "label": "Image Url",
+      "placeholder": "Enter image URL",
+      "type": "image",
+      "required": true,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": 1000
+      },
+      "relation": null
+    },
+    {
+      "name": "alt_text",
+      "label": "Image Name",
+      "placeholder": "Enter alt text",
+      "type": "text",
+      "required": false,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": 255
+      },
+      "relation": null
+    }
+   
+   
+     
+  
+  ],
+  "editFields": [
+    {
+      "name": "product_id",
+      "label": "Product Name",
+      "placeholder": "Select product",
+      "type": "select",
+      "required": true,
+      "options": null,
+      "defaultvalue": "",
+      "constraints": null,
+      "relation": {
+        "datasource": null,
+        "table": "products",
+        "valueField": "id",
+        "labelFields": ["id","name"],
+        "limit": 5
+      }
+    },
+    {
+      "name": "plan_id",
+      "label": "Plan Name",
+      "placeholder": "Select plan (optional)",
+      "type": "select",
+      "required": false,
+      "options": null,
+      "defaultvalue": "",
+      "constraints": null,
+      "relation": {
+        "datasource": null,
+        "table": "plans",
+        "valueField": "id",
+        "labelFields": ["id","name"],
+        "limit": 5
+      }
+    },
+    {
+      "name": "image_url",
+      "label": "Image Url",
+      "placeholder": "Enter image URL",
+      "type": "image",
+      "required": true,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": 1000
+      },
+      "relation": null
+    },
+    {
+      "name": "alt_text",
+      "label": "Image Name",
+      "placeholder": "Enter alt text",
+      "type": "text",
+      "required": false,
+      "options": [],
+      "defaultvalue": "",
+      "constraints": {
+        "min": null,
+        "max": 255
+      },
+      "relation": null
+    }
+   
+    
+  ],
+  "searchFields": [
+    "id",
+    "product_id",
+    "plan_id",
+    "image_url",
+    "alt_text",
+    "is_primary",
+    "sort_order",
+    "creation_date",
+    "update_date"
+  ],
+  "viewFields": [
+    { "name": "id", "label": "id" },
+    { "name": "product_id", "label": "product_id" },
+    { "name": "plan_id", "label": "plan_id" },
+    { "name": "image_url", "label": "image_url" },
+    { "name": "alt_text", "label": "alt_text" },
+    { "name": "is_primary", "label": "is_primary" },
+    { "name": "sort_order", "label": "sort_order" },
+    { "name": "creation_date", "label": "creation_date" },
+    { "name": "update_date", "label": "update_date" }
+  ],
+  "permissions": {
+    "allowCreate": {
+      "accessRoles": ["root"]
+    },
+    "allowEdit": {
+      "accessRoles": ["root"]
+    },
+    "allowDelete": {
+      "accessRoles": ["root"]
+    }
+  },
+  "pagination": true,
+  "ui": {
+    "icon": "FaImage"
+  },
+  "accessRoles": ["root"],
+  "limit": 20,
+  "orderBy": [
+    {
+      "column": "sort_order",
+      "direction": "asc"
+    }
+  ],
+  "isSearchRealtime": true
+},
+        {
+          "table": "addons",
+          "label": "addons",
+          "Identifier": "id",
+          "description": "Add-on Features",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "relation": null
+            },
+            {
+              "name": "price",
+              "label": "Price",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "placeholder": "Enter price",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "price",
+              "label": "price",
+              "placeholder": "Enter price",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "0.00",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "metadata",
+              "label": "metadata",
+              "placeholder": "Enter metadata",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "description",
+            "price",
+            "metadata",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "price",
+              "label": "price"
+            },
+            {
+              "name": "metadata",
+              "label": "metadata"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaPuzzlePiece"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Tags",
+      "description": "Tagging system and metadata for categorization",
+      "ui": {
+        "icon": "MdLabel"
+      },
+      "entities": [
+        {
+          "table": "tags",
+          "label": "tags",
+          "Identifier": "id",
+          "description": "Tags",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "relation": null
+            },
+            {
+              "name": "badgeTypeId",
+              "label": "Dadge Type",
+              "relation": {
+                "datasource": null,
+                "table": "badgetypes",
+                "valueField": "id",
+                "labelFields": "badgetypes.name"
+              }
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "badgeTypeId",
+              "label": "badgeTypeId",
+              "placeholder": "Enter badgeTypeId",
+              "type": "lookup",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "badgetypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "badgeTypeId",
+              "label": "badgeTypeId",
+              "placeholder": "Enter badgeTypeId",
+              "type": "lookup",
+              "required": false,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "badgetypes",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "description",
+            "badgeTypeId",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "badgeTypeId",
+              "label": "badgeTypeId"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaTag"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "badgetypes",
+          "label": "badgetypes",
+          "Identifier": "id",
+          "description": "Badge Types",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "relation": null
+            },
+            {
+              "name": "style",
+              "label": "Style",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "style",
+              "label": "style",
+              "placeholder": "Enter style",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "style",
+              "label": "style",
+              "placeholder": "Enter style",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date",
+              "placeholder": "Enter creation_date",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "name",
+            "description",
+            "style",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "style",
+              "label": "style"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaCertificate"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "Tenants",
+      "description": "Multi-tenant support and configuration",
+      "ui": {
+        "icon": "MdBusiness"
+      },
+      "entities": [
+        {
+          "table": "tenants",
+          "label": "Business Details",
+          "Identifier": "id",
+          "description": "Tenants",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "tenant_id",
+              "label": "Business Id",
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Business Name",
+              "relation": null
+            },
+            {
+              "name": "domain",
+              "label": "Domain",
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "tenant_id",
+              "label": "Business id",
+              "placeholder": "Enter tenant_id",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "domain",
+              "label": "Domain",
+              "placeholder": "Enter domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "tenant_id",
+              "label": "Business Id",
+              "placeholder": "Enter tenant_id",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "Enter name",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "domain",
+              "label": "Domain",
+              "placeholder": "Enter domain",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "placeholder": "Enter description",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "tenant_id",
+            "name",
+            "domain",
+            "description",
+            "creation_date",
+            "update_date"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "tenant_id",
+              "label": "tenant_id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "domain",
+              "label": "domain"
+            },
+            {
+              "name": "description",
+              "label": "description"
+            },
+            {
+              "name": "creation_date",
+              "label": "creation_date"
+            },
+            {
+              "name": "update_date",
+              "label": "update_date"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root_admin"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root_admin"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root_admin"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaBuilding"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    }
+  ]
+}
