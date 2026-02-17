@@ -2,7 +2,7 @@
   "Id": "20fb6362-ca78-4e8f-b635-20e2f3f5b3ce",
   "Solution": "CrudApi",
   "Company": "WebSvc",
-  "ContactPerson": "Narender Kumar1",
+  "ContactPerson": "Narender Kumar",
   "Email": "narender1990@live.com",
   "PhoneNumber": "09901134008",
   "MachineHash": "92B8CD346DC30125992295B0B7E5815E13DCD5C18A57C7FB60C34C1042F7B429",
@@ -12,3 +12,4 @@
   "Version": 1
 
 }
+
