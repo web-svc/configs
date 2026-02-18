@@ -91,7 +91,6 @@
     {"Iso2": "ZW", "Iso3": "ZWE", "CountryName": "Zimbabwe", "PhoneCode": "+263", "CurrencyCode": "ZWL", "CurrencyName": "Zimbabwe Dollar", "Continent": "Africa"}
   ],
   "States": [
-    /* === 🇮🇳 India === */
     { "CountryRef": "IN", "StateCode": "AP", "StateName": "Andhra Pradesh" },
     { "CountryRef": "IN", "StateCode": "AR", "StateName": "Arunachal Pradesh" },
     { "CountryRef": "IN", "StateCode": "AS", "StateName": "Assam" },
@@ -129,7 +128,6 @@
     { "CountryRef": "IN", "StateCode": "LA", "StateName": "Ladakh" },
     { "CountryRef": "IN", "StateCode": "DN", "StateName": "Dadra & Nagar Haveli and Daman & Diu" },
 
-    /* === 🇧🇩 Bangladesh === */
     { "CountryRef": "BD", "StateCode": "DHA", "StateName": "Dhaka Division" },
     { "CountryRef": "BD", "StateCode": "CTG", "StateName": "Chittagong Division" },
     { "CountryRef": "BD", "StateCode": "RAJ", "StateName": "Rajshahi Division" },
@@ -139,7 +137,6 @@
     { "CountryRef": "BD", "StateCode": "SYL", "StateName": "Sylhet Division" },
     { "CountryRef": "BD", "StateCode": "MYM", "StateName": "Mymensingh Division" },
 
-    /* === 🇵🇰 Pakistan === */
     { "CountryRef": "PK", "StateCode": "PB", "StateName": "Punjab" },
     { "CountryRef": "PK", "StateCode": "SD", "StateName": "Sindh" },
     { "CountryRef": "PK", "StateCode": "KP", "StateName": "Khyber Pakhtunkhwa" },
@@ -148,7 +145,7 @@
     { "CountryRef": "PK", "StateCode": "GB", "StateName": "Gilgit-Baltistan" },
     { "CountryRef": "PK", "StateCode": "AJ", "StateName": "Azad Jammu and Kashmir" },
 
-    /* === 🇳🇵 Nepal === */
+
     { "CountryRef": "NP", "StateCode": "P1", "StateName": "Province No. 1" },
     { "CountryRef": "NP", "StateCode": "M", "StateName": "Madhesh Province" },
     { "CountryRef": "NP", "StateCode": "B", "StateName": "Bagmati Province" },
@@ -157,7 +154,6 @@
     { "CountryRef": "NP", "StateCode": "K", "StateName": "Karnali Province" },
     { "CountryRef": "NP", "StateCode": "S", "StateName": "Sudurpashchim Province" },
 
-    /* === 🇱🇰 Sri Lanka === */
     { "CountryRef": "LK", "StateCode": "CE", "StateName": "Central Province" },
     { "CountryRef": "LK", "StateCode": "EP", "StateName": "Eastern Province" },
     { "CountryRef": "LK", "StateCode": "NC", "StateName": "North Central Province" },
@@ -168,7 +164,6 @@
     { "CountryRef": "LK", "StateCode": "UV", "StateName": "Uva Province" },
     { "CountryRef": "LK", "StateCode": "WE", "StateName": "Western Province" },
 
-    /* === 🇹🇭 Thailand === */
     { "CountryRef": "TH", "StateCode": "BKK", "StateName": "Bangkok" },
     { "CountryRef": "TH", "StateCode": "CMI", "StateName": "Chiang Mai" },
     { "CountryRef": "TH", "StateCode": "PKT", "StateName": "Phuket" },
@@ -176,7 +171,6 @@
     { "CountryRef": "TH", "StateCode": "KBI", "StateName": "Krabi" },
     { "CountryRef": "TH", "StateCode": "CTI", "StateName": "Chonburi" },
 
-    /* === 🇮🇩 Indonesia (Provinces) === */
     { "CountryRef": "ID", "StateCode": "JK", "StateName": "Jakarta" },
     { "CountryRef": "ID", "StateCode": "JB", "StateName": "West Java" },
     { "CountryRef": "ID", "StateCode": "JT", "StateName": "Central Java" },
@@ -186,7 +180,6 @@
     { "CountryRef": "ID", "StateCode": "SS", "StateName": "South Sumatra" },
     { "CountryRef": "ID", "StateCode": "KS", "StateName": "South Kalimantan" },
 
-    /* === 🇯🇵 Japan (Prefectures - key ones) === */
     { "CountryRef": "JP", "StateCode": "TK", "StateName": "Tokyo" },
     { "CountryRef": "JP", "StateCode": "OS", "StateName": "Osaka" },
     { "CountryRef": "JP", "StateCode": "KN", "StateName": "Kanagawa" },
@@ -194,7 +187,6 @@
     { "CountryRef": "JP", "StateCode": "HK", "StateName": "Hokkaido" },
     { "CountryRef": "JP", "StateCode": "FO", "StateName": "Fukuoka" },
 
-    /* === 🇨🇳 China (Provinces simplified) === */
     { "CountryRef": "CN", "StateCode": "BJ", "StateName": "Beijing" },
     { "CountryRef": "CN", "StateCode": "SH", "StateName": "Shanghai" },
     { "CountryRef": "CN", "StateCode": "GD", "StateName": "Guangdong" },
