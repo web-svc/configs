@@ -1,0 +1,1008 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
+  "datasources": {
+    "channelsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "xxxx-yyyy"
+      }
+    },
+    "connectionsDb": {
+      "url": "https://crud.webapis.in/api/v1/crud/",
+      "headers": {
+        "x-Database": "zzzz-1111"
+      }
+    }
+  },
+  "ui": {
+    "links": [
+      {
+        "label": "View External App",
+        "url": "https://external.app/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaExternalLinkAlt"
+      },
+      {
+        "label": "Open Admin",
+        "url": "https://admin.external.app/",
+        "target": "_blank",
+        "position": "header",
+        "icon": "FaUserShield"
+      }
+    ]
+  },
+  "description": "Master database with country and state management tables.",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": [
+          {
+            "label": "countries Summary",
+            "entity": "countries",
+            "fields": [
+              "AD",
+              "AE",
+              "AF",
+              "AL",
+              "AM",
+              "AO",
+              "AR",
+              "AT",
+              "AU",
+              "AZ",
+              "BA",
+              "BD",
+              "BE",
+              "BG",
+              "BH",
+              "BJ",
+              "BN",
+              "BO",
+              "BR",
+              "BT"
+            ],
+            "groupBy": "iso2",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "states Summary",
+            "entity": "states",
+            "fields": [
+              "637",
+              "653",
+              "670",
+              "671",
+              "677",
+              "683",
+              "688",
+              "694",
+              "707"
+            ],
+            "groupBy": "countryid",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total countries",
+          "display": "count(*) as display",
+          "entity": "countries",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total states",
+          "display": "count(*) as display",
+          "entity": "states",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 countries",
+          "display": "iso2,iso3,countryname,phonecode",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "countries",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 states",
+          "display": "statecode,statename",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "states",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "countries Table",
+          "display": "iso2,iso3,countryname,phonecode",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "countries",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "states Table",
+          "display": "statecode,statename",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "states",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "actions": {
+        "label": "Quick Actions",
+        "roles": [
+          "root",
+          "admin",
+          "hr"
+        ],
+        "items": [
+          {
+            "label": "Add countries",
+            "action": "create",
+            "entity": "countries",
+            "group": "countries",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          },
+          {
+            "label": "Add states",
+            "action": "create",
+            "entity": "states",
+            "group": "states",
+            "roles": [
+              "root",
+              "admin"
+            ]
+          }
+        ]
+      },
+      "reports": [
+        {
+          "label": "Monthly Joinees",
+          "filter": "Status eq \u0027Active\u0027",
+          "entity": "countries",
+          "exportable": true,
+          "roles": [
+            "root",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "calendar",
+      "roles": [
+        "root",
+        "hr",
+        "manager"
+      ],
+      "calendarConfig": [
+        {
+          "entity": "countries",
+          "titleField": "countryname",
+          "startDateField": "created_at",
+          "endDateField": "created_at",
+          "colorField": "updated_at",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        },
+        {
+          "entity": "states",
+          "titleField": "statename",
+          "startDateField": "created_at",
+          "endDateField": "created_at",
+          "colorField": "updated_at",
+          "roles": [
+            "root",
+            "hr",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Geography",
+      "description": "Manage countries and states information",
+      "ui": {
+        "icon": "FaGlobe"
+      },
+      "entities": [
+        {
+          "table": "countries",
+          "label": "countries",
+          "Identifier": "id",
+          "description": "Country list and details",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "iso2",
+              "label": "iso2",
+              "relation": null
+            },
+            {
+              "name": "iso3",
+              "label": "iso3",
+              "relation": null
+            },
+            {
+              "name": "countryname",
+              "label": "countryname",
+              "relation": null
+            },
+            {
+              "name": "phonecode",
+              "label": "phonecode",
+              "relation": null
+            },
+            {
+              "name": "currencycode",
+              "label": "currencycode",
+              "relation": null
+            },
+            {
+              "name": "currencyname",
+              "label": "currencyname",
+              "relation": null
+            },
+            {
+              "name": "continent",
+              "label": "continent",
+              "relation": null
+            },
+            {
+              "name": "is_active",
+              "label": "is_active",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "iso2",
+              "label": "iso2",
+              "placeholder": "Enter iso2",
+              "type": "toggle",
+              "required": true,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "iso3",
+              "label": "iso3",
+              "placeholder": "Enter iso3",
+              "type": "button-group",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "countryname",
+              "label": "countryname",
+              "placeholder": "Enter countryname",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "phonecode",
+              "label": "phonecode",
+              "placeholder": "Enter phonecode",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currencycode",
+              "label": "currencycode",
+              "placeholder": "Enter currencycode",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currencyname",
+              "label": "currencyname",
+              "placeholder": "Enter currencyname",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "continent",
+              "label": "continent",
+              "placeholder": "Enter continent",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "is_active",
+              "label": "is_active",
+              "placeholder": "Enter is_active",
+              "type": "dropdown",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "iso2",
+              "label": "iso2",
+              "placeholder": "Enter iso2",
+              "type": "chips",
+              "required": true,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "iso3",
+              "label": "iso3",
+              "placeholder": "Enter iso3",
+              "type": "toggle",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "countryname",
+              "label": "countryname",
+              "placeholder": "Enter countryname",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "phonecode",
+              "label": "phonecode",
+              "placeholder": "Enter phonecode",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currencycode",
+              "label": "currencycode",
+              "placeholder": "Enter currencycode",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "currencyname",
+              "label": "currencyname",
+              "placeholder": "Enter currencyname",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "continent",
+              "label": "continent",
+              "placeholder": "Enter continent",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "is_active",
+              "label": "is_active",
+              "placeholder": "Enter is_active",
+              "type": "segmented",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "iso2",
+            "iso3",
+            "countryname",
+            "phonecode",
+            "currencycode",
+            "currencyname",
+            "continent",
+            "is_active",
+            "created_at",
+            "updated_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "iso2",
+              "label": "iso2"
+            },
+            {
+              "name": "iso3",
+              "label": "iso3"
+            },
+            {
+              "name": "countryname",
+              "label": "countryname"
+            },
+            {
+              "name": "phonecode",
+              "label": "phonecode"
+            },
+            {
+              "name": "currencycode",
+              "label": "currencycode"
+            },
+            {
+              "name": "currencyname",
+              "label": "currencyname"
+            },
+            {
+              "name": "continent",
+              "label": "continent"
+            },
+            {
+              "name": "is_active",
+              "label": "is_active"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            },
+            {
+              "name": "updated_at",
+              "label": "updated_at"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaFlag"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "states",
+          "label": "states",
+          "Identifier": "id",
+          "description": "State and province data",
+          "features": {},
+          "displayFields": [
+            {
+              "name": "countryid",
+              "label": "countryid",
+              "relation": {
+                "datasource": null,
+                "table": "countries",
+                "valueField": "id",
+                "labelFields": "countries.id"
+              }
+            },
+            {
+              "name": "statecode",
+              "label": "statecode",
+              "relation": null
+            },
+            {
+              "name": "statename",
+              "label": "statename",
+              "relation": null
+            },
+            {
+              "name": "is_active",
+              "label": "is_active",
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "countryid",
+              "label": "countryid",
+              "placeholder": "Enter countryid",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "countries",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "statecode",
+              "label": "statecode",
+              "placeholder": "Enter statecode",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "statename",
+              "label": "statename",
+              "placeholder": "Enter statename",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "is_active",
+              "label": "is_active",
+              "placeholder": "Enter is_active",
+              "type": "button-group",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "countryid",
+              "label": "countryid",
+              "placeholder": "Enter countryid",
+              "type": "lookup",
+              "required": true,
+              "options": null,
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "countries",
+                "valueField": "id",
+                "labelFields": [
+                  "id"
+                ],
+                "limit": 5
+              }
+            },
+            {
+              "name": "statecode",
+              "label": "statecode",
+              "placeholder": "Enter statecode",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "statename",
+              "label": "statename",
+              "placeholder": "Enter statename",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": {
+                "min": null,
+                "max": null
+              },
+              "relation": null
+            },
+            {
+              "name": "is_active",
+              "label": "is_active",
+              "placeholder": "Enter is_active",
+              "type": "segmented",
+              "required": false,
+              "options": [
+                {
+                  "Label": "Yes",
+                  "Value": "1"
+                },
+                {
+                  "Label": "No",
+                  "Value": "0"
+                }
+              ],
+              "defaultvalue": "1",
+              "constraints": {
+                "min": -128,
+                "max": 127
+              },
+              "relation": null
+            }
+          ],
+          "searchFields": [
+            "id",
+            "countryid",
+            "statecode",
+            "statename",
+            "is_active",
+            "created_at",
+            "updated_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "countryid",
+              "label": "countryid"
+            },
+            {
+              "name": "statecode",
+              "label": "statecode"
+            },
+            {
+              "name": "statename",
+              "label": "statename"
+            },
+            {
+              "name": "is_active",
+              "label": "is_active"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            },
+            {
+              "name": "updated_at",
+              "label": "updated_at"
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "FaMap"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    }
+  ]
+}
