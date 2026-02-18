@@ -57,6 +57,7 @@
     {"Iso2": "KR", "Iso3": "KOR", "CountryName": "Korea, Republic of", "PhoneCode": "+82", "CurrencyCode": "KRW", "CurrencyName": "Won", "Continent": "Asia"},
     {"Iso2": "KW", "Iso3": "KWT", "CountryName": "Kuwait", "PhoneCode": "+965", "CurrencyCode": "KWD", "CurrencyName": "Kuwaiti Dinar", "Continent": "Asia"},
     {"Iso2": "LB", "Iso3": "LBN", "CountryName": "Lebanon", "PhoneCode": "+961", "CurrencyCode": "LBP", "CurrencyName": "Lebanese Pound", "Continent": "Asia"},
+    { "Iso2": "LK", "Iso3": "LKA", "CountryName": "Sri Lanka", "PhoneCode": "+94", "CurrencyCode": "LKR", "CurrencyName": "Sri Lankan Rupee", "Continent": "Asia"},
     {"Iso2": "MY", "Iso3": "MYS", "CountryName": "Malaysia", "PhoneCode": "+60", "CurrencyCode": "MYR", "CurrencyName": "Malaysian Ringgit", "Continent": "Asia"},
     {"Iso2": "MX", "Iso3": "MEX", "CountryName": "Mexico", "PhoneCode": "+52", "CurrencyCode": "MXN", "CurrencyName": "Mexican Peso", "Continent": "North America"},
     {"Iso2": "MA", "Iso3": "MAR", "CountryName": "Morocco", "PhoneCode": "+212", "CurrencyCode": "MAD", "CurrencyName": "Moroccan Dirham", "Continent": "Africa"},
