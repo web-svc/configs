@@ -1,6 +1,6 @@
 {
   "apiBaseUrl": "https://crud.webapis.in/api/v1/crud/",
-  "description": "Master database with country and state records for international data management.",
+  "description": "UI config for master database with countries and states tables.",
   "dashboard": [
     {
       "viewType": "summary",
@@ -209,7 +209,7 @@
   "groups": [
     {
       "name": "Geography",
-      "description": "Location and region related information",
+      "description": "Manage country and state records.",
       "ui": {
         "icon": "FaGlobe"
       },
@@ -218,7 +218,7 @@
           "table": "countries",
           "label": "countries",
           "Identifier": "id",
-          "description": "Country details and codes",
+          "description": "Countries and related info",
           "features": {},
           "searchFields": [
             "id",
@@ -316,7 +316,7 @@
           "table": "states",
           "label": "states",
           "Identifier": "id",
-          "description": "State or region data",
+          "description": "States or regions within countries",
           "features": {},
           "searchFields": [
             "id",
