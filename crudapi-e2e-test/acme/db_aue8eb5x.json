@@ -1,0 +1,532 @@
+{
+  "apiBaseUrl": "http://localhost:5291/api/v1/acme/db_aue8eb5x/crud",
+  "description": "UI configuration for db_aue8eb5x with tables: test, widgets.",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": [
+          {
+            "label": "widgets Summary",
+            "entity": "widgets",
+            "items": [
+              {
+                "label": "1",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "2",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "3",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "4",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "99",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "100",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "101",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "102",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "103",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "104",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "105",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "106",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "107",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "108",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "109",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "110",
+                "entity": "widgets",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              }
+            ],
+            "groupBy": "id",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total test",
+          "display": "count(*) as display",
+          "entity": "test",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total widgets",
+          "display": "count(*) as display",
+          "entity": "widgets",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 widgets",
+          "display": "name",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "widgets",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "widgets Table",
+          "display": "name",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "widgets",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Ungrouped",
+      "description": "Tables without a specific group",
+      "ui": {
+        "icon": "MdWidgets"
+      },
+      "entities": [
+        {
+          "table": "test",
+          "label": "test",
+          "Identifier": "id",
+          "description": "Test records",
+          "features": {},
+          "searchFields": [
+            "id",
+            "name"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            }
+          ],
+          "displayFields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "placeholder": "",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "placeholder": "",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "placeholder": "",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "MdWidgets"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "widgets",
+          "label": "widgets",
+          "Identifier": "id",
+          "description": "Widget items",
+          "features": {},
+          "searchFields": [
+            "id",
+            "name",
+            "created_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            }
+          ],
+          "displayFields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "placeholder": "",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "MdWidgets"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    }
+  ]
+}
