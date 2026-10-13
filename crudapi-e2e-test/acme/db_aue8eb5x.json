@@ -413,7 +413,7 @@
           "displayFields": [
             {
               "name": "id",
-              "label": "Id",
+              "label": "Ids",
               "placeholder": "",
               "type": "number",
               "required": true,
