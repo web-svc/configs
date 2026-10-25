@@ -1,0 +1,2591 @@
+{
+  "apiBaseUrl": "https://crud.webapis.in/api/v1/md-platform/db_ko79oet7/crud",
+  "description": "CRUD UI configuration for db_ko79oet7 with 5 tables organized by function.",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": [
+          {
+            "label": "config_generations Summary",
+            "entity": "config_generations",
+            "items": [
+              {
+                "label": "running",
+                "entity": "config_generations",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "failed",
+                "entity": "config_generations",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              },
+              {
+                "label": "succeeded",
+                "entity": "config_generations",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              }
+            ],
+            "groupBy": "status",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "database_connections Summary",
+            "entity": "database_connections",
+            "items": [
+              {
+                "label": "generating",
+                "entity": "database_connections",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              }
+            ],
+            "groupBy": "status",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "orgs Summary",
+            "entity": "orgs",
+            "items": [
+              {
+                "label": "81eec793-4415-4c3c-b5d4-de83c32d5837",
+                "entity": "orgs",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              }
+            ],
+            "groupBy": "id",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          },
+          {
+            "label": "platform_settings Summary",
+            "entity": "platform_settings",
+            "items": [
+              {
+                "label": "default",
+                "entity": "platform_settings",
+                "roles": [
+                  "root",
+                  "admin",
+                  "hr"
+                ]
+              }
+            ],
+            "groupBy": "id",
+            "roles": [
+              "root",
+              "admin",
+              "hr"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [
+        {
+          "type": "stat",
+          "label": "Total config_generations",
+          "display": "count(*) as display",
+          "entity": "config_generations",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total database_connections",
+          "display": "count(*) as display",
+          "entity": "database_connections",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total orgs",
+          "display": "count(*) as display",
+          "entity": "orgs",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total platform_settings",
+          "display": "count(*) as display",
+          "entity": "platform_settings",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "type": "stat",
+          "label": "Total user_preferences",
+          "display": "count(*) as display",
+          "entity": "user_preferences",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ],
+      "recentRecords": [
+        {
+          "label": "Recent 1 config_generations",
+          "display": "id,database_connection_id,status,error_message",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "started_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "config_generations",
+          "filter": "config_generations.status eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 database_connections",
+          "display": "id,org_id,slug,display_name",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "last_generated_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "database_connections",
+          "filter": "database_connections.status eq \u00271\u0027",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 orgs",
+          "display": "id,slug,name,loginlink_tenant_id",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "orgs",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 platform_settings",
+          "display": "id,loginlink_platform_client_id,loginlink_platform_secret_b64,app_base_url",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "setup_completed_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "platform_settings",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Recent 1 user_preferences",
+          "display": "id,org_id,loginlink_user_id",
+          "limit": 5,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "user_preferences",
+          "filter": null,
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ],
+          "actions": [
+            {
+              "label": "View",
+              "action": "view",
+              "roles": [
+                "root",
+                "hr"
+              ]
+            }
+          ]
+        }
+      ],
+      "entityViews": [
+        {
+          "label": "config_generations Table",
+          "display": "id,database_connection_id,status,error_message",
+          "limit": 5,
+          "filter": "config_generations.status eq \u00271\u0027",
+          "orderBy": [
+            {
+              "column": "started_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "config_generations",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "label": "database_connections Table",
+          "display": "id,org_id,slug,display_name",
+          "limit": 5,
+          "filter": "database_connections.status eq \u00271\u0027",
+          "orderBy": [
+            {
+              "column": "last_generated_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "database_connections",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "label": "orgs Table",
+          "display": "id,slug,name,loginlink_tenant_id",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "orgs",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "label": "platform_settings Table",
+          "display": "id,loginlink_platform_client_id,loginlink_platform_secret_b64,app_base_url",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "setup_completed_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "platform_settings",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        },
+        {
+          "label": "user_preferences Table",
+          "display": "id,org_id,loginlink_user_id",
+          "limit": 5,
+          "filter": null,
+          "orderBy": [
+            {
+              "column": "created_at",
+              "direction": "desc"
+            }
+          ],
+          "entity": "user_preferences",
+          "roles": [
+            "root",
+            "admin",
+            "hr"
+          ]
+        }
+      ]
+    },
+    {
+      "viewType": "kanban",
+      "roles": [
+        "root",
+        "manager"
+      ],
+      "kanbanConfig": [
+        {
+          "entity": "config_generations",
+          "statusField": "status",
+          "columns": [
+            "To Do",
+            "In Progress",
+            "Done"
+          ],
+          "displayFields": [
+            "error_message",
+            "publish_error",
+            "config_file_url"
+          ],
+          "roles": [
+            "root",
+            "manager"
+          ]
+        },
+        {
+          "entity": "database_connections",
+          "statusField": "status",
+          "columns": [
+            "To Do",
+            "In Progress",
+            "Done"
+          ],
+          "displayFields": [
+            "slug",
+            "display_name",
+            "crudapi_db_key"
+          ],
+          "roles": [
+            "root",
+            "manager"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "name": "Configuration",
+      "description": "Manage config generations and platform settings",
+      "ui": {
+        "icon": "MdSettings"
+      },
+      "entities": [
+        {
+          "table": "config_generations",
+          "label": "config_generations",
+          "Identifier": "id",
+          "description": "Config generation history",
+          "features": {},
+          "searchFields": [
+            "id",
+            "database_connection_id",
+            "status",
+            "error_message",
+            "published",
+            "publish_error",
+            "config_file_url",
+            "started_at",
+            "finished_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "database_connection_id",
+              "label": "database_connection_id"
+            },
+            {
+              "name": "status",
+              "label": "status"
+            },
+            {
+              "name": "error_message",
+              "label": "error_message"
+            },
+            {
+              "name": "published",
+              "label": "published"
+            },
+            {
+              "name": "publish_error",
+              "label": "publish_error"
+            },
+            {
+              "name": "config_file_url",
+              "label": "config_file_url"
+            },
+            {
+              "name": "started_at",
+              "label": "started_at"
+            },
+            {
+              "name": "finished_at",
+              "label": "finished_at"
+            }
+          ],
+          "displayFields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "database_connection_id",
+              "label": "Database Connection Id",
+              "placeholder": "",
+              "type": "relation",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "database_connections",
+                "valueField": "id",
+                "labelFields": [],
+                "limit": 5
+              }
+            },
+            {
+              "name": "status",
+              "label": "Status",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "error_message",
+              "label": "Error Message",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "published",
+              "label": "Published",
+              "placeholder": "",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "publish_error",
+              "label": "Publish Error",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "config_file_url",
+              "label": "Config File Url",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "started_at",
+              "label": "Started At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "finished_at",
+              "label": "Finished At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "database_connection_id",
+              "label": "Database Connection Id",
+              "placeholder": "",
+              "type": "relation",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "database_connections",
+                "valueField": "id",
+                "labelFields": [],
+                "limit": 5
+              }
+            },
+            {
+              "name": "status",
+              "label": "Status",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "error_message",
+              "label": "Error Message",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "published",
+              "label": "Published",
+              "placeholder": "",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "publish_error",
+              "label": "Publish Error",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "config_file_url",
+              "label": "Config File Url",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "started_at",
+              "label": "Started At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "finished_at",
+              "label": "Finished At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "database_connection_id",
+              "label": "Database Connection Id",
+              "placeholder": "",
+              "type": "relation",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "database_connections",
+                "valueField": "id",
+                "labelFields": [],
+                "limit": 5
+              }
+            },
+            {
+              "name": "status",
+              "label": "Status",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "error_message",
+              "label": "Error Message",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "published",
+              "label": "Published",
+              "placeholder": "",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "publish_error",
+              "label": "Publish Error",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "config_file_url",
+              "label": "Config File Url",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "started_at",
+              "label": "Started At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "finished_at",
+              "label": "Finished At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "MdHistory"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        },
+        {
+          "table": "platform_settings",
+          "label": "platform_settings",
+          "Identifier": "id",
+          "description": "Platform-wide settings",
+          "features": {},
+          "searchFields": [
+            "id",
+            "loginlink_platform_client_id",
+            "loginlink_platform_secret_b64",
+            "app_base_url",
+            "first_org_slug",
+            "setup_completed_at",
+            "updated_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "loginlink_platform_client_id",
+              "label": "loginlink_platform_client_id"
+            },
+            {
+              "name": "loginlink_platform_secret_b64",
+              "label": "loginlink_platform_secret_b64"
+            },
+            {
+              "name": "app_base_url",
+              "label": "app_base_url"
+            },
+            {
+              "name": "first_org_slug",
+              "label": "first_org_slug"
+            },
+            {
+              "name": "setup_completed_at",
+              "label": "setup_completed_at"
+            },
+            {
+              "name": "updated_at",
+              "label": "updated_at"
+            }
+          ],
+          "displayFields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_platform_client_id",
+              "label": "Loginlink Platform Client Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_platform_secret_b64",
+              "label": "Loginlink Platform Secret B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "app_base_url",
+              "label": "App Base Url",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "first_org_slug",
+              "label": "First Org Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "setup_completed_at",
+              "label": "Setup Completed At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "loginlink_platform_client_id",
+              "label": "Loginlink Platform Client Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_platform_secret_b64",
+              "label": "Loginlink Platform Secret B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "app_base_url",
+              "label": "App Base Url",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "first_org_slug",
+              "label": "First Org Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "setup_completed_at",
+              "label": "Setup Completed At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "loginlink_platform_client_id",
+              "label": "Loginlink Platform Client Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_platform_secret_b64",
+              "label": "Loginlink Platform Secret B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "app_base_url",
+              "label": "App Base Url",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "first_org_slug",
+              "label": "First Org Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "setup_completed_at",
+              "label": "Setup Completed At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "MdSettings"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    },
+    {
+      "name": "Organization Management",
+      "description": "Organizational data and connections",
+      "ui": {
+        "icon": "MdBusiness"
+      },
+      "entities": [
+        {
+          "table": "database_connections",
+          "label": "database_connections",
+          "Identifier": "id",
+          "description": "Database connection records",
+          "features": {},
+          "searchFields": [
+            "id",
+            "org_id",
+            "slug",
+            "display_name",
+            "crudapi_db_key",
+            "crudapi_database_id",
+            "status",
+            "last_generated_at",
+            "created_by_user_id",
+            "created_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "org_id",
+              "label": "org_id"
+            },
+            {
+              "name": "slug",
+              "label": "slug"
+            },
+            {
+              "name": "display_name",
+              "label": "display_name"
+            },
+            {
+              "name": "crudapi_db_key",
+              "label": "crudapi_db_key"
+            },
+            {
+              "name": "crudapi_database_id",
+              "label": "crudapi_database_id"
+            },
+            {
+              "name": "status",
+              "label": "status"
+            },
+            {
+              "name": "last_generated_at",
+              "label": "last_generated_at"
+            },
+            {
+              "name": "created_by_user_id",
+              "label": "created_by_user_id"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            }
+          ],
+          "displayFields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "org_id",
+              "label": "Org Id",
+              "placeholder": "",
+              "type": "relation",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "orgs",
+                "valueField": "id",
+                "labelFields": [],
+                "limit": 5
+              }
+            },
+            {
+              "name": "slug",
+              "label": "Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "display_name",
+              "label": "Display Name",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_db_key",
+              "label": "Crudapi Db Key",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_database_id",
+              "label": "Crudapi Database Id",
+              "placeholder": "",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "Status",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "last_generated_at",
+              "label": "Last Generated At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_by_user_id",
+              "label": "Created By User Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "org_id",
+              "label": "Org Id",
+              "placeholder": "",
+              "type": "relation",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "orgs",
+                "valueField": "id",
+                "labelFields": [],
+                "limit": 5
+              }
+            },
+            {
+              "name": "slug",
+              "label": "Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "display_name",
+              "label": "Display Name",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_db_key",
+              "label": "Crudapi Db Key",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_database_id",
+              "label": "Crudapi Database Id",
+              "placeholder": "",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "Status",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "last_generated_at",
+              "label": "Last Generated At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_by_user_id",
+              "label": "Created By User Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "org_id",
+              "label": "Org Id",
+              "placeholder": "",
+              "type": "relation",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "orgs",
+                "valueField": "id",
+                "labelFields": [],
+                "limit": 5
+              }
+            },
+            {
+              "name": "slug",
+              "label": "Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "display_name",
+              "label": "Display Name",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_db_key",
+              "label": "Crudapi Db Key",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_database_id",
+              "label": "Crudapi Database Id",
+              "placeholder": "",
+              "type": "number",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "status",
+              "label": "Status",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "last_generated_at",
+              "label": "Last Generated At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_by_user_id",
+              "label": "Created By User Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "MdStorage"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        },
+        {
+          "table": "orgs",
+          "label": "orgs",
+          "Identifier": "id",
+          "description": "List of organizations",
+          "features": {},
+          "searchFields": [
+            "id",
+            "slug",
+            "name",
+            "loginlink_tenant_id",
+            "loginlink_slug",
+            "loginlink_source",
+            "loginlink_app_id",
+            "loginlink_client_id",
+            "loginlink_client_secret_b64",
+            "loginlink_mgmt_client_id",
+            "loginlink_mgmt_secret_b64",
+            "loginlink_founder_user_id",
+            "crudapi_tenant_id",
+            "crudapi_tenant_slug",
+            "crudapi_source",
+            "crudadmin_workspace_key_b64",
+            "onboarding_state",
+            "onboarding_error",
+            "created_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "slug",
+              "label": "slug"
+            },
+            {
+              "name": "name",
+              "label": "name"
+            },
+            {
+              "name": "loginlink_tenant_id",
+              "label": "loginlink_tenant_id"
+            },
+            {
+              "name": "loginlink_slug",
+              "label": "loginlink_slug"
+            },
+            {
+              "name": "loginlink_source",
+              "label": "loginlink_source"
+            },
+            {
+              "name": "loginlink_app_id",
+              "label": "loginlink_app_id"
+            },
+            {
+              "name": "loginlink_client_id",
+              "label": "loginlink_client_id"
+            },
+            {
+              "name": "loginlink_client_secret_b64",
+              "label": "loginlink_client_secret_b64"
+            },
+            {
+              "name": "loginlink_mgmt_client_id",
+              "label": "loginlink_mgmt_client_id"
+            },
+            {
+              "name": "loginlink_mgmt_secret_b64",
+              "label": "loginlink_mgmt_secret_b64"
+            },
+            {
+              "name": "loginlink_founder_user_id",
+              "label": "loginlink_founder_user_id"
+            },
+            {
+              "name": "crudapi_tenant_id",
+              "label": "crudapi_tenant_id"
+            },
+            {
+              "name": "crudapi_tenant_slug",
+              "label": "crudapi_tenant_slug"
+            },
+            {
+              "name": "crudapi_source",
+              "label": "crudapi_source"
+            },
+            {
+              "name": "crudadmin_workspace_key_b64",
+              "label": "crudadmin_workspace_key_b64"
+            },
+            {
+              "name": "onboarding_state",
+              "label": "onboarding_state"
+            },
+            {
+              "name": "onboarding_error",
+              "label": "onboarding_error"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            }
+          ],
+          "displayFields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "slug",
+              "label": "Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_tenant_id",
+              "label": "Loginlink Tenant Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_slug",
+              "label": "Loginlink Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_source",
+              "label": "Loginlink Source",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_app_id",
+              "label": "Loginlink App Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_client_id",
+              "label": "Loginlink Client Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_client_secret_b64",
+              "label": "Loginlink Client Secret B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_mgmt_client_id",
+              "label": "Loginlink Mgmt Client Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_mgmt_secret_b64",
+              "label": "Loginlink Mgmt Secret B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_founder_user_id",
+              "label": "Loginlink Founder User Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_tenant_id",
+              "label": "Crudapi Tenant Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_tenant_slug",
+              "label": "Crudapi Tenant Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_source",
+              "label": "Crudapi Source",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudadmin_workspace_key_b64",
+              "label": "Crudadmin Workspace Key B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "onboarding_state",
+              "label": "Onboarding State",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "onboarding_error",
+              "label": "Onboarding Error",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "slug",
+              "label": "Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_tenant_id",
+              "label": "Loginlink Tenant Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_slug",
+              "label": "Loginlink Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_source",
+              "label": "Loginlink Source",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_app_id",
+              "label": "Loginlink App Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_client_id",
+              "label": "Loginlink Client Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_client_secret_b64",
+              "label": "Loginlink Client Secret B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_mgmt_client_id",
+              "label": "Loginlink Mgmt Client Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_mgmt_secret_b64",
+              "label": "Loginlink Mgmt Secret B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_founder_user_id",
+              "label": "Loginlink Founder User Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_tenant_id",
+              "label": "Crudapi Tenant Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_tenant_slug",
+              "label": "Crudapi Tenant Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_source",
+              "label": "Crudapi Source",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudadmin_workspace_key_b64",
+              "label": "Crudadmin Workspace Key B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "onboarding_state",
+              "label": "Onboarding State",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "onboarding_error",
+              "label": "Onboarding Error",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "slug",
+              "label": "Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "name",
+              "label": "Name",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_tenant_id",
+              "label": "Loginlink Tenant Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_slug",
+              "label": "Loginlink Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_source",
+              "label": "Loginlink Source",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_app_id",
+              "label": "Loginlink App Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_client_id",
+              "label": "Loginlink Client Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_client_secret_b64",
+              "label": "Loginlink Client Secret B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_mgmt_client_id",
+              "label": "Loginlink Mgmt Client Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_mgmt_secret_b64",
+              "label": "Loginlink Mgmt Secret B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "loginlink_founder_user_id",
+              "label": "Loginlink Founder User Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_tenant_id",
+              "label": "Crudapi Tenant Id",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_tenant_slug",
+              "label": "Crudapi Tenant Slug",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudapi_source",
+              "label": "Crudapi Source",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "crudadmin_workspace_key_b64",
+              "label": "Crudadmin Workspace Key B64",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "onboarding_state",
+              "label": "Onboarding State",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "onboarding_error",
+              "label": "Onboarding Error",
+              "placeholder": "",
+              "type": "text",
+              "required": false,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "MdBusiness"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": true
+        }
+      ]
+    },
+    {
+      "name": "User Preferences",
+      "description": "User viewing and session preferences",
+      "ui": {
+        "icon": "MdPerson"
+      },
+      "entities": [
+        {
+          "table": "user_preferences",
+          "label": "user_preferences",
+          "Identifier": "id",
+          "description": "User-specific settings",
+          "features": {},
+          "searchFields": [
+            "id",
+            "org_id",
+            "loginlink_user_id",
+            "session_recheck_interval_min",
+            "remember_me_enabled",
+            "created_at",
+            "updated_at"
+          ],
+          "viewFields": [
+            {
+              "name": "id",
+              "label": "id"
+            },
+            {
+              "name": "org_id",
+              "label": "org_id"
+            },
+            {
+              "name": "loginlink_user_id",
+              "label": "loginlink_user_id"
+            },
+            {
+              "name": "session_recheck_interval_min",
+              "label": "session_recheck_interval_min"
+            },
+            {
+              "name": "remember_me_enabled",
+              "label": "remember_me_enabled"
+            },
+            {
+              "name": "created_at",
+              "label": "created_at"
+            },
+            {
+              "name": "updated_at",
+              "label": "updated_at"
+            }
+          ],
+          "displayFields": [
+            {
+              "name": "id",
+              "label": "Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "org_id",
+              "label": "Org Id",
+              "placeholder": "",
+              "type": "relation",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "orgs",
+                "valueField": "id",
+                "labelFields": [],
+                "limit": 5
+              }
+            },
+            {
+              "name": "loginlink_user_id",
+              "label": "Loginlink User Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "session_recheck_interval_min",
+              "label": "Session Recheck Interval Min",
+              "placeholder": "",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "remember_me_enabled",
+              "label": "Remember Me Enabled",
+              "placeholder": "",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "createFields": [
+            {
+              "name": "org_id",
+              "label": "Org Id",
+              "placeholder": "",
+              "type": "relation",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "orgs",
+                "valueField": "id",
+                "labelFields": [],
+                "limit": 5
+              }
+            },
+            {
+              "name": "loginlink_user_id",
+              "label": "Loginlink User Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "session_recheck_interval_min",
+              "label": "Session Recheck Interval Min",
+              "placeholder": "",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "remember_me_enabled",
+              "label": "Remember Me Enabled",
+              "placeholder": "",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "editFields": [
+            {
+              "name": "org_id",
+              "label": "Org Id",
+              "placeholder": "",
+              "type": "relation",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": {
+                "datasource": null,
+                "table": "orgs",
+                "valueField": "id",
+                "labelFields": [],
+                "limit": 5
+              }
+            },
+            {
+              "name": "loginlink_user_id",
+              "label": "Loginlink User Id",
+              "placeholder": "",
+              "type": "text",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "session_recheck_interval_min",
+              "label": "Session Recheck Interval Min",
+              "placeholder": "",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "remember_me_enabled",
+              "label": "Remember Me Enabled",
+              "placeholder": "",
+              "type": "number",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            },
+            {
+              "name": "created_at",
+              "label": "Created At",
+              "placeholder": "",
+              "type": "datetime",
+              "required": true,
+              "options": [],
+              "defaultvalue": "",
+              "constraints": null,
+              "relation": null
+            }
+          ],
+          "permissions": {
+            "allowCreate": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowEdit": {
+              "accessRoles": [
+                "root"
+              ]
+            },
+            "allowDelete": {
+              "accessRoles": [
+                "root"
+              ]
+            }
+          },
+          "pagination": true,
+          "ui": {
+            "icon": "MdPerson"
+          },
+          "accessRoles": [
+            "root"
+          ],
+          "limit": 20,
+          "orderBy": [
+            {
+              "column": "id",
+              "direction": "asc"
+            }
+          ],
+          "isSearchRealtime": false
+        }
+      ]
+    }
+  ]
+}
