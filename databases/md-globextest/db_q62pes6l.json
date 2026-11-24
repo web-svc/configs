@@ -1,0 +1,28 @@
+{
+  "apiBaseUrl": "http://localhost:5291/api/v1/md-globextest/db_q62pes6l/crud",
+  "description": "No tables available",
+  "dashboard": [
+    {
+      "viewType": "summary",
+      "roles": [
+        "root",
+        "admin"
+      ],
+      "summaryConfig": {
+        "sections": []
+      }
+    },
+    {
+      "viewType": "table",
+      "roles": [
+        "root",
+        "admin",
+        "hr"
+      ],
+      "widgets": [],
+      "recentRecords": [],
+      "entityViews": []
+    }
+  ],
+  "groups": []
+}
